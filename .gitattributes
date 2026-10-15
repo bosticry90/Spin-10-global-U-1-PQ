@@ -1,0 +1,4 @@
+# Preserve scientific input and evidence bytes across platforms.
+* -text
+*.pdf binary
+*.zip binary

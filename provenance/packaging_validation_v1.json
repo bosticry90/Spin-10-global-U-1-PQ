@@ -1,0 +1,48 @@
+{
+  "schema": "SPIN10_PQ_PACKAGING_VALIDATION_V1",
+  "completed_at_utc": "2026-10-15T00:05:29.755471+00:00",
+  "execution_state": "COMPLETED",
+  "scope": "Package preparation, source authentication, document checks and two short read-only replays",
+  "scientific_acceptance": "NOT_PERFORMED_BY_PUBLICATION",
+  "director_acceptance": "NOT_INFERRED",
+  "publication_authorization": "Explicit human authorization to upload to this repository",
+  "note_version": 2,
+  "source_members_sha256_checked": 15909,
+  "source_archive_inventory": "ALL_MEMBERS_INCLUDED_EXACTLY_ONCE_ACROSS_TWO_PARTS",
+  "browsable_calculation_bytes": "MATCH_ARCHIVED_ORIGINAL_INPUTS",
+  "editorial_source_bindings_checked": 33,
+  "editorial_source_digest_mismatches": [],
+  "original_state_sha256": "d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8",
+  "source_state_version": 113,
+  "authority_changed": false,
+  "note_pdf_pages": 6,
+  "note_compilation": "SUCCESS_DESKTOP_COMPILER_AND_LOCAL_PDF_EXPORT",
+  "pdf_visual_review": "ALL_SIX_V2_PAGES_INSPECTED; FINAL_PAGE_6_REINSPECTED_AFTER_PROVENANCE_EDIT; NO_CLIPPING_OR_OVERLAP",
+  "latex_overfull_underfull_boxes": 0,
+  "read_only_replays": [
+    {
+      "command": "python -B reproducibility/calculations/canonical_so10_scalar_reconstruction/verify_pq.py",
+      "exit_code": 0,
+      "scope": "PQ charge arithmetic only; not representation multiplicities"
+    },
+    {
+      "command": "python -B reproducibility/calculations/canonical_so10_direct_gauge_next_order/independent_replay.py",
+      "exit_code": 0,
+      "scope": "Frozen diagnostic equations only; no physical parameter promotion",
+      "maximum_allowed_residual_difference": 2e-08,
+      "replayed_residual_inverse_couplings": [
+        0.26091472628315415,
+        -0.7454764145243473,
+        0.48479480357899263
+      ]
+    }
+  ],
+  "prepublication_correction": "The public V2 includes the later +0.10485824 relaxed-quartic point and correctly identifies it as the gauge-matching input, while preserving the original failed Stage 2 result.",
+  "omitted_checks": [
+    "No fresh 35-block Hessian or quartic replay",
+    "No expensive quantum-pole replays",
+    "No historical custody PASS",
+    "No finite two-loop threshold, refit, parameter search or flavor calculation"
+  ],
+  "publication_scope_limit": "This record validates packaging and declared short replays; it neither adjudicates the full theory nor upgrades any scientific gate."
+}
