@@ -42,8 +42,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "733db80b8534741c9dca809ded7614cbca2efd21f66d9c05619bc0124ed61d44",
-      "size_bytes": 5798
+      "sha256": "a59f1f68b21d1b90855c1b078094053d50ce42f522043df7d26b0485614f7fa2",
+      "size_bytes": 5808
     },
     {
       "path": "reproducibility/calculations/bdfss_2024_point_audit/RESULT.md",

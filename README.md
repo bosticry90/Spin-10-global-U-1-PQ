@@ -24,7 +24,7 @@ Global boundedness, loop control of the locally acceptable light-Higgs point, co
 
 ## What the materials contain
 
-- The unchanged technical note and its editable source.
+- The corrected Version 2 technical note and its editable source.
 - Browsable scalar/gauge calculation programs, frozen scalar points, and recorded results.
 - A compressed source/evidence snapshot covering the supporting local imports, frozen inputs, and manifest-bound files for the note's selected quantum statements.
 - SHA-256 manifests and a verifier that authenticate packaged bytes without executing or scientifically accepting the calculations.
