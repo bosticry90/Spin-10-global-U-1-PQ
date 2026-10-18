@@ -1,0 +1,39 @@
+{
+  "schema": "SPIN10_PQ_PUBLICATION_METADATA_V2",
+  "published_note_version": 3,
+  "source_commit": "22709b33f20484efe16eb4c3592d690c8e0650f3",
+  "base_publication_commit": "e4353580bb56680a8bc54113eacdf3763ce3741f",
+  "source_state_version": 113,
+  "source_state_sha256": "d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8",
+  "source_files": 21219,
+  "external_files": 3568,
+  "historical_files": 5,
+  "source_view": "All tracked paths at frozen source commit, with recorded existing worktree/Git line-ending differences. Base archives reused; new/changed source plus external controls and historical policy are update archives.",
+  "work_after_frozen_checkpoint": "EXCLUDED; the two completed reference-symbol/local-reference records are included at the final checkpoint.",
+  "publication_authorization": "Human repository owner explicitly requested this update.",
+  "scientific_acceptance": "NOT_PERFORMED_BY_PUBLICATION",
+  "human_scientific_authority": "UNCHANGED",
+  "historical_policy": "Original receipt policy hashes are authenticated at original Git objects and separately archived; no manifest rebinding.",
+  "historical_custody": "Original Git history is not included. Exit 2/seven unresolved references remains unresolved, not PASS.",
+  "changes": [
+    "Retain failed initial Higgs quartic and add subsequent perturbativity failure of earlier positive-quartic point",
+    "Separate new exploratory classical witness, full328 quartic certificate and complete contact bound",
+    "Report large complete selected singlet pole correction and limited RG/log cancellation",
+    "Add local gauge/PQ traces, conditional quantum background result, verified weighted symbol and explicit local covariant reference witness",
+    "No old spectrum/threshold/loop result transferred to new point"
+  ],
+  "shared_limits": [
+    "Same model/action and representation assumptions",
+    "Inherited proofs and caches",
+    "Some shared software and arithmetic",
+    "Same solo analyst, AI-assisted calculations and writing",
+    "No external scientist verification"
+  ],
+  "checks_omitted": [
+    "No expensive scientific Hessian/quartic/contact/pole replays",
+    "No full quantum restoration or model-specific regulated locality theorem",
+    "No gauge threshold recomputation at exploratory point",
+    "No numerical flavor fit or physical axion cosmology",
+    "No historical custody PASS"
+  ]
+}

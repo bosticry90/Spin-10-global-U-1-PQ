@@ -1,0 +1,67 @@
+from pathlib import Path
+import json,hashlib,zipfile,subprocess
+from datetime import datetime,timezone
+H=Path(__file__).resolve().parent
+R=H/'Spin-10-global-U-1-PQ'
+def sha(b): return hashlib.sha256(b).hexdigest()
+def dump(p,v): p.write_text(json.dumps(v,indent=2)+'\n',encoding='utf-8',newline='\n')
+source_path=R/'provenance/source_manifest_v2.json'
+m=json.loads(source_path.read_text())
+auth=json.loads((H/'claim_authentication_v2.json').read_text())
+assert auth['execution_state']=='COMPLETED'
+filename='spin10_pq_source_update_v2_history.zip'
+if not any(a['filename']==filename for a in m['archives']):
+    existing={e['path']:e for e in m['historical_files']}
+    added=[]
+    for check in auth['checks']:
+        for historical in check['historical_policy_inputs']:
+            path='historical/'+historical['authenticated_commit']+'/'+historical['path']
+            data=Path(historical['export_file']).read_bytes()
+            assert sha(data)==historical['expected_sha256']
+            if path in existing:
+                assert existing[path]['sha256']==sha(data)
+                continue
+            added.append((path,data,historical))
+    with zipfile.ZipFile(R/'reproducibility'/filename,'w',compression=zipfile.ZIP_DEFLATED) as z:
+        for path,data,historical in added:
+            z.writestr(path,data)
+            m['historical_files'].append({'path':path,'sha256':sha(data),'size_bytes':len(data),'historical_commit':historical['authenticated_commit'],'storage':'UPDATE_V2','archive':filename})
+    data=(R/'reproducibility'/filename).read_bytes()
+    m['archives'].append({'filename':filename,'sha256':sha(data),'size_bytes':len(data),'file_count':len(added)})
+    dump(source_path,m)
+metadata={
+ 'schema':'SPIN10_PQ_PUBLICATION_METADATA_V2','published_note_version':3,
+ 'source_commit':m['source_commit'],'base_publication_commit':'e4353580bb56680a8bc54113eacdf3763ce3741f',
+ 'source_state_version':113,'source_state_sha256':'d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8',
+ 'source_files':len(m['files']),'external_files':len(m['external_files']),'historical_files':len(m['historical_files']),
+ 'source_view':'All tracked paths at frozen source commit, with recorded existing worktree/Git line-ending differences. Base archives reused; new/changed source plus external controls and historical policy are update archives.',
+ 'untracked_work_excluded':'calculations/canonical_so10_ub12_reference_symbol/',
+ 'publication_authorization':'Human repository owner explicitly requested this update.',
+ 'scientific_acceptance':'NOT_PERFORMED_BY_PUBLICATION','human_scientific_authority':'UNCHANGED',
+ 'historical_policy':'Original receipt policy hashes are authenticated at original Git objects and separately archived; no manifest rebinding.',
+ 'historical_custody':'Original Git history is not included. Exit 2/seven unresolved references remains unresolved, not PASS.',
+ 'changes':['Retain failed initial Higgs quartic and add subsequent perturbativity failure of earlier positive-quartic point','Separate new exploratory classical witness, full328 quartic certificate and complete contact bound','Report large complete selected singlet pole correction and limited RG/log cancellation','Add local gauge/PQ trace results and latest conditional quantum background result','No old spectrum/threshold/loop result transferred to new point'],
+ 'shared_limits':['Same model/action and representation assumptions','Inherited proofs and caches','Some shared software and arithmetic','Same solo analyst, AI-assisted calculations and writing','No external scientist verification'],
+ 'checks_omitted':['No expensive scientific Hessian/quartic/contact/pole replays','No full quantum restoration or model-specific regulated locality theorem','No gauge threshold recomputation at exploratory point','No numerical flavor fit or physical axion cosmology','No historical custody PASS']
+}
+dump(R/'provenance/snapshot_metadata_v2.json',metadata)
+links='\n'.join('- ['+a['filename']+']('+a['filename']+').' for a in m['archives'])
+guide=R/'reproducibility/README.md'
+g=guide.read_text()
+if '### Update archive downloads' not in g:
+    g=g.replace('## Environment and short replays','### Update archive downloads\n\n'+links+'\n\n## Environment and short replays')
+    guide.write_text(g,encoding='utf-8',newline='\n')
+receipt=R/'provenance/packaging_validation_v2.json'
+if not receipt.exists():
+    dump(receipt,{'execution_state':'IN_PROGRESS','scientific_acceptance':'NOT_PERFORMED'})
+def release_manifest():
+    paths=subprocess.check_output(['git','-C',str(R),'ls-files','--cached','--others','--exclude-standard','-z']).decode().split('\0')
+    paths=sorted(set(p for p in paths if p and p!='provenance/publication_manifest_v2.json'))
+    files=[]
+    for path in paths:
+        p=R/path
+        if p.is_file():
+            data=p.read_bytes(); files.append({'path':path,'sha256':sha(data),'size_bytes':len(data)})
+    dump(R/'provenance/publication_manifest_v2.json',{'schema':'SPIN10_PQ_PUBLICATION_MANIFEST_V2','source_commit':m['source_commit'],'manifest_self_binding':'The Git commit binds this manifest. It does not hash itself.','release_files':files,'scientific_acceptance':'NOT_PERFORMED'})
+release_manifest()
+print(json.dumps({'release_files':len(json.loads((R/'provenance/publication_manifest_v2.json').read_text())['release_files']),'source_files':len(m['files']),'external_files':len(m['external_files']),'historical_files':len(m['historical_files']),'removed_paths':m['removed_paths'],'archives':m['archives']}))

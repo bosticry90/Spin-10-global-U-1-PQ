@@ -1,0 +1,40 @@
+{
+  "schema": "SPIN10_PQ_PUBLICATION_UPDATE_CONTRACT_V3",
+  "frozen_at_utc": "2026-10-18T02:44:53.878373+00:00",
+  "authorization": "User: Please update https://github.com/bosticry90/Spin-10-global-U-1-PQ",
+  "source_commit": "f3b3dbc8d6cb39767b5cc5ce29f2c8f7287a9ed3",
+  "publication_baseline": "e4353580bb56680a8bc54113eacdf3763ce3741f",
+  "live_policy_sha256": "187b276c38152e7cef292be6c8294da8b1887ddd0cc35492cf44f291888e9c98",
+  "state_sha256": "d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8",
+  "question": "Bring the standalone discussion note and materials up to the frozen committed evidence; distinguish classical feasibility from failed perturbative benchmarks and conditional quantum results.",
+  "scope": "Export all tracked frozen source paths, reusing unchanged v1 archive members. Include referenced external research-control directories and exact historical policy objects needed by new evidence. Exclude untracked work. Original v1 archives/manifests/receipts remain immutable.",
+  "methods": [
+    "Read actual contracts, results and completed receipts",
+    "Authenticate source bytes against Git, allowing only recorded existing line-ending differences",
+    "Authenticate input hash bindings for selected claim receipts",
+    "Compile and visually inspect updated PDF",
+    "Verify every release file/archive member and staged Git bytes",
+    "Normal fast-forward push only to the authorized publication repo and anonymous remote checks"
+  ],
+  "failure_conditions": [
+    "Substantive source drift from frozen commit",
+    "Missing selected receipt binding without explicit resolution/classification",
+    "Unsupported scientific claim",
+    "Archive truncation or any member hash mismatch",
+    "Unexpected publication remote head"
+  ],
+  "limits": {
+    "wall_seconds": 1800,
+    "source_and_external_bytes": 5000000000,
+    "archive_part_bytes": 94371840,
+    "compressed_total_bytes": 600000000
+  },
+  "authority_ceiling": "PUBLICATION_ONLY_NO_SCIENTIFIC_PROMOTION",
+  "omissions": [
+    "No new scientific computation or scalar search",
+    "No expensive Hessian/pole replay",
+    "No full historical custody PASS or original Git history",
+    "No untracked reference-symbol result",
+    "No source-repository mutation/push, flavor resumption or blocked-stage activation"
+  ]
+}

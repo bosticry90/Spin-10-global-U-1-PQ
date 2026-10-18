@@ -1,0 +1,25 @@
+{
+  "schema": "SPIN10_PQ_PUBLICATION_CONTINUATION_V4",
+  "frozen_at_utc": "2026-10-18T02:56:33.192606+00:00",
+  "authorization": "Same explicit human request to update public repository",
+  "previous_checkpoint": "f3b3dbc8d6cb39767b5cc5ce29f2c8f7287a9ed3",
+  "final_source_checkpoint": "22709b33f20484efe16eb4c3592d690c8e0650f3",
+  "scope": "Append exactly the two completed reference-symbol/local-covariant-witness records and their evidence/dependencies; preserve all existing source archives. Do not chase later live work.",
+  "expected_evidence": [
+    "11 selected receipts and all named SHA256 maps authenticate",
+    "All new source paths match frozen Git bytes up to declared existing line endings",
+    "New source/external entries have exact archive hashes",
+    "Final PDF and package revalidated before push"
+  ],
+  "failure_conditions": [
+    "Substantive frozen-input drift",
+    "Missing binding",
+    "Unsupported claim",
+    "Byte mismatch"
+  ],
+  "authority_ceiling": "PUBLICATION_ONLY_NO_PHYSICAL_SCHEME_OR_SCIENTIFIC_PROMOTION",
+  "resource_limit": {
+    "seconds": 600,
+    "additional_bytes": 100000000
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "execution_state": "COMPLETED",
+  "scope": "Authenticate selected actual receipts and every input_sha256 member; no scientific calculations rerun; historical policy bytes separately recovered without editing old manifests.",
+  "checks": [
+    {
+      "path": "calculations/canonical_so10_radial_input_control/validation_receipt.json",
+      "sha256": "be3f09d69147f3f82456fd3ec782f9943d2e4d697d3152566cac874a393d51fb",
+      "status": "COMPLETED_WITH_FIXED_INPUT_TREE_PERTURBATIVITY_SCREEN_FAIL",
+      "scientific_disposition": null,
+      "authenticated_input_bindings": 0,
+      "historical_policy_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_coherent_joint_witness/validation_receipt.json",
+      "sha256": "19593382e7cb5b0e941e7fd03860e6d3e99ba90b07939f39d1561aba3432ef39",
+      "status": "COMPLETED_FINITE_LISTED_NECESSARY_SET_WITNESS",
+      "scientific_disposition": null,
+      "authenticated_input_bindings": 0,
+      "historical_policy_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_complete_contact_bound/validation_receipt.json",
+      "sha256": "704b743cf72b43e30d1b653be03b1615fc666ccd953372fa84f93815046d624a",
+      "status": "COMPLETED_FULL_SCALAR_CONTACT_UPPER_BELOW_HALF",
+      "scientific_disposition": null,
+      "authenticated_input_bindings": 31,
+      "historical_policy_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_finite_full_bfb/validation_receipt.json",
+      "sha256": "589df5631aa29a53b6ea544f5b595beb3ac92f67c623fd32548a335ccd95c882",
+      "status": "COMPLETED_STRICT_GLOBAL328_QUARTIC_CERTIFICATE",
+      "scientific_disposition": null,
+      "authenticated_input_bindings": 40,
+      "historical_policy_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_singlet_pole_control/validation_receipt.json",
+      "sha256": "f1d255b39cd857262dc8652c5a33d2eb95083c88f7c6dcd8283e643454ae9b59",
+      "status": "COMPLETED_FORMAL_ONE_LOOP_POLE_CORRECTION_EXCEEDS_TREE_MASS_SQUARED",
+      "scientific_disposition": null,
+      "authenticated_input_bindings": 35,
+      "historical_policy_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_singlet_pole_rg_check/validation_receipt.json",
+      "sha256": "f06f0d80ba537c35a86f19fdeec53a2ef4ba369f8e67191f3003d9d480b8e845",
+      "status": "COMPLETED_LOCAL_ONE_LOOP_POLE_RG_CANCELLATION_WITH_INDUCED_PORTALS",
+      "scientific_disposition": null,
+      "authenticated_input_bindings": 29,
+      "historical_policy_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_pq_anomaly_screen/validation_receipt.json",
+      "sha256": "7f8c3b3f2bb2f8ceb35648a942a8f5c7cea15432dd2deba3b590daef2f7c000d",
+      "status": "COMPLETED_UV_ANOMALY_AND_CONDITIONAL_ORDINARY_ORBIT_SCREEN_ONLY",
+      "scientific_disposition": null,
+      "authenticated_input_bindings": 0,
+      "historical_policy_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_local_gauge_anomaly/validation_receipt.json",
+      "sha256": "cf2cb5b63cc835822f0d143c465ec97123337f9a203c991982bcdee0ee2c4e0b",
+      "status": "COMPLETED_VANISHING_PERTURBATIVE_LOCAL_REPRESENTATION_ANOMALY_TRACE_SCREEN_ONLY",
+      "scientific_disposition": null,
+      "authenticated_input_bindings": 0,
+      "historical_policy_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_ub12_background_locality/validation_v2_receipt.json",
+      "sha256": "e39153fbb6f77e59b4f688b101096ed6a0baf2dd3247820b9b7292682173cd43",
+      "status": "COMPLETED",
+      "scientific_disposition": "ACTUAL_COMMUTATION_AND_CONDITIONAL_LOCAL_BACKGROUND_UNIQUENESS_ONLY",
+      "authenticated_input_bindings": 376,
+      "historical_policy_inputs": [],
+      "mismatches": []
+    }
+  ],
+  "scientific_acceptance": "NOT_PERFORMED"
+}

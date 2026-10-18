@@ -1,0 +1,134 @@
+{
+  "schema": "SPIN10_PQ_PACKAGING_VALIDATION_V2",
+  "execution_state": "COMPLETED",
+  "validated_at_utc": "2026-10-18T02:57:57.662318+00:00",
+  "scientific_acceptance": "NOT_PERFORMED",
+  "director_acceptance": "NOT_INFERRED",
+  "source_export": {
+    "execution_state": "COMPLETED",
+    "source_files": 21180,
+    "new_or_changed_archive_members": 8797,
+    "external_files": 3522,
+    "historical_files": 2,
+    "bytes": 3035639799,
+    "elapsed_seconds": 305.06200000000536,
+    "archives": [
+      {
+        "filename": "spin10_pq_source_update_v2_part1.zip",
+        "sha256": "8c4d31a9caa6aefd11107e7d3bfd1eb00f046ba79b64d8433766fefcecaeecda",
+        "size_bytes": 87243466,
+        "file_count": 4192
+      },
+      {
+        "filename": "spin10_pq_source_update_v2_part2.zip",
+        "sha256": "56394d3da97ec3f1f05b63389c1701e38a5bc3e3d7dde3bbf285a7772b549344",
+        "size_bytes": 62781594,
+        "file_count": 4605
+      }
+    ],
+    "missing_external_bindings": []
+  },
+  "selected_receipt_authentication": {
+    "receipts": 11,
+    "bindings": 1607,
+    "historical_policy_inputs": 3,
+    "mismatches": []
+  },
+  "short_read_only_replays": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "reproducibility/calculations/canonical_so10_scalar_reconstruction/verify_pq.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Y10: source=-4, variant=+0\nYbar126: source=-4, variant=+0\nforbidden_conjugate_Y10: source=+0, variant=+4\nprinted_eta1: source=-4, variant=-4\nneutral_eta1_multiset: source=+0, variant=+0\nchi4: source=+0, variant=+0\nchi6: source=+0, variant=+0\neta3: source=+0, variant=+0\ndegree 2: 6 PQ-neutral scalar field multisets (SO(10) screening pending)\ndegree 3: 12 PQ-neutral scalar field multisets (SO(10) screening pending)\ndegree 4: 26 PQ-neutral scalar field multisets (SO(10) screening pending)\nPQ arithmetic PASS; SO(10) multiplicities are checked separately in count_d5_singlets.py\n",
+      "stderr": "",
+      "elapsed_seconds": 0.031000000002677552
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "reproducibility/calculations/canonical_so10_direct_gauge_next_order/independent_replay.py"
+      ],
+      "exit_code": 0,
+      "stdout": "INVERSE_COUPLING_REPLAY_PASS\ng10 omega 0.5231256381866919 1637373175292366.8\nresidual [0.26091472628315415, -0.7454764145243473, 0.48479480357899263]\n",
+      "stderr": "",
+      "elapsed_seconds": 0.875
+    }
+  ],
+  "original_v1_archives_and_provenance_unchanged": true,
+  "original_public_v2_pdf_and_tex_exactly_preserved": true,
+  "local_markdown_links_checked": true,
+  "pdf": {
+    "pages": 8,
+    "sha256": "3a6c7000ec6559f63b8a5c6b44ca1537cf6c38944e55252dbc7bb2d6aea5eb86",
+    "compilation": "SUCCESS",
+    "layout_warnings": [],
+    "visual_review": "All eight pages inspected; changed pages re-rendered after final edits, no clipping or overlap"
+  },
+  "package_check": "Every release file and all 24794 archive members checked with verify_package.py after document/receipt sealing; final run output is additionally retained by the publication operator outside this self-bound release.",
+  "known_packaging_corrections": "packaging_history_v2/CORRECTIONS.md; preserved failures are not scientific PASS",
+  "source_view": {
+    "source_files": 21219,
+    "external_files": 3568,
+    "historical_files": 5,
+    "missing_external_bindings": []
+  },
+  "checkpoint_extension": {
+    "execution_state": "COMPLETED",
+    "source_commit": "22709b33f20484efe16eb4c3592d690c8e0650f3",
+    "source_paths": [
+      "calculations/canonical_so10_local_covariant_reference_witness/DERIVATION.md",
+      "calculations/canonical_so10_local_covariant_reference_witness/RECORD.md",
+      "calculations/canonical_so10_local_covariant_reference_witness/REPLAY_CONTROLLER_CORRECTION_V2.md",
+      "calculations/canonical_so10_local_covariant_reference_witness/RESULT.md",
+      "calculations/canonical_so10_local_covariant_reference_witness/VALIDATION_CLARIFICATION_V2.md",
+      "calculations/canonical_so10_local_covariant_reference_witness/preparation.json",
+      "calculations/canonical_so10_local_covariant_reference_witness/primary_capture.json",
+      "calculations/canonical_so10_local_covariant_reference_witness/primary_result.json",
+      "calculations/canonical_so10_local_covariant_reference_witness/replay_capture.json",
+      "calculations/canonical_so10_local_covariant_reference_witness/replay_controller_preparation_v2.json",
+      "calculations/canonical_so10_local_covariant_reference_witness/replay_result.json",
+      "calculations/canonical_so10_local_covariant_reference_witness/validation_capture.json",
+      "calculations/canonical_so10_local_covariant_reference_witness/validation_preparation.json",
+      "calculations/canonical_so10_local_covariant_reference_witness/validation_preparation_v2.json",
+      "calculations/canonical_so10_local_covariant_reference_witness/validation_receipt.json",
+      "calculations/canonical_so10_local_covariant_reference_witness/validation_v2_capture.json",
+      "calculations/canonical_so10_local_covariant_reference_witness/validation_v2_receipt.json",
+      "calculations/canonical_so10_local_covariant_reference_witness/witness.py",
+      "calculations/canonical_so10_local_covariant_reference_witness/witness.py.source.txt",
+      "calculations/canonical_so10_ub12_reference_symbol/CORRECTION_V2.md",
+      "calculations/canonical_so10_ub12_reference_symbol/DERIVATION.md",
+      "calculations/canonical_so10_ub12_reference_symbol/RECORD.md",
+      "calculations/canonical_so10_ub12_reference_symbol/RESULT.md",
+      "calculations/canonical_so10_ub12_reference_symbol/preparation.json",
+      "calculations/canonical_so10_ub12_reference_symbol/preparation_v2.json",
+      "calculations/canonical_so10_ub12_reference_symbol/primary_capture.json",
+      "calculations/canonical_so10_ub12_reference_symbol/primary_v2_capture.json",
+      "calculations/canonical_so10_ub12_reference_symbol/primary_v2_result.json",
+      "calculations/canonical_so10_ub12_reference_symbol/replay_v2_capture.json",
+      "calculations/canonical_so10_ub12_reference_symbol/replay_v2_result.json",
+      "calculations/canonical_so10_ub12_reference_symbol/test.py",
+      "calculations/canonical_so10_ub12_reference_symbol/test.py.source.txt",
+      "calculations/canonical_so10_ub12_reference_symbol/test_v2.py",
+      "calculations/canonical_so10_ub12_reference_symbol/test_v2.py.source.txt",
+      "calculations/canonical_so10_ub12_reference_symbol/validation_capture.json",
+      "calculations/canonical_so10_ub12_reference_symbol/validation_preparation.json",
+      "calculations/canonical_so10_ub12_reference_symbol/validation_receipt.json",
+      "docs/RESEARCH_EXECUTION_HANDOFF_V252.md",
+      "docs/RESEARCH_EXECUTION_HANDOFF_V253.md"
+    ],
+    "additional_members": 85,
+    "archive_sha256": "6694e72d5f1b9f6e79fdf89b54ecfa666028fb19c41db6c4bd635f99819f0bc3",
+    "additional_bytes": 3524780
+  },
+  "limitations": [
+    "No expensive scientific Hessian/quartic/contact/pole replay",
+    "No original Git history or historical custody PASS",
+    "No new scalar point, finite two-loop threshold, flavor input, physical prediction or scientific promotion",
+    "Work after final frozen checkpoint excluded"
+  ],
+  "next_smallest_authorized_scientific_action": "Publication does not initiate research. The final frozen handoff identifies UV-log/subtraction correspondence for products of the actual covariant heat-damped propagators as a remaining prerequisite."
+}

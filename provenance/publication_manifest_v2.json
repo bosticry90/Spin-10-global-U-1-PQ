@@ -1,0 +1,1908 @@
+{
+  "schema": "SPIN10_PQ_PUBLICATION_MANIFEST_V2",
+  "source_commit": "22709b33f20484efe16eb4c3592d690c8e0650f3",
+  "manifest_self_binding": "The Git commit binds this manifest. It does not hash itself.",
+  "release_files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "14f9da70fafb11b2189ff4cec04f844072692f4aebd3940f9203a3766172e2b6",
+      "size_bytes": 99
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "cda30e67164c59b3120be1927974884f89c4e8d4cfe44b84a4252012baa1f4de",
+      "size_bytes": 126
+    },
+    {
+      "path": "README.md",
+      "sha256": "7c8140da780782a491ab75792d98d891e9a829930c2bd7c9a60745737b9e36be",
+      "size_bytes": 7648
+    },
+    {
+      "path": "paper/archive/spin10_pq_technical_note_v2.pdf",
+      "sha256": "bbe55a0f8d02f190fbf949a8e381b195710a778bcac92d2c2d1f771d3f9a94fb",
+      "size_bytes": 431051
+    },
+    {
+      "path": "paper/archive/spin10_pq_technical_note_v2.tex",
+      "sha256": "72a234a5a404ebfe6b2259e4c41a5455e64842372e00ec218bf53ee09cb91f29",
+      "size_bytes": 22891
+    },
+    {
+      "path": "paper/spin10_pq_technical_note.pdf",
+      "sha256": "3a6c7000ec6559f63b8a5c6b44ca1537cf6c38944e55252dbc7bb2d6aea5eb86",
+      "size_bytes": 460087
+    },
+    {
+      "path": "paper/spin10_pq_technical_note.tex",
+      "sha256": "e7462bd7e9141b03a66ee22045726e68d36cd8c71d96e3525ffad08b65440848",
+      "size_bytes": 30083
+    },
+    {
+      "path": "provenance/claim_authentication_v2.json",
+      "sha256": "2e27d6d098a5ad04908ae2e16e2868fd284f5a219154fcb4bf7b9ccd23b27aaf",
+      "size_bytes": 6455
+    },
+    {
+      "path": "provenance/packaging_history_v2/CORRECTIONS.md",
+      "sha256": "4d93ae9eb25af05422bec33fb4a55715ad15eefab924ab0f3d39d98e549b574e",
+      "size_bytes": 1500
+    },
+    {
+      "path": "provenance/packaging_history_v2/claim_authentication_v2_initial_limited_scope.json",
+      "sha256": "cd1a9eab789d9110b382798dc3de5af92f7c35da04963f73d1a8ac6717914aa0",
+      "size_bytes": 4056
+    },
+    {
+      "path": "provenance/packaging_history_v2/claim_authentication_v2_missing_historical_override.json",
+      "sha256": "b309b655753dac9e626453d529d811c4a04dc3956b5a291f8774b9fed66cced2",
+      "size_bytes": 5306
+    },
+    {
+      "path": "provenance/packaging_history_v2/failed_checkpoint_compile.txt",
+      "sha256": "30524b3af706221f3ada9e5543337ea90d33c49a26841dbec7c916fe39f2c016",
+      "size_bytes": 6303
+    },
+    {
+      "path": "provenance/packaging_history_v2/finalize_update_v2_failed_encoding.py.source.txt",
+      "sha256": "c121c44c26c4d7eb3d6085afb8d66375fefb13255c9a2d81b7fa7e3c89b4ff3f",
+      "size_bytes": 5550
+    },
+    {
+      "path": "provenance/packaging_history_v2/package_verify_v2_initial.json",
+      "sha256": "81bdbafea878352d9af89cf675d35596fb37871c539fa80cf9185244d63bbca7",
+      "size_bytes": 391
+    },
+    {
+      "path": "provenance/packaging_validation_v1.json",
+      "sha256": "3021311c97abf61ea49633d26da13a6356217c1e27a439c1bfed471b20c89efc",
+      "size_bytes": 2499
+    },
+    {
+      "path": "provenance/packaging_validation_v2.json",
+      "sha256": "dfa47fd07cae3dd235b408b3315004e209279981cdff93126c5fb658ddee9b51",
+      "size_bytes": 7540
+    },
+    {
+      "path": "provenance/publication_continuation_contract_v4.json",
+      "sha256": "c4ae62775975ee49912ad1e86ff713656881d79d81c0298e9c60bbf2579c6cc7",
+      "size_bytes": 1131
+    },
+    {
+      "path": "provenance/publication_manifest_v1.json",
+      "sha256": "e0601d9bc1ff6dba2f92677a030b66f8b7118f5e62b7c04291f430b541ba0d40",
+      "size_bytes": 40276
+    },
+    {
+      "path": "provenance/publication_update_contract_v3.json",
+      "sha256": "063d34917ed01ef977496b1fa38f9477a4a70b2525bbedcf2a8f9e1ae3832f6e",
+      "size_bytes": 2325
+    },
+    {
+      "path": "provenance/snapshot_metadata_v1.json",
+      "sha256": "fe4d1dc4993a7330d1e594a223f9ec27273b9bc1584f8887f08d72bd0893eff2",
+      "size_bytes": 1680
+    },
+    {
+      "path": "provenance/snapshot_metadata_v2.json",
+      "sha256": "aa52a51d6598939e02b18132a69feba0db52a0140d6793ac9750d01ef4a918ee",
+      "size_bytes": 2411
+    },
+    {
+      "path": "provenance/source_manifest_v1.json",
+      "sha256": "9b4d59bee55b145a5fd6132c690e1ddbc20189cabb718e2b33422cae9b1ae398",
+      "size_bytes": 7694091
+    },
+    {
+      "path": "provenance/source_manifest_v2.json",
+      "sha256": "4c17059cb51163041b2b26e47361556cd73b7c741424dab6fafd181739ded50e",
+      "size_bytes": 12165193
+    },
+    {
+      "path": "reproducibility/README.md",
+      "sha256": "5087beef6e405d07733bd666e5007a21f01126361f4da42568c86fa8da4a81f8",
+      "size_bytes": 9212
+    },
+    {
+      "path": "reproducibility/RESEARCH_EXECUTION_HANDOFF_V253.md",
+      "sha256": "5cda0d79b20a1bec4bd7e2cbafe5984e3501c9f7c3667655b0900e54cfdf047f",
+      "size_bytes": 4830
+    },
+    {
+      "path": "reproducibility/assemble_source.py",
+      "sha256": "0b59dd53444e8411abc67e89b96d201c44e65cea67f1a37932830453021112d3",
+      "size_bytes": 1923
+    },
+    {
+      "path": "reproducibility/calculations/bdfss_2024_point_audit/RESULT.md",
+      "sha256": "82733ddc57fb0e4b2c7270b1d6d345d47760072c3e97f0335c4125e139afa871",
+      "size_bytes": 7776
+    },
+    {
+      "path": "reproducibility/calculations/bk_ht_threshold_audit/RESULT.md",
+      "sha256": "b474dadc8a74c17d0cf5595481320af86fda91e8f483aaf509354b2e84f207e2",
+      "size_bytes": 2699
+    },
+    {
+      "path": "reproducibility/calculations/bk_light_doublet_projector_reconciliation/RESULT.md",
+      "sha256": "3becf57359a3d4f6939a0aadc92174a0f1d6670e4b866f938178faaf8514c5a5",
+      "size_bytes": 10045
+    },
+    {
+      "path": "reproducibility/calculations/bk_light_doublet_projector_reconciliation/replay_samples.py",
+      "sha256": "5d8be43b10aa6d1aa02d8c74548ce783d462d1ba1a57f3f6dca6135157178203",
+      "size_bytes": 4895
+    },
+    {
+      "path": "reproducibility/calculations/bk_light_doublet_projector_reconciliation/verify_printed_sample.jl",
+      "sha256": "808e83a8ed8ab6265bebc910109d6d332eed7ffd31aa6a4a398276a0417e5f70",
+      "size_bytes": 1077
+    },
+    {
+      "path": "reproducibility/calculations/bk_ps_bnv_running_mi_matching/RESULT.md",
+      "sha256": "0d8b0b7bf65d503c5674b88ad47b2e1ad68fba3874888c5ad7145c3ce5515b04",
+      "size_bytes": 9883
+    },
+    {
+      "path": "reproducibility/calculations/bk_ps_bnv_running_mi_matching/result.json",
+      "sha256": "1d649071791448809d68dd214f5229d26b43df8fb285b5cde499f3de42593517",
+      "size_bytes": 3337
+    },
+    {
+      "path": "reproducibility/calculations/bk_ps_bnv_running_mi_matching/verify_running.jl",
+      "sha256": "429f7a886d0e9ee563efd24e625c611fe704edb54d38792235e9e514036db543",
+      "size_bytes": 5069
+    },
+    {
+      "path": "reproducibility/calculations/bk_ps_bnv_running_mi_matching/verify_running.py",
+      "sha256": "ea163c2c35d1e78bcc411b050b7a1c4f28988cc1d301eda9f7868a07c5770083",
+      "size_bytes": 9205
+    },
+    {
+      "path": "reproducibility/calculations/bk_ps_flavor_kernel/RESULT.md",
+      "sha256": "6c41f234be9e88ea5cd0340da157fadc9c87c09b4fc9703bfb32f2c910d2fe3a",
+      "size_bytes": 9908
+    },
+    {
+      "path": "reproducibility/calculations/bk_ps_flavor_kernel/verify_boundary.jl",
+      "sha256": "0647417216a9e26ccf3d623f28f07b831a2d4d1a5450b15f0484390fab3fd98a",
+      "size_bytes": 1879
+    },
+    {
+      "path": "reproducibility/calculations/bk_ps_flavor_kernel/verify_boundary.py",
+      "sha256": "8f75ef8cfe6d3238c4372500183f676570bb407c6769f15be8747e0865f07ff0",
+      "size_bytes": 2711
+    },
+    {
+      "path": "reproducibility/calculations/bk_scalar_source_convention/RESULT.md",
+      "sha256": "9b0b8ac4f0e404284400cfe1a0ee9740c486b6ed8a7935eb448b6cff24c44243",
+      "size_bytes": 7621
+    },
+    {
+      "path": "reproducibility/calculations/bk_scalar_source_convention/verify_translation.jl",
+      "sha256": "7f93c9eeeb7d8d42c1930d107c02e2d4cbfc8932d5aa9c67acc5067b9c8be5b3",
+      "size_bytes": 1263
+    },
+    {
+      "path": "reproducibility/calculations/bk_scalar_source_convention/verify_translation.py",
+      "sha256": "fe2ea87161077c7d12ea630515d96ff2b95eefece75bd8ec0b8c60df98c752bb",
+      "size_bytes": 5409
+    },
+    {
+      "path": "reproducibility/calculations/bk_scalar_tensor_recovery/RESULT.md",
+      "sha256": "d9341076f2f2b6d68098808e0a704ca876ec88a477095910b014f7191101c627",
+      "size_bytes": 7172
+    },
+    {
+      "path": "reproducibility/calculations/bk_scalar_tensor_recovery/verify_independent.jl",
+      "sha256": "095035ca4f246aedcacae6d7b317755fbc2b01d39e37406427a3c409eb75cbeb",
+      "size_bytes": 1721
+    },
+    {
+      "path": "reproducibility/calculations/bk_scalar_tensor_recovery/verify_partial_tensor_and_positivity.py",
+      "sha256": "4ac5eb81e9bbc1c2afa2b58ab587a8f15871496374ca2cdb567750c3923793ef",
+      "size_bytes": 7667
+    },
+    {
+      "path": "reproducibility/calculations/bk_so10_bnv_matching/RESULT.md",
+      "sha256": "3cd63c418942e2738e49faa7e9a252f1d6e7c8f89710faadd1769b55aa5999da",
+      "size_bytes": 9878
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_bfb_orbit/RECORD.md",
+      "sha256": "30225cfeb9ad989b7f0a651cfe059c1125d62a26283ea73aac84f65263637b6a",
+      "size_bytes": 3453
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_bfb_orbit/RESULT.md",
+      "sha256": "a991f1d6539645c25d399766e432b2294dd7fb11ecfa18abb60a2ecc99533e26",
+      "size_bytes": 5955
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_bfb_orbit/attack_orbit.py",
+      "sha256": "b979a09a86258499f83dd7c654822e30cc85426d64b45b707e9ea7637088dae5",
+      "size_bytes": 6139
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_bfb_orbit/certify_pure_sigma.py",
+      "sha256": "ff85a5882e4c3e1673fbdaf503072cd466fa0c0a333d79960af7948f899bb9e9",
+      "size_bytes": 5609
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_bfb_probe/RECORD.md",
+      "sha256": "ff65987883c349f6e551d28c07d9c04251890d99749475f2a297d90e9a0b9dff",
+      "size_bytes": 3298
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_bfb_probe/RESULT.md",
+      "sha256": "47d76b80c2d758eb6db1663c637c481252cdc02e82ca7c2032db178de1b86c2a",
+      "size_bytes": 2158
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_bfb_probe/probe.py",
+      "sha256": "1ddae28bcd747dd20161e0c870dd5e73ca53835080fde0be601c0984ac6cbb17",
+      "size_bytes": 4412
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/CORRECTION_V2.md",
+      "sha256": "3af374950b0dc104af028b519a5c0cd13f027643484a2aa1e1666d275f2ac442",
+      "size_bytes": 1456
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/CORRECTION_V3.md",
+      "sha256": "681adc279b1f3ed79c5fc0c2afcabf4bba634982af7ca64fa9d29f7c98bf3e6d",
+      "size_bytes": 1625
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/POINT.json",
+      "sha256": "1981ea62b7317c108c1768936b1b7e07ec594d2a5c9322200644d7eef78662ec",
+      "size_bytes": 325
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/RECORD.md",
+      "sha256": "23c417bfce8f8eba7d53a1ced97331c1ddbe190363af78d2a0ed304915cb54c7",
+      "size_bytes": 5387
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/RESULT.md",
+      "sha256": "e68a6160128ccd22cd41d500b94b852ae120eae8d2a3a9a72aaedaa8941000bf",
+      "size_bytes": 6201
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/independent_verifier_capture.json",
+      "sha256": "f01828795b7f1c6f9b5cb30d35fe07f4e4f8b979ee0593b8d4c7b438112bd2e0",
+      "size_bytes": 1565
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/independent_verifier_v2_capture.json",
+      "sha256": "c76d99724302b469e9252543763642e7616e58a4d1eb19ed62dfa3786b225563",
+      "size_bytes": 1625
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/independent_verifier_v3_capture.json",
+      "sha256": "d7a0f97244b0eb18939b2e903538fa15c44748e5d06ba1f960f502e03e59a000",
+      "size_bytes": 15652
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/preparation.json",
+      "sha256": "e8021ffd6933bc16b8dcfdb671bbf0416fe8f080187d59e0af86fa4f4326b8b0",
+      "size_bytes": 4083
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/primary_capture.json",
+      "sha256": "80ea5a0963fb47313b90c0af6fdcef0659e191fa231d6ca8937379fd37249536",
+      "size_bytes": 26785
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/primary_result.json",
+      "sha256": "5521aed23fd3050c87e73c4d8c10cb8f2004bce08ae8ef9deea8801efa51594b",
+      "size_bytes": 24749
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/validation_preparation.json",
+      "sha256": "576f0bb3e4a4b73f2a1f0836f194efe67761ff6b1050bf1f0457a21b96617156",
+      "size_bytes": 4025
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/validation_preparation_v2.json",
+      "sha256": "b0fc4dfc02d551a30d53933f4c75b57f5a185b2cdb267403ee6466856338957a",
+      "size_bytes": 6189
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/validation_preparation_v3.json",
+      "sha256": "759a05a7281782dcdfd1b5ce1df0731bbf93bd61ed34505007ec2e0a59f38178",
+      "size_bytes": 8296
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/validation_receipt.json",
+      "sha256": "19593382e7cb5b0e941e7fd03860e6d3e99ba90b07939f39d1561aba3432ef39",
+      "size_bytes": 13906
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/witness.py",
+      "sha256": "4afdc0f1d57c0ba134b554219c3a35571ce06319613d6050d90dcffc9b4fc520",
+      "size_bytes": 9299
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_coherent_joint_witness/witness.py.source.txt",
+      "sha256": "4afdc0f1d57c0ba134b554219c3a35571ce06319613d6050d90dcffc9b4fc520",
+      "size_bytes": 9299
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_complete_contact_bound/RECORD.md",
+      "sha256": "512386130e2595b49e3cad68a98a480a7d8669b219a85b2260c67dfc15ae05b5",
+      "size_bytes": 4498
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_complete_contact_bound/RESULT.md",
+      "sha256": "56d7e990beecbd2eac6f70882ef20eee3a523775f86f7d4b3c7f91f9f45b8e0f",
+      "size_bytes": 6229
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_complete_contact_bound/contact.py",
+      "sha256": "5c52d18004fb1df139fa723e42a91be78694add6419716b002e32c0eabce2350",
+      "size_bytes": 9215
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_complete_contact_bound/contact.py.source.txt",
+      "sha256": "5c52d18004fb1df139fa723e42a91be78694add6419716b002e32c0eabce2350",
+      "size_bytes": 9215
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_complete_contact_bound/independent_verifier_capture.json",
+      "sha256": "413b9941dc11e12e4bf94d44ef9ed6b718568c585f61446f75f1cae7a894c254",
+      "size_bytes": 9897
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_complete_contact_bound/preparation.json",
+      "sha256": "7523705c7131bbe487b57851a4fffa0bf7258d60cb38d57dbe4aaffe39a6efa6",
+      "size_bytes": 4128
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_complete_contact_bound/primary_capture.json",
+      "sha256": "deb0c723dffbb49148032a61f4d9bcecaec947ccac5a51895f5bbb3417e89e82",
+      "size_bytes": 8718
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_complete_contact_bound/primary_result.json",
+      "sha256": "70387ef292b0a5eaa2b57df7d559b3512ea89345941120a0e5908e7eda1dd6e6",
+      "size_bytes": 6823
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_complete_contact_bound/validation_preparation.json",
+      "sha256": "ccb863a81096e8723ab75492aaf930e4829444b6f23a225c61bf77ac87e3e93b",
+      "size_bytes": 6235
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_complete_contact_bound/validation_receipt.json",
+      "sha256": "704b743cf72b43e30d1b653be03b1615fc666ccd953372fa84f93815046d624a",
+      "size_bytes": 8109
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_gauge_matching/RECORD.md",
+      "sha256": "5015231d5e360137c812832bf6d3a9dc65dd7d0cd74a96d2cef4fe759b6dfe07",
+      "size_bytes": 4052
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_gauge_matching/RESULT.md",
+      "sha256": "01650567a3d28f240635ea69ea56c3c9a70899be0c82b965405bd0b7f77c9daf",
+      "size_bytes": 6955
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_gauge_matching/derive_and_solve.py",
+      "sha256": "7ddabbe29bfa1c7ddc7d3d2d7275431248fd1a09ff09421c082cd968b6bce41a",
+      "size_bytes": 12831
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_gauge_matching/direct_matching.json",
+      "sha256": "175a59a87f1664bb233f0eaca459b321def29a27df05b0e451e76c22f446559b",
+      "size_bytes": 4631
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_gauge_next_order/RECORD.md",
+      "sha256": "1d8eb60fd463f3a8a6e2489b1b5b36b812a8561c3e835e03351c29212503eb8f",
+      "size_bytes": 4118
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_gauge_next_order/RESULT.md",
+      "sha256": "5a5ee1b78be98732de13c11affa3ac3700361f7fa4618eea2a356e3f55d84180",
+      "size_bytes": 5787
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_gauge_next_order/independent_replay.py",
+      "sha256": "ee0da19cc94ab14c85a3adb552dd0f5a9f8b976b8d9ea99f36cb1a76806116af",
+      "size_bytes": 4215
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_gauge_next_order/next_order.json",
+      "sha256": "62a8c3150e26c957641883ba3ac6fc6d977890c8543e859a4af22cbf7bbfb54a",
+      "size_bytes": 9044
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_gauge_next_order/run_next_order.py",
+      "sha256": "8c4542edef75a64ef59b5c56275814894e946106dd9b1f48d033d4e26d015fe9",
+      "size_bytes": 14177
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_two_loop_gauge_scalar_threshold/MASTER_BASIS_CONTRACT.md",
+      "sha256": "9484330ebc91f53722b757030c7ff3ba61132a1d04298547293eb33a8c6724a0",
+      "size_bytes": 1733
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_two_loop_gauge_scalar_threshold/RECORD.md",
+      "sha256": "59cee86f08cae503a42a7a8f058fb22463dfad388e142a67db4e4b7f8e58ce2d",
+      "size_bytes": 3176
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_two_loop_gauge_scalar_threshold/RESULT.md",
+      "sha256": "7ec3228e94a4c354c5d965bee647afb8766658ef1a69a5ce9b206063ccf41aa9",
+      "size_bytes": 5887
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_two_loop_gauge_scalar_threshold/audit_compiler_readiness.py",
+      "sha256": "1e928a04f6abbf14c8be066b97ff8e7ddb955c79f5221e8806ee1923d9d43af2",
+      "size_bytes": 4857
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_two_loop_gauge_scalar_threshold/comparison_gate.json",
+      "sha256": "920895e01821a639453476d3e6a9a083e13e59b57143cb135e863b91f316de95",
+      "size_bytes": 1005
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_two_loop_gauge_scalar_threshold/compile_scalar_vertices.py",
+      "sha256": "3c75082600b1c7ab91790909b598904d50bdb41541a5ef207c5116f5b6b1b63f",
+      "size_bytes": 8281
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_two_loop_gauge_scalar_threshold/compiler_readiness.json",
+      "sha256": "2db7ca73fb4b99a91934074196ed9be30a9262a60111dffc5d34bdcdee1cd681",
+      "size_bytes": 2470
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_two_loop_gauge_scalar_threshold/preregister_comparison.py",
+      "sha256": "e3766e9cab8284ede0da95715f96c1a7b188b56b5765decf4d7bab52bb44a13d",
+      "size_bytes": 1726
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_two_loop_gauge_scalar_threshold/scalar_vertex_oracle.json",
+      "sha256": "fa6ae2e43ca343d8adb9ed6dececcb557df9719c4d2ccf96db2e85a53cde372a",
+      "size_bytes": 835
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_two_loop_heavy_threshold/RECORD.md",
+      "sha256": "50f76cea9b4c476763b6132954de427e5d5146cb478275418c1f2c615b2000c5",
+      "size_bytes": 3100
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_two_loop_heavy_threshold/RESULT.md",
+      "sha256": "8885f65f878e045612a24fb6fb274c119d65c564bd73c00e1e82d581be030060",
+      "size_bytes": 6131
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_two_loop_heavy_threshold/YUKAWA_CONVENTION_V1.md",
+      "sha256": "2c637a0048605857da01f0c753e7bc13e08ca5de2d8dde26b87376330fcc4fff",
+      "size_bytes": 2621
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_two_loop_heavy_threshold/analyze_boundary.py",
+      "sha256": "4660ac75b001bf34c4439fa3d2cc9420e8134eb35fbb9a6e4046caa6157eca14",
+      "size_bytes": 10978
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_two_loop_heavy_threshold/independent_replay.py",
+      "sha256": "89220363a087aa454ec017e2b9cc8e3366cc7bd858aaf5146efe26c7e67b44a6",
+      "size_bytes": 1497
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_direct_two_loop_heavy_threshold/two_loop_boundary.json",
+      "sha256": "313e91a625e267f85d44143f6818b76e519a0789051b1fd6c110b00ab96ab4f6",
+      "size_bytes": 4946
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_finite_full_bfb/RECORD.md",
+      "sha256": "9d7f9c278f1d792dcb5d505e7856670b017bba51db9b5ba8cd264b1007807b41",
+      "size_bytes": 3012
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_finite_full_bfb/RESULT.md",
+      "sha256": "379842d12d07473520d4edd9bc823024cf95c2d5c072281e6429123d8832fa4d",
+      "size_bytes": 5758
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_finite_full_bfb/certify.py",
+      "sha256": "0fee4fb494e5528ee8510606d70a58e9d4c652a37381877ad281ab28f6208c6d",
+      "size_bytes": 5844
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_finite_full_bfb/certify.py.source.txt",
+      "sha256": "0fee4fb494e5528ee8510606d70a58e9d4c652a37381877ad281ab28f6208c6d",
+      "size_bytes": 5844
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_finite_full_bfb/independent_verifier_capture.json",
+      "sha256": "833820c24617da2eebb9f7f61d30438e214c1a16fff4a666d045f7db13ce4ff6",
+      "size_bytes": 10606
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_finite_full_bfb/preparation.json",
+      "sha256": "4f7dfae92dd0b3f1992df6bec07751beb3f0b58876e9647c8a26936e2a73b087",
+      "size_bytes": 5598
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_finite_full_bfb/primary_capture.json",
+      "sha256": "2842cfeef4926d5b7044f1b92513c404c97d83693bdb448b25333c8b0e78eba2",
+      "size_bytes": 9423
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_finite_full_bfb/primary_result.json",
+      "sha256": "806958d3696144192baa7f898c6b39a0018fca4ef80ad5843e34301c825bd647",
+      "size_bytes": 7728
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_finite_full_bfb/validation_preparation.json",
+      "sha256": "cbf2f689a2fde684f47ad5bb5efd4c1037c94148752365e0daf24df52a039761",
+      "size_bytes": 7313
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_finite_full_bfb/validation_receipt.json",
+      "sha256": "589df5631aa29a53b6ea544f5b595beb3ac92f67c623fd32548a335ccd95c882",
+      "size_bytes": 9367
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/RECORD.md",
+      "sha256": "b18611246c4000738a3616564224f651e693cc036a14b4577cc8a5a951ab940f",
+      "size_bytes": 4567
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/RESULT.md",
+      "sha256": "af1729b2092dca68956af5ae87541a0f30876cfd2ecd3170f9258e7914667fa5",
+      "size_bytes": 13384
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/check_charged_singlet_goldstone.py",
+      "sha256": "6832db4ac277bedb2a51f0d4fe74293584c402d2f769b84aa40e62e51e10f04f",
+      "size_bytes": 3079
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/check_full_block_rank_witness.py",
+      "sha256": "957b70afd5eba3373267df45efd72cbe2ca9dde305d43f33d6b34672924f1d6a",
+      "size_bytes": 2548
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/check_gauge_orbit_quadratics.py",
+      "sha256": "89a1d2965a119a3cf560c845dc689aef0d4920b7754bc27bdda00ec1e9b73df6",
+      "size_bytes": 4807
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/compile_sm_multiplicity_representatives.py",
+      "sha256": "c365d6b81b32a6b514fb17b25d00c510b10bf663cf0b3e792620450d8944d1f3",
+      "size_bytes": 9797
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/construct_symmetry_orbits.py",
+      "sha256": "8b37973df57c1ded3874df245c46aa6b2a3a0148b95d40b37644af39211335a5",
+      "size_bytes": 2037
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/decompose_sm_tangent.py",
+      "sha256": "35edc73fc47a7653d906dc22fd842ccf1af2d41a78b86a540dc6271ef3d95f39",
+      "size_bytes": 4113
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/define_generic_nullity_test.py",
+      "sha256": "88a10b27a1f4161fe414b48e7d574c69e1d86f7948db50479fb6b4ff40b32025",
+      "size_bytes": 3724
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/derive_neutral_singlet_block.py",
+      "sha256": "42c86786de70bfdce5390ed0c90ec59eba943ff758255c34f1c4c45d942c9e05",
+      "size_bytes": 2940
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/derive_vector10_self_block.py",
+      "sha256": "5417bb9fd08f1b68fe7c2f243b3efd9fcfb8b593a2187308c6944170c90ab06d",
+      "size_bytes": 2552
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/evaluate_sm_hessian_blocks.py",
+      "sha256": "41b75830cbb63ed3342581274cc05a63d2be1882969b963e3f14d18de49956e0",
+      "size_bytes": 8793
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/parent_bilinear_oracle.py",
+      "sha256": "2e0dabe32a3efb6dbfafb551f6dbf4610b68d2a39a3525b4e4f554ffc995b17b",
+      "size_bytes": 6777
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/probe_mixed_orbit_bilinear.py",
+      "sha256": "1fdb2128b191726ff7538c5cead4f5aa33e91ece0f998c40df26921245c56b8d",
+      "size_bytes": 2411
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/verify_doublet_block_independent.py",
+      "sha256": "9724d57b566de4a16d70edb6a77ef6d7b29c901a55ba41e5051a7bdd935d9dd3",
+      "size_bytes": 3663
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/verify_oracle_controls.py",
+      "sha256": "cee04d5026962a4d42574bb81b285a8c8c0a6a6c45ac14c5d319356ef50005ef",
+      "size_bytes": 1659
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/verify_oracle_goldstone_rows.py",
+      "sha256": "a2aab4894eee71dba313f9607ab76bddab4eec62dd594507e7820f8ab8ad959c",
+      "size_bytes": 2477
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_full_hessian/verify_vector10_self_block.jl",
+      "sha256": "352966993fc9e3bbe0cd22c9ed89abf505d2b927b0551525daef9c080386c3bc",
+      "size_bytes": 1247
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_gauge_matching/RECORD.md",
+      "sha256": "5f6a4328fcb3a735cc24fbfa5d8f266c77e4c48738400c30cb1c859dbf1f97b0",
+      "size_bytes": 3752
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_gauge_matching/RESULT.md",
+      "sha256": "64c4abf394ace8313c7ac96af2786a3c1d7b19c48d0d11584a626c8eb2ca999f",
+      "size_bytes": 7661
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_gauge_matching/build_sm_threshold_ledger.py",
+      "sha256": "9ad9013b2972eddc9341e8cc91fad4a1dd3427e22ee7b3ada9618d83d1d43bd8",
+      "size_bytes": 4570
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_gauge_matching/build_vector_ledger.py",
+      "sha256": "189812f6d80b06d46cbd08dd33ff41ea948434d1a7bcb237246b09badb709b1e",
+      "size_bytes": 4761
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_gauge_matching/coarse_one_loop.json",
+      "sha256": "d279f1b1332261c06d6b6c98dd35b86ead7d3914c00847516a3c69b893976d32",
+      "size_bytes": 1072
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_gauge_matching/coarse_one_loop.py",
+      "sha256": "894ea8f73fd5544e9c49861d77a25e4223b5eb0421ff05d5cb516b32ce73ce2b",
+      "size_bytes": 3161
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_gauge_matching/scalar_sm_ledger.json",
+      "sha256": "b8a5afa9805d5dfa2b07b826207f8f89d8492fac318dd8fa4afc7fc75d7730be",
+      "size_bytes": 17661
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_gauge_matching/vector_ledger.json",
+      "sha256": "aa819915caa18d49e4935a6955263d5086fad5ca4f0f7cdb1709b394264896fd",
+      "size_bytes": 2062
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_gauge_matching/verify_group_normalization.py",
+      "sha256": "ad10974e2ebd733ed8a416324682f25e8177bd46a3e065ffca5c94bb66959d69",
+      "size_bytes": 787
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_gauge_route_selection/RECORD.md",
+      "sha256": "5b9b44986b91d19f0095e02fe73359e912470042d709e1dcb2bf090a58671854",
+      "size_bytes": 3935
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_gauge_route_selection/RESULT.md",
+      "sha256": "eb93a6dc88ae32dd9ec536db7c103d13f887ba040e22fd01d8041d925a4cf483",
+      "size_bytes": 7346
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_gauge_route_selection/route_selection.json",
+      "sha256": "1a70cd0feb0ffabf29b8d66d656919d7616352ad8bde12e84c1b7e6cb77fe7bf",
+      "size_bytes": 8529
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_gauge_route_selection/select_route.py",
+      "sha256": "adb8aedcb70ceef334f5b304c4ec3c752f4298cd02614e1f2e9c4ef00eb4e12d",
+      "size_bytes": 9037
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_light_higgs_quartic/RECORD.md",
+      "sha256": "62afd78e52aa9ba63eae807f5db3c249ebd2010d79c6eae4f8b66ddd18116eb6",
+      "size_bytes": 3843
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_light_higgs_quartic/RESULT.md",
+      "sha256": "e2a1ef9fe92364be5d20c4a9b74e8e5b466fd94078f4db94c272bda983824c5e",
+      "size_bytes": 4288
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_light_higgs_quartic/compute.py",
+      "sha256": "ae6abc5d8cdd1cd0851f561fd9063dbab761404791eb12b540bc62652a209e9e",
+      "size_bytes": 12125
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/DERIVATION.md",
+      "sha256": "81406786d114078554a20273979f6384465ff6dcb0e6f7cc4bc1dee7d8315b3d",
+      "size_bytes": 3188
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/RECORD.md",
+      "sha256": "9069656a81e8268221f66cd6a54cb45c9b1b67594b7b86c70b5077936d4f56a7",
+      "size_bytes": 3251
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/REPLAY_CONTROLLER_CORRECTION_V2.md",
+      "sha256": "79a545329beb6e3356e093aade4acb778921192464c9e8bdee44d3dafa22967c",
+      "size_bytes": 594
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/RESULT.md",
+      "sha256": "bf9ce016c48620b387893dd4b6b9f155b902e003687be9505eab8aee5bd3843e",
+      "size_bytes": 2029
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/VALIDATION_CLARIFICATION_V2.md",
+      "sha256": "6518789f46db11554881ef00f08586e38ad56d409632e3017c2b272f80d365d0",
+      "size_bytes": 684
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/preparation.json",
+      "sha256": "a4735585fbd2c969eb4cff767e52ffe40023194af120173136752afd77b8be85",
+      "size_bytes": 82463
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/primary_capture.json",
+      "sha256": "ffacf0f096f19b21249cde79d728dbf0bdb62f87159a32e15c8e1b996160228a",
+      "size_bytes": 324858
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/primary_result.json",
+      "sha256": "00c489ae920c51e09ea7e4b32702c30e7338c34903913d2f46a69fc93a3aa6e1",
+      "size_bytes": 296458
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/replay_capture.json",
+      "sha256": "bca49fddaf63a80d5a7b8f6cb98c6709caff46e82b2d70158f332c3f27c1e312",
+      "size_bytes": 324855
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/replay_controller_preparation_v2.json",
+      "sha256": "2628aff0c96016a0ab317c90009d4fa049e219fcfb3694cd61493b8d82de226d",
+      "size_bytes": 84074
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/replay_result.json",
+      "sha256": "dd4e2431a9eaf6bafa69c6829e82d8fb78c2a2225f3d51044b367818323c6c39",
+      "size_bytes": 296456
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/validation_capture.json",
+      "sha256": "64aaef13b8b21cc38f42adc4a3b6a1aa8c90abbbc76eb792d0d4bf72f270698a",
+      "size_bytes": 94346
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/validation_preparation.json",
+      "sha256": "5cc9270a3630cd81a4facc6b7fa8d75a3a9b05960db239fa8242f9e0ff6a21c1",
+      "size_bytes": 83901
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/validation_preparation_v2.json",
+      "sha256": "70fb11eba914bab33c8a06ed04ab42ef997b108def05ac74099ca7e19c4c6bbe",
+      "size_bytes": 86136
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/validation_receipt.json",
+      "sha256": "0f7876bfa29d3817a6432e0041c8a1e8aa84c9c4f8560a5e4f3473e6fd13b650",
+      "size_bytes": 85020
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/validation_v2_capture.json",
+      "sha256": "86c3405d5802b88440cff7e275080c1e250764176f612a35518190f67b760473",
+      "size_bytes": 96879
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/validation_v2_receipt.json",
+      "sha256": "271707fd55abc61eff288b45791f9796babacd5efe3b9b442a381a07cbac6bc1",
+      "size_bytes": 87348
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/witness.py",
+      "sha256": "bae5443c2c770212d848d065a21820077fd1491d5ec040b6efdd7e93b31f334e",
+      "size_bytes": 8885
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_covariant_reference_witness/witness.py.source.txt",
+      "sha256": "bae5443c2c770212d848d065a21820077fd1491d5ec040b6efdd7e93b31f334e",
+      "size_bytes": 8885
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_gauge_anomaly/RECORD.md",
+      "sha256": "31466f24b2087bc275a61eeed541d4ce790e604017adfb1355ac37d8c551bc2b",
+      "size_bytes": 6199
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_gauge_anomaly/RESULT.md",
+      "sha256": "4a36d95a89bb9f3b9cec5a536f3bdb51f34051eb638b055a6238250051a7b829",
+      "size_bytes": 6372
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_gauge_anomaly/anomaly.py",
+      "sha256": "d9d26c0b2cfda2613bf8ec08ed7455c24948fe9f7ff2786c43117594995c7c35",
+      "size_bytes": 5066
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_gauge_anomaly/anomaly.py.source.txt",
+      "sha256": "d9d26c0b2cfda2613bf8ec08ed7455c24948fe9f7ff2786c43117594995c7c35",
+      "size_bytes": 5066
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_gauge_anomaly/execution_plan.json",
+      "sha256": "dca6e229f15ff668cda74a264e20ba46184a017f570540d42b0c219fbb59620b",
+      "size_bytes": 365
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_gauge_anomaly/fresh_capture.json",
+      "sha256": "b652f7b0fbd0fe15a9ff6a400cfec0bb07df7bae0e2a3c099f733c874968cadc",
+      "size_bytes": 6293
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_gauge_anomaly/fresh_result.json",
+      "sha256": "d77a2bfe28d547afac754a5f04c544e7ebd4e30d29cda9a0e6705b16d5bdae48",
+      "size_bytes": 4812
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_gauge_anomaly/original_capture.json",
+      "sha256": "ec46d4403e37a11ccc981c726f5c5632a0ee1d5caef4d7f82c003fa75f0dc6df",
+      "size_bytes": 6293
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_gauge_anomaly/original_result.json",
+      "sha256": "d77a2bfe28d547afac754a5f04c544e7ebd4e30d29cda9a0e6705b16d5bdae48",
+      "size_bytes": 4812
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_gauge_anomaly/preparation.json",
+      "sha256": "bf7d149009e60a6ce71ad875393c55b15a4b508f17bfde30a12be36fa96d7f26",
+      "size_bytes": 2723
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_gauge_anomaly/validation_capture.json",
+      "sha256": "d3d69e7752a65dc059e3798fde2adc320757f36eb5e2ec03d4141a69ac935eba",
+      "size_bytes": 396
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_gauge_anomaly/validation_preparation.json",
+      "sha256": "07527e1cd614965963eb3b6b5e219b8f43fe562316a5d069dcdf02646701b562",
+      "size_bytes": 2247
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_local_gauge_anomaly/validation_receipt.json",
+      "sha256": "cf2cb5b63cc835822f0d143c465ec97123337f9a203c991982bcdee0ee2c4e0b",
+      "size_bytes": 9547
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_lower_bfm/RECORD.md",
+      "sha256": "a0047e1ef63ce5a92f90a3fdc95ae808abcdc7a5b0866862907552a44584f499",
+      "size_bytes": 3995
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_lower_bfm/RESULT.md",
+      "sha256": "caea55d5edc50195eb97821dd0e2289e790ae38d9da4ba68dc7055b35fb82a42",
+      "size_bytes": 6343
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_lower_bfm/check_quadratic_orbits.py",
+      "sha256": "698ed9aeff79e62b5291436ca64d634c7f46d5e8309f9f35fed40695a6efb583",
+      "size_bytes": 3477
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_lower_f2/RECORD.md",
+      "sha256": "f2f1661e4e4f4da8538e6284fa1bca9fc7be59606b6b5c0853211b67b56ef031",
+      "size_bytes": 4073
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_lower_f2/RESULT.md",
+      "sha256": "0626aef72fb8976c96ec740bb15ac1059bc9f17cbf81519180dae80240f86591",
+      "size_bytes": 10366
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_lower_f2/check_delayed_scalar_candidate.py",
+      "sha256": "9b25077317443e70f17cb02714bb138e08b4e1bdd67a60c43de4b47571caaf42",
+      "size_bytes": 2970
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_lower_f2/check_vector_f2.py",
+      "sha256": "99130c5eb7185daaa90adae1c817dbbb45e851f0092078283d33df82b53dec99",
+      "size_bytes": 4155
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_matrix_threshold/RECORD.md",
+      "sha256": "962c25bbf73e4fdbd180c39333b44226f4f0365b58837b67dad391311a8655cd",
+      "size_bytes": 3473
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_matrix_threshold/RESULT.md",
+      "sha256": "423dfcbfb0c3d7c248dfe2bf760ff4efba873626882affa46de5f8517017b7b3",
+      "size_bytes": 6630
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_matrix_threshold/check_noncommuting_mass_warning.py",
+      "sha256": "69b0e9e055ba3c4c6b0d52cedb1e3cca8785bd5742bd5a10de3095809994c970",
+      "size_bytes": 1357
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_matrix_threshold/check_scalar_matrix_log.py",
+      "sha256": "ed7d43fe7324d7ca090dc5035da493c17d1da54095485031231f3f41f66a9542",
+      "size_bytes": 4952
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_matrix_threshold/check_vector_matrix_log.py",
+      "sha256": "aaffa988aeb081b219a4a6ca929dcfaeb47c33c4b067a9dc4bc197ed2fc46a53",
+      "size_bytes": 5094
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_matrix_threshold/scalar_matrix_log.json",
+      "sha256": "7e6fd9a7214011614300c6fa89c1ae225e7a0e3640172c7c1457ddcd42a3a201",
+      "size_bytes": 558
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_positive_higgs/POINT.json",
+      "sha256": "476645438ea8a7ada42fea90e80174b772d45ce3e729d013d134e9848950c816",
+      "size_bytes": 1058
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_positive_higgs/RECORD.md",
+      "sha256": "4fdfe46841f83929a2e723c546772238b8805eefbcbbd7d7712d203214af5ff7",
+      "size_bytes": 7212
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_positive_higgs/RESULT.md",
+      "sha256": "2bc589c89d89e0e03a1a9d5ed3422cc17ddf04d6d99b9232726e7870a8fc4c5d",
+      "size_bytes": 4789
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_positive_higgs/derive_exact_point.py",
+      "sha256": "f9353399cb631cd5d96f36492693e743987dbf92e8eeb97a1666238cd7aa6019",
+      "size_bytes": 1286
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_positive_higgs/explore.py",
+      "sha256": "da6c19698c01692f9614ab51c9ecb01ff488258f01aa78768a24d8d86f5e630d",
+      "size_bytes": 5753
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_positive_higgs/optimize_mixed_quartic.py",
+      "sha256": "4c5cbd8c54d469384a99930e54e24193925d95b2c6efcdb64f94e834c11e31cd",
+      "size_bytes": 4895
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_positive_higgs/verify_exact_point.py",
+      "sha256": "ad4a44aca9bb3129aa6c1b3416e834d35ef923aec514f785d24dc947a477bbff",
+      "size_bytes": 6727
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_pq_anomaly_screen/RECORD.md",
+      "sha256": "3a5533ecb41dd6fd4232b89557f686b3b56733581a35080b49f3b8dcf163e6df",
+      "size_bytes": 5808
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_pq_anomaly_screen/RESULT.md",
+      "sha256": "302f226030dcc4c72c38421ebbc7036be2d833d1a0eee9c3b62ed70b86ce6b84",
+      "size_bytes": 8556
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_pq_anomaly_screen/execution_plan.json",
+      "sha256": "7acc94e7f48a6439c1a92e0a54f585d0d1bd447b050cbecd12e707efb5f9a01d",
+      "size_bytes": 369
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_pq_anomaly_screen/fresh_capture.json",
+      "sha256": "b00be243400fa7aecc9855a30325653f503d3788e69e2cb48bfc2ddf38c8646e",
+      "size_bytes": 8173
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_pq_anomaly_screen/fresh_result.json",
+      "sha256": "c4981114252ba4d6b9a08912cd8eb6045eacf9a6a3dfeae42d0519bad8d06dee",
+      "size_bytes": 6581
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_pq_anomaly_screen/original_capture.json",
+      "sha256": "c332fb175c0bafc52aa2d71b526b4fc5f4ecc0a466ec16a3e9a485b2069fde48",
+      "size_bytes": 8173
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_pq_anomaly_screen/original_result.json",
+      "sha256": "c4981114252ba4d6b9a08912cd8eb6045eacf9a6a3dfeae42d0519bad8d06dee",
+      "size_bytes": 6581
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_pq_anomaly_screen/pq.py",
+      "sha256": "1ccadad7f39bbf10bda62de30e92b9cfc101de509eba22b6b590509d3f1ea7f3",
+      "size_bytes": 5796
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_pq_anomaly_screen/pq.py.source.txt",
+      "sha256": "1ccadad7f39bbf10bda62de30e92b9cfc101de509eba22b6b590509d3f1ea7f3",
+      "size_bytes": 5796
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_pq_anomaly_screen/preparation.json",
+      "sha256": "d010fb9166618447f9bcd8ae78ef4c7571b9a2d66ac6bb1ee955d31f6222a26f",
+      "size_bytes": 3103
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_pq_anomaly_screen/validation_capture.json",
+      "sha256": "d2e3d7628573a2f7a702fb1312854b11ef07bcff0b84e589cca74a5b1326457d",
+      "size_bytes": 392
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_pq_anomaly_screen/validation_preparation.json",
+      "sha256": "99c4a52af3691cf46d3a84c0d6a48362d3cf56274af44dc71b8c5e7aed2cae23",
+      "size_bytes": 2350
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_pq_anomaly_screen/validation_receipt.json",
+      "sha256": "7f8c3b3f2bb2f8ceb35648a942a8f5c7cea15432dd2deba3b590daef2f7c000d",
+      "size_bytes": 9333
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_eft_error_budget/RECORD.md",
+      "sha256": "5b0da366e716db6fdd0fb57b9b181c7f1a8489067a6ea3e6134d3e979ab615f7",
+      "size_bytes": 4582
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_eft_error_budget/RESULT.md",
+      "sha256": "dcbaf921ed11dfb1262f78851c26e7851d4a05b45c669e1b9dd7f0d0784c2f2b",
+      "size_bytes": 6935
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_eft_error_budget/error_budget.json",
+      "sha256": "0f1e697d63a71882e61bcf9ad16300589e91ee2ac8a6f608886ead2c32839ea0",
+      "size_bytes": 2890
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_eft_error_budget/quantify_error_budget.py",
+      "sha256": "022acf73147675ecad0cb59351c06907e8d73a58ec6a7e9d5e2300e30a28d192",
+      "size_bytes": 7936
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_interval_eft/RECORD.md",
+      "sha256": "e4646e693a14788e45e1b2c62a31253c03eb4ad07a53d1802b044c82643059f7",
+      "size_bytes": 4164
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_interval_eft/RESULT.md",
+      "sha256": "29fdfb8988ca2fe86bb16a27922d5e7d1c383c0b43ac7ea8fc7d884354b511f7",
+      "size_bytes": 7701
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_interval_eft/probe_quadratic.py",
+      "sha256": "79412e4a89f1b3f4f505c55bbde88523fa37d08c0681436c78070f0714a840cb",
+      "size_bytes": 3839
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_multispurion/RECORD.md",
+      "sha256": "98edcd2afe8c5d1382b499b6a3a2d52e958e8c5bcd6e77b38790bff42b8a9692",
+      "size_bytes": 4588
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_multispurion/RESULT.md",
+      "sha256": "612fefd56ad025d3e3d794139a628ef8e58a4ee9d11f08d6438bced67f7d6d8a",
+      "size_bytes": 11150
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_multispurion/analyze_cost.py",
+      "sha256": "bcc1a011835e52f4c0e5b88afc96c6f662907a0ed30ce6e1086255d404519877",
+      "size_bytes": 1923
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_multispurion/check_candidate_split.py",
+      "sha256": "a40bcdfe2b706d1d21308d9694a50ce679cffca555785ffa03bcd382e1225104",
+      "size_bytes": 9103
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_multispurion/check_scalar_symmetry.py",
+      "sha256": "fdb59fe80787a2c424da74d8ee5fb73d1683be2f6de9c56ef9bea79b9bfd97e0",
+      "size_bytes": 1766
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_multispurion/extract_intercepts.py",
+      "sha256": "d949ed795b9eccb06783e8fe434efda119f6f619b2a1986fe6af6ad9f2884f15",
+      "size_bytes": 8005
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_multispurion/test_joint_family.py",
+      "sha256": "5bcc0da297f7d6df0adc043dd449e02dca895c8b1ec31056bc6fec9be1b57bfd",
+      "size_bytes": 7216
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_operator_match/RECORD.md",
+      "sha256": "66cfd22dbf2f1f4ff64db4ce917900d5e3758008729852795a58d6791a4d0d33",
+      "size_bytes": 3960
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_operator_match/RESULT.md",
+      "sha256": "2adc3b69eb0e74206e5e1347f837dbc3aec80e6cf2245a6298c831d5cd061ad8",
+      "size_bytes": 5889
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_operator_match/derive_tree_gate.py",
+      "sha256": "3466496c1a56a77c38cea8cfa857ead6ee989bd0b5b4d3e1c9a2b1bf1875dac5",
+      "size_bytes": 5670
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_operator_match/tree_operator_gate.json",
+      "sha256": "c72305d9c30e0f63ac6b58fc40107b8da0fbcf00a77f75327a8280798aa8d2d9",
+      "size_bytes": 1794
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_threshold_kernel/RECORD.md",
+      "sha256": "b06e942e3de9ceda093bfbc5d0af317c0c263fd8001d573242079c2b392ac80f",
+      "size_bytes": 4193
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_threshold_kernel/RESULT.md",
+      "sha256": "aed91eeb6f63ae1727c4723340a7e7554f4618380d17d5d5bd75d5446dc6c4f0",
+      "size_bytes": 7400
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_threshold_kernel/certify_ps_projectors.py",
+      "sha256": "f9d5e6295e9de047a9a7302df2d8d528f4acdcc284c95662539f3cf6570af012",
+      "size_bytes": 5993
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_threshold_kernel/check_full_log_checksum.py",
+      "sha256": "03d09a5ed1a155ef505d1430cc03020febe95828d196c003a2222f246dea40ff",
+      "size_bytes": 1965
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_threshold_kernel/check_ps_mass_limit.py",
+      "sha256": "f027d2e4c6b0b10eeecb489198fb1b3a06a5cac3899009205f286c63af343487",
+      "size_bytes": 6951
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_threshold_kernel/check_vector_limits.py",
+      "sha256": "423fa01811c40110384780316631a13b1b17ef5c89ce1b0a93b3dd2f47e27369",
+      "size_bytes": 1102
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_threshold_kernel/check_vector_matching_indices.py",
+      "sha256": "6e9983d9c82fa3ef9f9a7896f2b3214de4a6ae65a05ea4d0936fe1627de62a6a",
+      "size_bytes": 1768
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_threshold_kernel/replay_limit_direct.py",
+      "sha256": "4424ebdb7de9e2989a2e447e332eb6dd238bf981e71bc8ae226ee4b04753e9c8",
+      "size_bytes": 3292
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ps_threshold_kernel/restoration_limit_spectrum.json",
+      "sha256": "2adc3b2dd40fa5148aa42716ad99fd49cbdd3a76333446639e77e83eb60d1ceb",
+      "size_bytes": 4671
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/ASSESSMENT_RECORD.md",
+      "sha256": "088f061ee9017691844d21504ecee9fe92bfb4200d4952eb5def4ac7e70de74e",
+      "size_bytes": 2270
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/COHERENT_RECORD.md",
+      "sha256": "f39949b06f175fc300d3ef093af7d62d41ed259139a64efb672689393160039b",
+      "size_bytes": 2433
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/RECORD.md",
+      "sha256": "94012c03c03f8ceb1643c6bc1165b359de563c31cd9930932f796febf83d0ee7",
+      "size_bytes": 5227
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/RESULT.md",
+      "sha256": "9a9a918048cec4ad456ccd5f4491ddc457aa6d95f94a316ddf63080f22e7ca19",
+      "size_bytes": 11495
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/assessment.py",
+      "sha256": "94737c9f7e5f5361408a6829978574ad56f9d82df663d2176236c747f89e5710",
+      "size_bytes": 6152
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/assessment.py.source.txt",
+      "sha256": "94737c9f7e5f5361408a6829978574ad56f9d82df663d2176236c747f89e5710",
+      "size_bytes": 6152
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/assessment_fresh_capture.json",
+      "sha256": "79a5b142be7cb34df54ab4a5dbe6a05cf48a8f3f873861fce4c04beec1c3e7fd",
+      "size_bytes": 29278
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/assessment_fresh_result.json",
+      "sha256": "85a2a27b297b05729132e02a86e4c9d1faff123b206cc78d6ebc4bc6e066a4ba",
+      "size_bytes": 27015
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/assessment_original_capture.json",
+      "sha256": "d8fd1128d5a0b4f53f381a7c5dba767c1dc3f280f76bc3b56e80e71c8881bb1d",
+      "size_bytes": 29277
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/assessment_original_result.json",
+      "sha256": "85a2a27b297b05729132e02a86e4c9d1faff123b206cc78d6ebc4bc6e066a4ba",
+      "size_bytes": 27015
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/assessment_preparation.json",
+      "sha256": "1dd425d962009edef650252f05a3a33068a16e6a3d9d2fef4fcead27b59eb938",
+      "size_bytes": 8901
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/coherent.py",
+      "sha256": "80bbda9d20bc2eeb82f23c223c0235f96fcc5762bc397effc963d04904e9259a",
+      "size_bytes": 5124
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/coherent.py.source.txt",
+      "sha256": "80bbda9d20bc2eeb82f23c223c0235f96fcc5762bc397effc963d04904e9259a",
+      "size_bytes": 5124
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/coherent_fresh_capture.json",
+      "sha256": "0eb32d96b21dcaf178fa60b5e5efa2417d39e2ce360805bc71de4a5ad6757d57",
+      "size_bytes": 19379
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/coherent_fresh_result.json",
+      "sha256": "4dc7be555bdc50cc4c1b3157755d7a67915637f415194e4eea78b5e8f684867c",
+      "size_bytes": 13061
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/coherent_original_capture.json",
+      "sha256": "131d0bf147d1a0ca9517fafab1834d1e77f83b4291d4ddcefbaea44320658890",
+      "size_bytes": 19495
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/coherent_original_result.json",
+      "sha256": "4dc7be555bdc50cc4c1b3157755d7a67915637f415194e4eea78b5e8f684867c",
+      "size_bytes": 13061
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/coherent_preparation.json",
+      "sha256": "3d604f37a7af1821b12a288b89f29e70d75ea331177a2722bb038ec0a03385a2",
+      "size_bytes": 9218
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/control.py",
+      "sha256": "1df10776ed0ab60f76d517677fa030d94059f9d130581ce8f33a29964ae53951",
+      "size_bytes": 10049
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/control.py.source.txt",
+      "sha256": "1df10776ed0ab60f76d517677fa030d94059f9d130581ce8f33a29964ae53951",
+      "size_bytes": 10049
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/execution_plan.json",
+      "sha256": "32de526e93a4e96fde8d195196b5c57e62ee8c2699d6a686ae9eeeb0a6a6316c",
+      "size_bytes": 419
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/fresh_capture.json",
+      "sha256": "e6837663402c81e2a833d73ec95c9ac4b71161027093d6bf3121c45b5069588d",
+      "size_bytes": 38054
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/fresh_result.json",
+      "sha256": "5140442e56fb730b41bde602fb25da2226e90c046bd8b4f02a425a43e90c3d40",
+      "size_bytes": 33739
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/original_capture.json",
+      "sha256": "93536ba95c797d765d72110ac694f731271762edd4c066faf9482bee25f079d4",
+      "size_bytes": 38052
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/original_result.json",
+      "sha256": "5140442e56fb730b41bde602fb25da2226e90c046bd8b4f02a425a43e90c3d40",
+      "size_bytes": 33739
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/preparation.json",
+      "sha256": "5d5edefcca4b485fef81712e120dfd1489ea8a3600233a8046d1c368b47d778e",
+      "size_bytes": 8260
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/validation_capture.json",
+      "sha256": "9a9b7479e4b5e601cb0b3fe8490e652b7da71ced4b9b493d6679d7c4e3e53fe9",
+      "size_bytes": 398
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/validation_preparation.json",
+      "sha256": "767b584cc26b76fe91abcd890d83cdeabd4be1c58024600a8f18e81416533f30",
+      "size_bytes": 4320
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_radial_input_control/validation_receipt.json",
+      "sha256": "be3f09d69147f3f82456fd3ec782f9943d2e4d697d3152566cac874a393d51fb",
+      "size_bytes": 10502
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_benchmark/RECORD.md",
+      "sha256": "eed20904149d5de6473769326c7b64afd05f03fb34b6c52cfa8c506d08c70fae",
+      "size_bytes": 5673
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_benchmark/RESULT.md",
+      "sha256": "c6249573b1284ae82661ddf775bcaa775e3074436364ce35831ed6dc056f869e",
+      "size_bytes": 5575
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_benchmark/STAGE1_POINT.json",
+      "sha256": "3a1054be3962db4b9055f6c7dbb7a2829f2332ef07dab5997fee693592de5b14",
+      "size_bytes": 1162
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_benchmark/STAGE2_POINT.json",
+      "sha256": "26bd69eb2f1341bca3576b72da666b0ca4d71a38a3e1c39f362908704dc16b6b",
+      "size_bytes": 727
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_benchmark/STAGE2_RECORD.md",
+      "sha256": "180ee340423e23c124f501004c7d06674dfa9fbde51ac0aa9a195a1f742bf516",
+      "size_bytes": 2937
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_benchmark/check_gauge_hierarchy.py",
+      "sha256": "6ed593a1849ed0fcf43f6ecf131224fbfe420e05f141923a9199f11efa5f24cb",
+      "size_bytes": 1664
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_benchmark/compile_numeric_blocks.py",
+      "sha256": "0934ec84d7cad6ace83526f456b9b8139c24e6c10a732d9a6f48d35c3887efb4",
+      "size_bytes": 2588
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_benchmark/derive_stage2_tuning.py",
+      "sha256": "0d13ed6fd8e2244bafafc9ff92bb7da067fb03ad54c32417dd61c6f728cd813f",
+      "size_bytes": 1241
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_benchmark/replay_candidate_exact.py",
+      "sha256": "f3babd282ae94f07aec7af6af78c39b56fe92c4401fde5883c7f982d9b1fb4fd",
+      "size_bytes": 5289
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_benchmark/replay_stage2_exact.py",
+      "sha256": "bbb6c3307ceb26536e8854c136de76af36252a6276a27e5b1d200cacdb784089",
+      "size_bytes": 4657
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_benchmark/search.py",
+      "sha256": "89e377cd336aa649a7358f46b0bcc7695f40defe24d3afcc1062521fe5fc9394",
+      "size_bytes": 6737
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_benchmark/stage2_tune.py",
+      "sha256": "8fb33431612b63ac53b8bdd4979ae45d4cbf4eaffa57f4250ea5b3a0862be1cc",
+      "size_bytes": 4248
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_benchmark/validate_candidate.py",
+      "sha256": "1a31075750551bfe9185981d0791c7af257aa8cd94d77173e5bd1cde47f7306c",
+      "size_bytes": 3725
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_benchmark/verify_compiled_blocks.py",
+      "sha256": "7972d6de3247e0e1b42808f8b43c460a297fa062480e14e85c38a7826479861d",
+      "size_bytes": 2172
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_reconstruction/PARENT_ACTION_V1.md",
+      "sha256": "01323e0f6a025edd6f6669b43e7c730f5350e28d8561e72df89636862ca358ed",
+      "size_bytes": 4528
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_reconstruction/RECORD.md",
+      "sha256": "fd542eb154da9dc88570d1221ed61197fa2240102b1a6672bed49f384ba41d13",
+      "size_bytes": 12670
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_reconstruction/RESULT.md",
+      "sha256": "2a657cca6087eb3c916fe6a954c562f0cf6a76882b8e23b3ddae5321dcc056a5",
+      "size_bytes": 7842
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_reconstruction/RESULT_V2.md",
+      "sha256": "b6c71d51c106b6d610ff1b56bc809750c7b629f7266d1beb7d58cc3ac2059852",
+      "size_bytes": 6665
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_reconstruction/certify_sigma_quartics.py",
+      "sha256": "3541644670b6943c95bf77085d5928b6eaf68d3f4a19beb06010cbcb2f7035f9",
+      "size_bytes": 5496
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_reconstruction/certify_simple_invariant_slots.py",
+      "sha256": "bc20e34afc0577f12af63ddeab30f8709fc76c6830d3022490babe303d058e1a",
+      "size_bytes": 5720
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_reconstruction/count_d5_singlets.py",
+      "sha256": "3ad727036b86dcd7a7eff078d7bfb71d1fda5ef9ace2754895e122a02398a1f1",
+      "size_bytes": 6354
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_reconstruction/test_eta1_invariant.py",
+      "sha256": "7404a252c78b53eea66a07499ea987365041822f6fe444da314d89a806e097a5",
+      "size_bytes": 4341
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_reconstruction/verify_action_inventory.py",
+      "sha256": "94afa19013d3ed499e69077bb4af49308059d97854722a381b8740c7736fba1d",
+      "size_bytes": 2193
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_reconstruction/verify_eta1_doublet_mixing.jl",
+      "sha256": "7fb82e53b7ee5baaa6e0c32b9be01aec90e5cc89f8f130db1c039213a2ba701c",
+      "size_bytes": 2155
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_reconstruction/verify_eta1_doublet_mixing.py",
+      "sha256": "1040031d76aafc13aa612b9b77e01e87fea82b951bc456bdfeaf30e9e8313bbd",
+      "size_bytes": 3924
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_reconstruction/verify_pq.py",
+      "sha256": "656fb33c9665f007d49948f9abb208018e7317747da70b7ef21fe30b66979867",
+      "size_bytes": 1714
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_scalar_reconstruction/verify_scalar_phases.py",
+      "sha256": "32c16e0b44f82cbdeb2c0562e7bfcb44ada74b3c692658b8153e10cd8d23ae88",
+      "size_bytes": 1604
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/CORRECTION_V2.md",
+      "sha256": "e2c8ac9f35ac4305a13371e2df04015c0292536c31390e89ea436fad21ef48c8",
+      "size_bytes": 1174
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/CORRECTION_V3.md",
+      "sha256": "fb3ccad5674c7a338d556f4959f69daf836f8b0d6d79f9a6306b0c0e82f67435",
+      "size_bytes": 1377
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/RECORD.md",
+      "sha256": "caef0dc1a99e049d1d91a0617161e4a792858b0d38f53d4339d2ad2e463762d1",
+      "size_bytes": 6050
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/RESULT.md",
+      "sha256": "dfa5338006f62acadec3b97745f03984f0542b6702c83f37bf9cfd8ec7c7def9",
+      "size_bytes": 11199
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/independent_verifier_capture.json",
+      "sha256": "94c83d545e9e043b8745d42f7be60f5f258fc5619529a47dab150aeda9eb7658",
+      "size_bytes": 1459
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/independent_verifier_v2_capture.json",
+      "sha256": "0b8b532a3fdefbcc7c76e94221a114764599af0de3a8e86f58e71e4110c3e07c",
+      "size_bytes": 14825
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/pole.py",
+      "sha256": "2482c74767d788853b81c31b3272ddd7db263139fe9b4fa7cb293f3ab5025b49",
+      "size_bytes": 8260
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/pole.py.source.txt",
+      "sha256": "2482c74767d788853b81c31b3272ddd7db263139fe9b4fa7cb293f3ab5025b49",
+      "size_bytes": 8260
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/pole_v2.py",
+      "sha256": "bf7107a58bd6c0b0d00bac66eae384ffe5531beafc286dd082eea12b05091d2a",
+      "size_bytes": 8487
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/pole_v2.py.source.txt",
+      "sha256": "bf7107a58bd6c0b0d00bac66eae384ffe5531beafc286dd082eea12b05091d2a",
+      "size_bytes": 8487
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/preparation.json",
+      "sha256": "995b83d622b242679a54301dd778d8beb702aef1344cf3d4605c5c03cad3dd64",
+      "size_bytes": 4524
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/preparation_v2.json",
+      "sha256": "48b46670f1005726a1c5c2e19c82aa39dac304a0355bb383cca404ec44dbacd0",
+      "size_bytes": 5166
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/primary_capture.json",
+      "sha256": "7e9212e8edbf39b1e04f98cdd3c83f98068aed5c208f5ba15f2a45c31bf96fbf",
+      "size_bytes": 1367
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/primary_result.json",
+      "sha256": "32ca9f04f9cb7a199a6875f8f93be6f6c33a0156b1c7e7efc8a2a90ed6c197a6",
+      "size_bytes": 90946
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/primary_v2_capture.json",
+      "sha256": "47fe658a52653a61dab415fcf60a522649798fd00e653dcf643a2a0c1f98d7bb",
+      "size_bytes": 98303
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/validation_preparation.json",
+      "sha256": "8df5963def3ddc7d6f3619d508d61ec88b564a38c10da6332e98eb4b56b256ea",
+      "size_bytes": 7605
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/validation_preparation_v2.json",
+      "sha256": "0cda276a0676506fdd05c94d9b3edc3d9be22a00ff8b9b7989b79784daa419c9",
+      "size_bytes": 8788
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_control/validation_receipt.json",
+      "sha256": "f1d255b39cd857262dc8652c5a33d2eb95083c88f7c6dcd8283e643454ae9b59",
+      "size_bytes": 11978
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_rg_check/RECORD.md",
+      "sha256": "e4d2be7a1a680287eed119f30e1bb94225471ea4df70d2081df2efe399c3fb57",
+      "size_bytes": 5878
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_rg_check/RESULT.md",
+      "sha256": "75d5f4d43c178cc461335928646e7ef36c9b04ded5602d37639c4730019b38dd",
+      "size_bytes": 9169
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_rg_check/independent_verifier_capture.json",
+      "sha256": "9be7bf9993ca05d11300ed4b49681cf47f9b2461a7f52c18a9722dbf4fa67a0a",
+      "size_bytes": 11042
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_rg_check/preparation.json",
+      "sha256": "a41e46cc5e362d7db9dce13954e5bb5dd733ed9b5afcaa2ab250727cee98b360",
+      "size_bytes": 4378
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_rg_check/primary_capture.json",
+      "sha256": "99e37ad1cb92a3c1f388be53ee3e9cd82e29b175b3be24a942bd162fa456fe0e",
+      "size_bytes": 14907
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_rg_check/primary_result.json",
+      "sha256": "79835bf3889acdcd886879966896338955caafcc7c04a05781bb1def37915f74",
+      "size_bytes": 13100
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_rg_check/rg.py",
+      "sha256": "5ea93db3039a989888fbcc69373adf129f0ae5876f928aef9cf15f5faec4345b",
+      "size_bytes": 6174
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_rg_check/rg.py.source.txt",
+      "sha256": "5ea93db3039a989888fbcc69373adf129f0ae5876f928aef9cf15f5faec4345b",
+      "size_bytes": 6174
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_rg_check/validation_preparation.json",
+      "sha256": "089924412c49c39908043350fbc270b51b6cb51d2d3ecd0c438c2ffc805bb170",
+      "size_bytes": 5674
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_singlet_pole_rg_check/validation_receipt.json",
+      "sha256": "f06f0d80ba537c35a86f19fdeec53a2ef4ba369f8e67191f3003d9d480b8e845",
+      "size_bytes": 9772
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/.gitattributes",
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "size_bytes": 8
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/CORRECTION_V2.md",
+      "sha256": "f56c8b59bead7fbdb0b9d800d40da86775c05c5bc0ca93e7a4af1a5b78a38d70",
+      "size_bytes": 528
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/DERIVATION.md",
+      "sha256": "315022dcb9ccd9d996a8c9b70ecc07eaa28af879dbf9895a54f9a12bc139e7b3",
+      "size_bytes": 3777
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/RECORD.md",
+      "sha256": "4a1fe12dc6d390afd7aa5552b201eaa20ac6b7ef087b8dbca98f61216df36753",
+      "size_bytes": 3275
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/RESULT.md",
+      "sha256": "4450135dd7b92cf4bc71c58f6bbf3aada03d081a175251b354280038fa94e3e7",
+      "size_bytes": 2416
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/VALIDATION_CORRECTION_V2.md",
+      "sha256": "677244c7491ecdc956ee8fe220417d09a102ee8ac57b4029df1e62d0b57e1d87",
+      "size_bytes": 793
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/preparation.json",
+      "sha256": "6de9be3ccd0cd59e1f8aa02d3cd5204fd5e7c2cee76f582f71d85451ddb31e9a",
+      "size_bytes": 68567
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/preparation_v2.json",
+      "sha256": "76979aa4058cdb7b23e83d1be32c3442bba51c0d046c6d031a4e1c01eaa00d36",
+      "size_bytes": 70456
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/primary_capture.json",
+      "sha256": "f48be74462eafc35c0c4559bdf12990996c0478147e413ad2f6957251c998a88",
+      "size_bytes": 1729
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/primary_v2_capture.json",
+      "sha256": "a2b4fc04f4b45cba2678461188a9b578727d9ab54abee9a0431628b7799a3a4a",
+      "size_bytes": 60340
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/primary_v2_result.json",
+      "sha256": "035ab2c647bde9703053b4776e94ee96d432450536a0b6db612f65a7cd469073",
+      "size_bytes": 49878
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/replay_v2_capture.json",
+      "sha256": "05f9cb5b431ba1c6204f9a0c0fcaec430101ba3f8b1644d858a154a4e6c2aa14",
+      "size_bytes": 60333
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/replay_v2_result.json",
+      "sha256": "e14dab85c07067cd0af7f91ea6ce7c932748b7576301510fc8f37738fdd2a71c",
+      "size_bytes": 49877
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/test.py",
+      "sha256": "0e5886f951bc10febf74d964479f139d569efdbf7c78dd80a88838f0280f1a05",
+      "size_bytes": 9768
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/test.py.source.txt",
+      "sha256": "0e5886f951bc10febf74d964479f139d569efdbf7c78dd80a88838f0280f1a05",
+      "size_bytes": 9768
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/test_v2.py",
+      "sha256": "56b49e6ebfcc6ff54a2cefa2a3cb137889b69078dfb539d6080de6e65ff57db1",
+      "size_bytes": 9804
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/test_v2.py.source.txt",
+      "sha256": "56b49e6ebfcc6ff54a2cefa2a3cb137889b69078dfb539d6080de6e65ff57db1",
+      "size_bytes": 9804
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/validation_capture.json",
+      "sha256": "b84a07b28e110a8ad4125ae7ebf2c5a9b43b06b5ed645ecdc8c2485d4e3165c2",
+      "size_bytes": 2735
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/validation_preparation.json",
+      "sha256": "50fccddc0a8dd7d63ddc2330653be125de2270af42acf10c233b4188c472d7db",
+      "size_bytes": 69473
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/validation_preparation_v2.json",
+      "sha256": "7d46a630f0567222394367f543ca5daee7bef505f51dc5511e09859dbf3ca70d",
+      "size_bytes": 71616
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/validation_v2_capture.json",
+      "sha256": "b2f20944108ad248d82964c56d1487ed051e40e1cd8ccf92b5363c80e9f1b0f5",
+      "size_bytes": 80879
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_background_locality/validation_v2_receipt.json",
+      "sha256": "e39153fbb6f77e59b4f688b101096ed6a0baf2dd3247820b9b7292682173cd43",
+      "size_bytes": 72596
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/CORRECTION_V2.md",
+      "sha256": "ca5307a06695dd10b27fcc415f80f8a6ff3380a4bab24f2690fbcff08632c35b",
+      "size_bytes": 652
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/DERIVATION.md",
+      "sha256": "2177532104e5b5ee66d6d267fb6672d640bb165e66494f56ef45e37e99324915",
+      "size_bytes": 3465
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/RECORD.md",
+      "sha256": "82d4d81c585ada4e97907564864d34c4987542f3db5dbe3386cdb77cae1906d7",
+      "size_bytes": 3140
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/RESULT.md",
+      "sha256": "1ecfebc06c17b702c704a2c4c431f5cff1ca4902fc8c50d42a6b8e1abe387959",
+      "size_bytes": 3197
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/preparation.json",
+      "sha256": "18eaff7e1881e4912dba28d70b6d6a09cc605e2b58fcac10cf004026ab4f1e76",
+      "size_bytes": 75644
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/preparation_v2.json",
+      "sha256": "0680fc401fb458dc471ab63af497dff30c0d3d6c83e9ea704c8f7ad52508b407",
+      "size_bytes": 77902
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/primary_capture.json",
+      "sha256": "31217cf6e059137f8eeb2c240cdca5c172c326d9f265071f0201657b4216424e",
+      "size_bytes": 4404
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/primary_v2_capture.json",
+      "sha256": "2bd24f9680a877849fe8a3ae470990db0d8e79d4818befc93ccad52901367d1a",
+      "size_bytes": 7030
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/primary_v2_result.json",
+      "sha256": "ace2f5378a3bee13efcdf8a7332cb68adbea5c23bf0917434e2c24e482331612",
+      "size_bytes": 5209
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/replay_v2_capture.json",
+      "sha256": "1c4a25bb1c2f6bf042fb77c620d1e255d94db83b918f0a7d50442e2dbd069042",
+      "size_bytes": 7139
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/replay_v2_result.json",
+      "sha256": "f240a7ce214b2ef21128bf8b711481ddb3613770bf34d67ce82eecae03b52293",
+      "size_bytes": 5208
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/test.py",
+      "sha256": "1df70830e886b02e0552e238378b64e0b3d0b3ca273bd466fe6420a74e63087b",
+      "size_bytes": 10345
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/test.py.source.txt",
+      "sha256": "1df70830e886b02e0552e238378b64e0b3d0b3ca273bd466fe6420a74e63087b",
+      "size_bytes": 10345
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/test_v2.py",
+      "sha256": "8375bed581df5d7694f63c49c466f32fc9613c8c7b9e5a232588910813a1f029",
+      "size_bytes": 10470
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/test_v2.py.source.txt",
+      "sha256": "8375bed581df5d7694f63c49c466f32fc9613c8c7b9e5a232588910813a1f029",
+      "size_bytes": 10470
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/validation_capture.json",
+      "sha256": "c40ba15a4be8f95b7b6a56a26808d18c8eee61ee99f09e44341b54fd820cb7fc",
+      "size_bytes": 88648
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/validation_preparation.json",
+      "sha256": "2dc785112c90233d133a1114573fc6cd987133a0d661bf027283301c60d9989e",
+      "size_bytes": 78238
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_ub12_reference_symbol/validation_receipt.json",
+      "sha256": "a1d0ae0b83d556c6103cdfc587af8411fd605407aed47d4e3ec67097dc798f14",
+      "size_bytes": 79284
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_vacuum_kernel/RECORD.md",
+      "sha256": "447907662085fd4fbabfd8d4bfab5318f6c1df6517211064815f1c8608a6924a",
+      "size_bytes": 3676
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_vacuum_kernel/RESULT.md",
+      "sha256": "b9399ec9b0ad1c1e14d310a0b8ede1f297b86e9d6405829b6b7479c484a0b6f5",
+      "size_bytes": 7836
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_vacuum_kernel/derive_doublet_block.py",
+      "sha256": "fff03b857237ae86b93d5560a604615e6142df91f2c42cb88d939d0963620ecd",
+      "size_bytes": 6349
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_vacuum_kernel/derive_radial_hessian.py",
+      "sha256": "70113e39f03931f91217e05d4258db2dfc6f0f984e5d6a7f1aa51b8ec30546ff",
+      "size_bytes": 1381
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_vacuum_kernel/derive_stabilizers.py",
+      "sha256": "14f7b87e9442996df35fc4f8a7dd2af78296d6542ee4cb8a5152d76bdd87e61a",
+      "size_bytes": 4526
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_vacuum_kernel/derive_vacuum.py",
+      "sha256": "fba194601411bf60378cd97af2a16a6598980fdb5d11a0c2fc99f6520e571613",
+      "size_bytes": 4863
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_vacuum_kernel/verify_sm_singlets_modular.py",
+      "sha256": "24c1f9582a510deb956bfb99b7e0d771ce604e23d642cdd7d15d21c92f2ad88e",
+      "size_bytes": 2309
+    },
+    {
+      "path": "reproducibility/calculations/canonical_so10_vacuum_kernel/verify_vacuum_replay.jl",
+      "sha256": "8d8e4f2b90a2646c12553eed97e876621dbafb638eb32ba8c8d75de019944b80",
+      "size_bytes": 1358
+    },
+    {
+      "path": "reproducibility/calculations/real_120_sign_audit/RESULT.md",
+      "sha256": "b3e2ecc2ae1e61da453a855f94c3a8cec13e667c0c31ad667f4d18a9eefc3b9f",
+      "size_bytes": 5397
+    },
+    {
+      "path": "reproducibility/requirements-core.txt",
+      "sha256": "952b592d3bb620c709bb360cfda91db88469d2325d4cc93cf4f0cbdab257cf60",
+      "size_bytes": 215
+    },
+    {
+      "path": "reproducibility/spin10_pq_source_snapshot_v1_part1.zip",
+      "sha256": "b5554988c98252dfad314e3d32da0c79f22816c48ed8e8a5bec79c6cb7f77937",
+      "size_bytes": 84750621
+    },
+    {
+      "path": "reproducibility/spin10_pq_source_snapshot_v1_part2.zip",
+      "sha256": "fc6ec4bf29688b56beda1654306700e6e971c02136749cb3026235bb791b9159",
+      "size_bytes": 44042044
+    },
+    {
+      "path": "reproducibility/spin10_pq_source_update_v2_checkpoint.zip",
+      "sha256": "6694e72d5f1b9f6e79fdf89b54ecfa666028fb19c41db6c4bd635f99819f0bc3",
+      "size_bytes": 774530
+    },
+    {
+      "path": "reproducibility/spin10_pq_source_update_v2_history.zip",
+      "sha256": "93deb64b23177b13d4cfcf3659bb8fd5dfe9551c8ab94cb849dbc283138026af",
+      "size_bytes": 7748
+    },
+    {
+      "path": "reproducibility/spin10_pq_source_update_v2_part1.zip",
+      "sha256": "8c4d31a9caa6aefd11107e7d3bfd1eb00f046ba79b64d8433766fefcecaeecda",
+      "size_bytes": 87243466
+    },
+    {
+      "path": "reproducibility/spin10_pq_source_update_v2_part2.zip",
+      "sha256": "56394d3da97ec3f1f05b63389c1701e38a5bc3e3d7dde3bbf285a7772b549344",
+      "size_bytes": 62781594
+    },
+    {
+      "path": "reproducibility/verify_package.py",
+      "sha256": "5dc927a2667439b4863edca5dddf4e97bf3a4c707ed92141bc3ba80e017339a4",
+      "size_bytes": 3911
+    }
+  ],
+  "scientific_acceptance": "NOT_PERFORMED"
+}
