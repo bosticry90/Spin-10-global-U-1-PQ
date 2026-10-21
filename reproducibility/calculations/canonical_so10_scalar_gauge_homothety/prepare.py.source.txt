@@ -1,0 +1,50 @@
+from pathlib import Path
+from hashlib import sha256
+import ast,json,subprocess
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_scalar_gauge_homothety';C=Path(__file__).resolve().parent
+digest=lambda p:sha256(p.read_bytes()).hexdigest();read=lambda p:json.loads(p.read_bytes())
+base='155c1681b1c3dc9bbf929cd7a53627a0c5b31bf6'
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=R,text=True).strip()==base
+assert not subprocess.check_output(['git','diff','--name-only'],cwd=R).strip()
+assert not subprocess.check_output(['git','diff','--cached','--name-only'],cwd=R).strip()
+old=read(R/'calculations/canonical_so10_singlet_two_loop_input_closure/validation_receipt_v3.json');assert old['execution_state']=='COMPLETED'
+inputs=dict(old['input_sha256']);hist=list(old['historical_git_bindings'])
+for leaf in ['validation_receipt.json','bosonic_validation_receipt.json']:
+ rp=R/'calculations/canonical_so10_finite_radial_control'/leaf;v=read(rp);assert v['status'].startswith('COMPLETED')
+ for raw,h in v['input_sha256'].items():
+  path=R/raw
+  if digest(path)==h:inputs[str(path)]=h
+  else:
+   assert sha256(subprocess.check_output(['git','show',v['base_commit']+':'+raw],cwd=R)).hexdigest()==h
+   row={'path':raw,'commit':v['base_commit'],'sha256':h,'use':'HISTORICAL_BYTES_NOT_LIVE_POLICY'}
+   if row not in hist:hist.append(row)
+for folder,leaves in {
+ 'canonical_so10_finite_radial_control':['primary_result.json','validation_receipt.json','RESULT.md','bosonic_primary_result.json','bosonic_validation_receipt.json','BOSONIC_RESULT_V2.md','BOSONIC_RECORD_V2.md'],
+ 'canonical_so10_radial_bosonic_tadpoles':['original_v2_result.json'],
+ 'canonical_so10_singlet_pole_control':['primary_result.json','validation_receipt.json','RESULT.md'],
+ 'canonical_so10_singlet_pole_rg_check':['primary_result.json','validation_receipt.json','RESULT.md'],
+ 'canonical_so10_complete_contact_bound':['RESULT.md','validation_receipt.json'],
+ 'canonical_so10_finite_full_bfb':['RESULT.md','validation_receipt.json'],
+ 'canonical_so10_coherent_joint_witness':['POINT.json','RESULT.md','validation_receipt.json'],
+ 'canonical_so10_singlet_two_loop_input_closure':['validation_receipt_v3.json','RESULT.md']}.items():
+ for leaf in leaves:
+  path=R/'calculations'/folder/leaf;inputs[str(path)]=digest(path)
+for path in [R/'AGENTS.md',R/'project_state.json',R/'docs/RESEARCH_EXECUTION_HANDOFF_V358.md',
+ R/'calculations/canonical_so10_scalar_reconstruction/PARENT_ACTION_V1.md',
+ C.parent/'singlet-two-loop-input-closure-v1-2026-10-19/post_commit.json',
+ O/'RECORD.md',O/'DERIVATION.md',O/'scale.py',C/'prepare.py',C/'run.py']:
+ if path.suffix=='.py':ast.parse(path.read_text(encoding='utf-8'))
+ inputs[str(path)]=digest(path)
+for path in [O/'RECORD.md',O/'DERIVATION.md',O/'scale.py',C/'prepare.py',C/'run.py']:
+ dest=O/(path.name+'.source.txt')
+ with dest.open('xb') as f:f.write(path.read_bytes())
+ inputs[str(dest)]=digest(dest)
+for raw,h in inputs.items():assert digest(Path(raw))==h,raw
+p={'schema':'SCALAR_GAUGE_HOMOTHETY_PREPARATION_V1','base_commit':base,'input_sha256':inputs,'historical_git_bindings':hist,
+ 'controller_sha256':digest(C/'run.py'),'native_seconds_after_imports':120,'independent_seconds_after_imports':180,
+ 'sampled_private_limit_bytes':8*1024**3,'minimum_available_commit_bytes':350*1024**2,'package_limit_bytes':4*1024**2,
+ 'precisions':[50,80],'absolute_agreement':'1e-28','vector_root_enclosure_width':'2e-15',
+ 'prelaunch_failed_patch_applications':1,'scientific_acceptance':'NOT_PERFORMED',
+ 'scope':'Uniform scalar-potential family, conditional fixed-gauge bosonic response and S pole scaling; no quantum-control/GUT or benchmark adoption'}
+with(O/'preparation.json').open('xb') as f:f.write((json.dumps(p,indent=2,sort_keys=True)+'\n').encode())
+print('FROZEN',len(inputs),'historical',len(hist),flush=True)

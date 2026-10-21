@@ -1,0 +1,25 @@
+from pathlib import Path
+from hashlib import sha256
+import json,subprocess
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_graded_causal_qap';C=Path(__file__).resolve().parent
+base='438c86279ad2ed5ba9bcc27debc20cdb4dbabeeb';d=lambda p:sha256(p.read_bytes()).hexdigest()
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=R).decode().strip()==base
+assert not subprocess.check_output(['git','diff','--name-only'],cwd=R) and not subprocess.check_output(['git','diff','--cached','--name-only'],cwd=R)
+PK=R/'tools/two_loop_qft_compiler_v1/m08_independent_replay_package_v1'
+files=[R/'AGENTS.md',R/'CHARTER.md',R/'project_state.json',R/'docs/RESEARCH_EXECUTION_HANDOFF_V368.md',R/'docs/LOCAL_RESEARCH_CONVENTIONS_V1.md',R/'docs/SOLO_REVIEW_POLICY_V1.md',PK/'A10_E5_QUANTUM_CONTRACT_V1.md',PK/'A10_E5_QUANTUM_FUNCTIONAL_SPEC_V1.md',PK/'a10_bv_common.py',PK/'export_a10_e5_antighost_vector.py',PK/'audit_a10_e5_antighost_vector.py',R/'tools/portable_dh_v1/inputs.json.gz',PK/'frozen_a10_executable_reconciliation/M08_PHYSICAL_ACTION_COVARIANT_EXECUTABLE_V1.json']
+for n in ['primary.json','replay.json','bindings.json']:files.append(PK/'frozen_a10_e5_full_hessian'/n)
+for n in ['full_primary.json','full_replay.json','validation_receipt.json','bindings.json']:files.append(PK/'frozen_a10_physical_reconciliation'/n)
+for folder,proof,receipt in [('causal_one_loop_sewing','DERIVATION.md','validation_receipt.json'),('causal_wick_bridge','DERIVATION.md','validation_receipt.json'),('free_causal_reference','RESULT.md','validation_receipt_v3.json'),('dimensional_stokes_primitive','DERIVATION.md','validation_receipt.json'),('one_loop_acceptance_reconciliation','DERIVATION.md','validation_receipt.json')]:
+ p=R/'calculations'/('canonical_so10_'+folder);files +=[p/proof,p/receipt]
+for name in ['CYCLE_NORMALIZATION.md','FINITE_JET_DOMAIN.md','cycle_receipt.json','jets_receipt.json']:files.append(R/'calculations/canonical_so10_causal_one_loop_sewing'/name)
+files +=[R/'calculations/canonical_so10_causal_wick_bridge/primary_v2_result.json',R/'calculations/canonical_so10_causal_wick_bridge/singlet_receipt.json',R/'calculations/canonical_so10_dimensional_stokes_primitive/RESULT.md',R/'calculations/canonical_so10_one_loop_acceptance_reconciliation/RESULT.md']
+for name in ['RECORD.md','DERIVATION.md','qap.py','verify.py']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((O/name).read_bytes())
+ files +=[O/name,O/(name+'.source.txt')]
+for name in ['prepare.py','run.py','prepare_validation.py','run_validation.py']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((C/name).read_bytes())
+ files +=[C/name,O/(name+'.source.txt')]
+files.append(O/'.gitattributes');assert all(p.is_file() for p in files)
+v={'schema':'GRADED_CAUSAL_QAP_PREPARATION_V1','base_commit':base,'input_sha256':{str(p):d(p) for p in files},'native_seconds_after_imports':120,'verifier_seconds_after_imports':180,'sampled_private_cap_bytes':8*1024**3,'launch_available_commit_floor_bytes':350*1024**2,'package_cap_bytes':4*1024**2,'exact_symbolic_arithmetic':True,'historical_scientific_replay':False,'authority_changed':False}
+with (O/'preparation.json').open('xb') as f:f.write((json.dumps(v,indent=2,sort_keys=True)+'\n').encode())
+print('FROZEN',len(v['input_sha256']),flush=True)

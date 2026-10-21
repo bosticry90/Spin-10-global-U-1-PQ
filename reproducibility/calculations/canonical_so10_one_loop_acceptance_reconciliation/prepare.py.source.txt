@@ -1,0 +1,90 @@
+from pathlib import Path
+from hashlib import sha256
+import ast, json, subprocess
+R=Path('C:/Users/psboy/Documents/ToE-Next')
+O=R/'calculations/canonical_so10_one_loop_acceptance_reconciliation'
+C=Path(__file__).resolve().parent
+read=lambda p:json.loads(p.read_bytes())
+digest=lambda p:sha256(p.read_bytes()).hexdigest()
+base='3be8623957cee2bb6226a9613bb00fae1755e8b7'
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=R,text=True).strip()==base
+assert not subprocess.check_output(['git','diff','--name-only'],cwd=R).strip()
+assert not subprocess.check_output(['git','diff','--cached','--name-only'],cwd=R).strip()
+old=read(R/'calculations/canonical_so10_endpoint_source_projection/validation_receipt.json')
+assert old['execution_state']=='COMPLETED'
+inputs=dict(old['input_sha256'])
+names={
+ 'original_ghost_rescaling':'validation_receipt.json',
+ 'geometric_ward_products':'validation_receipt.json',
+ 'actual_normalization_assembly':'validation_receipt.json',
+ 'physical_counterterm_span':'validation_receipt.json',
+ 'polynomial_basic_lift':'validation_receipt_v2.json',
+ 'basic_primitive_comparison':'validation_receipt_v2.json',
+ 'onesource_primitive_probe':'validation_receipt.json',
+ 'sourcequadratic_primitive_probe':'validation_receipt.json',
+ 'sourcefree_primitive_probe':'validation_receipt.json',
+ 'dimensional_stokes_primitive':'validation_receipt.json',
+ 'basic_rotation_torsion':'validation_receipt.json',
+ 'endpoint_source_projection':'validation_receipt.json',
+}
+receipts=[]
+for name,leaf in names.items():
+ folder=R/'calculations'/('canonical_so10_'+name)
+ rp=folder/leaf;assert read(rp)['execution_state']=='COMPLETED';receipts.append(str(rp))
+ for path in [rp,folder/'RESULT.md',folder/'DERIVATION.md',folder/'ACCEPTANCE_RECONCILIATION.md',folder/'NORMALIZATION_SCOPE_NOTE.md']:
+  if path.exists():inputs[str(path)]=digest(path)
+root=R/'tools/two_loop_qft_compiler_v1/m08_independent_replay_package_v1'
+spec=root/'A10_E5_QUANTUM_FUNCTIONAL_SPEC_V1.md'
+domain=root/'A10_E5_DOMAIN_CONTRACT_V1.md'
+contract=root/'A10_E5_QUANTUM_CONTRACT_V1.md'
+# Exact source anchors, with surrounding lines frozen before the audit.
+requests=[
+ (domain,'closure and adequate counterterm content'),
+ (domain,'being BRST exact does not erase it'),
+ (spec,'A2 | A local power-counting'),
+ (spec,'nonempty all-order prescription class proved'),
+ (spec,'n=1: Q\' Gamma_1'),
+ (spec,'n=2: Q\' Gamma_2'),
+ (spec,'At first differing restored order'),
+ (spec,'Equivalence requires an admitted canonical'),
+ (spec,'X_K S\'=-Q\'K'),
+ (spec,'Multiple derivatives require'),
+ (contract,'order expansion through order four'),
+ (R/'calculations/canonical_so10_polynomial_basic_lift/RESULT.md','SURJECTIVITY'),
+ (R/'calculations/canonical_so10_basic_primitive_comparison/RESULT.md','B_basic intersect Q(K_full)'),
+ (R/'calculations/canonical_so10_physical_counterterm_span/RESULT.md','At strength O(hbar)'),
+ (R/'calculations/canonical_so10_physical_counterterm_span/RESULT.md','SINGLE existing raw UV counterterm'),
+ (R/'calculations/canonical_so10_onesource_primitive_probe/RESULT.md','No arbitrary constant'),
+ (R/'calculations/canonical_so10_basic_rotation_torsion/RESULT_V2.md','four directions are independent'),
+ (R/'calculations/canonical_so10_endpoint_source_projection/RESULT.md','not a constructed'),
+]
+anchors=[]
+for path,needle in requests:
+ lines=path.read_text(encoding='utf-8').splitlines()
+ matches=[i for i,l in enumerate(lines) if needle.lower() in l.lower()]
+ assert len(matches)==1,(str(path),needle,matches)
+ i=matches[0];lo=max(i-1,0);hi=min(i+3,len(lines))
+ anchors.append({'path':str(path),'needle':needle,'first_line':lo+1,'last_line':hi,'lines':lines[lo:hi]})
+ inputs[str(path)]=digest(path)
+for path in [R/'AGENTS.md',R/'project_state.json',R/'docs/LOCAL_RESEARCH_CONVENTIONS_V1.md',R/'docs/RESEARCH_EXECUTION_HANDOFF_V355.md',
+ R/'calculations/canonical_so10_basic_rotation_torsion/RESULT_V2.md',
+ R/'calculations/canonical_so10_basic_rotation_torsion/replay_result.json',
+ Path('C:/Users/psboy/.codex/attachments/81d3ecfb-d827-47f8-b9fb-d9ebc35d6b32/Pasted text.txt'),
+ C.parent/'endpoint-source-projection-v1-2026-10-19/post_commit.json',
+ O/'RECORD.md',O/'DERIVATION.md',O/'audit.py',C/'prepare.py',C/'run.py']:
+ if path.suffix=='.py':ast.parse(path.read_text(encoding='utf-8'))
+ if str(path) in inputs:assert inputs[str(path)]==digest(path),path
+ inputs[str(path)]=digest(path)
+for raw,h in inputs.items():assert digest(Path(raw))==h,raw
+for path in [O/'RECORD.md',O/'DERIVATION.md',O/'audit.py',C/'prepare.py',C/'run.py']:
+ dest=O/(path.name+'.source.txt')
+ with dest.open('xb') as f:f.write(path.read_bytes())
+ inputs[str(dest)]=digest(dest)
+p={'schema':'ONE_LOOP_ACCEPTANCE_RECONCILIATION_PREPARATION_V1','base_commit':base,
+ 'input_sha256':inputs,'anchors':anchors,'receipts':receipts,'controller_sha256':digest(C/'run.py'),
+ 'native_seconds_after_imports':60,'independent_seconds_after_imports':120,
+ 'sampled_private_limit_bytes':8*1024**3,'minimum_available_commit_bytes':350*1024**2,
+ 'package_limit_bytes':2*1024**2,'scientific_acceptance':'NOT_PERFORMED',
+ 'scope':'Original acceptance reconciliation and strict first-order local replacement only; no full E5/A5 or all-prescription nonemptiness'}
+with(O/'preparation.json').open('xb') as f:f.write((json.dumps(p,sort_keys=True,indent=2)+'\n').encode())
+print('FROZEN',len(inputs),'anchors',len(anchors),flush=True)

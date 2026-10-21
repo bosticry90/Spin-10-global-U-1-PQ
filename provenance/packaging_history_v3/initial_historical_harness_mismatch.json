@@ -1,0 +1,500 @@
+{
+  "schema": "SPIN10_PQ_CLAIM_AUTHENTICATION_V3",
+  "execution_state": "FAILED",
+  "scope": "Actual selected receipts plus explicitly named successful/final preparation maps. Historical failed preparations/captures are preserved but not relabeled passing. Byte authentication is not scientific replay or acceptance.",
+  "source_commit": "7562f42c14ef1ab5a946fbfc4534509f3378c76b",
+  "checks": [
+    {
+      "path": "calculations/canonical_so10_radial_input_control/validation_receipt.json",
+      "sha256": "be3f09d69147f3f82456fd3ec782f9943d2e4d697d3152566cac874a393d51fb",
+      "status": "COMPLETED_WITH_FIXED_INPUT_TREE_PERTURBATIVITY_SCREEN_FAIL",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 52,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_coherent_joint_witness/validation_receipt.json",
+      "sha256": "19593382e7cb5b0e941e7fd03860e6d3e99ba90b07939f39d1561aba3432ef39",
+      "status": "COMPLETED_FINITE_LISTED_NECESSARY_SET_WITNESS",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 71,
+      "historical_inputs": [
+        {
+          "original_path": "AGENTS.md",
+          "expected_sha256": "a7f0b33fc689063729de891031a88c1c2fe57473142af290471efd657f00de58",
+          "historical_commit": "b115b72b5e03efcc18b8a599c680545f3fb560c1",
+          "archive_path": "historical/b115b72b5e03efcc18b8a599c680545f3fb560c1/AGENTS.md"
+        },
+        {
+          "original_path": "AGENTS.override.md",
+          "expected_sha256": "3bf9d44b7b3b7b8748d501b83869180ad010307c87e529056ef2de514b1d495e",
+          "historical_commit": "70cec201a3f1a250bf68e040e40bcab712d3697c",
+          "archive_path": "historical/70cec201a3f1a250bf68e040e40bcab712d3697c/AGENTS.override.md"
+        },
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        },
+        {
+          "original_path": "docs/RESEARCH_AUTONOMY_DIRECTIVE_V1.md",
+          "expected_sha256": "0f11a4947b7c4e125a3bbe8375fd725ae6492c87ddd82366202a2f8389415deb",
+          "historical_commit": "70cec201a3f1a250bf68e040e40bcab712d3697c",
+          "archive_path": "historical/70cec201a3f1a250bf68e040e40bcab712d3697c/docs/RESEARCH_AUTONOMY_DIRECTIVE_V1.md"
+        }
+      ],
+      "mismatches": [
+        {
+          "input_document": "calculations/canonical_so10_coherent_joint_witness/validation_receipt.json",
+          "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\research_session_preflight.py",
+          "expected_sha256": "095f96c8312bddf4e69c3bc144d760f06cf46b5328299e346c8278c0b08a050a",
+          "actual_sha256": "8bc0493d18a4cb6146ecbd6a66a025bb72629df5f7927371e3a4eb92cab62b7b"
+        }
+      ]
+    },
+    {
+      "path": "calculations/canonical_so10_complete_contact_bound/validation_receipt.json",
+      "sha256": "704b743cf72b43e30d1b653be03b1615fc666ccd953372fa84f93815046d624a",
+      "status": "COMPLETED_FULL_SCALAR_CONTACT_UPPER_BELOW_HALF",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 42,
+      "historical_inputs": [
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        }
+      ],
+      "mismatches": [
+        {
+          "input_document": "calculations/canonical_so10_complete_contact_bound/validation_receipt.json",
+          "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\research_session_preflight.py",
+          "expected_sha256": "095f96c8312bddf4e69c3bc144d760f06cf46b5328299e346c8278c0b08a050a",
+          "actual_sha256": "8bc0493d18a4cb6146ecbd6a66a025bb72629df5f7927371e3a4eb92cab62b7b"
+        }
+      ]
+    },
+    {
+      "path": "calculations/canonical_so10_finite_full_bfb/validation_receipt.json",
+      "sha256": "589df5631aa29a53b6ea544f5b595beb3ac92f67c623fd32548a335ccd95c882",
+      "status": "COMPLETED_STRICT_GLOBAL328_QUARTIC_CERTIFICATE",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 51,
+      "historical_inputs": [
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        }
+      ],
+      "mismatches": [
+        {
+          "input_document": "calculations/canonical_so10_finite_full_bfb/validation_receipt.json",
+          "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\research_session_preflight.py",
+          "expected_sha256": "095f96c8312bddf4e69c3bc144d760f06cf46b5328299e346c8278c0b08a050a",
+          "actual_sha256": "8bc0493d18a4cb6146ecbd6a66a025bb72629df5f7927371e3a4eb92cab62b7b"
+        }
+      ]
+    },
+    {
+      "path": "calculations/canonical_so10_singlet_pole_control/validation_receipt.json",
+      "sha256": "f1d255b39cd857262dc8652c5a33d2eb95083c88f7c6dcd8283e643454ae9b59",
+      "status": "COMPLETED_FORMAL_ONE_LOOP_POLE_CORRECTION_EXCEEDS_TREE_MASS_SQUARED",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 52,
+      "historical_inputs": [
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        }
+      ],
+      "mismatches": [
+        {
+          "input_document": "calculations/canonical_so10_singlet_pole_control/validation_receipt.json",
+          "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\research_session_preflight.py",
+          "expected_sha256": "095f96c8312bddf4e69c3bc144d760f06cf46b5328299e346c8278c0b08a050a",
+          "actual_sha256": "8bc0493d18a4cb6146ecbd6a66a025bb72629df5f7927371e3a4eb92cab62b7b"
+        }
+      ]
+    },
+    {
+      "path": "calculations/canonical_so10_singlet_pole_rg_check/validation_receipt.json",
+      "sha256": "f06f0d80ba537c35a86f19fdeec53a2ef4ba369f8e67191f3003d9d480b8e845",
+      "status": "COMPLETED_LOCAL_ONE_LOOP_POLE_RG_CANCELLATION_WITH_INDUCED_PORTALS",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 37,
+      "historical_inputs": [
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        }
+      ],
+      "mismatches": [
+        {
+          "input_document": "calculations/canonical_so10_singlet_pole_rg_check/validation_receipt.json",
+          "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\research_session_preflight.py",
+          "expected_sha256": "095f96c8312bddf4e69c3bc144d760f06cf46b5328299e346c8278c0b08a050a",
+          "actual_sha256": "8bc0493d18a4cb6146ecbd6a66a025bb72629df5f7927371e3a4eb92cab62b7b"
+        }
+      ]
+    },
+    {
+      "path": "calculations/canonical_so10_pq_anomaly_screen/validation_receipt.json",
+      "sha256": "7f8c3b3f2bb2f8ceb35648a942a8f5c7cea15432dd2deba3b590daef2f7c000d",
+      "status": "COMPLETED_UV_ANOMALY_AND_CONDITIONAL_ORDINARY_ORBIT_SCREEN_ONLY",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 28,
+      "historical_inputs": [],
+      "mismatches": [
+        {
+          "input_document": "calculations/canonical_so10_pq_anomaly_screen/validation_receipt.json",
+          "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\research_session_preflight.py",
+          "expected_sha256": "095f96c8312bddf4e69c3bc144d760f06cf46b5328299e346c8278c0b08a050a",
+          "actual_sha256": "8bc0493d18a4cb6146ecbd6a66a025bb72629df5f7927371e3a4eb92cab62b7b"
+        }
+      ]
+    },
+    {
+      "path": "calculations/canonical_so10_local_gauge_anomaly/validation_receipt.json",
+      "sha256": "cf2cb5b63cc835822f0d143c465ec97123337f9a203c991982bcdee0ee2c4e0b",
+      "status": "COMPLETED_VANISHING_PERTURBATIVE_LOCAL_REPRESENTATION_ANOMALY_TRACE_SCREEN_ONLY",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 27,
+      "historical_inputs": [],
+      "mismatches": [
+        {
+          "input_document": "calculations/canonical_so10_local_gauge_anomaly/validation_receipt.json",
+          "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\research_session_preflight.py",
+          "expected_sha256": "095f96c8312bddf4e69c3bc144d760f06cf46b5328299e346c8278c0b08a050a",
+          "actual_sha256": "8bc0493d18a4cb6146ecbd6a66a025bb72629df5f7927371e3a4eb92cab62b7b"
+        }
+      ]
+    },
+    {
+      "path": "calculations/canonical_so10_ub12_background_locality/validation_v2_receipt.json",
+      "sha256": "e39153fbb6f77e59b4f688b101096ed6a0baf2dd3247820b9b7292682173cd43",
+      "status": "ACTUAL_COMMUTATION_AND_CONDITIONAL_LOCAL_BACKGROUND_UNIQUENESS_ONLY",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 376,
+      "historical_inputs": [
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_ub12_reference_symbol/validation_receipt.json",
+      "sha256": "a1d0ae0b83d556c6103cdfc587af8411fd605407aed47d4e3ec67097dc798f14",
+      "status": "ACTUAL_MIXED_WEIGHTED_PRINCIPAL_INVERTIBILITY_QUALIFIED_ACTUAL_BACKGROUND_LOCALITY_UNPROVED",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 412,
+      "historical_inputs": [
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_local_covariant_reference_witness/validation_v2_receipt.json",
+      "sha256": "271707fd55abc61eff288b45791f9796babacd5efe3b9b442a381a07cbac6bc1",
+      "status": "EXPLICIT_LOCAL_COVARIANT_REFERENCE_WITNESS_QUALIFIED_NOT_ADOPTED_QUANTUM_SCHEME",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 452,
+      "historical_inputs": [
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_singlet_momentum_shape/validation_receipt.json",
+      "sha256": "b0069380f587a6fa297582d987042a637fd14ccc3248a89609d4089f2e7987d3",
+      "status": "QUALIFIED_COMPLETE_SAME_POINT_ONE_LOOP_AFFINE_SUBTRACTION_INDEPENDENT_SINGLET_MOMENTUM_COMBINATIONS_NOT_QUANTUM_CONTROL",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 69,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_singlet_two_loop_input_closure/validation_receipt_v3.json",
+      "sha256": "62b561d1c4affb5745a9ef396f13cbca2c9d832f0f5d563239b28420e328f0e3",
+      "status": "QUALIFIED_NONZERO_ACTUAL_SCALAR_CARRIER_FOR_INTERNAL_YUKAWA_TWO_LOOP_TOPOLOGY_NOT_A_FULL_TWO_LOOP_AMPLITUDE",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 130,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_scalar_gauge_homothety/validation_receipt_v2.json",
+      "sha256": "543d34670bb931a583e78947e146d7435a29ebefe87e0d1fc206e050963b58be",
+      "status": "QUALIFIED_ANALYTIC_SCALAR_FAMILY_CLASSICAL_TRANSFER_AND_CONDITIONAL_BOSONIC_NONRESCUE_NOT_QUANTUM_MODEL_VERDICT",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 191,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_bv_uv_residue_bridge/validation_receipt.json",
+      "sha256": "7e284959c52aec190afafe7273540ed07423e00f6a2af2a5c0870b2dca69aa5d",
+      "status": "COMPLETE_FORMAL_ONE_LOOP_LOCAL_LOG_SLAVNOV_IDENTITY_IN_EXPLICIT_LOCAL_HEAT_REFERENCE_FAMILY_NOT_FINITE_OR_FULL_E5",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_bv_uv_residue_bridge/validation_preparation_v3.json",
+          "sha256": "3d9a0a0201f927bf9fbfa435b8e17a407243626c4b538a2bc11d601caceff1da"
+        }
+      ],
+      "authenticated_input_bindings": 144,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_physical_counterterm_span/validation_receipt.json",
+      "sha256": "1291f60f6809bb3f413a6a0f47f0c1ac6d49cdd161eddd62e66c4bbab22b7049",
+      "status": "ACTUAL_FORMAL_PARITY_EVEN_ONE_LOOP_PHYSICAL_PARAMETER_SPAN_AND_FIRST_ORDER_NORMALIZATION_RECONSTRUCTION_WITH_SEPARATE_BACKGROUND_VACUUM_NORMALIZATIONS_NOT_FULL_E5",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 100,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_one_loop_acceptance_reconciliation/validation_receipt.json",
+      "sha256": "0fae03efd84d5faf2cdbe597242fdd20c6f4738e4869bcd679997c9b9b570d60",
+      "status": "QUALIFIED_BOUNDED_ACCEPTANCE_RECONCILIATION_AND_STRICT_FORMAL_FIRST_ORDER_REPLACEMENT_NOT_UNIVERSAL_E5",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 618,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_graded_causal_qap/validation_receipt_v2.json",
+      "sha256": "70f5493cdb124a095d4b9bd7a1bbf06f1afa438529865f723f73a51a89f44b79",
+      "status": "GRADED_COMPACT_ONE_LOOP_ANOMALOUS_INSERTION_PRINCIPLE_AND_NONTRIVIAL_FINITE_CHART_TRANSPORT",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 76,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_background_reference_normalization/validation_receipt_v6.json",
+      "sha256": "77699e6902ce3f3cb9f4c066cd86d3c1eb784dc3a76f48d8e9807bdcabdfb941",
+      "status": "JOINT_FINITE_NORMALIZATION_TRANSPORT_AND_EXPLICIT_PERTURBATIVE_REFERENCE_MEMBER",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 135,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_local_cutoff_comparison/validation_receipt_v4.json",
+      "sha256": "9dad3b5e2449fd68c30e85a1c743781dbdc9caee176fd6c6e35a713c4a81275a",
+      "status": "LOCAL_CUTOFF_INTERTWINER_WITH_GRADED_SOURCE_TRANSPORT_AND_COUNTEREXAMPLE_TO_GLOBAL_FUNCTIONAL_IMPLICATION",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 106,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_vector_quartic_primitive/validation_receipt_v3.json",
+      "sha256": "fb2c3f4557b203c4975b020f5bc0b1c583106385c2ddeab0c485b2b330744cd3",
+      "status": "QUALIFIED_COMPLETE_REGULATED_BARE_QUARTIC_AND_ACTUAL_ONE_SOFT_INVERSE_IR_CLOSURE",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 0,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_vector_quartic_ir_matching/validation_receipt_v2.json",
+      "sha256": "c0f72f4fd5f17011d1fbcdb7e2c291c47189f237b45b0858b28d1ff8ce46d734",
+      "status": "QUALIFIED_ACTUAL_QUARTIC_MIXED_AND_ALL_LIGHT_IR_SUBTRACTION_WITH_BARE_HARD_REMAINDER",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_vector_quartic_ir_matching/validation_preparation_v2.json",
+          "sha256": "c3e75632cc45bf0172f13f47c296036205828e4e1d2e4ee2567662b0c74b8498"
+        }
+      ],
+      "authenticated_input_bindings": 13,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_vector_scalar_quartic/validation_receipt.json",
+      "sha256": "7fc8e23487ea5eb31a32e6351c62688be3b6d0558e3bebe047b0811b4d77f5e8",
+      "status": "QUALIFIED_VVSS_GRAPH_LOCAL_UV_AND_LIGHT_MATCHED_FINITE_F2",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_vector_scalar_quartic/validation_preparation.json",
+          "sha256": "461df85195e2b6c3db03e8ab2e5b57c196741010e6caac97be8df78fd1a704b8"
+        }
+      ],
+      "authenticated_input_bindings": 2373,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_vector_scalar_quartic/controls_receipt.json",
+      "sha256": "e105de9d331645ccbfdf5e08819bb36381009490911df7bb9d3b91eb86268ca7",
+      "status": "QUALIFIED_ACTUAL_MASS_OMISSION_AND_COMMON_IR_CONTROLS",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_vector_scalar_quartic/control_preparation.json",
+          "sha256": "4a01771b50f996dee2473792253889daed5faa2f96115b007742cdaae50b7c46"
+        }
+      ],
+      "authenticated_input_bindings": 2381,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_scalar_current_vss_assembly/validation_receipt.json",
+      "sha256": "6b47bd50b75902c2f662921d04ffc4e6fbd348193f69c9493b141b05b0ac7410",
+      "status": "QUALIFIED_COMPLETE_COMMON_SCALE_VSS_PRIMITIVE",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_scalar_current_vss_assembly/validation_preparation.json",
+          "sha256": "d1e806105a610c0e124f81ec5d9678d77546c6bcabe23152e25f367376283332"
+        }
+      ],
+      "authenticated_input_bindings": 4,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_ghost_scalar_charge_kernel/validation_receipt.json",
+      "sha256": "d4ab813f970df5dabfb7b814ce62df09f2abb721a5fe78eccef407b4ff23baee",
+      "status": "QUALIFIED_COMPLETE_ORDERED_GHOST_SCALAR_CHARGE_OPERATORS",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_ghost_scalar_charge_kernel/validation_preparation.json",
+          "sha256": "9ba7ce0065116d32716a0ea7c1e75c2003c9b401dcbebf5357b14ccd2348a34c"
+        }
+      ],
+      "authenticated_input_bindings": 3269,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_ghost_scalar_sunset/measure_receipt.json",
+      "sha256": "261d97642d3ee08b45b1fee2fc8aa1899f8fe731bb965055191d4b6202d2f39b",
+      "status": "QUALIFIED_COMPLETE_GHOST_SCALAR_SPECTRAL_MEASURE",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_ghost_scalar_sunset/measure_comparison_preparation.json",
+          "sha256": "37f2fd1cec8e2d938923b9105106075401887146612a28399e2c7376d5578fd2"
+        }
+      ],
+      "authenticated_input_bindings": 3297,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_ghost_scalar_sunset/validation_receipt.json",
+      "sha256": "6a03b1c5935ddf03d5f33f1f77cc18e7bc178aa30ca521b5fb814f624bc9b970",
+      "status": "QUALIFIED_COMPLETE_COMMON_SCALE_GHOST_SCALAR_PRIMITIVE",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_ghost_scalar_sunset/finalization_preparation.json",
+          "sha256": "45320158b78cbd7cb965cc176f1b3d5fc580283f8559479cca7cc57af5ae390c"
+        }
+      ],
+      "authenticated_input_bindings": 3314,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_ghost_scalar_sunset/control_receipt.json",
+      "sha256": "c5f472e97a4ab8155c3f32da2791947fad8857acf399c2d8044f9185d975b53a",
+      "status": "QUALIFIED_COMPLETE_FINITE_OMISSION_CONTROLS",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_ghost_scalar_sunset/controls_preparation.json",
+          "sha256": "43df821095c76e99249547fdfeb0ba9c0dc2dfe339eb591f62f9acc578027fc7"
+        }
+      ],
+      "authenticated_input_bindings": 3322,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_background_threshold_inputs/validation_receipt_v2.json",
+      "sha256": "fd1afe95d714f99d37828660f146bdc1b71c6ae13b014de16d51123766f561e6",
+      "status": "PASS_BOUNDED_KINEMATIC_INPUT_AND_TOPOLOGY_ONLY",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 0,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_actual_normalization_assembly/validation_receipt.json",
+      "sha256": "57e773e9bd8ac3d4cbd884a019001f609e0bf7999021bdd783b3d83c7935ef5c",
+      "status": "COMPLETE_FORMAL_FIRST_ORDER_ONE_LOOP_ACTUAL_COUNTERTERM_SLAVNOV_BACKGROUND_AND_COMPLETED_GEOMETRIC_WARD_ASSEMBLY_NOT_FULL_E5",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 77,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/research_integration_portable_dh/validation_receipt.json",
+      "sha256": "bc6516cd81196091a5a566c0b4a61ecf1ab1b43467c29d6a9b6766abd6261b6c",
+      "status": "QUALIFIED_WHOLE_DH_PORTABLE_REPRODUCTION_AND_HISTORICAL_README_INTEGRATION_ONLY",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 60,
+      "historical_inputs": [],
+      "mismatches": []
+    }
+  ],
+  "historical_inputs": [
+    {
+      "path": "historical/b115b72b5e03efcc18b8a599c680545f3fb560c1/AGENTS.md",
+      "original_path": "AGENTS.md",
+      "sha256": "a7f0b33fc689063729de891031a88c1c2fe57473142af290471efd657f00de58",
+      "size_bytes": 3793,
+      "historical_commit": "b115b72b5e03efcc18b8a599c680545f3fb560c1",
+      "export_file": "C:\\Users\\psboy\\.codex\\visualizations\\2026\\10\\14\\01a13ca8-898d-7d80-8685-b09d5fa9c214\\publication\\historical_inputs_v3\\b115b72b5e03efcc18b8a599c680545f3fb560c1\\AGENTS.md"
+    },
+    {
+      "path": "historical/70cec201a3f1a250bf68e040e40bcab712d3697c/AGENTS.override.md",
+      "original_path": "AGENTS.override.md",
+      "sha256": "3bf9d44b7b3b7b8748d501b83869180ad010307c87e529056ef2de514b1d495e",
+      "size_bytes": 3090,
+      "historical_commit": "70cec201a3f1a250bf68e040e40bcab712d3697c",
+      "export_file": "C:\\Users\\psboy\\.codex\\visualizations\\2026\\10\\14\\01a13ca8-898d-7d80-8685-b09d5fa9c214\\publication\\historical_inputs_v3\\70cec201a3f1a250bf68e040e40bcab712d3697c\\AGENTS.override.md"
+    },
+    {
+      "path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md",
+      "original_path": "README.md",
+      "sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+      "size_bytes": 71801,
+      "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+      "export_file": "C:\\Users\\psboy\\.codex\\visualizations\\2026\\10\\14\\01a13ca8-898d-7d80-8685-b09d5fa9c214\\publication\\historical_inputs_v3\\cadfca2dcf82c34f03b3e7ab0a68248c80c092be\\README.md"
+    },
+    {
+      "path": "historical/70cec201a3f1a250bf68e040e40bcab712d3697c/docs/RESEARCH_AUTONOMY_DIRECTIVE_V1.md",
+      "original_path": "docs/RESEARCH_AUTONOMY_DIRECTIVE_V1.md",
+      "sha256": "0f11a4947b7c4e125a3bbe8375fd725ae6492c87ddd82366202a2f8389415deb",
+      "size_bytes": 7890,
+      "historical_commit": "70cec201a3f1a250bf68e040e40bcab712d3697c",
+      "export_file": "C:\\Users\\psboy\\.codex\\visualizations\\2026\\10\\14\\01a13ca8-898d-7d80-8685-b09d5fa9c214\\publication\\historical_inputs_v3\\70cec201a3f1a250bf68e040e40bcab712d3697c\\docs\\RESEARCH_AUTONOMY_DIRECTIVE_V1.md"
+    }
+  ],
+  "scientific_acceptance": "NOT_PERFORMED",
+  "elapsed_seconds": 11.35999999998603
+}

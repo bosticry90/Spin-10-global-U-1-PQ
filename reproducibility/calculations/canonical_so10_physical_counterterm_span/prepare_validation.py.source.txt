@@ -1,0 +1,17 @@
+from pathlib import Path
+from hashlib import sha256
+import json
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_physical_counterterm_span';C=Path(__file__).resolve().parent
+read=lambda p:json.loads(p.read_bytes());digest=lambda p:sha256(p.read_bytes()).hexdigest()
+v=read(O/'preparation_v2.json');inputs={str(O/'preparation_v2.json'):digest(O/'preparation_v2.json')};inputs.update(v['input_sha256'])
+for p in [C/'verify.py',C/'run_validation.py',Path(__file__)]:
+ p.write_bytes((chr(10).join(z.rstrip() for z in p.read_text().splitlines()).rstrip()+chr(10)).encode())
+ with p.with_name(p.name+'.source.txt').open('xb') as f:f.write(p.read_bytes())
+ inputs[str(p)]=digest(p)
+ with(O/(p.name+'.source.txt')).open('xb') as f:f.write(p.read_bytes())
+for p in O.iterdir():
+ if p.is_file():inputs[str(p)]=digest(p)
+for raw,h in inputs.items():assert digest(Path(raw))==h
+vp={'schema':'PHYSICAL_COUNTERTERM_SPAN_VALIDATION_PREPARATION_V1','input_sha256':inputs,'controller_sha256':digest(C/'run_validation.py'),'verifier_sha256':digest(C/'verify.py'),'scope':v['scope'],'shared_limits':'Inherited exact action,source and reference proofs,software and AI authorship. New verifier imports no new native implementation.'}
+with(O/'validation_preparation.json').open('xb') as f:f.write((json.dumps(vp,indent=2,sort_keys=True)+chr(10)).encode())
+print('VALIDATION_FROZEN',len(inputs),vp['verifier_sha256'])

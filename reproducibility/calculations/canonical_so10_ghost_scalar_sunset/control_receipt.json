@@ -1,0 +1,40 @@
+{
+  "authority": "34/39_UNCHANGED",
+  "cases": {
+    "0.5": {
+      "SU2_averaged_ghost_Casimir": "INSENSITIVE: exact GSK charge matrices already scalar on each mass sector",
+      "SU3_soft_kinetic": "INSENSITIVE: exact zero scalar-soft charge",
+      "UV_poles_for_finite_mutations": "INSENSITIVE: all proper unit overall poles are zero",
+      "omitted_Gold_finite_change": [
+        "-23.4826196804770826991683994484197961750586543",
+        "0.384386231872088205344244158909797021735521796",
+        "-8.86152169375896519648296944166092978581160173"
+      ],
+      "omitted_soft_finite_change": [
+        "-0.0106331635201710554348429832187310776539650596",
+        "-0.0000964167864048137487250644739427145658291361012",
+        "-0.00677075288562892388694223368383047312478880653"
+      ]
+    },
+    "1.0": {
+      "SU2_averaged_ghost_Casimir": "INSENSITIVE: exact GSK charge matrices already scalar on each mass sector",
+      "SU3_soft_kinetic": "INSENSITIVE: exact zero scalar-soft charge",
+      "UV_poles_for_finite_mutations": "INSENSITIVE: all proper unit overall poles are zero",
+      "omitted_Gold_finite_change": [
+        "-23.3561922510056433470859394034569907659399137",
+        "0.250670951434115347141741663389392636999058554",
+        "-8.58765335071421685097192397980809636402851753"
+      ],
+      "omitted_soft_finite_change": [
+        "-0.00772771604545253178545322217419209023635957775",
+        "-0.0000641420057673579194921493302734342810124867098",
+        "-0.00493467647603143671280306106620030581077497448"
+      ]
+    }
+  },
+  "elapsed_after_imports": 0.8993246000027284,
+  "primary_scientific_receipt_sha256": "6a03b1c5935ddf03d5f33f1f77cc18e7bc178aa30ca521b5fb814f624bc9b970",
+  "schema": "GSA1_CONTROL_INTERPRETATION",
+  "scientific_acceptance": "NOT_PERFORMED",
+  "status": "QUALIFIED_COMPLETE_FINITE_OMISSION_CONTROLS"
+}

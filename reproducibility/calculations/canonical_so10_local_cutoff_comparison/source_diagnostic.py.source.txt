@@ -1,0 +1,30 @@
+"""Actual failed-projection diagnostic; not a completed scientific result."""
+from pathlib import Path
+from hashlib import sha256
+import sympy as s,json,gzip
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_local_cutoff_comparison';C=Path(__file__).resolve().parent
+prep=json.loads((O/'preparation.json').read_bytes());d=lambda p:sha256(p.read_bytes()).hexdigest()
+for p,h in prep['input_sha256'].items():assert d(Path(p))==h,p
+before={'classification':'FAILED_PROJECTION_DIAGNOSTIC_ONLY','input_sha256':dict(prep['input_sha256'],**{str(Path(__file__).resolve()):d(Path(__file__).resolve())})}
+with (C/'diagnostic_preparation.json').open('xb') as f:f.write((json.dumps(before,indent=2,sort_keys=True)+'\n').encode())
+PK=R/'tools/two_loop_qft_compiler_v1/m08_independent_replay_package_v1'
+ref=json.loads((PK/'frozen_a10_e5_full_hessian/primary.json').read_bytes())['retained_reference'];fi={n:i for i,n in enumerate(ref['field_order'])}
+def mat(rows):return s.SparseMatrix(643,643,{(i,j):s.sympify(v) for i,j,v in rows})
+an=[f'bar{i}' if i<12 else f'ub{i}' for i in range(45)];ai=[fi[n] for n in an];ci=[fi[f'C{i}'] for i in range(45)]
+inv=mat(ref['physical_to_raw_inverse']['entries']).extract(ai,list(range(598,643)));G=(inv*inv.T).applyfunc(s.simplify)
+K=mat(ref['reference_Hessian_raw_C3']['entries']).extract(ai,ci);p=s.Matrix(s.symbols('p0_ref0:4'));P=p[0]**2-sum(p[k]**2 for k in [1,2,3]);kn=K.applyfunc(lambda v:s.simplify(s.cancel(v/P)))
+nativekin=s.zeros(45);nrows=0;data=json.loads(gzip.decompress((R/'tools/portable_dh_v1/inputs.json.gz').read_bytes()));selected=[]
+for row in data['gauge_fixing_density']:
+ ts=[w.partition('__') for w in row['word']]
+ if len(ts)!=2 or sum(len(v[2]) for v in ts)!=2:continue
+ if {v[0] for v in ts}=={'C14','ub14'}:selected.append(row)
+ if not(any(v[0] in an for v in ts) and any(v[0].startswith('C') for v in ts)):continue
+ for j,(base,sep,jet) in enumerate(ts):
+  if base not in an:continue
+  other=ts[1-j];value=s.sympify(row['coefficient'])*(-1)**(j+len(jet))
+  for mu in jet+other[2]:value*=s.I*p[int(mu)]
+  nativekin[an.index(base),int(other[0][1:])]+=value;nrows+=1
+nativekin=nativekin.applyfunc(lambda v:s.simplify(s.cancel(v/P)));image=(G*kn).applyfunc(s.simplify)
+v={'classification':'FAILED_PROJECTION_DIAGNOSTIC_ONLY','G14_diagonal':str(G[14,14]),'K14_diagonal':str(kn[14,14]),'native_K14_diagonal':str(nativekin[14,14]),'image14_diagonal':str(image[14,14]),'GF_selected_rows':selected,'GF_selected_count':len(selected),'GF_two_jet_count':nrows,'native_kinetic_rank':nativekin.rank(),'frozen_kinetic_rank':kn.rank(),'G_rank':G.rank(),'native_vs_frozen':nativekin==kn,'first_image_nonzeros':[[i,j,str(x)] for (i,j),x in sorted(image.todok().items())[:8]],'input_sha256':before['input_sha256']}
+with (C/'source_diagnostic.json').open('xb') as f:f.write((json.dumps(v,indent=2,sort_keys=True)+'\n').encode())
+print(json.dumps({k:v[k] for k in v if k!='input_sha256'},indent=2))

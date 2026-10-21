@@ -1,0 +1,578 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,array,geometry,xcolor}
+\usepackage[hidelinks]{hyperref}
+\geometry{margin=0.76in,headheight=14pt,headsep=15pt}
+\definecolor{ink}{HTML}{173A51}
+\makeatletter
+\def\ps@draft{\def\@oddhead{\small\color{ink}Spin(10) and global PQ: discussion draft\hfil 17 October 2026}
+\def\@evenhead{\@oddhead}
+\def\@oddfoot{\small Discussion draft; bounded results and open physical questions\hfil\thepage}
+\def\@evenfoot{\@oddfoot}}
+\makeatother
+\pagestyle{draft}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\newcommand{\PQ}{\mathrm{PQ}}
+\newcommand{\Spin}{\operatorname{Spin}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\hc}{\mathrm{h.c.}}
+\newcommand{\pathref}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\sect}[1]{\vspace{5pt}{\large\bfseries\color{ink}#1}\par}
+\begin{document}
+\thispagestyle{draft}
+{\LARGE\bfseries\color{ink} An AI-assisted investigation of a\par
+Spin(10) $\times$ global U(1)$_{\PQ}$\par
+gauge/scalar candidate\par}
+\vspace{4pt}
+{\large Construction, bounded results, and failed tests}\par
+{\small Solo research discussion note, prepared with AI assistance. Version 3.}
+
+\sect{Abstract}
+This note specifies a nonsupersymmetric Spin(10) gauge/scalar construction
+with global PQ selection rules and reports bounded calculations. Earlier
+locally positive scalar points include a failed Higgs quartic tuning and a
+positive-quartic point subsequently rejected by a tree perturbativity screen.
+A different exploratory point has positive heavy masses, a positive relaxed
+Higgs quartic, a full-field quartic-positivity certificate and a complete
+scalar-contact bound below $1/2$. Its formal one-loop singlet pole correction,
+however, exceeds its tree squared mass. Gauge unification and complete quantum
+consistency remain unresolved. Local anomaly traces and conditional source
+identities add necessary checks, not a viability theorem. This is a discussion
+draft based on recorded evidence, with no new scientific acceptance decision.
+
+\sect{1. Assumptions and fields}
+Work in four spacetime dimensions with gauge group $\Spin(10)$ and global PQ
+selection rules. The simply connected group permits the fermionic spinor $16$;
+local tensor calculations use the $\mathfrak{so}(10)$ action. A possible quotient
+by common gauge/PQ centers has not been fixed, although the ordinary-field
+center identification has now been calculated (Section 5). No supersymmetry, explicit soft
+PQ violation, or additional scalar representation is assumed.
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule Field & Representation/type & $q_{\PQ}$ & Real scalar coordinates\\
+\midrule
+$\Phi_{ij}$ & real symmetric traceless $54$ & $0$ & $54$\\
+$\Sigma_{ijklm}$ & complex self-dual $126$ & $+2$ & $252$\\
+$\phi_i$ & complex $10$ & $-2$ & $20$\\
+$S$ & complex singlet & $-4$ & $2$\\
+$\psi_p$, $p=1,2,3$ & left-handed $16_F$ & $+1$ & ---\\
+\bottomrule
+\end{tabular}
+\end{center}
+Indices run from $0$ to $9$, with Euclidean vector metric $\delta_{ij}$ and
+$\epsilon_{0\cdots9}=+1$. Fix $*\Sigma=+i\Sigma$; its conjugate is the
+$\overline{126}$. The scalar kinetic convention is
+\[
+\mathcal L_{\rm kin}=
+\frac12(D_\mu\Phi_{ij})^*(D^\mu\Phi_{ij})
++\frac{1}{2\,5!}(D_\mu\Sigma_{ijklm})^*(D^\mu\Sigma_{ijklm})
++(D_\mu\phi_i)^*(D^\mu\phi_i)+(\partial_\mu S)^*(\partial^\mu S).
+\]
+The self-dual factor avoids double counting complementary five-index sectors.
+The physical construction uses the usual gauge-curvature kinetic term and
+$\mathcal L=\mathcal L_{\rm gauge}+\mathcal L_{\rm kin}+\mathcal L_Y-V$.
+The allowed symbolic Yukawa structures are $\psi\psi\phi$ and
+$\psi\psi\Sigma^*$, with complex symmetric family matrices and isometrically
+normalized intertwiners. Their numerical matrices and right-handed-neutrino
+spectrum have not been selected.
+
+The field-content motivation follows Babu and Khan [1]; PQ/axion context is
+discussed in [2,3]. The potential below is a separately specified source-derived
+variant. Published scalar benchmarks, fermion fits, and unification conclusions
+are not imported as results for it. No novelty claim is made.
+
+\newpage
+\sect{2. Complete frozen scalar definition}
+Write $V=V_2+V_3+V_4$. Repeated tensor indices are summed over all ten values.
+Define
+\[
+\begin{gathered}
+N=\frac1{5!}\Sigma_{abcde}\Sigma^*_{abcde},\quad
+u=\phi_i^*\phi_i,\quad t=\phi_i\phi_i,\quad
+p_n=\Tr(\Phi^n),\ n=2,3,4,\\
+K_{ij}=\frac1{4!}\Sigma_{iabcd}\Sigma^*_{jabcd},\qquad
+T_{ij}=\frac1{4!}\Sigma_{iabcd}\Sigma_{jabcd},\\
+L_{\Phi\Sigma}=\frac1{2\,3!}\Phi_{ij}\Phi_{kl}
+\Sigma_{ikabc}\Sigma^*_{jlabc},\qquad
+E=\frac1{2!\,2!\,3!}\Sigma_{ijlmn}\Sigma_{ijpqr}\Sigma^*_{lmpqr}\phi_n .
+\end{gathered}
+\]
+$T$ is symmetric traceless. For increasing tuples $I,J$ of length $5-k$,
+let $P_k[I,J]=\sum_{K\in\binom{\{0,\ldots,9\}}k}\Sigma_{KI}\Sigma_{KJ}$
+and $Q_k=\sum_{I,J}|P_k[I,J]|^2$, for $k=0,1,2$.
+Antisymmetric components with repeated indices vanish. If $A,B$ are disjoint,
+$\varepsilon(A,B)$ is the parity of their concatenation relative to increasing
+order; otherwise it is zero. The fourth real five-form quartic is
+\[
+\begin{split}
+X_{131}={}&\sum_{I,J\in\binom{\{0,\ldots,9\}}4}
+\ \sum_{\substack{A\subset I,\ |A|=3\\B\subset J,\ |B|=1}}
+\varepsilon(A,I\setminus A)\varepsilon(B,J\setminus B)
+\varepsilon(A,B)\varepsilon(I\setminus A,J\setminus B)\\[-2pt]
+&\hspace{25pt}\times P_1[I,J]\,
+\overline{P_1[\operatorname{sort}(A\cup B),
+\operatorname{sort}((I\setminus A)\cup(J\setminus B))]} .
+\end{split}
+\]
+The potential in these normalizations is
+\begin{align*}
+V_2={}&m_\Phi^2p_2+m_\Sigma^2N+m_\phi^2u+m_S^2|S|^2,\\
+V_3={}&\mu_\Phi p_3+\mu_{\Phi\phi}\Phi_{ij}\phi_i^*\phi_j
++[z_6tS^*+\hc],\\
+V_4={}&\lambda_{\Phi1}p_2^2+\lambda_{\Phi2}p_4
++\lambda_{\Phi\Sigma1}p_2N+\lambda_{\Phi\Sigma2}L_{\Phi\Sigma}\\
+&+\lambda_{\Phi\phi1}p_2u+\lambda_{\Phi\phi2}\phi_i^*\Phi_{ij}\Phi_{jk}\phi_k
++\lambda_{\Phi S}p_2|S|^2\\
+&+\lambda_{\Sigma1}Q_0+\lambda_{\Sigma2}Q_1
++\lambda_{\Sigma3}Q_2+\lambda_{\Sigma4}X_{131}\\
+&+\lambda_{\Sigma\phi1}Nu+\lambda_{\Sigma\phi2}\phi_i^*K_{ij}\phi_j
++\lambda_{\phi1}u^2+\lambda_{\phi2}|t|^2\\
+&+\lambda_{\Sigma S}N|S|^2+\lambda_{\phi S}u|S|^2+\lambda_S|S|^4\\
+&+[z_4\Phi_{ij}T_{ij}S+z_K\Phi_{ij}\phi_i\phi_jS^*
++z_\eta E+z_D T_{ij}\phi_i\phi_j+\hc].
+\end{align*}
+All $m^2,\mu,\lambda$ coefficients are real; $z_6,z_4,z_K,z_\eta,z_D$
+are complex. The masses have dimension two, the cubics dimension one, and
+the quartics dimension zero. Hermitian conjugation includes the coefficient.
+The shorthand $\mu_{\Phi\phi},\lambda_{\phi1,2},\lambda_{\phi S},z_\eta$
+corresponds to repository names \pathref{muPhiPhi}, \pathref{lambdaPhiVector1,2},
+\pathref{lambdaVectorS}, and \pathref{zEta}.
+
+There are 29 Hermitian coefficient groups: four quadratic, three cubic, and
+22 quartic. Their 24 real and five complex coefficients give 34 real directions
+before rephasings. Independent $D_5$ character multiplicities give 34 complex
+singlet slots before Hermitian pairing; explicit contractions attain that upper
+bound. The generic scalar phase quotient leaves three relative coupling phases.
+This basis result fixes the action, not a viable vacuum.
+
+\newpage
+\sect{3. Scalar results: a failed tuning and a later positive point}
+The candidate high-scale background is
+\[
+\langle\Phi\rangle=\frac{\omega}{\sqrt{60}}
+\operatorname{diag}(-2\mathbf1_6,3\mathbf1_4),\quad
+\langle\Sigma\rangle=\frac{\sigma}{4\sqrt2}
+\bigwedge_{k=0}^{4}(e_{2k+1}+i e_{2k}),\quad
+\langle S\rangle=\frac v{\sqrt2},\quad\langle\phi\rangle=0.
+\]
+The first direction has the intended Pati--Salam/discrete-parity stabilizer;
+the combined gauge orbit has 33 broken and 12 unbroken directions, consistent
+with the SM Lie algebra. Global topology and the PQ quotient are separate
+questions. Tadpoles and Hessians are derived from the same frozen potential.
+
+At the recorded Stage 1 point, $\omega=\sqrt{60}$ in calculation units and
+$\sigma/\omega=v/\omega=0.1$. The exact-decimal free coefficients and
+tadpole-eliminated masses are specified in \pathref{STAGE1_POINT.json} and its
+replay program. All 35 SM-irrep multiplicity blocks were evaluated. The real
+Hessian has rank 294 and nullity 34: 33 gauge directions plus one PQ direction.
+The remaining eigenvalues are positive in the canonical kinetic metric;
+the smallest recorded physical mass squared is approximately $0.08656$.
+This is local positivity modulo symmetry, not global boundedness or a
+phenomenologically fitted scale. This point has no light Higgs doublet.
+
+The distinct Stage 2 point changes
+$\operatorname{Re}z_6,\operatorname{Re}z_K,\operatorname{Re}z_\eta$ to $0.3$
+in the stored dimensionless convention and tunes
+$m_\phi^2/\omega^2\simeq-0.1337864654$ to the exact algebraic root recorded in
+\pathref{STAGE2_POINT.json}. It has rank 290 and nullity 38, including four
+real coordinates of one massless complex SM Higgs doublet. All physical heavy
+quadratic modes remain positive. This statement alone is insufficient for
+local stability along the tuned flat direction.
+
+\sect{Decisive additional test}
+For a canonically normalized neutral field $h$, $H^\dagger H=h^2/2$, expand
+around the tuned point with physical heavy coordinates $X_A$:
+\[
+V=V_0+a_{\rm direct}h^4+h^2j_AX_A
++\tfrac12X_A\mathcal H_{AB}X_B+\cdots .
+\]
+Minimization on the positive heavy subspace gives
+$X=-\mathcal H^+j h^2+\cdots$, and hence
+\[
+\lambda_{\rm eff}=4\left(a_{\rm direct}
+-\tfrac12j^T\mathcal H^+j\right),\qquad
+V_{\rm eff}=\lambda_{\rm eff}(H^\dagger H)^2+\cdots .
+\]
+The recorded parent-action evaluation gives
+\begin{center}
+\begin{tabular}{lr}
+\toprule Quantity in $(H^\dagger H)^2$ normalization & Value\\
+\midrule Fixed-heavy direct quartic & $+0.19910$\\
+Heavy relaxation subtraction & $56.68893$\\
+Relaxed effective quartic & $\boldsymbol{-56.48984}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The negative sign makes the Stage 2 point a failed local scalar minimum at
+tree level. It does not invalidate the separate Stage 1 result or prove that
+every parameter point fails. A direct parent-potential expansion along the
+heavy-field valley reproduces the quartic; heavy-coordinate shear and complex
+Higgs-phase controls preserve it. These extraction routes share the frozen
+tensor implementation. No global-minimum or loop-corrected stabilization claim
+is made.
+
+\sect{A distinct positive-quartic point}
+The later recorded point in \pathref{canonical_so10_positive_higgs/POINT.json}
+retains the Stage 1 VEVs but uses $z_6/\omega=z_K=0.03$, $z_\eta=0.3$,
+$\lambda_{\Phi\phi1}=-0.002$ and an exact algebraic tuning
+$m_\phi^2/\omega^2\simeq0.007302047861$. Its real Hessian has rank 290 and
+nullity 38, with positive heavy modes. The direct quartic is $0.19845235$;
+heavy relaxation subtracts $0.09359411$, leaving
+\[
+\boxed{\lambda_{\rm eff}=+0.10485824.}
+\]
+The point's SHA-256 is \texttt{476645438ea8a7ada42fea90e80174b772}\newline
+\texttt{d45ce3e729d013d134e9848950c816}.
+Direct-parent and valley-polynomial routes agree with shared tensor inputs.
+This remains a local tree-level result. Subsequent calculation at this SAME
+point gives a physical coherent scalar channel with $|a_0|=0.76809032>1/2$
+in the fixed-input high-energy tree limit [7]. Its vector-exchange currents
+vanish in that channel. The point therefore fails this perturbativity screen;
+positive local masses and quartic did not establish a controlled benchmark.
+This failure does not exclude the construction. The new exploratory point
+in Section 6 has different inputs and must be assessed separately.
+
+\newpage
+\sect{4. Gauge matching: a measured mismatch, an incomplete verdict}
+The recorded direct one-loop calculation matches the full parent to the SM
+in a common $\overline{\rm MS}$ background-field Feynman-gauge convention,
+with GUT-normalized $g_1$. It includes 290 heavy real scalar directions and
+33 massive vector/Goldstone/ghost sets from the later positive-quartic point,
+not the earlier failed tuning. The threshold ledger binds that point's hash.
+This point subsequently fails the scalar perturbativity screen. These
+residuals have not been recomputed for the new exploratory point in Section 6.
+
+Define $\alpha_i=g_i^2/(4\pi)$ and one-loop threshold functions $\lambda_i$ by
+\[
+\alpha_i^{-1}(\mu)=\alpha_{10}^{-1}(\mu)-\frac{\lambda_i(\mu)}{12\pi}.
+\]
+The complete state accounting gives
+\[
+\begin{gathered}
+b_{\rm SM}=\left(\frac{41}{10},-\frac{19}{6},-7\right),\quad
+b_S=\left(\frac{377}{30},\frac{77}{6},\frac{79}{6}\right),\quad
+T_V=(8,6,5),\\
+b_{{\rm SM},i}+b_{S,i}-\frac72 T_{V,i}=-\frac{34}{3}=b_{10},\qquad
+\frac{d\lambda_i}{d\ln\mu}=6(b_{{\rm SM},i}-b_{10}).
+\end{gathered}
+\]
+These are exact beta-jump and one-loop matching-scale checks. At
+$\mu=\omega$, the frozen inverse-coupling inputs are
+$(59.0100,29.5800,8.47458)$ at $M_Z$. The one-loop equations are
+\[
+\alpha_i^{-1}(M_Z)=\frac{4\pi}{g_{10}^2}
+-\frac{\lambda_i^S+\lambda_i^V(g_{10})}{12\pi}
++\frac{b_i^{\rm SM}}{2\pi}\ln\frac{\omega}{M_Z}.
+\]
+They have no common perturbative solution for the frozen inputs. The recorded
+least-squares residuals, in inverse-coupling units and channel order $(1,2,3)$,
+are:
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule Completed approximation & $r_1$ & $r_2$ & $r_3$ & $\max|r_i|$\\
+\midrule One-loop running and thresholds & $0.36615$ & $-1.05980$ & $0.69389$ & $1.05980$\\
+Two-loop SM running, one-loop thresholds & $0.26091$ & $-0.74548$ & $0.48479$ & $0.74548$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The latter uses the SM running framework [5] and frozen reference boundaries
+from [6], including top, bottom, and tau insertions with their one-loop
+evolution. A separate inverse-coupling evolution with a different adaptive
+integrator reproduces the residual to better than $2\times10^{-8}$ under
+the frozen equations. Matching-scale variation $\mu/\omega\in[0.5,2]$
+leaves maximum residuals from $0.74172$ to $0.74931$.
+
+\sect{What the missing calculation must supply}
+The exact two-loop RG logarithmic template has been derived, but its finite
+model-dependent heavy constants have not. The published general matching
+framework [4] provides methodology and a restricted comparator, not the finite
+answer for these mixed, nondegenerate fields and multiple VEVs. The complete
+Yukawa-dependent threshold also requires numerical family matrices and
+right-handed-neutrino masses.
+
+Small scale variation is not a rigorous bound on unknown finite constants.
+Setting them to zero or freely tuning them would not compute a prediction.
+Consequently the formal gauge verdict remains unresolved: neither unification
+success nor exclusion has been established. The diagnostic fitted
+$g_{10}\simeq0.5231$ and $\omega\simeq1.64\times10^{15}\,\mathrm{GeV}$
+are not physical benchmark parameters. No replacement spectrum or flavor fit
+is introduced in this note.
+
+\newpage
+\sect{5. Symmetry and quantum evidence: scope matters}
+A separately named covariant physical gauge/scalar candidate satisfies exact
+classical local gauge identities through factorized representation checks.
+The recorded primary and tensor-functor replay compare the 328-real scalar
+representation action and all 45 generator directions. The usual
+$\delta(Dx)=-g_{10}\rho(\omega)Dx$ identity, invariant kinetic metric,
+curvature identity, and invariant potential establish the classical statement.
+This qualification is inactive; it does not replace a promoted component AST
+or complete a quantum calculation.
+
+Earlier literal component-action failures are retained. One preserved
+two-field witness has nonzero gauge variation
+\[
+\delta\mathcal L_{\rm old}=
+\frac{i g_{10}}{\sqrt2}(\partial_\mu C^4)
+(Y\partial^\mu X-X\partial^\mu Y),
+\]
+with nonzero ghost Euler derivative. The later covariant candidate fixes the
+kinetic structure by derivation. A failed encoded candidate is evidence about
+that representation of the action, not a theorem against the gauge group.
+
+Separately, the recorded one-loop parent scalar-pole projection has exact
+rank $4+4+26=34$ and zero out-of-basis residual in its tested operator space.
+Hermiticity and PQ selection-rule audits also pass within that scope. This
+bounded radiative-closure result is not a complete anomaly or quantum
+consistency theorem; it does not evaluate finite two-loop thresholds.
+
+In the gauge-fixing/source investigation, a preserved normalization candidate
+misses a selected auxiliary--antighost--ghost cubic pole. At one recorded
+real-component witness, in common
+$\hbar g_{10}\xi^2/(32\pi^2\epsilon)$ units, the coefficients are
+\[
+G_{\rm actual}=\frac{48\sqrt{10}}{25},\quad
+G_{\rm candidate}=\frac{8\sqrt{10}}5,\quad
+G_{\rm actual}-G_{\rm candidate}=\frac{8\sqrt{10}}{25}\ne0.
+\]
+Later calculations retain this failed candidate while deriving actual
+additional source, auxiliary and ghost coefficients and checking selected
+local Ward/Slavnov relations. These are scoped operator results. They do not
+establish the full source-free Slavnov identity or a quantum-equivalence theorem.
+
+The latest selected background test verifies that a specified broken-antighost
+operation commutes with the actual local residual-gauge transformation on all
+1334 classical field/source/background columns. In its declared polynomial
+ring, a 642-column Ward/Euler calculation proves uniqueness of a background
+extension at coupling orders zero and one, conditional on locality and inherited
+covariance of the actual logarithmic UV pole. A nonlocal transverse
+counterexample shows why locality is essential. Subsequent tests verify weighted principal invertibility on all 643 fields
+and construct one explicit local covariant reference operator, recovering all
+1597 flat entries. This supplies a local-symbol member, without identifying a
+unique historical completion or adopting a physical scheme. The actual product
+of heat-damped propagators still lacks a proved UV/subtraction correspondence;
+the full background logarithmic identity remains conditional.
+Regulated insertions, products/contacts, measure and infrared limits remain open.
+The formal ledger is still at 34 of 39 items with the quantum gate blocked.
+
+\sect{Gauge anomaly and PQ structure}
+For the three left-handed $16_F$ multiplets, the local four-dimensional
+perturbative gauge-anomaly tensor and linear gauge traces vanish. A weight
+polynomial route with conjugacy/polarization and a Clifford-matrix route
+evaluate the established representation criterion [9], including all 16,215
+symmetric cubic slots. This does not construct a regulated matter determinant
+or settle global anomalies, bundles or the full quantum measure.
+
+For the declared PQ charges the convention $N=2\sum_f q_f T_c(f)$ and
+$E=2\sum_f q_f Q_f^2$ gives
+\[
+N=12,\qquad E=32,\qquad E/N=8/3.
+\]
+The common Spin(10) center identifies an ordinary-field PQ quarter-turn;
+nonzero gauge-singlet $S$ fixes the vacuum-orbit period to $\alpha=\pi/2$.
+The conventional QCD potential would consequently give $N_{\rm DW}=3$,
+\emph{conditional} on realistic nonzero quark masses/QCD susceptibility, this
+ordinary orbit and no additional identification or explicit PQ breaking [3].
+The electroweak-unbroken reference does not supply that QCD vacuum. This is
+neither a physical axion mass/abundance prediction nor a full global completion.
+
+\newpage
+\sect{6. A new scalar witness and its quantum-control warning}
+The different rational fixture in
+\pathref{canonical_so10_coherent_joint_witness/POINT.json}
+uses the same field content, action and VEV shape. Its frozen reduced inputs
+are $p_1=1/100$, $p_2=1/50$, $x=3/25$, $s=1/1000$, $z=1/500$,
+$D=1/50$, $t=23/1250$, $\Delta=0$, $\eta=1/10000$; the dependent
+coefficients and larger simple weak root are fixed by the recorded action
+maps. It is an exploratory fixture, not an adopted physical benchmark.
+Do not combine its results with the old point's spectrum, thresholds or loops.
+
+Exact specialization of the inherited 12 spectral types (35 blocks, 328 real
+fields) gives 290 positive directions and 38 symmetry/tuning zeros. The
+actual weak kernel and all positive neutral relaxation modes give
+$\lambda_{\rm eff}\simeq0.1074374161>0$ at tree level. This uses a new
+point-specific light direction, not a transported earlier quartic.
+
+\sect{Complete classical coverage at this point}
+The complete symmetric scalar pair space has 53,956 states. In the contact
+convention of [7], the recorded structural Gram and block-norm bounds give
+\[
+\|a_0^{\rm contact}\|\le
+\frac{35439836953}{24000000000\pi}
+\simeq0.47003544<\frac12.
+\]
+This is a conservative upper bound, not a largest eigenvalue or complete
+gauged scattering amplitude. Massless-gauge exchange requires its own
+infrared-safe treatment; no gauge coupling is silently set to zero.
+
+With $X=\Tr\Phi^2$, $n=N_\Sigma$, $u=\phi^\dagger\phi$, $v=|S|^2$,
+global invariant inequalities and explicit completion of the complex mixed
+terms give a rational positive-definite four-norm lower matrix. Its exact
+minors and a separate rational solver yield, for all 328 real fields,
+\[
+V_4\ge c(X+n+2u+2v)^2,\qquad
+c=\frac{824404010711173266247333949}
+{1720579893948342670590110120750}
+\simeq4.79143115\times10^{-4}>0.
+\]
+This is global quartic positivity, rather than sampled positive rays. It
+ensures growth at large fields for this potential. It does not prove that the
+chosen stationary vacuum is deepest or has a sufficient tunneling lifetime.
+The old failed points and closed parameter families remain failed in their
+qualified scopes; these certificates do not transfer to other inputs.
+
+\sect{A complete selected one-loop pole coefficient is large}
+At the same fixture, $Q^2=\omega^2=60$ and the declared
+$\overline{\rm MS}$ stationary-branch expansion, the isolated singlet has
+tree squared mass $6/5$. Scalar seagulls and momentum-dependent bubbles,
+including the physical PQ/Higgs zero modes, give a one-particle-irreducible
+contribution $-1.36799138-0.23557167i$. The required vacuum-source insertion
+adds $+3.03144395$, so [8]
+\[
+\delta m^2_{S,\rm pole}=1.66345257-0.23557167i,\qquad
+\frac{|\delta m^2_{S,\rm pole}|}{m^2_{S,\rm tree}}\simeq1.40004.
+\]
+Field-content and projector checks justify this particular one-loop component.
+Direct singlet gauge/Yukawa vertices vanish here. The tree singlet plane is
+isolated and the relevant other tadpole multipliers vanish. This does not
+make every quantum-vacuum component complete.
+An exact local RG/log check retains generated $\Phi$--$S$ and $\Sigma$--$S$
+portals [10] and cancels the scale derivative, but does not reduce the large
+correction. A small first-order correction is unsupported in this expansion.
+No reliable physical pole mass/width, resummed solution or universal scheme
+failure is inferred. Classical feasibility and controlled quantum viability
+remain distinct.
+
+\newpage
+\sect{7. Evidence and reproduction map}
+This note summarizes recorded evidence at source commit
+\begin{center}\texttt{22709b33f20484efe16eb4c3592d690c8e0650f3}.\end{center}
+The source scientific authority remains \pathref{project_state.json}, version
+113, unchanged by publication. The original Version 2 note and two base source
+archives remain preserved. The Version 2 \emph{source update} overlays those
+archives; the reproduction guide specifies extraction, deleted paths and
+separate historical-policy/external-control namespaces. Manifests authenticate
+bytes without performing scientific acceptance. Original Git history is not
+included; historical custody exit 2 with seven unresolved references is not PASS.
+
+Evidence paths below are relative to the assembled source tree. Each new row
+includes its prospective \pathref{RECORD.md}, result, actual validation receipt,
+frozen inputs, sources and complete successful/failed captures.
+
+{\small
+\begin{tabular}{p{0.21\linewidth}p{0.73\linewidth}}
+\toprule Claim & Evidence locator under \pathref{calculations/}\\
+\midrule
+Scalar action & \pathref{canonical_so10_scalar_reconstruction/RESULT_V2.md}\\[3pt]
+Original masses & \pathref{canonical_so10_scalar_benchmark/RESULT.md}\\[3pt]
+Failed / positive quartics & \pathref{canonical_so10_light_higgs_quartic/RESULT.md} and\newline
+\pathref{canonical_so10_positive_higgs/RESULT.md}\\[3pt]
+Old point contact failure & \pathref{canonical_so10_radial_input_control/RESULT.md}\\[3pt]
+New point and local tests & \pathref{canonical_so10_coherent_joint_witness/RESULT.md}\\[3pt]
+Whole contact bound & \pathref{canonical_so10_complete_contact_bound/RESULT.md}\\[3pt]
+Global quartic bound & \pathref{canonical_so10_finite_full_bfb/RESULT.md}\\[3pt]
+Singlet pole warning & \pathref{canonical_so10_singlet_pole_control/RESULT.md}\\[3pt]
+Pole RG/log check & \pathref{canonical_so10_singlet_pole_rg_check/RESULT.md}\\[3pt]
+Gauge residuals & \pathref{canonical_so10_direct_gauge_matching/RESULT.md} and\newline
+\pathref{canonical_so10_direct_gauge_next_order/RESULT.md}\\[3pt]
+Missing finite boundary & \pathref{canonical_so10_direct_two_loop_heavy_threshold/RESULT.md}\\[3pt]
+Gauge / PQ traces & \pathref{canonical_so10_local_gauge_anomaly/RESULT.md} and\newline
+\pathref{canonical_so10_pq_anomaly_screen/RESULT.md}\\[3pt]
+Conditional background & \pathref{canonical_so10_ub12_background_locality/RESULT.md}\\
+\bottomrule
+\end{tabular}}
+
+The scalar-pole closure record is under
+\pathref{tools/two_loop_qft_compiler_v1/LAYER5B_M05_M08_RESULT.md}.
+The preserved classical-action and auxiliary-normalization records are in
+its \pathref{m08_independent_replay_package_v1/} subdirectory:
+\pathref{A10_PHYSICAL_ACTION_RECONCILIATION_RESULT.md} and
+\pathref{A10_E5_AUXILIARY_VERTEX_RESULT.md}.
+The larger source archive retains intermediate exclusions, corrections and
+bounded source/ghost calculations; archive inclusion does not promote every
+historical claim. The completed weighted-reference and local-witness records
+are also included; work after the frozen checkpoint is excluded.
+
+\sect{What publication validation does}
+The package verifier checks every released file and archive member. The
+publication receipt separately authenticates the selected scientific receipts
+and their immutable inputs, distinguishes historical policy versions and
+records executed short checks. No expensive Hessian, contact, singlet-pole or
+full quantum calculation is repeated for this release. Original paths in
+external control scripts may require explicit relocation in a disposable
+environment; flat export is not an automatic historical audit replay.
+
+\newpage
+\sect{8. Remaining obligations and AI assistance}
+No physically viable GUT or experimental agreement is established. The new
+point has a full classical quartic bound, but the preferred vacuum, tunneling,
+loop control, hierarchy/naturalness and complete gauged scattering remain
+open. Full quantum restoration/measure/contact/IR obligations, finite heavy
+thresholds, realistic matter/neutrino inputs, complete axion cosmology and
+proton-decay phenomenology also remain open. The old gauge residuals are
+diagnostics at their own frozen inputs and do not predict the new point.
+
+Useful discussion questions are whether the new point's large singlet
+correction admits a justified, controlled physical-input expansion, and what
+model-specific locality and finite-threshold calculations are needed before
+extending the quantum and gauge conclusions. Missing contributions are not
+assumed to rescue any failed result.
+
+LLMs assisted derivations, code, verification and writing. Scientific direction
+and acceptance belong to the human author. The records demonstrate bounded
+symbolic/numerical calculation, structural reductions and cross-checking;
+they also preserve failed interpolation, assertion, normalization and
+verification attempts. Corrected agreement cannot validate a shared physical
+assumption. Shared action/representation inputs, inherited proof caches,
+some tensor/arithmetic code, Python/SymPy and the same analyst limit
+independence. Selected work uses NumPy, SciPy, mpmath, CVXPY/Clarabel and
+Julia. Multiple AI routes are not independent scientists. No external expert
+verification, whole-model proof-assistant certification or general reliability
+claim is made.
+
+\sect{References}
+{\small\setlength{\parskip}{3pt}
+[1] K. S. Babu and S. Khan, \emph{A Minimal Non-Supersymmetric SO(10) Model:
+Gauge Coupling Unification, Proton Decay and Fermion masses},
+Phys. Rev. D \textbf{92}, 075018 (2015).
+\href{https://arxiv.org/abs/1507.06712}{arXiv:1507.06712}.
+
+[2] R. D. Peccei and H. R. Quinn, \emph{CP Conservation in the Presence of
+Pseudoparticles}, Phys. Rev. Lett. \textbf{38}, 1440 (1977).
+\href{https://doi.org/10.1103/PhysRevLett.38.1440}{doi:10.1103/PhysRevLett.38.1440}.
+
+[3] A. Ernst, A. Ringwald and C. Tamarit, \emph{Axion Predictions in
+SO(10) $\times$ U(1)$_{\PQ}$ Models}, JHEP \textbf{02} (2018) 103.
+\newline\href{https://arxiv.org/abs/1801.04906}{arXiv:1801.04906}.
+
+[4] W. Martens, \emph{Towards a Two-Loop Matching of Gauge Couplings in
+Grand Unified Theories}, JHEP \textbf{01} (2011) 104.
+\href{https://arxiv.org/abs/1011.2927}{arXiv:1011.2927}.
+
+[5] M. Luo and Y. Xiao, \emph{Two-loop Renormalization Group Equations in
+the Standard Model}, Phys. Rev. Lett. \textbf{90}, 011601 (2003).
+\href{https://arxiv.org/abs/hep-ph/0207271}{arXiv:hep-ph/0207271}.
+
+[6] D. Buttazzo et al., \emph{Investigating the near-criticality of the Higgs
+boson}, JHEP \textbf{12} (2013) 089.
+\href{https://arxiv.org/abs/1307.3536}{arXiv:1307.3536}.
+
+[7] M. D. Goodsell and F. Staub, \emph{Unitarity constraints on general scalar
+couplings with SARAH}, Eur. Phys. J. C \textbf{78}, 649 (2018).
+\href{https://arxiv.org/abs/1805.07306}{arXiv:1805.07306}.
+
+[8] S. P. Martin, \emph{Two-loop scalar self-energies in a general
+renormalizable theory at leading order in gauge couplings}, Phys. Rev. D
+\textbf{70}, 016005 (2004).
+\href{https://arxiv.org/abs/hep-ph/0312092}{arXiv:hep-ph/0312092}.
+
+[9] A. Bilal, \emph{Lectures on Anomalies} (2008).
+\href{https://arxiv.org/abs/0802.0634}{arXiv:0802.0634}.
+
+[10] M. Luo, H. Wang and Y. Xiao, \emph{Two-loop Renormalization Group
+Equations in General Gauge Field Theories}, Phys. Rev. D \textbf{67},
+065019 (2003). \href{https://arxiv.org/abs/hep-ph/0211440}{arXiv:hep-ph/0211440}.
+
+}
+\end{document}

@@ -1,0 +1,29 @@
+{
+  "completed_V2_reused_not_replayed": true,
+  "input_sha256": {
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\FAILURE_V1.md": "02ab091e0094332ab5536678ec7b3ec2feb0b5b0b72689742bcd92a02fa2e30f",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\ONE_SOFT_SUPPLEMENT_V3.md": "8f3fba4d4553bae1cf27231ddd19938d34c49f2958980ca15720171828bd7fbd",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\ONE_SOFT_SUPPLEMENT_V3.md.source.txt": "8f3fba4d4553bae1cf27231ddd19938d34c49f2958980ca15720171828bd7fbd",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\prepare_one_soft_v3.py": "6f53fd41b368a9f0d44ecca52d0bad094b21c9d54d7b34cc0d383f9e2307327b",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\prepare_one_soft_v3.py.source.txt": "6f53fd41b368a9f0d44ecca52d0bad094b21c9d54d7b34cc0d383f9e2307327b",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\primary_v2_result.json": "6bbc73c07c733b698c06d322e4e313d72f8bf514a3979a533671292d632fa813",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\primary_v2_tables.json.gz": "be3f4adec9e9921017771c898f36b4c998aec6343c314f7bf9500db4395541e0",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\replay_v2_result.json": "93fd48644d30f756bb682d185de24c7a5319f86e7ec2733591eaa03a58e1812c",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\replay_v2_tables.json.gz": "be3f4adec9e9921017771c898f36b4c998aec6343c314f7bf9500db4395541e0",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\run_one_soft_v3.py": "31ba1f00038ba161f4483750ec12b74c18d449191270216245c241118c5e6ccd",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\run_one_soft_v3.py.source.txt": "31ba1f00038ba161f4483750ec12b74c18d449191270216245c241118c5e6ccd",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\validation_preparation_v2.json": "7859d639d7cf7fb7564e6e0902c0eeac195e0cd476f2a4661706a1fd3fcbbf04",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\validation_receipt_v2.json": "a7495823ebe1d8a96388d7bb51c8c50e005f37c04c200332426e30ee925f8398",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\validation_v2_capture.json": "a5e411a8c0ab1bed38d82d8094b43b6e812503e881d0a5e0cf77c53b733535e6",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\verify_one_soft_v3.py": "8a8399996c87fa2347006f58adf041cba8a4772c3543a756b34320ddc249f092",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\verify_one_soft_v3.py.source.txt": "8a8399996c87fa2347006f58adf041cba8a4772c3543a756b34320ddc249f092",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\project_state.json": "d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8"
+  },
+  "launch_floor": 367001600,
+  "nested_input_manifest": "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\validation_preparation_v2.json",
+  "private_sampled_cap": 8589934592,
+  "schema": "C1_VECTOR_QUARTIC_ONE_SOFT_PREPARATION_V3",
+  "scientific_acceptance": "NOT_PERFORMED",
+  "supplement_seconds": 120,
+  "whole_package_limit": 2097152
+}

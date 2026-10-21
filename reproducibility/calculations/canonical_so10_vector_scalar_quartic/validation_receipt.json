@@ -1,0 +1,37 @@
+{
+  "authority": "34/39_UNCHANGED",
+  "common_IR_identity": "FULL-OPENED_HS-OPENED_SH-EFT=HH at delta>0, including graph-local UV projections",
+  "complete_C1_or_gauge_independence_or_E5_qualified": false,
+  "controls": {
+    "bad_frame_inverse": 2348,
+    "drop_C_positive_eps_consistently": "R_MS_FINITE_INSENSITIVE; bare_and_CT_terms_individually_sensitive",
+    "duplicate_CT": "nonzero_bare_pole_and_wrong_finite",
+    "missing_CT": "nonzero_generic_and_actual_bare_pole",
+    "omitted_EFT": [
+      "bare_LL_poles",
+      [
+        "-27/25",
+        "91/5",
+        "0"
+      ]
+    ],
+    "omitted_Goldstone": "actual_nonzero_finite_coefficients",
+    "premature_D4_only_in_U_pair_consistently": "R_MS_FINITE_INSENSITIVE",
+    "whole_family_zero_test": "NOT_USED; family_nonzero",
+    "wrong_Wick_sign_and_factor": "nonzero_complete_amplitude_changes",
+    "wrong_closed_D_or_premature_D4": "nonzero_actual_W_contractions",
+    "wrong_color_sign": "actual_nonzero_operators_flip"
+  },
+  "counts": {
+    "gauge": 33,
+    "physical": 290,
+    "soft": 5
+  },
+  "elapsed_after_imports": 26.554734600009397,
+  "execution_state": "COMPLETED",
+  "full_color_domain": 2151680,
+  "max_scaled_route_error": "0.0",
+  "schema": "VSP1_VALIDATION",
+  "scientific_acceptance": "NOT_PERFORMED",
+  "status": "QUALIFIED_VVSS_GRAPH_LOCAL_UV_AND_LIGHT_MATCHED_FINITE_F2"
+}

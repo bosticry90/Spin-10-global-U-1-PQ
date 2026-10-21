@@ -1,0 +1,18 @@
+from pathlib import Path
+from hashlib import sha256
+import ast,json
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_singlet_two_loop_input_closure';C=Path(__file__).resolve().parent
+digest=lambda p:sha256(p.read_bytes()).hexdigest();p=json.loads((O/'validation_preparation_v2.json').read_bytes());inputs=dict(p['input_sha256'])
+assert not(O/'validation_v2_capture.json').exists()
+for path in [O/'validation_preparation_v2.json',O/'VERIFICATION_PRELAUNCH_CORRECTION_V3.md',C/'build_verify_v3.py',C/'verify_v3.py',C/'prepare_validation_v3.py',C/'run_validation_v3.py']:
+ if path.suffix=='.py':ast.parse(path.read_text())
+ inputs[str(path)]=digest(path)
+for path in [O/'VERIFICATION_PRELAUNCH_CORRECTION_V3.md',C/'build_verify_v3.py',C/'verify_v3.py',C/'prepare_validation_v3.py',C/'run_validation_v3.py']:
+ dest=O/(path.name+'.source.txt')
+ with dest.open('xb') as f:f.write(path.read_bytes())
+ inputs[str(dest)]=digest(dest)
+for raw,h in inputs.items():assert digest(Path(raw))==h,raw
+v={**p,'schema':'SINGLET_TWO_LOOP_INPUT_CLOSURE_VALIDATION_PREPARATION_V3','input_sha256':inputs,
+ 'verifier_sha256':digest(C/'verify_v3.py'),'controller_sha256':digest(C/'run_validation_v3.py'),'prelaunch_unexecuted_verifier_revisions':1}
+with(O/'validation_preparation_v3.json').open('xb') as f:f.write((json.dumps(v,indent=2,sort_keys=True)+'\n').encode())
+print('VALIDATION_FROZEN_V3',len(inputs),flush=True)

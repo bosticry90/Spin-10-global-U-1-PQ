@@ -1,0 +1,11 @@
+{
+  "elapsed_after_imports": 5.617895999981556,
+  "execution_state": "COMPLETED",
+  "packed_bytes": 4399,
+  "packed_sha256": "d25a0508bdbb2f0946b6239bcbb4b0c446c7b3c06c31a4734325bee0e52de86a",
+  "raw_bytes": 10276,
+  "role": "sensitivity",
+  "schema": "VSP1_CONTROLS",
+  "status": "QUALIFIED_ACTUAL_MASS_OMISSION_AND_COMMON_IR_CONTROLS",
+  "tables_sha256": "bff5d331c08b081f4edd36fc946422efa3503e3f34b79d8edc0f3e3143b9ad51"
+}

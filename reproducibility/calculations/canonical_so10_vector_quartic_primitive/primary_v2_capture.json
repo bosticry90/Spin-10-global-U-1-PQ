@@ -1,0 +1,50 @@
+{
+  "all_resource_samples": [
+    {
+      "private_bytes": 434176,
+      "seconds": 0.001340300019364804
+    },
+    {
+      "private_bytes": 49741824,
+      "seconds": 2.013946200022474
+    },
+    {
+      "private_bytes": 50913280,
+      "seconds": 4.019411500019487
+    },
+    {
+      "private_bytes": 50995200,
+      "seconds": 6.0260112000396475
+    }
+  ],
+  "calculation_completed": true,
+  "command": [
+    "C:\\Program Files\\Python310\\python.exe",
+    "-B",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\primitive_v2.py",
+    "primary"
+  ],
+  "execution_state": "COMPLETED",
+  "exit_code": 0,
+  "failed_or_incomplete_counted_as_PASS": false,
+  "launch": {
+    "creation_after_observation": true,
+    "creation_filetime": 134369788769654690,
+    "creation_query_error": null,
+    "memory": {
+      "available_pagefile": 12351582208,
+      "available_physical": 3757223936,
+      "load": 77,
+      "total_pagefile": 36658069504,
+      "total_physical": 16992980992
+    },
+    "minimum_available_commit_bytes": 367001600,
+    "observation_end_filetime": 134369788769642649,
+    "observation_start_filetime": 134369788769642649,
+    "pid": 31308,
+    "private_allocation_limit_bytes": 8589934592
+  },
+  "post_run_observations_qualified": true,
+  "private_allocation_limit_bytes": 8589934592,
+  "stdout_and_stderr": "STAGE color_primary_0\nSTAGE color_primary_1\nSTAGE color_primary_2\nRESULT {\"all_ordered_mass_pairs\":25,\"background_words\":8,\"color_coefficients\":225,\"double_poles\":[-1152,-1152,-1152],\"elapsed_after_imports\":6.4273803000105545,\"execution_state\":\"COMPLETED\",\"full_C1_or_finite_hard_family_qualified\":false,\"packed_bytes\":2008,\"packed_sha256\":\"be3f4adec9e9921017771c898f36b4c998aec6343c314f7bf9500db4395541e0\",\"route\":\"primary\",\"schema\":\"C1_VECTOR_QUARTIC_PRIMITIVE_NATIVE_V1\",\"table_bytes\":7177,\"tables_sha256\":\"845898ee988a990b669034aa36f1727ca9edbd07520da4a71e8b22862721c49f\"}\n"
+}

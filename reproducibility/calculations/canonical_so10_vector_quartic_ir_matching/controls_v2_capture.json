@@ -1,0 +1,37 @@
+{
+  "all_resource_samples": [
+    {
+      "private_bytes": 421888,
+      "seconds": 0.0009324000566266477
+    }
+  ],
+  "calculation_completed": true,
+  "command": [
+    "C:\\Program Files\\Python310\\python.exe",
+    "-B",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\verify_controls_v2.py"
+  ],
+  "execution_state": "COMPLETED",
+  "exit_code": 0,
+  "failed_or_incomplete_counted_as_PASS": false,
+  "launch": {
+    "creation_after_observation": true,
+    "creation_filetime": 134369808737656310,
+    "creation_query_error": null,
+    "memory": {
+      "available_pagefile": 12322430976,
+      "available_physical": 3395096576,
+      "load": 80,
+      "total_pagefile": 36658069504,
+      "total_physical": 16992980992
+    },
+    "minimum_available_commit_bytes": 367001600,
+    "observation_end_filetime": 134369808737641083,
+    "observation_start_filetime": 134369808737641083,
+    "pid": 31072,
+    "private_allocation_limit_bytes": 8589934592
+  },
+  "post_run_observations_qualified": true,
+  "private_allocation_limit_bytes": 8589934592,
+  "stdout_and_stderr": "RESULT {\"actual_hard_remainder_mutants\":[{\"group\":\"U1\",\"missing_B_epsilon_zeta2_residual\":\"-1152\",\"omitted_light_assignments_final_hard_test\":\"INSENSITIVE_REQUIRES_FULL_UV_AND_PARTNERS\",\"omitted_light_assignments_full_UV_residual_nonzero\":true,\"premature_D4_hard_finite_residual\":\"755546827/37950\",\"reversed_trace_residuals\":[\"0\",\"0\",\"0\",\"0\"]},{\"group\":\"SU2\",\"missing_B_epsilon_zeta2_residual\":\"-648\",\"omitted_light_assignments_final_hard_test\":\"INSENSITIVE_REQUIRES_FULL_UV_AND_PARTNERS\",\"omitted_light_assignments_full_UV_residual_nonzero\":true,\"premature_D4_hard_finite_residual\":\"25998627/63250\",\"reversed_trace_residuals\":[\"0\",\"0\",\"18\",\"18\"]},{\"group\":\"SU3\",\"missing_B_epsilon_zeta2_residual\":\"-450\",\"omitted_light_assignments_final_hard_test\":\"INSENSITIVE_REQUIRES_FULL_UV_AND_PARTNERS\",\"omitted_light_assignments_full_UV_residual_nonzero\":true,\"premature_D4_hard_finite_residual\":\"573300877/94875\",\"reversed_trace_residuals\":[\"9\",\"0\",\"18\",\"18\"]}],\"elapsed_after_imports\":0.2123472000239417,\"execution_state\":\"COMPLETED\",\"native_and_completed_V1_validation_reused\":true,\"new_loop_calculations\":false,\"schema\":\"C1_VECTOR_QUARTIC_IR_CONTROLS_V2\",\"unnormalized_frame_kinetic_defect\":\"3\"}\n"
+}

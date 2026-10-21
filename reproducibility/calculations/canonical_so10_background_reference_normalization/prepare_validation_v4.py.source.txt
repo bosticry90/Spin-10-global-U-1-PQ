@@ -1,0 +1,45 @@
+from pathlib import Path
+from hashlib import sha256
+import json
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_background_reference_normalization';C=Path(__file__).resolve().parent
+p=json.loads((O/'preparation_v3.json').read_bytes());digest=lambda q:sha256(q.read_bytes()).hexdigest()
+for q,h in p['input_sha256'].items():assert digest(Path(q))==h,q
+files=list(map(Path,p['input_sha256']))+[O/'preparation_v3.json']
+for role in ['primary','replay']:
+ cap=json.loads((O/(role+'_v3_capture.json')).read_bytes());assert cap['execution_state']=='COMPLETED' and cap['exit_code']==0
+ files.extend([O/(role+'_v3_capture.json'),O/(role+'_v3_result.json')])
+code=(O/'verify_v3.py').read_text().replace('validation_preparation_v3.json','validation_preparation_v4.json')
+check=''' # Recover the actual physical5x5 and odd/scalar blocks before the contour test.
+ rawK=mat(643,643,full['reference_Hessian_raw_C3']['entries'])
+ invT=mat(643,643,full['physical_to_raw_inverse']['entries'])
+ p=s.Matrix(s.symbols('p0_ref0:4'));eta=s.diag(1,-1,-1,-1);P=(p.T*eta*p)[0];uu=eta*p
+ physicalids=[0,1,2,3,508];cols=invT.extract(list(range(643)),physicalids)
+ KM=(cols.T*rawK*cols).applyfunc(s.simplify);ww=KM[4,4]
+ target=(-P*eta+uu*uu.T).row_join(s.I*uu).col_join((-s.I*uu.T).row_join(s.Matrix([[ww]])))
+ assert zero(KM-target) and ww!=0
+ q=s.Matrix(s.symbols('q0:4',real=True));Q=(q.T*q)[0];subs=dict(zip(p,[s.I*q[0],q[1],q[2],q[3]]))
+ contour=s.diag(-s.I,1,1,1,s.I);ci=contour.inv()
+ KE=(-ci.T*KM.subs(subs)*ci).applyfunc(s.simplify)
+ expected=(Q*s.eye(4)-q*q.T).row_join(q).col_join((-q.T).row_join(s.Matrix([[ww]])))
+ assert zero(KE-expected)
+ wrong=s.diag(-s.I,1,1,1,1).inv();assert not zero(-wrong.T*KM.subs(subs)*wrong-expected)
+ oddcols=invT.extract(list(range(643)),[553,598]);odd=(oddcols.T*rawK*oddcols).applyfunc(s.simplify)
+ assert zero(odd-s.Matrix([[0,-P],[P,0]])) and zero(-odd.subs(subs)-s.Matrix([[0,-Q],[Q,0]]))
+ scalarcol=invT.extract(list(range(643)),[180]);scalar=s.simplify((scalarcol.T*rawK*scalarcol)[0])
+ mass=s.simplify(P-scalar);assert not mass.has(*list(p)) and mass!=0
+ assert s.simplify(-scalar.subs(subs)-Q-mass)==0
+'''
+anchor=' performance={}';assert anchor in code;code=code.replace(anchor,check+anchor)
+code=code.replace("'reference_and_source_derivatives_retained':True,","'actual_frozen_contour_blocks_matched':True,'reference_and_source_derivatives_retained':True,")
+with (O/'verify_v4.py').open('xb') as f:f.write(code.encode())
+run=(C/'run_validation_v3.py').read_text().replace('_v3','_v4')
+with (C/'run_validation_v4.py').open('xb') as f:f.write(run.encode())
+for name in ['verify_v4.py','CONTOUR_CHECK.md']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((O/name).read_bytes())
+ files.extend([O/name,O/(name+'.source.txt')])
+for name in ['prepare_validation_v4.py','run_validation_v4.py']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((C/name).read_bytes())
+ files.extend([C/name,O/(name+'.source.txt')])
+v={'schema':'BACKGROUND_REFERENCE_VALIDATION_PREPARATION_V4','input_sha256':{str(q):digest(q) for q in files},'authority_changed':False}
+with (O/'validation_preparation_v4.json').open('xb') as f:f.write((json.dumps(v,indent=2,sort_keys=True)+'\n').encode())
+print('VALIDATION_FROZEN',len(v['input_sha256']),flush=True)

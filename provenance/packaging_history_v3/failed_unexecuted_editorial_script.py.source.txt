@@ -1,0 +1,104 @@
+from pathlib import Path
+import json,hashlib,zipfile,shutil
+H=Path(__file__).resolve().parent; R=H/'Spin-10-global-U-1-PQ'
+S=Path(r'C:\Users\psboy\Documents\ToE-Next')
+def sha(b): return hashlib.sha256(b).hexdigest()
+def dump(p,v): p.write_text(json.dumps(v,indent=2)+'\n',encoding='utf-8',newline='\n')
+auth=json.loads((H/'claim_authentication_v3.json').read_text(encoding='utf-8'))
+assert auth['execution_state']=='COMPLETED'
+mp=R/'provenance/source_manifest_v3.json'; m=json.loads(mp.read_text(encoding='utf-8'))
+assert not m['missing_or_historical_external_bindings_for_review']
+filename='spin10_pq_source_update_v3_history.zip'
+assert not any(a['filename']==filename for a in m['archives'])
+existing={e['path']:e for e in m['historical_files']}; added=[]
+with zipfile.ZipFile(R/'reproducibility'/filename,'w',compression=zipfile.ZIP_DEFLATED) as z:
+    for e in auth['historical_inputs']:
+        if e['path'] in existing:
+            assert existing[e['path']]['sha256']==e['sha256']; continue
+        data=Path(e['export_file']).read_bytes(); assert sha(data)==e['sha256']
+        z.writestr(e['path'],data)
+        out={k:v for k,v in e.items() if k!='export_file'}
+        out.update({'archive':filename,'storage':'UPDATE_V3'})
+        m['historical_files'].append(out); added.append(out)
+data=(R/'reproducibility'/filename).read_bytes()
+m['archives'].append({'filename':filename,'sha256':sha(data),'size_bytes':len(data),'file_count':len(added)})
+dump(mp,m)
+shutil.copyfile(H/'claim_authentication_v3.json',R/'provenance/claim_authentication_v3.json')
+# Only exact tracked files are copied into the browsable subset.
+folders={str(Path(e['path']).parent).replace('\\','/') for e in auth['checks']}
+for e in m['files']:
+    path=Path(e['path']); parent=path.parent.as_posix()
+    if parent in folders or e['path'].startswith('tools/portable_dh_v1/'):
+        rel=e['path']
+        if rel.startswith('tools/portable_dh_v1/'):
+            out=R/'reproducibility/portable_dh_v1'/path.name
+        else:
+            out=R/'reproducibility'/rel
+        out.parent.mkdir(parents=True,exist_ok=True)
+        data=(S/rel).read_bytes(); assert sha(data)==e['sha256']
+        out.write_bytes(data)
+shutil.copyfile(S/'docs/RESEARCH_EXECUTION_HANDOFF_V421.md',R/'reproducibility/RESEARCH_EXECUTION_HANDOFF_V421.md')
+history=R/'provenance/packaging_history_v3'; history.mkdir(exist_ok=True)
+shutil.copyfile(H/'claim_authentication_v3_initial_historical_harness_mismatch.json',history/'initial_historical_harness_mismatch.json')
+(history/'CORRECTIONS.md').write_text('''# Publication binding-classification correction
+
+The initial authentication pass checked historical policy/README versions but had not classified the older research_session_preflight.py harness. Seven prior scientific receipts bind its old SHA-256, while the source repository legitimately updated this operating tool.
+
+The initial FAILED report is preserved. The corrected check authenticates the exact historical Git blob, separately archives it and leaves every old receipt, source file, policy and hash unchanged. The final pass authenticates all selected receipt/preparation bindings. No scientific worker was launched or failed during publication.
+''',encoding='utf-8',newline='\n')
+dump(R/'provenance/snapshot_metadata_v3.json',{
+ 'schema':'SPIN10_PQ_PUBLICATION_METADATA_V3','published_note_version':4,'publication_date':'20 October 2026',
+ 'source_commit':m['source_commit'],'source_handoff':'V421','publication_baseline':'c35d22498c7f609fd49fd8c5e7cf244454ca452c',
+ 'source_state_version':113,'source_state_sha256':'d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8',
+ 'source_files':len(m['files']),'external_files':len(m['external_files']),'historical_files':len(m['historical_files']),
+ 'authorization':'Explicit human request to update the same public repository.',
+ 'scientific_acceptance':'NOT_PERFORMED_BY_PUBLICATION','human_scientific_authority':'UNCHANGED',
+ 'changes':['Subtraction-independent same-point singlet momentum diagnostics and two-loop internal Yukawa input limitation','Complete formal local one-loop UV Slavnov result and actual bosonic counterterm closure in declared domains','Constructed graded compact causal/QAP and finite normalization/reference results, with retained source/global limitations','Four scoped BFT primitive amplitude families at the OLDER positive-Higgs point; no full finite C1 or unification refit','Closed portable standard-library 99256-position classical Hessian pilot'],
+ 'point_separation':{'classical_and_singlet':'canonical_so10_coherent_joint_witness exploratory point','C1_threshold':'canonical_so10_positive_higgs/POINT.json SHA256 476645438ea8a7ada42fea90e80174b772d45ce3e729d013d134e9848950c816; historical perturbativity failure retained'},
+ 'shared_limits':['Action/representation/reference and inherited proofs','Some common arithmetic/software and a solo AI-assisted analyst','No outside scientist, empirical or whole-model proof-assistant validation'],
+ 'historical_custody':'Original Git history absent; custody exit 2/seven unresolved references remains unresolved, not PASS. Exact historical policy/README/harness objects are separately authenticated; old manifests are not rebound.',
+ 'omitted':['No expensive original spectrum/pole/threshold or full quantum replays','No physical input/scheme adoption, numerical flavor fit or scalar search','No complete finite C1, gauge-unification refit or physical-viability verdict'],
+ 'work_after_frozen_checkpoint':'EXCLUDED'
+})
+readme=R/'README.md'; s=readme.read_text(encoding='utf-8')
+s=s.replace('eight-page technical note, Version 3','nine-page technical note, Version 4').replace('17 October 2026','20 October 2026').replace('22709b33f20484efe16eb4c3592d690c8e0650f3',m['source_commit'])
+s=s.replace('| Quantum control at new point | Complete selected one-loop singlet pole correction has magnitude/tree squared-mass ratio ≈ 1.40004 | A small correction is unsupported in the declared expansion; no reliable pole mass/width is predicted |','| Quantum control at new point | Local-inclusive one-loop singlet pole shift ≈ 140%; separate affine-subtraction-independent Euclidean/timelike combinations ≈ 1.94% / 20.27% | Distinct diagnostics, not contradictory estimates or a higher-order error bound; no reliable physical pole prediction |')
+s=s.replace('| Selected quantum identities | Additional source/ghost poles and scoped Ward/Slavnov checks; latest background extension is conditional on locality of the actual regulated UV pole | Bounded progress, not complete quantum consistency or a proved model-specific locality theorem |','| Formal one-loop consistency | Complete local logarithmic UV Slavnov identity, actual parity-even bosonic counterterm closure, and constructed compact causal/QAP/normalization results in their declared domains | Material progress beyond the previous locality prerequisite; full source/global/physical E5/A5 requirements remain unqualified |\\n| Two-loop threshold primitives | VVVV, VVSS, VSS and ghost–scalar families have scoped amplitude results at the older +0.10486 point | An inventory of four of nine families, not four complete physical thresholds; full finite C1 and unification remain unresolved |')
+s=s.replace('A local RG/log cancellation checks the large singlet correction without making it small.','The new momentum combinations cancel local affine subtractions without deleting the large local-inclusive shift or its absorptive cut. A nonzero internal Yukawa carrier prevents claiming a complete two-loop singlet error bound without the missing matter inputs. Uniform scalar weakening is not a demonstrated quantum-control rescue.')
+s=s.replace('- The updated Version 3 note and editable source, with the original public Version 2 preserved in [paper/archive](paper/archive/).','- The updated Version 4 note and editable source, with public Versions 2 and 3 preserved in [paper/archive](paper/archive/).')
+s=s.replace('- SHA-256 manifests and a verifier that authenticate packaged bytes without executing or scientifically accepting the calculations.','- A [closed portable Hessian pilot](reproducibility/portable_dh_v1/README.md), requiring Python 3.11+ and only the standard library.\\n- SHA-256 manifests and a verifier that authenticate packaged bytes without executing or scientifically accepting the calculations.')
+s=s.replace('The completed weighted-reference and local-covariant-witness records are included; work after the frozen checkpoint is excluded.','The [V421 handoff](reproducibility/RESEARCH_EXECUTION_HANDOFF_V421.md) supplies the frozen continuation context; work after that checkpoint is excluded.')
+s=s.replace('For discussion, useful questions are whether a justified physical-input expansion can control the new point\\'s large singlet correction, and which model-specific locality and finite-threshold calculations are needed before extending the quantum and gauge conclusions.','The C1 amplitude program uses the older point and a fixed background-field Feynman-gauge reference; it is separate from the newer exploratory point and the formal 643-field nonlinear-source construction. No old spectrum, partial primitive or normalization prescription is silently transferred between them. Remaining graph families, counterterm remainders, finite insertions, EFT matching and the final conversion to C1 are not set to zero.\\n\\nFor discussion, useful questions are how to define controlled physical inputs while retaining the singlet cut, and how to finish the primitive/counterterm/EFT layers without double counting.')
+readme.write_text(s,encoding='utf-8',newline='\n')
+guide=R/'reproducibility/README.md'; g=guide.read_text(encoding='utf-8')
+g=g.replace('Version 3 technical note','Version 4 technical note').replace('22709b33f20484efe16eb4c3592d690c8e0650f3',m['source_commit']).replace('original public note is preserved','earlier public notes are preserved')
+a=g.index('The final [handoff V253]'); b=g.index('These original files',a)
+g=g[:a]+'''The final [handoff V421](RESEARCH_EXECUTION_HANDOFF_V421.md) records the current frozen continuation. State version 113 and formal authority 34/39 are unchanged. The current completed results include formal one-loop UV/normalization constructions, compact-domain graded causal/QAP work, additional singlet momentum diagnostics, and four scoped two-loop primitive amplitude families. Full finite C1, unification and physical viability remain unresolved.
+
+The C1 program uses the older positive-Higgs point (hash 476645438ea8a7ada42fea90e80174b772d45ce3e729d013d134e9848950c816) and its specified background-field Feynman-gauge reference. The newer classical witness and its singlet diagnostics use different scalar inputs. The 643-field formal nonlinear-source construction is another precisely defined computational scope. Do not transfer results or assume equivalence between them.
+
+'''+g[b:]
+table='''\n| New completed scope | Result |\n| --- | --- |\n| Same-point singlet momentum response | [1.94% and 20.27% combinations](calculations/canonical_so10_singlet_momentum_shape/RESULT.md), [two-loop Yukawa input carrier](calculations/canonical_so10_singlet_two_loop_input_closure/RESULT.md), [scalar-weakening tradeoff](calculations/canonical_so10_scalar_gauge_homothety/RESULT.md) |\n| Complete formal one-loop UV | [Slavnov identity](calculations/canonical_so10_bv_uv_residue_bridge/RESULT.md), [physical counterterm span](calculations/canonical_so10_physical_counterterm_span/RESULT.md), [strict one-loop acceptance distinction](calculations/canonical_so10_one_loop_acceptance_reconciliation/RESULT.md) |\n| Local causal/QAP and finite normalization | [Graded QAP](calculations/canonical_so10_graded_causal_qap/RESULT.md), [joint normalization/reference member](calculations/canonical_so10_background_reference_normalization/RESULT.md), [local cutoff/source-functional boundary](calculations/canonical_so10_local_cutoff_comparison/RESULT.md) |\n| Scoped VVVV / VVSS amplitudes | [Regulated quartic-vector coefficient](calculations/canonical_so10_vector_quartic_primitive/RESULT.md), [complete IR subtraction](calculations/canonical_so10_vector_quartic_ir_matching/RESULT.md), [mixed quartic finite family](calculations/canonical_so10_vector_scalar_quartic/RESULT.md) |\n| Scoped VSS / ghost–scalar amplitudes | [All-sector common-scale VSS](calculations/canonical_so10_scalar_current_vss_assembly/RESULT.md), [ordered ghost charge operators](calculations/canonical_so10_ghost_scalar_charge_kernel/RESULT.md), [complete ghost–scalar primitive](calculations/canonical_so10_ghost_scalar_sunset/RESULT.md) |\n'''
+g=g.replace('The exploratory fixture is specified',table+'\nThe exploratory fixture is specified')
+g=g.replace('The [Version 2 source manifest](../provenance/source_manifest_v2.json) lists every **update** archive, exact members, the complete current source view and any removed paths.','The [Version 3 source manifest](../provenance/source_manifest_v3.json) binds the unchanged v2 manifest and lists the new update archives and complete current source view. The v2 manifest binds the original v1 base manifest. Every old archive/manifest is retained.')
+g=g.replace('then extract every update archive','then extract all v2 updates followed by all v3 updates')
+g=g.replace('it includes the completed reference-symbol and explicit local-reference witness; work after the frozen checkpoint is excluded.','it includes the completed evidence through V421; work after the frozen checkpoint is excluded.')
+links='\n'.join('- ['+a['filename']+']('+a['filename']+').' for a in m['archives'])
+g=g.replace('## Environment and short replays','### New v3 update archives\n\n'+links+'\n\n## Environment and short replays')
+portable='''## Closed portable classical pilot
+
+Copy the entire [portable_dh_v1 directory](portable_dh_v1/README.md) elsewhere, including its compressed data and manifest. In that copy run both commands:
+
+§§§sh
+python -I -S -B run.py --method slot
+python -I -S -B run.py --method left
+§§§
+
+This pilot requires **Python 3.11+**, independently of the older Python 3.10 scalar environment. It uses the standard library, relative inputs and exact arithmetic. Each method computes all 99,256 positions of the retained classical gauge-fixing/Hessian identity before reading the expected table. It does not reproduce the scalar mass spectrum, full quantum action, upstream physical assumptions or E5/A5. Both methods are executed in an isolated copy for this release.
+
+'''
+g=g.replace('## What was checked for this update',portable.replace('§',chr(96))+'## What was checked for this update')
+g=g.replace('claim_authentication_v2.json','claim_authentication_v3.json').replace('packaging_validation_v2.json','packaging_validation_v3.json')
+g=g.replace('The new point\\'s global quartic and contact certificates','The singlet momentum combinations have different local-subtraction sensitivity from the retained 140% pole shift. The two-loop internal Yukawa carrier supplies a real missing input; no scalar-only truncation is promoted to a complete two-loop error bound. The four primitive amplitude families have different UV/IR completion scopes, not a common fully renormalized threshold status.\\n\\nThe new point\\'s global quartic and contact certificates')
+guide.write_text(g,encoding='utf-8',newline='\n')
+print(json.dumps({'historical_files':len(m['historical_files']),'new_history_members':len(added),'selected_receipts':len(auth['checks'])}))

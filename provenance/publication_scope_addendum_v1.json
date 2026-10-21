@@ -1,0 +1,7 @@
+{
+  "authorization": "Human user additionally requested a public-facing non-technical explanation during the authorized repository update.",
+  "scope": "Add a prominent plain-language explanation in the existing public README. Explain the candidate, tests, setbacks, AI role and remaining limits without changing scientific claims.",
+  "scientific_authority_changed": false,
+  "source_checkpoint_unchanged": "7562f42c14ef1ab5a946fbfc4534509f3378c76b",
+  "scientific_acceptance": "NOT_PERFORMED"
+}

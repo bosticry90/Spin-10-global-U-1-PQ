@@ -1,0 +1,126 @@
+{
+  "all_resource_samples": [
+    {
+      "private_bytes": 430080,
+      "seconds": 0.0012149999965913594
+    },
+    {
+      "private_bytes": 64274432,
+      "seconds": 2.0062535999459215
+    },
+    {
+      "private_bytes": 64208896,
+      "seconds": 4.013179599947762
+    },
+    {
+      "private_bytes": 65089536,
+      "seconds": 6.02908969996497
+    },
+    {
+      "private_bytes": 65286144,
+      "seconds": 8.029388699971605
+    },
+    {
+      "private_bytes": 65286144,
+      "seconds": 10.034246299997903
+    },
+    {
+      "private_bytes": 66334720,
+      "seconds": 12.040836599946488
+    },
+    {
+      "private_bytes": 65392640,
+      "seconds": 14.041217799996957
+    },
+    {
+      "private_bytes": 58593280,
+      "seconds": 16.047791799996048
+    },
+    {
+      "private_bytes": 63762432,
+      "seconds": 18.06310189998476
+    },
+    {
+      "private_bytes": 61251584,
+      "seconds": 20.068770299956668
+    },
+    {
+      "private_bytes": 62193664,
+      "seconds": 22.075532699993346
+    },
+    {
+      "private_bytes": 62197760,
+      "seconds": 24.082386899972335
+    },
+    {
+      "private_bytes": 62197760,
+      "seconds": 26.097904699970968
+    },
+    {
+      "private_bytes": 62197760,
+      "seconds": 28.101889799989294
+    },
+    {
+      "private_bytes": 62197760,
+      "seconds": 30.103488099994138
+    },
+    {
+      "private_bytes": 62197760,
+      "seconds": 32.11017229995923
+    },
+    {
+      "private_bytes": 62197760,
+      "seconds": 34.11703269998543
+    },
+    {
+      "private_bytes": 64569344,
+      "seconds": 36.13232389994664
+    },
+    {
+      "private_bytes": 67305472,
+      "seconds": 38.13787169998977
+    },
+    {
+      "private_bytes": 69529600,
+      "seconds": 40.13876289996551
+    },
+    {
+      "private_bytes": 73588736,
+      "seconds": 42.14903789997334
+    },
+    {
+      "private_bytes": 75341824,
+      "seconds": 44.15163549996214
+    }
+  ],
+  "calculation_completed": true,
+  "command": [
+    "C:\\Program Files\\Python310\\python.exe",
+    "-B",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_scalar_quartic\\color.py",
+    "replay"
+  ],
+  "execution_state": "COMPLETED",
+  "exit_code": 0,
+  "failed_or_incomplete_counted_as_PASS": false,
+  "launch": {
+    "creation_after_observation": true,
+    "creation_filetime": 134369896064083865,
+    "creation_query_error": null,
+    "memory": {
+      "available_pagefile": 11909324800,
+      "available_physical": 2754633728,
+      "load": 83,
+      "total_pagefile": 36658069504,
+      "total_physical": 16992980992
+    },
+    "minimum_available_commit_bytes": 367001600,
+    "observation_end_filetime": 134369896064062914,
+    "observation_start_filetime": 134369896064062914,
+    "pid": 12596,
+    "private_allocation_limit_bytes": 8589934592
+  },
+  "post_run_observations_qualified": true,
+  "private_allocation_limit_bytes": 8589934592,
+  "stdout_and_stderr": "STAGE literal_color_and_normalized_H\nSTAGE color_operator_5\nSTAGE color_operator_10\nSTAGE color_operator_15\nSTAGE color_operator_20\nRESULT {\"elapsed_after_imports\": 44.86116020003101, \"packed_bytes\": 55044, \"packed_sha256\": \"f991d9f3ec0ba1ad25b533b6074990fbb5dc27c40afbf52081a9a4943831a83c\", \"raw_bytes\": 282912, \"role\": \"replay\", \"schema\": \"VSP1_COLOR\", \"tables_sha256\": \"bbc5faacb1ea7472f75e3a3e439225b9c7bfb1299d1dbf78a9bfcf0297f115d6\"}\n"
+}

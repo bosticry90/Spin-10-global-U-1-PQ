@@ -1,0 +1,20 @@
+from pathlib import Path
+from hashlib import sha256
+import ast,json
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_singlet_momentum_shape';C=Path(__file__).resolve().parent
+digest=lambda p:sha256(p.read_bytes()).hexdigest();p=json.loads((O/'preparation.json').read_bytes());inputs=dict(p['input_sha256'])
+for path in [O/'preparation.json',O/'primary_capture.json',O/'replay_capture.json',O/'primary_result.json',O/'replay_result.json',C/'verify.py',C/'prepare_validation.py',C/'run_validation.py']:
+ if path.suffix=='.py':ast.parse(path.read_text())
+ inputs[str(path)]=digest(path)
+for path in [C/'verify.py',C/'prepare_validation.py',C/'run_validation.py']:
+ dest=O/(path.name+'.source.txt')
+ with dest.open('xb') as f:f.write(path.read_bytes())
+ inputs[str(dest)]=digest(dest)
+for raw,h in inputs.items():assert digest(Path(raw))==h,raw
+v={'schema':'SINGLET_MOMENTUM_SHAPE_VALIDATION_PREPARATION_V1','input_sha256':inputs,
+ 'verifier_sha256':digest(C/'verify.py'),'controller_sha256':digest(C/'run_validation.py'),
+ 'independent_seconds_after_imports':180,'sampled_private_limit_bytes':8*1024**3,
+ 'minimum_available_commit_bytes':350*1024**2,'package_limit_bytes':4*1024**2,'absolute_agreement':'1e-28',
+ 'scientific_acceptance':'NOT_PERFORMED'}
+with(O/'validation_preparation.json').open('xb') as f:f.write((json.dumps(v,indent=2,sort_keys=True)+'\n').encode())
+print('VALIDATION_FROZEN',len(inputs),flush=True)

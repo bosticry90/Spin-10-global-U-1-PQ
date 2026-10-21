@@ -1,0 +1,9 @@
+{
+  "capture_sha256": "99d4d7787d5a83c7cfed29e0a1159bd421bd7131c92242c6bd5a78a6494abfd6",
+  "cause": "The generic diagnostic vector O made O local throughout main,shadowing the output directory before preparation was read.",
+  "classification": "FAILED_NATIVE_SETUP_VARIABLE_SHADOWING_BEFORE_SCIENTIFIC_STAGES",
+  "correction": "Rename that illustrative vector only; use new frozen V2 source/preparation/controller and output paths. All original bytes remain.",
+  "failed_counted_as_scientific_PASS": false,
+  "mathematical_inputs_scope_and_resource_limits_changed": false,
+  "source_sha256": "068270011d118344a74089daad155b9de25c5d8c44e8b5832a2965a228ffba34"
+}

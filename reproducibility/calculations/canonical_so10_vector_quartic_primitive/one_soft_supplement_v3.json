@@ -1,0 +1,61 @@
+{
+  "actual_light_ideal_ranks": [
+    1,
+    3,
+    8
+  ],
+  "all_five_45x45_open_kernels_from_six_density_slots_agree": true,
+  "d0_IR_logs_UV_forests_or_common_matching_closed": false,
+  "elapsed_after_imports": 1.0046074999845587,
+  "execution_state": "COMPLETED",
+  "full_inverse_d_pole_and_finite_terms_equal_actual_one_soft_closure": true,
+  "hard_graph_mass_poles_in_ell60g4_units": [
+    "-1309/200",
+    "-1509/200",
+    "-1009/200"
+  ],
+  "hypercharge_closure_control": "INSENSITIVE_ZERO_LIGHT_CHARGE",
+  "inverse_d_closure": [
+    {
+      "finite_inverse_d": "0",
+      "group": "U1",
+      "pole_inverse_d": "0"
+    },
+    {
+      "finite_inverse_d": "-75*h3 - 759*h4/10 - 1509*ld/10 + 1509*z/5 + 6539/100",
+      "group": "SU2",
+      "pole_inverse_d": "1509/10"
+    },
+    {
+      "finite_inverse_d": "-9*h1/20 - 75*h3 - 759*h4/10 - 3027*ld/20 + 3027*z/10 + 13117/200",
+      "group": "SU3",
+      "pole_inverse_d": "3027/20"
+    }
+  ],
+  "mass_resolved_open_kernel_scalars": [
+    [
+      "0",
+      "14/5",
+      "0",
+      "5",
+      "1/5"
+    ],
+    [
+      "2",
+      "0",
+      "0",
+      "3",
+      "3"
+    ],
+    [
+      "3",
+      "1",
+      "0",
+      "2",
+      "2"
+    ]
+  ],
+  "physical_gauge_masses_or_counterterms_adopted": false,
+  "schema": "C1_VECTOR_QUARTIC_ONE_SOFT_SUPPLEMENT_V3",
+  "wrong_half_D4_and_missing_C_epsilon_controls_sensitive_in_nonabelian_factors": true
+}

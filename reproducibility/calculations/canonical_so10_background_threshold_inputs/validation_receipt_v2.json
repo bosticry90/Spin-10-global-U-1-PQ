@@ -1,0 +1,137 @@
+{
+  "C1_GS_calculated": false,
+  "antisymmetric_mutant_changed": 6784,
+  "authority_changed": false,
+  "complete_diagram_weighted_amplitude": false,
+  "custody": "EXIT2_SEVEN_UNRESOLVED_NOT_RERUN",
+  "elapsed_after_imports": 4.884157399996184,
+  "f_nonzero": 720,
+  "f_positions_checked": 91125,
+  "f_sign_mutant_changed": 720,
+  "formal_authority": "34/39_UNCHANGED",
+  "full_T_positions_replayed": 664200,
+  "generic_CT_words": 6,
+  "ghost_sign_control_sensitive": true,
+  "historical_A10_or_E1_action_adopted": false,
+  "independent_matrix_controls": {
+    "SSS": [
+      [
+        "-14441/21600",
+        "4837/10800"
+      ],
+      [
+        "2929/3600",
+        "5477/10800"
+      ]
+    ],
+    "SSSS": [
+      [
+        "59/216",
+        "-71/216"
+      ],
+      [
+        "29/36",
+        "-2/27"
+      ]
+    ],
+    "VSS": [
+      [
+        "-32471/21600",
+        "869/21600"
+      ],
+      [
+        "17/180",
+        "949/2160"
+      ]
+    ],
+    "VVS": [
+      [
+        "-14441/21600",
+        "4837/10800"
+      ],
+      [
+        "2929/3600",
+        "5477/10800"
+      ]
+    ],
+    "VVSS": [
+      [
+        "59/216",
+        "-71/216"
+      ],
+      [
+        "29/36",
+        "-2/27"
+      ]
+    ],
+    "VVV": [
+      [
+        "-32471/21600",
+        "869/21600"
+      ],
+      [
+        "17/180",
+        "949/2160"
+      ]
+    ],
+    "VVVV": [
+      [
+        "59/216",
+        "-71/216"
+      ],
+      [
+        "29/36",
+        "-2/27"
+      ]
+    ],
+    "ghostS": [
+      [
+        "-14441/21600",
+        "4837/10800"
+      ],
+      [
+        "2929/3600",
+        "5477/10800"
+      ]
+    ],
+    "ghostV": [
+      [
+        "-32471/21600",
+        "869/21600"
+      ],
+      [
+        "17/180",
+        "949/2160"
+      ]
+    ],
+    "one_loop_CT": [
+      [
+        "3/4",
+        "-1"
+      ],
+      [
+        "47/36",
+        "-97/54"
+      ]
+    ]
+  },
+  "input_bindings": 63,
+  "mass_VEV_tadpole_finite_CT_complete": false,
+  "native_failures": 0,
+  "native_tables_identical": true,
+  "nonzero_T": 10524,
+  "one_particle_reducible_tadpole_control_sensitive": true,
+  "orbit_coefficients": 424,
+  "ordered_AA_words": 156,
+  "prior_full_coefficient_receipt_reused": true,
+  "schema": "C1_BACKGROUND_THRESHOLD_INPUT_VALIDATION_V2",
+  "shared_premises": "physical action, representation and VEV data, SymPy, published conventions, same AI author",
+  "state_sha256": "d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8",
+  "status": "PASS_BOUNDED_KINEMATIC_INPUT_AND_TOPOLOGY_ONLY",
+  "tensor_sign_mutant_changed": 10524,
+  "v_contraction_control_is_insensitive_to_antisymmetric_omission": true,
+  "verifier_failures": 0,
+  "whole_tensor_antisymmetric_control": true,
+  "zero_complement": 653676,
+  "zero_dimensional_Legendre_Gamma2": "G*(-2*G**2*a**2*lam**2 + 3*G*a**2*k + 12*u**2)/(24*a**2)"
+}

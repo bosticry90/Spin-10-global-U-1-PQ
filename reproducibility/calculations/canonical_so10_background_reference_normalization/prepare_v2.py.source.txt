@@ -1,0 +1,18 @@
+from pathlib import Path
+from hashlib import sha256
+import json,subprocess
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_background_reference_normalization';C=Path(__file__).resolve().parent
+p=json.loads((O/'preparation.json').read_bytes());d=lambda q:sha256(q.read_bytes()).hexdigest()
+for q,h in p['input_sha256'].items():assert d(Path(q))==h,q
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=R).decode().strip()==p['base_commit']
+cap=json.loads((O/'primary_capture.json').read_bytes());assert cap['exit_code']==1 and cap['execution_state']=='FAILED'
+files=list(map(Path,p['input_sha256']))+[O/'preparation.json',O/'primary_capture.json',O/'COMPARISON_V2.md']
+for name in ['bcr_v2.py','verify_v2.py','COMPARISON_V2.md']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((O/name).read_bytes())
+ files.extend([O/name,O/(name+'.source.txt')])
+for name in ['prepare_v2.py','repair_v2.py','run_v2.py','prepare_validation_v2.py','run_validation_v2.py']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((C/name).read_bytes())
+ files.extend([C/name,O/(name+'.source.txt')])
+v=dict(p);v['schema']='BACKGROUND_REFERENCE_PREPARATION_V2';v['input_sha256']={str(q):d(q) for q in files};v['failed_native_workers_preserved']=1
+with (O/'preparation_v2.json').open('xb') as f:f.write((json.dumps(v,indent=2,sort_keys=True)+'\n').encode())
+print('FROZEN_V2',len(v['input_sha256']),flush=True)

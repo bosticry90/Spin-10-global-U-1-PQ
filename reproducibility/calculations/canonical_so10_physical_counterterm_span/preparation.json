@@ -1,0 +1,216 @@
+{
+  "artifacts": {
+    "primary": {
+      "action": {
+        "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_physical_reconciliation\\M08_PHYSICAL_ACTION_COVARIANT_CANDIDATE_V1.json",
+        "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_physical_reconciliation\\validation_receipt.json",
+        "receipt_sha256": "ae86028828bab561189380314a62ef9260158700692ebec5082ec161fac23125",
+        "sha256": "72df4bddfda6d9967f87fc30510c49b1cfb59fddcca1be1694a34828c888ff8b"
+      },
+      "e1": {
+        "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e1_fermion\\primary.json",
+        "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e1_fermion\\validation_receipt.json",
+        "receipt_sha256": "a9dab74d6a9f2eac7cf377d858eb29f9dcaf00bf9fbfde0fce0cafcc2cbbe677",
+        "sha256": "6e8e510252c4615fdfe60e2f9759d7fdded08eb9a8e4afb1aabbce03916ff4ed"
+      },
+      "e2": {
+        "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e2_transport\\primary.json",
+        "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e2_transport\\validation_receipt.json",
+        "receipt_sha256": "ac0e29bf834e7bc24dac3e8e8328e940bd45a4e3ca518f170ef737411f278d11",
+        "sha256": "b08eda0a95ee67677ba69ea81165cd92775c50bce5d4f93ac4486941d84927d4"
+      },
+      "e3": {
+        "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e3_symmetry\\primary.json",
+        "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e3_symmetry\\validation_receipt.json",
+        "receipt_sha256": "33e5acc75c5ffc18424bcfb7b99a5e921003169796eb25dc2f7965d1a7038bfc",
+        "sha256": "51252182b4f07a3c2c017e41fadc4892b953a845860e48c7b5324480e39cef7b"
+      },
+      "ref": {
+        "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_full_hessian\\primary.json",
+        "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_full_hessian\\validation_receipt.json",
+        "receipt_sha256": "aa872b8986f94b828a83aa9ab99cc2c6ea09d7abcbdd502529dc17d5555c18aa",
+        "sha256": "7be7649a0dd0d9c3d77971e104b0a35b08f5c0e9dceaf6897dd96a3303b3068d"
+      },
+      "retract": {
+        "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_nonminimal_retract\\primary.json",
+        "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_nonminimal_retract\\validation_receipt.json",
+        "receipt_sha256": "50730a6f792a2dc7180b27aea88261b7e4f28b91c02d85364b15afeaf9dbe4d7",
+        "sha256": "978cd72ba93c9f8e70be039f3da7815b9c027835125820d1b72f42936611a971"
+      }
+    },
+    "replay": {
+      "action": {
+        "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_physical_reconciliation\\M08_PHYSICAL_ACTION_COVARIANT_CANDIDATE_V1.json",
+        "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_physical_reconciliation\\validation_receipt.json",
+        "receipt_sha256": "ae86028828bab561189380314a62ef9260158700692ebec5082ec161fac23125",
+        "sha256": "72df4bddfda6d9967f87fc30510c49b1cfb59fddcca1be1694a34828c888ff8b"
+      },
+      "e1": {
+        "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e1_fermion\\replay.json",
+        "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e1_fermion\\validation_receipt.json",
+        "receipt_sha256": "a9dab74d6a9f2eac7cf377d858eb29f9dcaf00bf9fbfde0fce0cafcc2cbbe677",
+        "sha256": "3514f2e706527b50f51883681bf42b9e77afcb64999dbc90f2dd4be6dcb62b21"
+      },
+      "e2": {
+        "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e2_transport\\replay.json",
+        "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e2_transport\\validation_receipt.json",
+        "receipt_sha256": "ac0e29bf834e7bc24dac3e8e8328e940bd45a4e3ca518f170ef737411f278d11",
+        "sha256": "f979084cb8236d99f086fbd24038939b340d6dc37e991103b95d2027644ea7ea"
+      },
+      "e3": {
+        "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e3_symmetry\\replay.json",
+        "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e3_symmetry\\validation_receipt.json",
+        "receipt_sha256": "33e5acc75c5ffc18424bcfb7b99a5e921003169796eb25dc2f7965d1a7038bfc",
+        "sha256": "c4ffbc6a6873b34bc566cf822b58afa81aab6e54f5a72574c8ac7785fcb9381d"
+      },
+      "ref": {
+        "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_full_hessian\\replay.json",
+        "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_full_hessian\\validation_receipt.json",
+        "receipt_sha256": "aa872b8986f94b828a83aa9ab99cc2c6ea09d7abcbdd502529dc17d5555c18aa",
+        "sha256": "16f685de41a3b91d48cd663b9b47581ed835e938dd52d9bb1713a5a20c6e29dc"
+      },
+      "retract": {
+        "path": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_nonminimal_retract\\replay.json",
+        "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_nonminimal_retract\\validation_receipt.json",
+        "receipt_sha256": "50730a6f792a2dc7180b27aea88261b7e4f28b91c02d85364b15afeaf9dbe4d7",
+        "sha256": "5e3e82dcad35ed36f8c340dc0873098ec21979474b5a669682f864c2257fd6d3"
+      }
+    }
+  },
+  "base": "29327f5332f68e002d5c81b82a7cbd93f59a61fe",
+  "controller_sha256": "16b927d8792c612f279efe3cf5293d42923e92900edcbea4e52060bddfb36464",
+  "input_sha256": {
+    "C:\\Users\\psboy\\.codex\\research-control-records\\ToE-Next\\physical-counterterm-span-v1-2026-10-19\\prepare.py": "5a8e4631079f655210b366bbe099204cff569fc0bb0e81a6e7680706a38649dd",
+    "C:\\Users\\psboy\\.codex\\research-control-records\\ToE-Next\\physical-counterterm-span-v1-2026-10-19\\run.py": "16b927d8792c612f279efe3cf5293d42923e92900edcbea4e52060bddfb36464",
+    "C:\\Users\\psboy\\.codex\\research-control-records\\ToE-Next\\pq-normalization-span-v1-2026-10-19\\next_physical_derivative_parameter_closure_question.json": "b645b8917d7211ac60aea333817a691142bb07b1d40a8670f55f7a2b0e234df4",
+    "C:\\Users\\psboy\\.codex\\research-control-records\\ToE-Next\\pq-normalization-span-v1-2026-10-19\\post_commit.json": "6750db7b190b44a77ed35aefd5f2f87ae8585b7fde6575731b7cc4badac813e2",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\AGENTS.md": "187b276c38152e7cef292be6c8294da8b1887ddd0cc35492cf44f291888e9c98",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\CHARTER.md": "735cdddad5838ad638e7b0c135dbff8ac9601e1f38c4c21dedfb69be4cfbcd7b",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_actual_normalization_assembly\\ACCEPTANCE_RECONCILIATION.md": "78a1ad9286a00b8c884aae7d79747ffc31f2106db0e5113b58a26906c80f9ebc",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_actual_normalization_assembly\\DERIVATION.md": "4c9787b7d6b10c2cb553ba98d08372df53b47c638e589665783dec4e60e0428d",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_actual_normalization_assembly\\RESULT.md": "54f7cb5f53ddd45281b1ac668fed73c2c334df38995085abca0332313a390db5",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_actual_normalization_assembly\\validation_receipt.json": "57e773e9bd8ac3d4cbd884a019001f609e0bf7999021bdd783b3d83c7935ef5c",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_actual_uv_basic_representative\\DERIVATION.md": "ee57e5e8209bda07ee5228e6f7512a96fd74b67144e32ba5b6e23774aa95cfdf",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_actual_uv_basic_representative\\RESULT.md": "b9e605d3d0e600f2e3c7e3fa54f5ff85de2e4aace316b4de9feb3980cd16b47a",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_actual_uv_basic_representative\\validation_receipt.json": "2bf1fad4ed0183ef6394129eb261772bbea829d2e317dabbd4f0ef7258daeee1",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_dimensional_stokes_primitive\\DERIVATION.md": "304aae132d7579325593bb6ee21cd56245992640cc21b707d6f8fdcbe913a6e9",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_dimensional_stokes_primitive\\RESULT.md": "59f69d0045a0da89373b2ffd2fba9e627bf6805a8c294d03642448b3e0aa7e59",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_dimensional_stokes_primitive\\validation_receipt.json": "c4b4d2f83d87e9575e58be2e8fc73ed48c24f98d58244daee45cfa85539f400f",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_geometric_ward_products\\DERIVATION.md": "4efe41f1a47a9f7d5379ece0135ffb429e738ca75123ef4873de3e9241f11e2f",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_geometric_ward_products\\RESULT.md": "6ebb62654625b7444aa1543e9af4fcb1f4855f8e342bab5107f1d8453ecafb6d",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_geometric_ward_products\\validation_receipt.json": "ee9276d600b93600ecedf6593d4d2dc3ef4cc166743fd15a032fbd3e143e3ff4",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_original_ghost_rescaling\\DERIVATION.md": "8931f354c9f6feb0f709f1690786a7525c0d52a77de6eb77c3bd0b0979c8af8c",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_original_ghost_rescaling\\RESULT.md": "d6c8ce665838870a44c1b987fd6f0973edd5c111c8dd6bf332e40988e49fddc7",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_original_ghost_rescaling\\validation_receipt.json": "c39d3a9c96dfa25e184e91f78c2da4b541e340beab0a765fa0a34c64470a0f3f",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_physical_counterterm_span\\DERIVATION.md": "6fd41fec687797df1a6d6cf8d46985bab9f65e826ddccdab010155a7f9893935",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_physical_counterterm_span\\RECORD.md": "0ab787850c6e8d1645305a61247372e49479cd0090a63d23bec4876a2e0a00ae",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_pq_normalization_span\\DERIVATION.md": "96c282f966ace79ca50aa18d33f38d6441228a920f5caa2b5bfbc1df99a5d80b",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_pq_normalization_span\\RESULT.md": "ec1ee9f87558c8fa819e96034cf45a575aacaa463d301ab8ef65b4462ea56e47",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_pq_normalization_span\\validation_receipt.json": "d7365ec1acb3799461040358df16d815c0799326bb6949230749a783ae64a32c",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_pq_residue_transport\\DERIVATION.md": "85df56097bd75594086cf2f10aea9f62bf59c19b064a2fe2d955b35fa3bf2fc4",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_pq_residue_transport\\RESULT.md": "24aa0dd070c1ba91c07ab06d236d5d2e0a1bf91c431fa6b58a8d77deaa4bb4b2",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_pq_residue_transport\\validation_receipt.json": "a58d235adc61080d3e8f838dd899e2e35ff1e391522cb884c07d410ad1711117",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_scalar_reconstruction\\PARENT_ACTION_V1.md": "01323e0f6a025edd6f6669b43e7c730f5350e28d8561e72df89636862ca358ed",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_scalar_reconstruction\\RESULT_V2.md": "b6c71d51c106b6d610ff1b56bc809750c7b629f7266d1beb7d58cc3ac2059852",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_sourcefree_primitive_probe\\ACCEPTANCE_RECONCILIATION.md": "2001428240586d2f2153866186ef80bd9eddfa6d3450a9f2895b8c68b38456c8",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_sourcefree_primitive_probe\\DERIVATION.md": "d884a341797b51b45d5748449227e157de9a9ea32efbb67d30fac3d472ceb5c0",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_sourcefree_primitive_probe\\RESULT.md": "a32ebdb95b4821366735333c2425090ba07a6793c8fc4c30a8ccaa8744fec78e",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_sourcefree_primitive_probe\\validation_receipt.json": "7a7cfcfd27541b2715874167e43243652230ed49c500f188dbe5e4f616edf1fb",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\docs\\LOCAL_RESEARCH_CONVENTIONS_V1.md": "65503f21fbde7e43d45b4f6851250bff7667a787637a78bfed730655a09fbbf3",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\docs\\RESEARCH_EXECUTION_HANDOFF_V337.md": "4b88ad1dc764219273b58718626d44efcad7eff77c288850214511c984b80b67",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\docs\\SOLO_REVIEW_POLICY_V1.md": "c0f86555ef8e3e36637f560549476f00508f47c6f58c06ebcfc51a3566826fe1",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\project_state.json": "d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\portable_dh_v1\\exact_algebra.py": "8f28652f3f7d53a8fdd9555d9976f32b49cf23239fa663eb9df3711d59b07379",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\portable_dh_v1\\inputs.json.gz": "7cb864dcef9d47e664c2a7cec3a5d457f2e9872eae7af4f015a0e0bd3fc0edcb",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\A10_E5_COUPLING_RING_DERIVATION_V1.md": "15850b7e30e49071f0d92284c67a44ce777538ea8dad3369b2057222bf4f1e7e",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\A10_E5_COUPLING_RING_RESULT.md": "2a429e15fee496ba5c14d3ab3ef24a78dd9396ca95075ce9a425b5857fe3737e",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\A10_E5_DOMAIN_CONTRACT_V1.md": "235b17e4af608f6aa6bf2f5a29398bf624d8d1a3a122cd136f26607467a3d1d3",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\A10_E5_NONMINIMAL_RETRACT_DERIVATION_V1.md": "93cee3a0e0f539e1fb311651dd67c893152badb6bbb1aa0097b28f8b4afac4c7",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\A10_E5_NONMINIMAL_RETRACT_RESULT.md": "5c8c53b890f12bf7020c3098d5506e4294750ef8aaaa17eefeceaedbb28045f2",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\A10_E5_QUANTUM_FUNCTIONAL_SPEC_V1.md": "09cb8f8c2f1ffc8e25dca6cd2931d491aa2f9e1db67f46844e75ae7d6b148a9a",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e1_fermion\\bindings.json": "e40243b16a5b99e8a1afa6138ed8879446c2f2ace4e336d1d241c75ca95c3b8e",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e1_fermion\\primary.json": "6e8e510252c4615fdfe60e2f9759d7fdded08eb9a8e4afb1aabbce03916ff4ed",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e1_fermion\\replay.json": "3514f2e706527b50f51883681bf42b9e77afcb64999dbc90f2dd4be6dcb62b21",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e1_fermion\\validation_receipt.json": "a9dab74d6a9f2eac7cf377d858eb29f9dcaf00bf9fbfde0fce0cafcc2cbbe677",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e2_transport\\bindings.json": "8d86873bc3a9504603dbce91bedc928b4a98ff356c69cf9521d54d77ee3c0ab6",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e2_transport\\primary.json": "b08eda0a95ee67677ba69ea81165cd92775c50bce5d4f93ac4486941d84927d4",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e2_transport\\replay.json": "f979084cb8236d99f086fbd24038939b340d6dc37e991103b95d2027644ea7ea",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e2_transport\\validation_receipt.json": "ac0e29bf834e7bc24dac3e8e8328e940bd45a4e3ca518f170ef737411f278d11",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e3_symmetry\\bindings.json": "1ea8e5a8b9707e2bb7e88cdb52764c3c3f1b2108750666bec2f7051474ad66d3",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e3_symmetry\\primary.json": "51252182b4f07a3c2c017e41fadc4892b953a845860e48c7b5324480e39cef7b",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e3_symmetry\\replay.json": "c4ffbc6a6873b34bc566cf822b58afa81aab6e54f5a72574c8ac7785fcb9381d",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e3_symmetry\\validation_receipt.json": "33e5acc75c5ffc18424bcfb7b99a5e921003169796eb25dc2f7965d1a7038bfc",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_coupling_ring\\validation_receipt.json": "df8461f42d2cd852fe5bfb2faf316be037cff51a01d4fecc2c268dce094e0538",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_full_hessian\\primary.json": "7be7649a0dd0d9c3d77971e104b0a35b08f5c0e9dceaf6897dd96a3303b3068d",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_full_hessian\\replay.json": "16f685de41a3b91d48cd663b9b47581ed835e938dd52d9bb1713a5a20c6e29dc",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_full_hessian\\validation_receipt.json": "aa872b8986f94b828a83aa9ab99cc2c6ea09d7abcbdd502529dc17d5555c18aa",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_nonminimal_retract\\primary.json": "978cd72ba93c9f8e70be039f3da7815b9c027835125820d1b72f42936611a971",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_nonminimal_retract\\replay.json": "5e3e82dcad35ed36f8c340dc0873098ec21979474b5a669682f864c2257fd6d3",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_nonminimal_retract\\validation_receipt.json": "50730a6f792a2dc7180b27aea88261b7e4f28b91c02d85364b15afeaf9dbe4d7",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_physical_reconciliation\\M08_PHYSICAL_ACTION_COVARIANT_CANDIDATE_V1.json": "72df4bddfda6d9967f87fc30510c49b1cfb59fddcca1be1694a34828c888ff8b",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_physical_reconciliation\\validation_receipt.json": "ae86028828bab561189380314a62ef9260158700692ebec5082ec161fac23125"
+  },
+  "limits": {
+    "native_seconds_after_imports": 120,
+    "package_bytes": 8388608,
+    "sampled_private_bytes": 8589934592,
+    "verifier_seconds_after_imports": 180
+  },
+  "qualified_receipt_scopes": [
+    {
+      "disposition": "QUALIFIED_ACTUAL_ONE_LOOP_UV_SOURCE_COMPLETENESS_AND_CONSTRUCTIVE_CLASSICAL_BASIC_REPRESENTATIVE_ONLY",
+      "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_actual_uv_basic_representative\\validation_receipt.json"
+    },
+    {
+      "disposition": "COMPLETE_FORMAL_FIRST_ORDER_ONE_LOOP_ACTUAL_COUNTERTERM_SLAVNOV_BACKGROUND_AND_COMPLETED_GEOMETRIC_WARD_ASSEMBLY_NOT_FULL_E5",
+      "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_actual_normalization_assembly\\validation_receipt.json"
+    },
+    {
+      "disposition": "COMPLETE_FORMAL_ONE_LOOP_FIRST_PROBE_SOURCEFREE_PRIMITIVE_REPLACEMENT_IN_DECLARED_EUCLIDEAN_DOMAIN_NOT_FULL_E5",
+      "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_sourcefree_primitive_probe\\validation_receipt.json"
+    },
+    {
+      "disposition": "FORMAL_LOCAL_POLYNOMIAL_DIMENSIONAL_STOKES_PRIMITIVE_WITH_REAL_BACKGROUND_REPRESENTATIVE_NOT_FULL_CONTACT_QAP_E5",
+      "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_dimensional_stokes_primitive\\validation_receipt.json"
+    },
+    {
+      "disposition": "QUALIFIED_COMPLETE56_W5_ONE_LOOP_WHOLE_SOURCE_PRODUCT_AND_GEOMETRIC_WARD_CONSTRUCTION_IN_FIXED_EUCLIDEAN_FINITE_MAP_ONLY",
+      "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_geometric_ward_products\\validation_receipt.json"
+    },
+    {
+      "disposition": "QUALIFIED_ORIGINAL_EXACT_GHOST_COUNTERTERM_FIRST_PROBE_ONE_LOOP_RENORMALIZED_REPLACEMENT_IN_SPECIFIED_EUCLIDEAN_CONSTRUCTION_ONLY",
+      "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_original_ghost_rescaling\\validation_receipt.json"
+    },
+    {
+      "disposition": "ACTUAL_BOSONIC_PQ_UV_CLASS_NEUTRAL_REPRESENTATIVE_WITH_TRANSPORTED_SOURCES_NOT_FULL_PHYSICAL_PARAMETER_STABILITY",
+      "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_pq_residue_transport\\validation_receipt.json"
+    },
+    {
+      "disposition": "ACTUAL_PQ_RESTORING_PRIMITIVE_REDUCED_TO_SIX_AFFINE_SCALAR_NORMALIZATIONS_WITH_COMMON_ONE_LOOP_FIRST_PROBE_REPLACEMENT_ONLY",
+      "receipt": "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_pq_normalization_span\\validation_receipt.json"
+    }
+  ],
+  "read_json_by_role": {
+    "primary": [
+      "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_physical_counterterm_span\\preparation.json",
+      "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e1_fermion\\primary.json",
+      "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e2_transport\\primary.json",
+      "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e3_symmetry\\primary.json",
+      "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_full_hessian\\primary.json",
+      "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_nonminimal_retract\\primary.json",
+      "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_physical_reconciliation\\M08_PHYSICAL_ACTION_COVARIANT_CANDIDATE_V1.json"
+    ],
+    "replay": [
+      "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_physical_counterterm_span\\preparation.json",
+      "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e1_fermion\\replay.json",
+      "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e2_transport\\replay.json",
+      "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e3_symmetry\\replay.json",
+      "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_full_hessian\\replay.json",
+      "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_e5_nonminimal_retract\\replay.json",
+      "C:\\Users\\psboy\\Documents\\ToE-Next\\tools\\two_loop_qft_compiler_v1\\m08_independent_replay_package_v1\\frozen_a10_physical_reconciliation\\M08_PHYSICAL_ACTION_COVARIANT_CANDIDATE_V1.json"
+    ]
+  },
+  "schema": "PHYSICAL_COUNTERTERM_SPAN_PREPARATION_V1",
+  "scope": "Actual formal parity-even one-loop physical parameter span and first-order correlated normalization reconstruction,with separate background/vacuum normalization;not full E5/A5 or all-order/physical viability.",
+  "source_sha256": "068270011d118344a74089daad155b9de25c5d8c44e8b5832a2965a228ffba34"
+}

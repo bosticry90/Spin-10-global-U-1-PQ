@@ -1,0 +1,218 @@
+"""SGH1 independent joint geometry, finite CW derivatives and rational root bounds."""
+from pathlib import Path
+from hashlib import sha256
+from fractions import Fraction as F
+from functools import lru_cache
+import json,time,subprocess,threading,os
+import sympy as s
+import mpmath as mp
+T0=time.perf_counter();timer=threading.Timer(180,lambda:os._exit(124));timer.daemon=True;timer.start()
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_scalar_gauge_homothety'
+p=json.loads((O/'validation_preparation.json').read_bytes())
+for raw,h in p['input_sha256'].items():assert sha256(Path(raw).read_bytes()).hexdigest()==h,raw
+prep=json.loads((O/'preparation.json').read_bytes())
+for v in prep['historical_git_bindings']:
+ assert sha256(subprocess.check_output(['git','show',v['commit']+':'+v['path']],cwd=R)).hexdigest()==v['sha256']
+read=lambda x:json.loads(x.read_bytes())
+rad=read(R/'calculations/canonical_so10_finite_radial_control/primary_result.json');base=rad['probes'][-1]
+old=read(R/'calculations/canonical_so10_radial_bosonic_tadpoles/original_v2_result.json')
+GP=s.SparseMatrix(old['gauge_Gamma_Phi']);GS=s.SparseMatrix(old['gauge_Gamma_Sigma'])
+assert GP*GS==GS*GP and GP**2==50*GP
+Q0=s.eye(45)-GP/50;Q50=GP/50;sv=[s.S.Zero,s.Rational(3,5),s.Integer(3)]
+joint=[];total=s.zeros(45)
+for phi,Qp in [(s.S.Zero,Q0),(s.Integer(50),Q50)]:
+ for sigma in sv:
+  Qs=s.eye(45)
+  for other in sv:
+   if sigma!=other:Qs=Qs*(GS-other*s.eye(45))/(sigma-other)
+  P=Qp*Qs;assert P*P==P and GP*P==phi*P and GS*P==sigma*P
+  rank=int(s.trace(P));total+=P
+  if rank:joint.append((phi,sigma,rank))
+assert total==s.eye(45) and sum(n for a,b,n in joint)==45
+assert {(str(a),str(b),n) for a,b,n in joint}=={('0','0',12),('0','3/5',8),('0','3',1),('50','0',12),('50','3/5',12)}
+heavy=[(a,b,n) for a,b,n in joint if a+b!=0]
+assert sum(n for a,b,n in heavy)==33
+H=s.Matrix(rad['exact_raw_radial_Hessian']);metric=list(map(s.Rational,rad['radial_metrics']))
+assert H==s.diag(*[H[i,i] for i in range(3)]) and H[1,1]==s.Rational(27,625)
+
+# The literal action/Hessian is linear in its34 independent real coefficient slots.
+cache=read(R/'calculations/canonical_so10_singlet_tadpole/original_v2_result.json')
+assert len(cache['slots'])==34 and len(set(cache['slots']))==34
+assert len(cache['block_inputs'])==35 and len(rad['raw_coefficients'])==29
+assert all(0<=k<34 for b in cache['block_inputs'] for k,i,j,v in b['raw_H34_sparse'])
+e=s.Symbol('epsilon',positive=True);x,lam,v=s.symbols('x lam v',real=True)
+literal=-(lam*v*v)*x*x/2+lam*x**4/4
+assert s.diff(e*literal,x).subs(x,v)==0
+assert s.diff(-(lam*v*v)*x*x/2+e*lam*x**4/4,x).subs(x,v)==lam*v**3*(e-1)
+HH=s.Matrix([[3,1],[1,2]]);bb=s.Matrix([2,3]);q=s.Integer(7)
+assert s.simplify(e*q-(e*bb).T.multiply((e*HH).inv()).multiply(e*bb)[0]-e*(q-(bb.T*HH.inv()*bb)[0]))==0
+c0=s.Rational(824404010711173266247333949,1720579893948342670590110120750)
+assert c0>0 and s.Rational(35439836953,72000000000)<s.Rational(1,2)
+# These are transferred bounds, not fresh invariant/whole-contact proofs.
+
+mp.mp.dps=100;num=lambda x:mp.mpf(str(s.N(x,110)));hh=[num(H[i,i]) for i in range(3)];gm=list(map(num,metric))
+h=mp.mpf('1e-40');eps=[mp.mpf(1),mp.mpf(1)/2,mp.mpf(1)/10,mp.mpf(1)/100]
+def cw(z,c):return mp.mpc(0) if z==0 else z*z*(mp.log(mp.mpc(z)/60)-c)/(64*mp.pi**2)
+def scalar_fd(e):
+ result=[]
+ for direction in range(3):
+  derivative=mp.mpc(0);zeros=positive=0
+  for block in base['blocks']:
+   vals=list(map(mp.mpf,block['mass_squared']));nz=block['zero_copies']
+   assert all(abs(z)<mp.mpf('1e-60') for z in vals[:nz]) and all(z>mp.mpf('1e-40') for z in vals[nz:])
+   zeros+=block['dimension']*nz;positive+=block['dimension']*(len(vals)-nz)
+   for j,z in enumerate(vals):
+    z=mp.mpf(0) if j<nz else z
+    tangent=mp.mpf(block['D_radial_in_mass_basis_diagonals'][direction][j])
+    derivative+=block['dimension']*(cw(e*(z+h*tangent),mp.mpf('1.5'))-cw(e*(z-h*tangent),mp.mpf('1.5')))/(2*h)
+  assert zeros==38 and positive==290 and abs(mp.im(derivative))<mp.mpf('1e-28')
+  result.append(-mp.re(derivative)/(e*hh[direction]))
+ return result
+scalar={str(e):scalar_fd(e) for e in eps};S=scalar[str(mp.mpf(1))]
+b=[mp.mpf(base['B_raw'][i])/hh[i] for i in range(3)]
+assert all(z>0 for z in S+b)
+for e in eps:
+ for i in range(3):assert abs(scalar[str(e)][i]-e*(S[i]-b[i]*mp.log(e)))<mp.mpf('1e-28')
+def vector_fd(g,constant=mp.mpf(5)/6):
+ result=[]
+ for i in range(3):
+  def U(t):
+   val=mp.mpf(0)
+   for a,z,n in heavy:
+    gamma=num(a)*(1+t if i==0 else 1)**2+num(z)*(1+t if i==1 else 1)**2
+    val+=3*n*cw(g*g*gamma,constant)
+   return val
+  result.append(-mp.re(U(h)-U(-h))/(2*h*hh[i]))
+ return result
+def orbit_fd(u,e):
+ result=[]
+ for i in range(3):
+  def U(t):
+   val=mp.mpf(0)
+   for a,z,n in heavy:
+    gamma=num(a+z);weight=num(a) if i==0 else num(z) if i==1 else mp.mpf(0)
+    tangent=e*hh[i]/gm[i]*weight/gamma
+    val+=n*cw(u*gamma+t*tangent,mp.mpf('1.5'))
+   return val
+  result.append(-mp.re(U(h)-U(-h))/(2*h*e*hh[i]))
+ return result
+gvals=[mp.mpf(1)/4,mp.mpf(1)/2,mp.mpf(1)]
+vectors={str(g):vector_fd(g) for g in gvals}
+orbits={(str(u),str(e)):orbit_fd(u,e) for u in [mp.mpf(1)/4,mp.mpf(1)/2] for e in eps}
+assert 2*S[1]>3*b[1] and vectors[str(mp.mpf('.5'))][1]>S[1]-b[1]
+assert abs(vector_fd(mp.mpf('.5'),mp.mpf('1.5'))[1]-vectors[str(mp.mpf('.5'))][1])>mp.mpf('1e-8')
+assert abs(scalar[str(mp.mpf('.1'))][1]-mp.mpf('.1')*S[1])>mp.mpf('1e-8')
+assert vectors[str(mp.mpf('.5'))][1]/mp.mpf('.1')!=vectors[str(mp.mpf('.5'))][1]
+assert orbits[str(mp.mpf('.25')),str(mp.mpf('.1'))][1]/mp.mpf('.1')!=orbits[str(mp.mpf('.25')),str(mp.mpf('.1'))][1]
+
+# Rigorous interval arithmetic for the EXACT vector function and its unique root.
+def atan_interval(q,N):
+ sm=sum((-1)**k*q**(2*k+1)/F(2*k+1) for k in range(N));nxt=(-1)**N*q**(2*N+1)/F(2*N+1)
+ return min(sm,sm+nxt),max(sm,sm+nxt)
+a0,a1=atan_interval(F(1,5),22);b0,b1=atan_interval(F(1,239),8)
+tan2=2*F(1,5)/(1-F(1,5)**2);tan4=2*tan2/(1-tan2**2)
+assert (tan4-F(1,239))/(1+tan4*F(1,239))==1
+assert 0<4*(F(1,5)/(1+F(1,5)**2))-F(1,239) and 4*F(1,5)<1
+pi_lo,pi_hi=16*a0-4*b1,16*a1-4*b0;assert F(3)<pi_lo<pi_hi and pi_hi*pi_hi<10
+@lru_cache(None)
+def small_log(q,N):
+ z=(q-1)/(q+1);assert 0<=z<=F(1,3)
+ sm=2*sum(z**(2*k+1)/F(2*k+1) for k in range(N));tail=2*z**(2*N+1)/(F(2*N+1)*(1-z*z))
+ return sm,sm+tail
+def logarithm(q,N):
+ exponent=0
+ while q<1:q*=2;exponent-=1
+ while q>=2:q/=2;exponent+=1
+ lo,hi=small_log(q,N);two_lo,two_hi=small_log(F(2),N)
+ if exponent>=0:return lo+exponent*two_lo,hi+exponent*two_hi
+ return lo+exponent*two_hi,hi+exponent*two_lo
+ratheavy=[(F(str(a+z)),F(str(z))*n) for a,z,n in heavy]
+def V_interval(g,N=24):
+ lo=hi=F(0)
+ for gamma,trGS in ratheavy:
+  if trGS==0:continue
+  ll,uu=logarithm(g*g*gamma/60,N);w=gamma*2*trGS
+  lo+=w*(F(1,3)-uu);hi+=w*(F(1,3)-ll)
+ factor=F(3)*g**4/(32*F(27,625))
+ return factor*lo/(pi_hi*pi_hi),factor*hi/(pi_lo*pi_lo)
+left,right=F(0),F(1)
+assert V_interval(right)[0]>1
+for _ in range(50):
+ middle=(left+right)/2;N=24
+ while True:
+  vlo,vhi=V_interval(middle,N)
+  if vlo>1:right=middle;break
+  if vhi<1:left=middle;break
+  N+=12;assert N<=132,'INCONCLUSIVE_EXACT_ROOT_INTERVAL'
+assert right-left<F(2,10**15)
+assert V_interval(left)[1]<1<V_interval(right)[0]
+assert F(1)-F(1,6)+F(1,72)-F(1,1296)>F(253,300)
+coarse=F(1,2)**4*sum(ga*2*ts for ga,ts in ratheavy)/(32*10*F(27,625));assert coarse>1
+def V_num(g):
+ return 3*g**4*sum(mp.mpf(ga.numerator)/ga.denominator*2*mp.mpf(ts.numerator)/ts.denominator*(mp.mpf(1)/3-mp.log(g*g*mp.mpf(ga.numerator)/ga.denominator/60)) for ga,ts in ratheavy)/(32*mp.pi**2*hh[1])
+lo,hi=mp.mpf(0),mp.mpf(1)
+for _ in range(240):
+ mid=(lo+hi)/2
+ if 4*S[1]*V_num(mid)<1:lo=mid
+ else:hi=mid
+rootAM=(lo+hi)/2
+
+# Complete S pole homogeneity, with the finite-difference source response.
+pp=read(R/'calculations/canonical_so10_singlet_pole_control/primary_result.json')['probes'][-1]
+rg=read(R/'calculations/canonical_so10_singlet_pole_rg_check/primary_result.json')
+CA=CB=mp.mpf(0)
+for block in pp['blocks']:
+ if block.get('exact_zero_D_E'):continue
+ CA+=block['dimension']*sum(mp.mpf(x)*mp.mpf(y) for x,y in zip(block['mass_squared'],block['E_in_mass_basis_diagonal']))/(32*mp.pi**2)
+ CB+=block['dimension']*sum(mp.mpf(v['D_abs2']) for v in block['D_squared_and_kernel_all_pairs'])/(32*mp.pi**2)
+L=CA+CB-mp.mpf(18)/5*b[2]
+assert abs(2*L+mp.mpf(rg['explicit_log_derivative_numeric']))<mp.mpf('1e-28')
+pole_values={}
+for e in eps:
+ local=e*e*(mp.mpf(pp['seagull'])+CA*mp.log(e))
+ bubble=e*e*(mp.mpc(*map(mp.mpf,pp['cubic_bubble']))+CB*mp.log(e))
+ source=mp.mpf(18)/5*e*scalar[str(e)][2]
+ pole_values[str(e)]=local+bubble+source
+ assert abs(pole_values[str(e)]-(local+bubble-source))>mp.mpf('1e-8')
+assert pole_values[str(mp.mpf('.1'))]!=-pole_values[str(mp.mpf('.1'))]
+
+# Read completed native outputs only after independent calculations.
+times={}
+for role in ['primary','replay']:
+ cap=read(O/(role+'_capture.json'));assert cap['execution_state']=='COMPLETED' and not cap['failed_or_incomplete_counted_as_PASS']
+ r=read(O/(role+'_result.json'));times[role]=r['elapsed_after_imports'];assert times[role]<120
+ assert r['scalar_coefficient_directions_scaled']==34 and not r['new_benchmark_or_gauge_input_adopted']
+ assert not r['fermion_cancellation_full_quantum_control_or_model_no_go_claimed'] and not r['authority_changed']
+ for probe in r['probes']:
+  root=mp.mpf(probe['vector_only_root_g']);assert mp.mpf(left.numerator)/left.denominator<root<mp.mpf(right.numerator)/right.denominator
+  assert abs(mp.mpf(probe['AM_necessary_root_g'])-rootAM)<mp.mpf('1e-28')
+  assert abs(mp.mpf(probe['S_pole_log_epsilon_coefficient'])-L)<mp.mpf('1e-28')
+  for row in probe['scalar_responses']:
+   e=mp.mpf(row['epsilon']);assert max(abs(mp.mpf(x)-y) for x,y in zip(row['raw_scalar_response'],scalar[str(e)]))<mp.mpf('1e-28')
+  for row in probe['bosonic_grid']:
+   e,g,u=map(mp.mpf,[row['epsilon'],row['g_diagnostic'],row['u_xi_g2_diagnostic']])
+   vv=vectors[str(g)];oo=orbits[str(u),str(e)];answer=[scalar[str(e)][i]+vv[i]/e+oo[i] for i in range(3)]
+   assert max(abs(mp.mpf(x)-y) for x,y in zip(row['raw_bosonic_response'],answer))<mp.mpf('1e-28')
+   assert answer[1]>=2*mp.sqrt(S[1]*vv[1])+oo[1]
+  for row in probe['singlet_poles']:
+   e=mp.mpf(row['epsilon']);value=pole_values[str(e)]
+   assert abs(mp.mpc(*map(mp.mpf,row['complete_S_delta_mass2']))-value)<mp.mpf('1e-28')
+ assert F(r['probes'][-1]['g_half_exact_vector_lower_bound_using_pi2_lt10'])==coarse
+assert sha256((R/'project_state.json').read_bytes()).hexdigest()=='d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8'
+assert sum(f.stat().st_size for f in O.iterdir() if f.is_file())<4*1024**2
+elapsed=time.perf_counter()-T0;assert elapsed<180
+out={'schema':'SCALAR_GAUGE_HOMOTHETY_VALIDATION_V1','execution_state':'COMPLETED',
+ 'scientific_disposition':'QUALIFIED_ANALYTIC_SCALAR_FAMILY_CLASSICAL_TRANSFER_AND_CONDITIONAL_BOSONIC_NONRESCUE_NOT_QUANTUM_MODEL_VERDICT',
+ 'input_sha256':p['input_sha256'],'historical_git_bindings':prep['historical_git_bindings'],
+ 'native_seconds_after_imports':times,'elapsed_after_imports':elapsed,
+ 'vector_root_rigorous_rational_bracket':[str(left),str(right)],'vector_root_enclosure_width':str(right-left),
+ 'AM_root_numerical_inherits_scalar_input':mp.nstr(rootAM,32),
+ 'g_half_exact_vector_lower_bound_using_pi2_lt10':str(coarse),'S_pole_log_epsilon_coefficient':mp.nstr(L,32),
+ 'joint45_geometry_and_all_scalar_response_tables_checked':True,
+ 'CW_directional_finite_difference_tolerance':'1e-28','native_tolerance':'1e-28',
+ 'all_epsilon_proof_required_and_g_half_monotonic_worsening_conditions_checked':True,
+ 'physical_benchmark_scheme_gauge_or_flavor_input_adopted':False,
+ 'full_quantum_control_or_model_no_go_or_E5_claimed':False,
+ 'failed_native_workers':0,'failed_verifier_workers':0,'prelaunch_failed_patch_applications':1,
+ 'authority_changed':False,'whole_goal_complete':False}
+print('RESULT '+json.dumps(out,sort_keys=True,separators=(',',':')),flush=True);timer.cancel()

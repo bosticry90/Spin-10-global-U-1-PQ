@@ -1,0 +1,14 @@
+{
+  "counts": {
+    "gauge": 33,
+    "physical": 290,
+    "soft": 5
+  },
+  "elapsed_after_imports": 7.961728300026152,
+  "packed_bytes": 22914,
+  "packed_sha256": "7bdbbc41eea578d1385027f4884173aba99ab397e8b1f595ec2795eb79439c7d",
+  "raw_bytes": 111146,
+  "role": "primary",
+  "schema": "VSP1_AMPLITUDE",
+  "tables_sha256": "b40617b4a8e5c609432e37a8e3791b7f4f8b0b96bb6ac039548fde8b998ad893"
+}

@@ -1,0 +1,13 @@
+from pathlib import Path
+from hashlib import sha256
+import json
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_graded_causal_qap'
+p=json.loads((O/'preparation.json').read_bytes());files=list(map(Path,p['input_sha256']))
+for role in ['primary','replay']:
+ cap=json.loads((O/(role+'_capture.json')).read_bytes());assert cap['execution_state']=='COMPLETED' and cap['exit_code']==0
+ files +=[O/(role+'_capture.json'),O/(role+'_result.json')]
+files.append(O/'preparation.json')
+for q,h in p['input_sha256'].items():assert sha256(Path(q).read_bytes()).hexdigest()==h,q
+v={'schema':'GRADED_CAUSAL_QAP_VALIDATION_PREPARATION_V1','input_sha256':{str(q):sha256(q.read_bytes()).hexdigest() for q in files},'authority_changed':False}
+with (O/'validation_preparation.json').open('xb') as f:f.write((json.dumps(v,indent=2,sort_keys=True)+'\n').encode())
+print('VALIDATION_FROZEN',len(v['input_sha256']),flush=True)

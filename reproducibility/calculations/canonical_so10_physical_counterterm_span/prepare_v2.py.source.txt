@@ -1,0 +1,16 @@
+from pathlib import Path
+from hashlib import sha256
+import json,ast
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_physical_counterterm_span';C=Path(__file__).resolve().parent
+read=lambda p:json.loads(p.read_bytes());digest=lambda p:sha256(p.read_bytes()).hexdigest()
+old=read(O/'preparation.json')
+for raw,h in old['input_sha256'].items():assert digest(Path(raw))==h,raw
+assert digest(O/'span.py')==old['source_sha256'] and digest(C/'run.py')==old['controller_sha256']
+v=read(O/'preparation.json');v['schema']='PHYSICAL_COUNTERTERM_SPAN_PREPARATION_V2';v['source_sha256']=digest(O/'span_v2.py');v['controller_sha256']=digest(C/'run_v2.py')
+ast.parse((O/'span_v2.py').read_text());ast.parse((C/'run_v2.py').read_text())
+with Path(__file__).with_name('prepare_v2.py.source.txt').open('xb') as f:f.write(Path(__file__).read_bytes())
+with(O/'prepare_v2.py.source.txt').open('xb') as f:f.write(Path(__file__).read_bytes())
+for p in [O/'preparation.json',O/'span.py',O/'span.py.source.txt',O/'span_v2.py',O/'span_v2.py.source.txt',C/'run_v2.py',C/'run_v2.py.source.txt',Path(__file__),O/'failure_v1.json',O/'primary_capture.json',O/'CONTINUATION_V2.md']:v['input_sha256'][str(p)]=digest(p)
+for role in v['read_json_by_role']:v['read_json_by_role'][role]=[str(O/'preparation_v2.json') if raw==str(O/'preparation.json') else raw for raw in v['read_json_by_role'][role]]
+with(O/'preparation_v2.json').open('xb') as f:f.write((json.dumps(v,sort_keys=True,indent=2)+chr(10)).encode())
+print('V2_FROZEN',len(v['input_sha256']),v['source_sha256'])

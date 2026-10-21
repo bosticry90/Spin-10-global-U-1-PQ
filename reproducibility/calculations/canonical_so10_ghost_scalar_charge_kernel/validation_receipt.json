@@ -1,0 +1,285 @@
+{
+  "F2_nonzero_profiles": [
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      3
+    ],
+    [
+      1,
+      2,
+      2
+    ],
+    [
+      1,
+      3,
+      0
+    ],
+    [
+      1,
+      3,
+      5
+    ],
+    [
+      1,
+      4,
+      0
+    ],
+    [
+      1,
+      4,
+      1
+    ],
+    [
+      2,
+      1,
+      2
+    ],
+    [
+      2,
+      4,
+      0
+    ],
+    [
+      2,
+      4,
+      5
+    ],
+    [
+      3,
+      1,
+      0
+    ],
+    [
+      3,
+      1,
+      5
+    ],
+    [
+      3,
+      3,
+      0
+    ],
+    [
+      3,
+      4,
+      0
+    ],
+    [
+      4,
+      1,
+      0
+    ],
+    [
+      4,
+      1,
+      1
+    ],
+    [
+      4,
+      2,
+      0
+    ],
+    [
+      4,
+      2,
+      5
+    ],
+    [
+      4,
+      3,
+      0
+    ],
+    [
+      4,
+      4,
+      0
+    ],
+    [
+      4,
+      4,
+      3
+    ]
+  ],
+  "F2_profile_count": 21,
+  "Gold_Frobenius_replacement_change_profiles": 13,
+  "SCM_actual_commutator_and_frame_certificate": "REUSED_AUTHENTICATED_NOT_RERUN",
+  "actual_intertwiners": 12,
+  "authority": "34/39_UNCHANGED",
+  "classes": 35,
+  "closed_type_probe_positions": 150,
+  "commutant_units": 177,
+  "complete_operator_positions": 30975,
+  "diagonal_H_trace_change_operator_count": 33,
+  "elapsed_after_imports": 101.91024170001037,
+  "exact_UV_arithmetic_no_float_atoms": true,
+  "exact_native_operator_equality": true,
+  "execution_state": "COMPLETED",
+  "full_C1_or_E5_qualified": false,
+  "full_model_ghostS_amplitude_calculated": false,
+  "ghost_Casimir_averaging_change_positions": 40,
+  "ghost_pairs": 25,
+  "light_pair_operator_positions": 11151,
+  "mass_role_exchange_change_positions": 108,
+  "native_runs": [
+    {
+      "role": "primary",
+      "sampled_private_max": 66600960,
+      "seconds": 41.456730899983086
+    },
+    {
+      "role": "replay",
+      "sampled_private_max": 69885952,
+      "seconds": 61.427229600027204
+    }
+  ],
+  "negative_Gold_raw_profiles": 6,
+  "nonzero_operator_positions": 434,
+  "off_diagonal_operator_positions": 162,
+  "operators_per_pair": 7,
+  "physical_soft_raw_norm_equalities": 50,
+  "raw_nonzero_profiles": [
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      3
+    ],
+    [
+      1,
+      2,
+      2
+    ],
+    [
+      1,
+      3,
+      0
+    ],
+    [
+      1,
+      3,
+      5
+    ],
+    [
+      1,
+      4,
+      0
+    ],
+    [
+      1,
+      4,
+      1
+    ],
+    [
+      2,
+      1,
+      2
+    ],
+    [
+      2,
+      2,
+      0
+    ],
+    [
+      2,
+      4,
+      0
+    ],
+    [
+      2,
+      4,
+      5
+    ],
+    [
+      3,
+      1,
+      0
+    ],
+    [
+      3,
+      1,
+      5
+    ],
+    [
+      3,
+      3,
+      0
+    ],
+    [
+      3,
+      4,
+      0
+    ],
+    [
+      4,
+      1,
+      0
+    ],
+    [
+      4,
+      1,
+      1
+    ],
+    [
+      4,
+      2,
+      0
+    ],
+    [
+      4,
+      2,
+      5
+    ],
+    [
+      4,
+      3,
+      0
+    ],
+    [
+      4,
+      4,
+      0
+    ],
+    [
+      4,
+      4,
+      3
+    ]
+  ],
+  "raw_profile_count": 22,
+  "scalar_dimension": 328,
+  "scalar_soft_profiles": [
+    [
+      1,
+      4,
+      1
+    ],
+    [
+      4,
+      1,
+      1
+    ]
+  ],
+  "schema": "GSK1_VALIDATION",
+  "scientific_acceptance": "NOT_PERFORMED",
+  "shared_limits": [
+    "action",
+    "reference",
+    "scalar frame",
+    "exact ring/software",
+    "AI authorship"
+  ],
+  "status": "QUALIFIED_COMPLETE_ORDERED_GHOST_SCALAR_CHARGE_OPERATORS",
+  "structurally_excluded_profiles": 128,
+  "wrong_scalar_dual_change_positions": 14,
+  "zero_operator_positions": 30541
+}

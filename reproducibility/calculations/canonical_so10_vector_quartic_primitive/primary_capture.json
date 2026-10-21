@@ -1,0 +1,398 @@
+{
+  "all_resource_samples": [
+    {
+      "private_bytes": 438272,
+      "seconds": 0.0011220999876968563
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 2.00404739996884
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 4.010801600001287
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 6.010908800002653
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 8.017517799977213
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 10.031669399992097
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 12.032796199957374
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 14.0382994999527
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 16.048792499990668
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 18.06124389998149
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 20.066165899974294
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 22.06625879998319
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 24.0807864999515
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 26.088885199977085
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 28.100974699947983
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 30.107584099983796
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 32.11120260000462
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 34.11446889996296
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 36.116485699953046
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 38.12981630000286
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 40.13050809997367
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 42.13860750000458
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 44.142112399975304
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 46.14596439996967
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 48.16062559996499
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 50.173664499947336
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 52.18382889998611
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 54.19890269997995
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 56.19912760000443
+    },
+    {
+      "private_bytes": 48693248,
+      "seconds": 58.20455319999019
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 60.20993559999624
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 62.2115036000032
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 64.2268625999568
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 66.23237679997692
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 68.24258209997788
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 70.24604349996662
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 72.24632879998535
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 74.26046019996284
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 76.2677493999945
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 78.27373979997355
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 80.28845949994866
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 82.29461729998002
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 84.29595329996664
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 86.30314039997756
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 88.30841409997083
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 90.31654499995057
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 92.32857599999988
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 94.33275699999649
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 96.33635929995216
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 98.33645219996106
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 100.34305279998807
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 102.34661169996252
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 104.36393409996526
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 106.37095699994825
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 108.38096669997321
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 110.38149149995297
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 112.38455899996916
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 114.38889780000318
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 116.40048109996133
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 118.4053503999603
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 120.41487839998445
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 122.42859699996188
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 124.4332899999572
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 126.43991199997254
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 128.44689159997506
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 130.46273999998812
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 132.4629164999933
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 134.47833209997043
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 136.48154869995778
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 138.49318160000257
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 140.50359589996515
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 142.51519669999834
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 144.5266795999487
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 146.53637970000273
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 148.54041479999432
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 150.5422923999722
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 152.54450649995124
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 154.54823919996852
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 156.55334379995475
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 158.56624259997625
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 160.56723609997425
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 162.5704201000044
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 164.5848109999788
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 166.5995597000001
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 168.6085058999597
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 170.61315039999317
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 172.62830749998102
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 174.62855399999535
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 176.63408499996876
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 178.63417889998527
+    },
+    {
+      "private_bytes": 48582656,
+      "seconds": 180.64083079999546
+    }
+  ],
+  "calculation_completed": false,
+  "command": [
+    "C:\\Program Files\\Python310\\python.exe",
+    "-B",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\primitive.py",
+    "primary"
+  ],
+  "execution_state": "FAILED",
+  "exit_code": 124,
+  "failed_or_incomplete_counted_as_PASS": false,
+  "launch": {
+    "creation_after_observation": true,
+    "creation_filetime": 134369786288452488,
+    "creation_query_error": null,
+    "memory": {
+      "available_pagefile": 12306735104,
+      "available_physical": 3741745152,
+      "load": 77,
+      "total_pagefile": 36658069504,
+      "total_physical": 16992980992
+    },
+    "minimum_available_commit_bytes": 367001600,
+    "observation_end_filetime": 134369786288412865,
+    "observation_start_filetime": 134369786288412865,
+    "pid": 7160,
+    "private_allocation_limit_bytes": 8589934592
+  },
+  "post_run_observations_qualified": true,
+  "private_allocation_limit_bytes": 8589934592,
+  "stdout_and_stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\primitive.py\", line 178, in <module>\n    if __name__=='__main__':main()\n  File \"C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\primitive.py\", line 163, in main\n    rows,words=tensors(role);amp=amplitudes(rows,role);c=controls(rows,amp)\n  File \"C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\primitive.py\", line 40, in tensors\n    G=matrix(data['Gram'])\n  File \"C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\primitive.py\", line 18, in matrix\n    def matrix(x):return s.SparseMatrix(*x['shape'],{(i,j):s.sympify(v) for i,j,v in x['entries']})\nTypeError: list indices must be integers or slices, not str\n"
+}

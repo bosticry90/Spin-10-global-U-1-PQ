@@ -1,0 +1,49 @@
+{
+  "actual_hard_remainder_mutants": [
+    {
+      "group": "U1",
+      "missing_B_epsilon_zeta2_residual": "-1152",
+      "omitted_light_assignments_final_hard_test": "INSENSITIVE_REQUIRES_FULL_UV_AND_PARTNERS",
+      "omitted_light_assignments_full_UV_residual_nonzero": true,
+      "premature_D4_hard_finite_residual": "755546827/37950",
+      "reversed_trace_residuals": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "group": "SU2",
+      "missing_B_epsilon_zeta2_residual": "-648",
+      "omitted_light_assignments_final_hard_test": "INSENSITIVE_REQUIRES_FULL_UV_AND_PARTNERS",
+      "omitted_light_assignments_full_UV_residual_nonzero": true,
+      "premature_D4_hard_finite_residual": "25998627/63250",
+      "reversed_trace_residuals": [
+        "0",
+        "0",
+        "18",
+        "18"
+      ]
+    },
+    {
+      "group": "SU3",
+      "missing_B_epsilon_zeta2_residual": "-450",
+      "omitted_light_assignments_final_hard_test": "INSENSITIVE_REQUIRES_FULL_UV_AND_PARTNERS",
+      "omitted_light_assignments_full_UV_residual_nonzero": true,
+      "premature_D4_hard_finite_residual": "573300877/94875",
+      "reversed_trace_residuals": [
+        "9",
+        "0",
+        "18",
+        "18"
+      ]
+    }
+  ],
+  "elapsed_after_imports": 0.2123472000239417,
+  "execution_state": "COMPLETED",
+  "native_and_completed_V1_validation_reused": true,
+  "new_loop_calculations": false,
+  "schema": "C1_VECTOR_QUARTIC_IR_CONTROLS_V2",
+  "unnormalized_frame_kinetic_defect": "3"
+}

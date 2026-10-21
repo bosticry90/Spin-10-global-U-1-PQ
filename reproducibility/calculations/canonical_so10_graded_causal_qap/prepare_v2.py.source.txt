@@ -1,0 +1,24 @@
+from pathlib import Path
+from hashlib import sha256
+import json
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_graded_causal_qap';C=Path(__file__).resolve().parent
+p=json.loads((O/'preparation.json').read_bytes())
+for q,h in p['input_sha256'].items():assert sha256(Path(q).read_bytes()).hexdigest()==h,q
+cap=json.loads((O/'primary_capture.json').read_bytes());assert cap['execution_state']=='FAILED' and cap['exit_code']==1
+def write(path,txt):
+ with path.open('xb') as f:f.write(txt.encode())
+t=(O/'qap.py').read_text();old="  if node in ['GroupContraction','LorentzContraction']:return ast_dim(v['expression'])"
+assert t.count(old)==1
+t=t.replace(old,"  if node in ['GroupContraction','LorentzContraction']:\n   child='expression' if 'expression' in v else 'argument'\n   assert child in v\n   return ast_dim(v[child])")
+t=t.replace("O/'preparation.json'","O/'preparation_v2.json'");write(O/'qap_v2.py',t)
+t=(O/'verify.py').read_text().replace("O/'validation_preparation.json'","O/'validation_preparation_v2.json'").replace("role+'_result.json'","role+'_v2_result.json'").replace("role+'_capture.json'","role+'_v2_capture.json'").replace("'native_failures':0","'native_failures':1")
+write(O/'verify_v2.py',t)
+t=(C/'run.py').read_text().replace("O/'preparation.json'","O/'preparation_v2.json'").replace("O/'qap.py'","O/'qap_v2.py'").replace("role+'_capture.json'","role+'_v2_capture.json'").replace("role+'_full_capture.json'","role+'_v2_full_capture.json'").replace("role+'_result.json'","role+'_v2_result.json'")
+write(C/'run_v2.py',t)
+t=(C/'run_validation.py').read_text().replace("O/'verify.py'","O/'verify_v2.py'").replace('validation_capture.json','validation_v2_capture.json').replace('validation_full_capture.json','validation_v2_full_capture.json').replace('validation_receipt.json','validation_receipt_v2.json')
+write(C/'run_validation_v2.py',t)
+files=list(map(Path,p['input_sha256']))+[O/'preparation.json',O/'primary_capture.json']
+for q in [O/'qap_v2.py',O/'verify_v2.py',O/'AST_CORRECTION_V2.md',C/'prepare_v2.py',C/'run_v2.py',C/'run_validation_v2.py',C/'prepare_validation_v2.py']:
+ dest=O/(q.name+'.source.txt');write(dest,q.read_text());files.extend([q,dest])
+v={**p,'schema':'GRADED_CAUSAL_QAP_PREPARATION_V2','input_sha256':{str(q):sha256(q.read_bytes()).hexdigest() for q in files},'preserved_failed_native_workers':1}
+write(O/'preparation_v2.json',json.dumps(v,indent=2,sort_keys=True)+'\n');print('FROZEN_V2',len(v['input_sha256']),flush=True)

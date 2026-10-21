@@ -1,0 +1,54 @@
+{
+  "all_resource_samples": [
+    {
+      "private_bytes": 458752,
+      "seconds": 0.0033306999830529094
+    },
+    {
+      "private_bytes": 53665792,
+      "seconds": 2.0035808999673463
+    },
+    {
+      "private_bytes": 58482688,
+      "seconds": 4.015515899984166
+    },
+    {
+      "private_bytes": 58892288,
+      "seconds": 6.015724700002465
+    },
+    {
+      "private_bytes": 60018688,
+      "seconds": 8.015932399954181
+    }
+  ],
+  "calculation_completed": true,
+  "command": [
+    "C:\\Program Files\\Python310\\python.exe",
+    "-B",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_scalar_quartic\\amplitude.py",
+    "primary"
+  ],
+  "execution_state": "COMPLETED",
+  "exit_code": 0,
+  "failed_or_incomplete_counted_as_PASS": false,
+  "launch": {
+    "creation_after_observation": true,
+    "creation_filetime": 134369896596698441,
+    "creation_query_error": null,
+    "memory": {
+      "available_pagefile": 12204351488,
+      "available_physical": 3001704448,
+      "load": 82,
+      "total_pagefile": 36658069504,
+      "total_physical": 16992980992
+    },
+    "minimum_available_commit_bytes": 367001600,
+    "observation_end_filetime": 134369896596678826,
+    "observation_start_filetime": 134369896596678826,
+    "pid": 10180,
+    "private_allocation_limit_bytes": 8589934592
+  },
+  "post_run_observations_qualified": true,
+  "private_allocation_limit_bytes": 8589934592,
+  "stdout_and_stderr": "STAGE actual35blocks_matrix_functions\nSTAGE block_7\nSTAGE block_17\nSTAGE block_27\nSTAGE block_34\nRESULT {\"counts\": {\"gauge\": 33, \"physical\": 290, \"soft\": 5}, \"elapsed_after_imports\": 7.961728300026152, \"packed_bytes\": 22914, \"packed_sha256\": \"7bdbbc41eea578d1385027f4884173aba99ab397e8b1f595ec2795eb79439c7d\", \"raw_bytes\": 111146, \"role\": \"primary\", \"schema\": \"VSP1_AMPLITUDE\", \"tables_sha256\": \"b40617b4a8e5c609432e37a8e3791b7f4f8b0b96bb6ac039548fde8b998ad893\"}\n"
+}

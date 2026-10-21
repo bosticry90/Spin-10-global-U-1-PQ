@@ -1,0 +1,13 @@
+"""Debug only: exact frozen V5 pole expressions, no scientific qualification."""
+from pathlib import Path
+from hashlib import sha256
+import sympy as s,json
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_background_reference_normalization';C=Path(__file__).resolve().parent
+p=json.loads((O/'validation_preparation_v5.json').read_bytes())
+for q,h in p['input_sha256'].items():assert sha256(Path(q).read_bytes()).hexdigest()==h,q
+u=s.Symbol('u');eps=s.Symbol('epsilon',positive=True);mass,z=s.symbols('M z',positive=True);Delta=mass+u*(1-u)*z
+pole=s.limit(eps*s.gamma(-1+eps)*Delta**(1-eps),eps,0,dir='+')
+error=s.integrate(pole,(u,0,1));reduced=s.simplify(pole);reduced_error=s.integrate(reduced,(u,0,1))
+v={'classification':'EXPRESSION_DIAGNOSTIC_ONLY','pole':str(pole),'reduced_pole':str(reduced),'integral_unreduced':str(error),'integral_reduced':str(reduced_error),'integral_difference':str(s.simplify(error+mass+z/6)),'input_sha256':p['input_sha256']}
+with (C/'pole_diagnostic.json').open('xb') as f:f.write((json.dumps(v,indent=2,sort_keys=True)+'\n').encode())
+print(json.dumps({k:v[k] for k in ['classification','pole','reduced_pole','integral_unreduced','integral_reduced','integral_difference']}))

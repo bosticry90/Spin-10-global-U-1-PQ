@@ -1,0 +1,109 @@
+{
+  "all_resource_samples": [
+    {
+      "private_bytes": 421888,
+      "seconds": 0.0010680000414140522
+    },
+    {
+      "private_bytes": 52187136,
+      "seconds": 2.010430400026962
+    },
+    {
+      "private_bytes": 52187136,
+      "seconds": 4.0159255000180565
+    },
+    {
+      "private_bytes": 52187136,
+      "seconds": 6.022490800009109
+    },
+    {
+      "private_bytes": 52187136,
+      "seconds": 8.022702600050252
+    },
+    {
+      "private_bytes": 52187136,
+      "seconds": 10.029430700000376
+    },
+    {
+      "private_bytes": 52187136,
+      "seconds": 12.043669700040482
+    },
+    {
+      "private_bytes": 52187136,
+      "seconds": 14.050193500006571
+    },
+    {
+      "private_bytes": 52187136,
+      "seconds": 16.050439100014046
+    },
+    {
+      "private_bytes": 52187136,
+      "seconds": 18.066661600023508
+    },
+    {
+      "private_bytes": 52187136,
+      "seconds": 20.073103700007778
+    },
+    {
+      "private_bytes": 52187136,
+      "seconds": 22.078147599997465
+    },
+    {
+      "private_bytes": 52187136,
+      "seconds": 24.084848200029228
+    },
+    {
+      "private_bytes": 52187136,
+      "seconds": 26.091769100050442
+    },
+    {
+      "private_bytes": 52187136,
+      "seconds": 28.091924600012135
+    },
+    {
+      "private_bytes": 53239808,
+      "seconds": 30.10682030004682
+    },
+    {
+      "private_bytes": 53239808,
+      "seconds": 32.112855400017
+    },
+    {
+      "private_bytes": 53239808,
+      "seconds": 34.11294530000305
+    },
+    {
+      "private_bytes": 53239808,
+      "seconds": 36.11928650003392
+    }
+  ],
+  "calculation_completed": true,
+  "command": [
+    "C:\\Program Files\\Python310\\python.exe",
+    "-B",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\verify_v2.py"
+  ],
+  "execution_state": "COMPLETED",
+  "exit_code": 0,
+  "failed_or_incomplete_counted_as_PASS": false,
+  "launch": {
+    "creation_after_observation": true,
+    "creation_filetime": 134369789505676513,
+    "creation_query_error": null,
+    "memory": {
+      "available_pagefile": 12396736512,
+      "available_physical": 3885936640,
+      "load": 77,
+      "total_pagefile": 36658069504,
+      "total_physical": 16992980992
+    },
+    "minimum_available_commit_bytes": 367001600,
+    "observation_end_filetime": 134369789505665032,
+    "observation_start_filetime": 134369789505665032,
+    "pid": 19136,
+    "private_allocation_limit_bytes": 8589934592
+  },
+  "post_run_observations_qualified": true,
+  "private_allocation_limit_bytes": 8589934592,
+  "stdout_and_stderr": "STAGE alternate_probe_0\nSTAGE alternate_probe_1\nSTAGE alternate_probe_2\nSTAGE Mellin_and_positive_quadratures\nRESULT {\"IR_classification\":[{\"IR_terms\":{\"-1\":{\"inverse_d_nonzero\":false,\"log_d_at_d0_nonzero\":false},\"-2\":{\"inverse_d_nonzero\":false,\"log_d_at_d0_nonzero\":false},\"0\":{\"inverse_d_nonzero\":false,\"log_d_at_d0_nonzero\":false}},\"group\":\"U1\"},{\"IR_terms\":{\"-1\":{\"inverse_d_nonzero\":true,\"log_d_at_d0_nonzero\":true},\"-2\":{\"inverse_d_nonzero\":false,\"log_d_at_d0_nonzero\":false},\"0\":{\"inverse_d_nonzero\":true,\"log_d_at_d0_nonzero\":true}},\"group\":\"SU2\"},{\"IR_terms\":{\"-1\":{\"inverse_d_nonzero\":true,\"log_d_at_d0_nonzero\":true},\"-2\":{\"inverse_d_nonzero\":false,\"log_d_at_d0_nonzero\":false},\"0\":{\"inverse_d_nonzero\":true,\"log_d_at_d0_nonzero\":true}},\"group\":\"SU3\"}],\"Mellin\":{\"all18_bare_Laurent_coefficients_from_smooth_Mellin_derivatives\":true,\"max_scaled_Mellin_error\":\"3.6259132757e-81\",\"max_scaled_positive_quadrature_error\":\"1.52955908132e-46\",\"positive_quadratures\":15,\"quadrature_epsilon\":\"5/4\"},\"UV_forests_or_common_EFT_IR_subtraction_constructed\":false,\"all225_color_coefficients_and_zero_complements_checked\":true,\"all25_mass_assignments_retained\":true,\"alternate_probes\":[{\"X_negative_projected_norms\":true,\"alternate_probe_all_entries_agree\":true,\"group\":\"U1\"},{\"X_negative_projected_norms\":true,\"alternate_probe_all_entries_agree\":true,\"group\":\"SU2\"},{\"X_negative_projected_norms\":true,\"alternate_probe_all_entries_agree\":true,\"group\":\"SU3\"}],\"complete_finite_hard_family_or_C1_qualified\":false,\"double_pole_each_factor\":-1152,\"elapsed_after_imports\":36.244946099992376,\"execution_state\":\"COMPLETED\",\"finite_scheme_or_vacuum_adopted\":false,\"heat_and_lorentz\":{\"dimensional_and_external_coupling_normalization_checked\":true,\"global_spin_sign_insensitive\":true,\"orbital_and_spin_coefficients_independent_heat_check\":true,\"wrong_spin_magnitude_or_omitted_orbital_term_detected\":true},\"mixed_factor_X_and_Z_checks\":[[0,1],[0,2],[1,2]],\"schema\":\"C1_VECTOR_QUARTIC_PRIMITIVE_VALIDATION_V1\",\"scientific_acceptance\":\"NOT_PERFORMED\",\"scientific_authority\":\"34/39_UNCHANGED\",\"source_or_arbitrary_width_controls\":\"NOT_APPLICABLE_SOURCE_ZERO_XI1\",\"status\":\"QUALIFIED_COMPLETE_AUXILIARY_IR_REGULATED_BARE_VECTOR_QUARTIC_F2\"}\n"
+}

@@ -1,0 +1,10 @@
+from pathlib import Path
+C=Path(__file__).resolve().parent
+src=(C/'verify_v2.py').read_text()
+old="set(raw)=={'lambdaS','lambdaVectorS','z4','z6','zK'}"
+new="set(raw)=={'lambdaS','lambdaVectorS','lambdaPhiS','lambdaSigmaS','z4','z6','zK'}"
+assert src.count(old)==1
+src=src.replace(old,new).replace("O/'validation_preparation_v2.json'","O/'validation_preparation_v3.json'")
+with(C/'verify_v3.py').open('x',encoding='utf-8',newline='\n') as f:f.write(src)
+run=(C/'run_validation_v2.py').read_text().replace('validation_preparation_v2.json','validation_preparation_v3.json').replace('validation_receipt_v2.json','validation_receipt_v3.json').replace('validation_v2_capture.json','validation_v3_capture.json').replace('validation_v2_full_capture.json','validation_v3_full_capture.json').replace('verify_v2.py','verify_v3.py').replace('QUALIFIED_V2','QUALIFIED_V3')
+with(C/'run_validation_v3.py').open('x',encoding='utf-8',newline='\n') as f:f.write(run)

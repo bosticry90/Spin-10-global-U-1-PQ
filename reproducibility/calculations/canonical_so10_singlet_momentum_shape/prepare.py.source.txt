@@ -1,0 +1,44 @@
+from pathlib import Path
+from hashlib import sha256
+import ast,json,subprocess
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_singlet_momentum_shape';C=Path(__file__).resolve().parent
+digest=lambda p:sha256(p.read_bytes()).hexdigest();read=lambda p:json.loads(p.read_bytes())
+base='6e7a95af879af2609c1c87bdeb34eb427e98eef6'
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=R,text=True).strip()==base
+assert not subprocess.check_output(['git','diff','--name-only'],cwd=R).strip()
+assert not subprocess.check_output(['git','diff','--cached','--name-only'],cwd=R).strip()
+old=read(R/'calculations/canonical_so10_singlet_pole_control/validation_receipt.json')
+assert old['status']=='COMPLETED_FORMAL_ONE_LOOP_POLE_CORRECTION_EXCEEDS_TREE_MASS_SQUARED'
+inputs={};historical=[]
+for raw,h in old['input_sha256'].items():
+ path=R/raw
+ if digest(path)==h:inputs[str(path)]=h
+ else:
+  data=subprocess.check_output(['git','show',old['base_commit']+':'+raw],cwd=R)
+  assert sha256(data).hexdigest()==h,raw
+  historical.append({'path':raw,'commit':old['base_commit'],'sha256':h,'use':'HISTORICAL_BYTES_NOT_LIVE_POLICY'})
+for folder,leaves in {
+ 'canonical_so10_singlet_pole_control':['primary_result.json','validation_receipt.json','RESULT.md','RECORD.md','CORRECTION_V2.md','CORRECTION_V3.md','independent_verifier_v2_capture.json'],
+ 'canonical_so10_singlet_quartic_running':['source_receipt.json','SINGLET_SOURCE_CLOSURE_V1.md','RESULT.md'],
+ 'canonical_so10_singlet_pole_rg_check':['RESULT.md','validation_receipt.json'],
+ 'canonical_so10_finite_full_bfb':['RESULT.md','validation_receipt.json'],
+ 'canonical_so10_one_loop_acceptance_reconciliation':['RESULT.md','validation_receipt.json']}.items():
+ for leaf in leaves:
+  path=R/'calculations'/folder/leaf;inputs[str(path)]=digest(path)
+for path in [R/'AGENTS.md',R/'project_state.json',R/'docs/RESEARCH_EXECUTION_HANDOFF_V356.md',R/'docs/LOCAL_RESEARCH_CONVENTIONS_V1.md',
+ C.parent/'one-loop-acceptance-reconciliation-v1-2026-10-19/post_commit.json',O/'RECORD.md',O/'DERIVATION.md',O/'shape.py',C/'prepare.py',C/'run.py']:
+ if path.suffix=='.py':ast.parse(path.read_text(encoding='utf-8'))
+ inputs[str(path)]=digest(path)
+for raw,h in inputs.items():assert digest(Path(raw))==h,raw
+for path in [O/'RECORD.md',O/'DERIVATION.md',O/'shape.py',C/'prepare.py',C/'run.py']:
+ dest=O/(path.name+'.source.txt')
+ with dest.open('xb') as f:f.write(path.read_bytes())
+ inputs[str(dest)]=digest(dest)
+p={'schema':'SINGLET_MOMENTUM_SHAPE_PREPARATION_V1','base_commit':base,
+ 'input_sha256':inputs,'historical_git_bindings':historical,'controller_sha256':digest(C/'run.py'),
+ 'native_seconds_after_imports':120,'independent_seconds_after_imports':180,
+ 'sampled_private_limit_bytes':8*1024**3,'minimum_available_commit_bytes':350*1024**2,
+ 'package_limit_bytes':4*1024**2,'precisions':[40,60],'absolute_agreement':'1e-28',
+ 'scientific_acceptance':'NOT_PERFORMED','scope':'Unchanged point, complete inherited one-loop singlet two-point momentum combinations only, not quantum-control PASS'}
+with(O/'preparation.json').open('xb') as f:f.write((json.dumps(p,indent=2,sort_keys=True)+'\n').encode())
+print('FROZEN',len(inputs),'live',len(historical),'historical',flush=True)

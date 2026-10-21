@@ -1,0 +1,35 @@
+from pathlib import Path
+from hashlib import sha256
+import json,subprocess,ast
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_physical_counterterm_span';C=Path(__file__).resolve().parent;P=R/'tools/two_loop_qft_compiler_v1/m08_independent_replay_package_v1'
+read=lambda p:json.loads(p.read_bytes());digest=lambda p:sha256(p.read_bytes()).hexdigest()
+base='29327f5332f68e002d5c81b82a7cbd93f59a61fe';assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=R,text=True).strip()==base and not subprocess.check_output(['git','diff','--name-only'],cwd=R)
+ast.parse((O/'span.py').read_text())
+for p in [O/'span.py',O/'RECORD.md',O/'DERIVATION.md',Path(__file__),C/'run.py']:
+ p.write_bytes((chr(10).join(z.rstrip() for z in p.read_text().splitlines()).rstrip()+chr(10)).encode())
+ with p.with_name(p.name+'.source.txt').open('xb') as f:f.write(p.read_bytes())
+for n in ['prepare.py','run.py']:
+ with(O/(n+'.source.txt')).open('xb') as f:f.write((C/n).read_bytes())
+prior=C.parent/'pq-normalization-span-v1-2026-10-19';inputs=[prior/'post_commit.json',prior/'next_physical_derivative_parameter_closure_question.json',Path(__file__),C/'run.py',O/'RECORD.md',O/'DERIVATION.md']
+for raw,h in read(prior/'next_physical_derivative_parameter_closure_question.json')['input_sha256'].items():assert digest(Path(raw))==h;inputs.append(Path(raw))
+for rel in ['AGENTS.md','CHARTER.md','project_state.json','docs/RESEARCH_EXECUTION_HANDOFF_V337.md','docs/LOCAL_RESEARCH_CONVENTIONS_V1.md','docs/SOLO_REVIEW_POLICY_V1.md','tools/portable_dh_v1/inputs.json.gz','tools/portable_dh_v1/exact_algebra.py']:inputs.append(R/rel)
+arts={r:{} for r in ['primary','replay']};allowed={r:[str(O/'preparation.json')] for r in arts}
+for lab,folder in [('e1','frozen_a10_e1_fermion'),('e2','frozen_a10_e2_transport'),('e3','frozen_a10_e3_symmetry')]:
+ d=P/folder;bp=d/'bindings.json';bindings=read(bp);rc=d/'validation_receipt.json';assert bindings['byte_sha256'][rc.relative_to(R).as_posix()]==digest(rc);inputs.extend([bp,rc])
+ for role in arts:
+  fp=d/(role+'.json');assert bindings['byte_sha256'][fp.relative_to(R).as_posix()]==digest(fp);inputs.append(fp);allowed[role].append(str(fp));arts[role][lab]={'path':str(fp),'sha256':digest(fp),'receipt':str(rc),'receipt_sha256':digest(rc)}
+for lab,folder in [('ref','frozen_a10_e5_full_hessian'),('retract','frozen_a10_e5_nonminimal_retract')]:
+ d=P/folder;rc=d/'validation_receipt.json';v=read(rc);inputs.append(rc)
+ for role in arts:
+  fp=d/(role+'.json');assert v['new_sha256'][fp.relative_to(R).as_posix()]==digest(fp);inputs.append(fp);allowed[role].append(str(fp));arts[role][lab]={'path':str(fp),'sha256':digest(fp),'receipt':str(rc),'receipt_sha256':digest(rc)}
+fp=P/'frozen_a10_physical_reconciliation/M08_PHYSICAL_ACTION_COVARIANT_CANDIDATE_V1.json';rc=P/'frozen_a10_physical_reconciliation/validation_receipt.json';inputs.extend([fp,rc])
+for role in arts:allowed[role].append(str(fp));arts[role]['action']={'path':str(fp),'sha256':digest(fp),'receipt':str(rc),'receipt_sha256':digest(rc)}
+facts=[]
+for name in ['canonical_so10_actual_uv_basic_representative','canonical_so10_actual_normalization_assembly','canonical_so10_sourcefree_primitive_probe','canonical_so10_dimensional_stokes_primitive','canonical_so10_geometric_ward_products','canonical_so10_original_ghost_rescaling','canonical_so10_pq_residue_transport','canonical_so10_pq_normalization_span']:
+ d=R/'calculations'/name;rc=d/'validation_receipt.json';v=read(rc);assert v['execution_state']=='COMPLETED';inputs.append(rc);facts.append({'receipt':str(rc),'disposition':v['scientific_disposition']})
+ for nm in ['RESULT.md','DERIVATION.md','DERIVATION_V2.md','ACCEPTANCE_RECONCILIATION.md']:
+  if(d/nm).exists():inputs.append(d/nm)
+for nm in ['A10_E5_QUANTUM_FUNCTIONAL_SPEC_V1.md','A10_E5_DOMAIN_CONTRACT_V1.md','A10_E5_NONMINIMAL_RETRACT_DERIVATION_V1.md','A10_E5_NONMINIMAL_RETRACT_RESULT.md']:inputs.append(P/nm)
+v={'schema':'PHYSICAL_COUNTERTERM_SPAN_PREPARATION_V1','base':base,'source_sha256':digest(O/'span.py'),'controller_sha256':digest(C/'run.py'),'input_sha256':{str(p):digest(p) for p in sorted(set(inputs))},'artifacts':arts,'read_json_by_role':allowed,'qualified_receipt_scopes':facts,'limits':{'native_seconds_after_imports':120,'verifier_seconds_after_imports':180,'sampled_private_bytes':8*2**30,'package_bytes':8*2**20},'scope':'Actual formal parity-even one-loop physical parameter span and first-order correlated normalization reconstruction,with separate background/vacuum normalization;not full E5/A5 or all-order/physical viability.'}
+with(O/'preparation.json').open('xb') as f:f.write((json.dumps(v,sort_keys=True,indent=2)+chr(10)).encode())
+print('FROZEN',len(v['input_sha256']),v['source_sha256'])

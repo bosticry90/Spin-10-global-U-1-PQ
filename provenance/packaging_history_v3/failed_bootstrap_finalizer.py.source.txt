@@ -1,0 +1,84 @@
+"""Seal publication evidence and manifest; no research source writes."""
+from pathlib import Path
+import hashlib,json,re,shutil,subprocess,time
+from datetime import datetime,timezone
+H=Path(__file__).resolve().parent; R=H/'Spin-10-global-U-1-PQ'
+def sha(b): return hashlib.sha256(b).hexdigest()
+def dump(p,v): p.write_text(json.dumps(v,indent=2)+'\n',encoding='utf-8',newline='\n')
+m=json.loads((R/'provenance/source_manifest_v3.json').read_text(encoding='utf-8'))
+auth=json.loads((R/'provenance/claim_authentication_v3.json').read_text(encoding='utf-8'))
+assert auth['execution_state']=='COMPLETED'
+pilots=[]
+for name in ['slot','left']:
+    text=(H/f'portable_v3_{name}_capture.json').read_text(encoding='utf-8')
+    line=next(line[7:] for line in text.splitlines() if line.startswith('RESULT '))
+    obj=json.loads(line)
+    assert obj['execution_state']=='COMPLETED' and obj['every_coefficient_and_implicit_zero_matches']
+    assert obj['complete_actual_DH_positions']==99256 and obj['workspace_writes']==0 and not obj['unexpected_outside_reads']
+    pilots.append(obj)
+assert pilots[0]['complete_actual_DH_sha256']==pilots[1]['complete_actual_DH_sha256']
+for ext in ['pdf','tex']:
+    old=subprocess.check_output(['git','-C',str(R),'show','c35d22498c7f609fd49fd8c5e7cf244454ca452c:paper/spin10_pq_technical_note.'+ext])
+    assert (R/f'paper/archive/spin10_pq_technical_note_v3.{ext}').read_bytes()==old
+# Previously published provenance and ZIP inputs remain immutable.
+previous=json.loads((R/'provenance/publication_manifest_v2.json').read_text(encoding='utf-8'))
+for e in previous['release_files']:
+    if e['path'].startswith('provenance/') or e['path'].endswith('.zip'):
+        assert sha((R/e['path']).read_bytes())==e['sha256'],e['path']
+links=[]
+for rel in ['README.md','reproducibility/README.md']:
+    p=R/rel; txt=p.read_text(encoding='utf-8')
+    assert r'\n|' not in txt and '§' not in txt
+    for target in re.findall(r'\]\(([^)]+)\)',txt):
+        if '://' not in target and not target.startswith('#') and not (p.parent/target.split('#')[0]).exists():
+            links.append((rel,target))
+assert not links,links
+# Every browsable calculation is exactly the current frozen source member.
+by={e['path']:e for e in m['files']}
+for p in (R/'reproducibility/calculations').rglob('*'):
+    if p.is_file():
+        rel=p.relative_to(R/'reproducibility').as_posix()
+        assert sha(p.read_bytes())==by[rel]['sha256'],rel
+log=(H/'note_v4_build/spin10_pq_technical_note.log').read_text(encoding='utf-8',errors='replace')
+assert not any(x in log for x in ['Overfull','Underfull','Warning'])
+history=R/'provenance/packaging_history_v3'
+shutil.copyfile(H/'update_materials_v3_failed_syntax.py.source.txt',history/'failed_unexecuted_editorial_script.py.source.txt')
+with (history/'CORRECTIONS.md').open('a',encoding='utf-8') as f:
+    f.write('\nAn editorial script first failed Python syntax parsing before any file writes; the corrected source fixed quote/newline escaping. A literal Markdown newline was then caught during content inspection and corrected before sealing. A PDF line-width warning was corrected and re-rendered; the final compile has no layout warnings. These are packaging corrections, not scientific worker failures.\n')
+archive_members=0
+for version in [1,2,3]:
+    layer=json.loads((R/f'provenance/source_manifest_v{version}.json').read_text(encoding='utf-8'))
+    archive_members+=sum(a.get('file_count',0) for a in layer['archives'])
+# v1 archive metadata may predate explicit file_count fields.
+if archive_members<30000:
+    base=json.loads((R/'provenance/source_manifest_v1.json').read_text(encoding='utf-8'))
+    archive_members=len(base['files'])+sum(a['file_count'] for version in [2,3] for a in json.loads((R/f'provenance/source_manifest_v{version}.json').read_text(encoding='utf-8'))['archives'])
+receipt={
+ 'schema':'SPIN10_PQ_PACKAGING_VALIDATION_V3','execution_state':'COMPLETED','validated_at_utc':datetime.now(timezone.utc).isoformat(),'source_commit':m['source_commit'],'publication_date':'20 October 2026',
+ 'scientific_acceptance':'NOT_PERFORMED','director_acceptance':'NOT_INFERRED',
+ 'selected_receipts':len(auth['checks']),'receipt_and_successful_preparation_binding_checks':sum(c['authenticated_input_bindings'] for c in auth['checks']),'binding_checks_may_repeat_shared_inputs':True,'historical_inputs_separately_authenticated':len(auth['historical_inputs']),'binding_mismatches':[],
+ 'source_export':json.loads((H/'source_export_receipt_v3.json').read_text(encoding='utf-8')),
+ 'portable_pilot_replays':pilots,'portable_replay_context':'Isolated copy under a path with spaces; bundled CPython 3.12.14, -I -S -B; no pip, external scientific packages or workspace writes.',
+ 'old_public_archives_provenance_and_v3_note_exactly_preserved':True,'local_markdown_links':'PASS','browsable_source_bytes':'MATCH_FROZEN_SOURCE',
+ 'pdf':{'version':4,'pages':9,'sha256':sha((R/'paper/spin10_pq_technical_note.pdf').read_bytes()),'compilation':'SUCCESS','layout_warnings':[],'visual_review':'All nine rendered pages inspected; no clipping or overlapping text; final changed paragraph and references re-rendered.'},
+ 'package_verification':{'expected_archive_members':archive_members,'command':'python -B reproducibility/verify_package.py','scope':'All current release files and all v1/v2/v3 archive members; exact final output retained externally to avoid manifest self-reference.'},
+ 'core_scalar_gauge_replays':'Prior completed publication replays reused; code bytes unchanged. No new expensive scalar/gauge/pole/threshold computation.',
+ 'limitations':['Closed portable pilot computes a classical identity, not the scalar spectrum or quantum restoration','No full finite C1 or updated unification fit','No physical point/scheme adoption or flavor input','No original Git history or historical custody PASS','Shared action/reference/software/AI analyst limit independence'],
+ 'authority':'state113/34of39_UNCHANGED','next_scientific_dependency':'Frozen V421 identifies remaining primitive families (next candidate VVS), parent-minus-family and overall counterterms, finite insertions, EFT matching and final C1 conversion; publication does not execute them.'}
+dump(R/'provenance/packaging_validation_v3.json',receipt)
+paths=subprocess.check_output(['git','-C',str(R),'ls-files','--cached','--others','--exclude-standard','-z']).decode().split('\0')
+files=[]
+for rel in sorted(set(paths)-{''}):
+    if rel=='provenance/publication_manifest_v3.json': continue
+    p=R/rel
+    if p.is_file():
+        data=p.read_bytes(); files.append({'path':rel,'sha256':sha(data),'size_bytes':len(data)})
+dump(R/'provenance/publication_manifest_v3.json',{'schema':'SPIN10_PQ_PUBLICATION_MANIFEST_V3','source_commit':m['source_commit'],'manifest_self_binding':'Git commit binds this manifest; it does not hash itself.','release_files':files,'scientific_acceptance':'NOT_PERFORMED'})
+print(json.dumps({'release_files':len(files),'expected_archive_members':archive_members,'source_files':len(m['files']),'external_files':len(m['external_files']),'historical_files':len(m['historical_files'])}),flush=True)
+start=time.monotonic()
+p=subprocess.run(['python','-B','reproducibility/verify_package.py'],cwd=R,capture_output=True,text=True)
+(H/'package_verify_v3_final.json').write_text(p.stdout,encoding='utf-8')
+(H/'package_verify_v3_final_stderr.txt').write_text(p.stderr,encoding='utf-8')
+print(p.stdout,flush=True)
+assert p.returncode==0,p.stderr
+print(json.dumps({'package_seconds':time.monotonic()-start,'release_ready':True}),flush=True)

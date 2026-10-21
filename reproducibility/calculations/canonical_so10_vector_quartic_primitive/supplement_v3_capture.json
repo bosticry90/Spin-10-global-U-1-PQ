@@ -1,0 +1,37 @@
+{
+  "all_resource_samples": [
+    {
+      "private_bytes": 438272,
+      "seconds": 0.000964400009252131
+    }
+  ],
+  "calculation_completed": true,
+  "command": [
+    "C:\\Program Files\\Python310\\python.exe",
+    "-B",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_primitive\\verify_one_soft_v3.py"
+  ],
+  "execution_state": "COMPLETED",
+  "exit_code": 0,
+  "failed_or_incomplete_counted_as_PASS": false,
+  "launch": {
+    "creation_after_observation": true,
+    "creation_filetime": 134369792791043457,
+    "creation_query_error": null,
+    "memory": {
+      "available_pagefile": 12331954176,
+      "available_physical": 3773960192,
+      "load": 77,
+      "total_pagefile": 36658069504,
+      "total_physical": 16992980992
+    },
+    "minimum_available_commit_bytes": 367001600,
+    "observation_end_filetime": 134369792791033080,
+    "observation_start_filetime": 134369792791033080,
+    "pid": 24180,
+    "private_allocation_limit_bytes": 8589934592
+  },
+  "post_run_observations_qualified": true,
+  "private_allocation_limit_bytes": 8589934592,
+  "stdout_and_stderr": "STAGE open_density_0\nSTAGE open_density_1\nSTAGE open_density_2\nSTAGE open_density_3\nSTAGE open_density_4\nRESULT {\"actual_light_ideal_ranks\":[1,3,8],\"all_five_45x45_open_kernels_from_six_density_slots_agree\":true,\"d0_IR_logs_UV_forests_or_common_matching_closed\":false,\"elapsed_after_imports\":1.0046074999845587,\"execution_state\":\"COMPLETED\",\"full_inverse_d_pole_and_finite_terms_equal_actual_one_soft_closure\":true,\"hard_graph_mass_poles_in_ell60g4_units\":[\"-1309/200\",\"-1509/200\",\"-1009/200\"],\"hypercharge_closure_control\":\"INSENSITIVE_ZERO_LIGHT_CHARGE\",\"inverse_d_closure\":[{\"finite_inverse_d\":\"0\",\"group\":\"U1\",\"pole_inverse_d\":\"0\"},{\"finite_inverse_d\":\"-75*h3 - 759*h4/10 - 1509*ld/10 + 1509*z/5 + 6539/100\",\"group\":\"SU2\",\"pole_inverse_d\":\"1509/10\"},{\"finite_inverse_d\":\"-9*h1/20 - 75*h3 - 759*h4/10 - 3027*ld/20 + 3027*z/10 + 13117/200\",\"group\":\"SU3\",\"pole_inverse_d\":\"3027/20\"}],\"mass_resolved_open_kernel_scalars\":[[\"0\",\"14/5\",\"0\",\"5\",\"1/5\"],[\"2\",\"0\",\"0\",\"3\",\"3\"],[\"3\",\"1\",\"0\",\"2\",\"2\"]],\"physical_gauge_masses_or_counterterms_adopted\":false,\"schema\":\"C1_VECTOR_QUARTIC_ONE_SOFT_SUPPLEMENT_V3\",\"wrong_half_D4_and_missing_C_epsilon_controls_sensitive_in_nonabelian_factors\":true}\n"
+}

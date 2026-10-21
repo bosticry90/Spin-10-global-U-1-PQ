@@ -1,0 +1,30 @@
+from pathlib import Path
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_background_reference_normalization';C=Path(__file__).resolve().parent
+text=(O/'bcr.py').read_text()
+text=text.replace("O/'preparation.json'","O/'preparation_v2.json'")
+text=text.replace("assert len(carriers)==12 and all(zero(a-b) for a,b in zip(actual,carriers))","assert len(carriers)==12 and all(zero(a-b) for a,b in zip(actual,carriers))\n print('STAGE carriers',time.perf_counter()-tick,flush=True)")
+text=text.replace("# Different sparse color contractions. Internal representation ranks stay fixed.","print('STAGE symmetry',time.perf_counter()-tick,flush=True)\n # Different sparse color contractions. Internal representation ranks stay fixed.")
+old="for b,db in enumerate(rows):gram[a,b]=-sum(v*db.get((j,i),0) for (i,j),v in da.items())"
+new="for b,db in enumerate(rows):\n     common=set(da).intersection((j,i) for i,j in db);gram[a,b]=-sum(da[i,j]*db[j,i] for i,j in common)"
+assert old in text;text=text.replace(old,new)
+old="ids=sectors[tag];hh=s.zeros(12)\n  for h in range(12):\n   ra=carriers[h].extract(ids,ids)\n   for k in range(12):hh[h,k]=-sum(v*carriers[k][ids[j],ids[i]] for (i,j),v in ra.todok().items())"
+new="ids=sectors[tag];hh=s.zeros(12);hd=[r.extract(ids,ids).todok() for r in carriers]\n  for h,da in enumerate(hd):\n   for k,db in enumerate(hd):\n    common=set(da).intersection((j,i) for i,j in db);hh[h,k]=-sum(da[i,j]*db[j,i] for i,j in common)"
+assert old in text;text=text.replace(old,new)
+text=text.replace("hh=hh.applyfunc(clean);assert zero(hh-ind*F.T*GB*F);grams[tag]=sparse(hh)","hh=hh.applyfunc(clean);assert zero(hh-ind*F.T*GB*F);grams[tag]=sparse(hh)\n  print('STAGE scalar '+tag,time.perf_counter()-tick,flush=True)")
+old="I1=lambda x:s.gamma(1-dd/2)*x**(dd/2-1)\n I2=lambda x:s.gamma(2-dd/2)*x**(dd/2-2)"
+new="aa=dd/2-1\n # Remove commonGamma(1-D/2) usingGamma(2-D/2)=-aa*Gamma(1-D/2).\n # Exponential form keeps one branch/base; verifier independently usesGamma numerics.\n I1=lambda x:s.exp(aa*s.log(x))\n I2=lambda x:-aa*I1(x)/x"
+assert old in text;text=text.replace(old,new)
+with (O/'bcr_v2.py').open('xb') as f:f.write(text.encode())
+text=(O/'verify.py').read_text().replace("O/'validation_preparation.json'","O/'validation_preparation_v2.json'")
+text=text.replace("role+'_result.json'","role+'_v2_result.json'").replace("role+'_capture.json'","role+'_v2_capture.json'")
+text=text.replace("'native_failures':0","'native_failures':1")
+with (O/'verify_v2.py').open('xb') as f:f.write(text.encode())
+for name in ['run','prepare_validation','run_validation']:
+ text=(C/(name+'.py')).read_text().replace("preparation.json","preparation_v2.json").replace("validation_preparation.json","validation_preparation_v2.json")
+ text=text.replace("O/'bcr.py'","O/'bcr_v2.py'").replace("O/'verify.py'","O/'verify_v2.py'")
+ text=text.replace("role+'_capture.json'","role+'_v2_capture.json'").replace("role+'_full_capture.json'","role+'_v2_full_capture.json'").replace("role+'_result.json'","role+'_v2_result.json'")
+ text=text.replace("validation_capture.json","validation_v2_capture.json").replace("validation_full_capture.json","validation_v2_full_capture.json").replace("validation_receipt.json","validation_receipt_v2.json")
+ # Avoid replacing an already-versioned preparation name twice.
+ text=text.replace('validation_preparation_v2_v2.json','validation_preparation_v2.json')
+ with (C/(name+'_v2.py')).open('xb') as f:f.write(text.encode())
+print('VERSIONED_SOURCES')

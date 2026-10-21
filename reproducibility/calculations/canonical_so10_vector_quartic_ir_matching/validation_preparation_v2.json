@@ -1,0 +1,24 @@
+{
+  "input_sha256": {
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\VALIDATION_SUPPLEMENT_V2.md": "abefa48f8accd6653f2195ff0fe86171ec28560ded70976cf159fc83accf0ede",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\VALIDATION_SUPPLEMENT_V2.md.source.txt": "abefa48f8accd6653f2195ff0fe86171ec28560ded70976cf159fc83accf0ede",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\prepare_controls_v2.py": "0f3af358c2aac1a23db0b999e01fbabfe61c74740a3bd4d30b4c65f0afc38a23",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\prepare_controls_v2.py.source.txt": "0f3af358c2aac1a23db0b999e01fbabfe61c74740a3bd4d30b4c65f0afc38a23",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\primary_tables.json.gz": "a79428e73a2e892735d1496303a016fb9ef05f347f30c797f2d9b9fd481d5b66",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\replay_tables.json.gz": "a79428e73a2e892735d1496303a016fb9ef05f347f30c797f2d9b9fd481d5b66",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\run_controls_v2.py": "73677cad48f1ca04bf1bf6d9ecc98ce20dcd53acdedf120f7c06e0dc1f0f05cc",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\run_controls_v2.py.source.txt": "73677cad48f1ca04bf1bf6d9ecc98ce20dcd53acdedf120f7c06e0dc1f0f05cc",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\validation_capture.json": "b48a81dab7c88b952a59f96ed781b583056a02e75f0a5fad229ccb109969f2cc",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\validation_preparation.json": "ad49cd9ff95ba8fe1932f0f4be076debfbb30a737b8e6ba7e3e7780578adebf2",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\validation_receipt.json": "79b822cfc2e7543743d47c662533af191383b90b6775e75f6dde8e74c6ba01f3",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\verify_controls_v2.py": "75212eb9eff5475a63c31756c459a3e26a66b8487e4fb054155f0e44d57c0c73",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\verify_controls_v2.py.source.txt": "75212eb9eff5475a63c31756c459a3e26a66b8487e4fb054155f0e44d57c0c73"
+  },
+  "launch_floor": 367001600,
+  "nested_input_manifest": "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\validation_preparation.json",
+  "sampled_private_cap": 8589934592,
+  "schema": "C1_VECTOR_QUARTIC_IR_CONTROL_PREPARATION_V2",
+  "scientific_acceptance": "NOT_PERFORMED",
+  "supplement_seconds": 120,
+  "whole_package_bytes": 2097152
+}

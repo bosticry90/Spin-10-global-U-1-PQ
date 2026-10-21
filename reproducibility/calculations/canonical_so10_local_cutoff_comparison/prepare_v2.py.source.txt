@@ -1,0 +1,37 @@
+from pathlib import Path
+from hashlib import sha256
+import json,subprocess
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_local_cutoff_comparison';C=Path(__file__).resolve().parent
+p=json.loads((O/'preparation.json').read_bytes());d=lambda q:sha256(q.read_bytes()).hexdigest()
+for q,h in p['input_sha256'].items():assert d(Path(q))==h,q
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=R).decode().strip()==p['base_commit']
+cap=json.loads((O/'primary_capture.json').read_bytes());assert cap['exit_code']==1 and cap['execution_state']=='FAILED'
+diag=json.loads((C/'source_diagnostic.json').read_bytes());assert diag['G14_diagonal']==diag['image14_diagonal']=='0' and diag['native_vs_frozen'] and diag['native_kinetic_rank']==diag['frozen_kinetic_rank']==diag['G_rank']==45
+files=list(map(Path,p['input_sha256']))+[O/'preparation.json',O/'primary_capture.json',C/'source_diagnostic.py',C/'diagnostic_preparation.json',C/'source_diagnostic.json']
+text=(O/'cutoff.py').read_text().replace("O/'preparation.json'","O/'preparation_v2.json'")
+old="assert image[14,14]!=0 and G[14,14]!=0";assert old in text
+text=text.replace(old,"assert image.rank()==kn.rank()==G.rank()==45 and image[14,14]==G[14,14]==0 and image[0,0]!=0")
+text=text.replace("'QN_source_two_jet_normalized':serial(image)","'QN_source_two_jet_normalized':serial(image),'source_image_rank':45,'old_selected_projection_zero':True")
+with (O/'cutoff_v2.py').open('xb') as f:f.write(text.encode())
+text=(O/'verify.py').read_text().replace('validation_preparation.json','validation_preparation_v2.json').replace("role+'_result.json'","role+'_v2_result.json'").replace("role+'_capture.json'","role+'_v2_capture.json'")
+text=text.replace("zero(image-G*kn) and image[14,14]!=0","zero(image-G*kn) and image.rank()==45 and image[14,14]==0 and image[0,0]!=0")
+text=text.replace("'actual_QN_Jub14_C14_normalized':str(image[14,14]),","'actual_QN_Jub14_C14_normalized':str(image[14,14]),'actual_QN_Jbar0_C0_normalized':str(image[0,0]),'source_image_rank':45,")
+text=text.replace("'native_failures':0","'native_failures':1")
+with (O/'verify_v2.py').open('xb') as f:f.write(text.encode())
+text=(O/'DERIVATION.md').read_text().replace('Jub14--C14 two-jet entry is nonzero.','Jbar0--C0 two-jet entry is nonzero, while Jub14--C14 is zero. The complete\nsource image has rank45; see FRAME_CORRECTION_V2.md.')
+with (O/'DERIVATION_V2.md').open('xb') as f:f.write(text.encode())
+for name in ['run','prepare_validation','run_validation']:
+ text=(C/(name+'.py')).read_text().replace('preparation.json','preparation_v2.json').replace('validation_preparation_v2_v2.json','validation_preparation_v2.json')
+ text=text.replace("O/'cutoff.py'","O/'cutoff_v2.py'").replace("O/'verify.py'","O/'verify_v2.py'")
+ text=text.replace("role+'_capture.json'","role+'_v2_capture.json'").replace("role+'_full_capture.json'","role+'_v2_full_capture.json'").replace("role+'_result.json'","role+'_v2_result.json'")
+ text=text.replace('validation_capture.json','validation_v2_capture.json').replace('validation_full_capture.json','validation_v2_full_capture.json').replace('validation_receipt.json','validation_receipt_v2.json')
+ with (C/(name+'_v2.py')).open('xb') as f:f.write(text.encode())
+for name in ['cutoff_v2.py','verify_v2.py','DERIVATION_V2.md','FRAME_CORRECTION_V2.md']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((O/name).read_bytes())
+ files.extend([O/name,O/(name+'.source.txt')])
+for name in ['prepare_v2.py','run_v2.py','prepare_validation_v2.py','run_validation_v2.py','source_diagnostic.py','diagnostic_preparation.json','source_diagnostic.json']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((C/name).read_bytes())
+ files.extend([C/name,O/(name+'.source.txt')])
+v=dict(p);v['schema']='LOCAL_CUTOFF_PREPARATION_V2';v['input_sha256']={str(q):d(q) for q in files};v['failed_native_workers_preserved']=1
+with (O/'preparation_v2.json').open('xb') as f:f.write((json.dumps(v,indent=2,sort_keys=True)+'\n').encode())
+print('FROZEN_V2',len(v['input_sha256']),flush=True)

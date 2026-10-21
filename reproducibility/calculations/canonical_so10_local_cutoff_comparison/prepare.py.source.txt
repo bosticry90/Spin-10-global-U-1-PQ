@@ -1,0 +1,21 @@
+from pathlib import Path
+from hashlib import sha256
+import json,subprocess
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_local_cutoff_comparison';C=Path(__file__).resolve().parent
+base='1e2b0d141bb0c1c4e06acfe2fd2e29c785f75a13';d=lambda q:sha256(q.read_bytes()).hexdigest()
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=R).decode().strip()==base
+assert not subprocess.check_output(['git','diff','--name-only'],cwd=R) and not subprocess.check_output(['git','diff','--cached','--name-only'],cwd=R)
+PK=R/'tools/two_loop_qft_compiler_v1/m08_independent_replay_package_v1'
+files=[R/'AGENTS.md',R/'CHARTER.md',R/'project_state.json',R/'docs/RESEARCH_EXECUTION_HANDOFF_V370.md',R/'docs/LOCAL_RESEARCH_CONVENTIONS_V1.md',R/'docs/SOLO_REVIEW_POLICY_V1.md',PK/'A10_E5_QUANTUM_CONTRACT_V1.md',PK/'A10_E5_QUANTUM_FUNCTIONAL_SPEC_V1.md',PK/'a10_bv_common.py',PK/'export_a10_e5_antighost_vector.py',PK/'audit_a10_e5_antighost_vector.py',R/'tools/portable_dh_v1/inputs.json.gz']
+for folder,names in [('frozen_a10_e5_full_hessian',['primary.json','replay.json','bindings.json']),('frozen_a10_e3_symmetry',['primary.json','replay.json','bindings.json','validation_receipt.json'])]:files.extend(PK/folder/n for n in names)
+for folder,names in [('background_reference_normalization',['DERIVATION.md','RESULT.md','NEXT_RESEARCH_QUESTION.md','validation_receipt_v6.json']),('causal_one_loop_sewing',['DERIVATION.md','CYCLE_NORMALIZATION.md','FINITE_JET_DOMAIN.md','validation_receipt.json','cycle_receipt.json','jets_receipt.json']),('graded_causal_qap',['DERIVATION.md','RESULT.md','validation_receipt_v2.json']),('causal_wick_bridge',['DERIVATION.md','validation_receipt.json']),('local_covariant_reference_witness',['replay_result.json','validation_v2_receipt.json'])]:files.extend(R/'calculations'/('canonical_so10_'+folder)/n for n in names)
+for name in ['RECORD.md','DERIVATION.md','cutoff.py','verify.py']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((O/name).read_bytes())
+ files.extend([O/name,O/(name+'.source.txt')])
+for name in ['prepare.py','run.py','prepare_validation.py','run_validation.py']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((C/name).read_bytes())
+ files.extend([C/name,O/(name+'.source.txt')])
+files.append(O/'.gitattributes');assert all(p.is_file() for p in files)
+v={'schema':'LOCAL_CUTOFF_PREPARATION_V1','base_commit':base,'input_sha256':{str(q):d(q) for q in files},'native_seconds_after_imports':120,'verifier_seconds_after_imports':180,'sampled_private_cap_bytes':8*1024**3,'launch_available_commit_floor_bytes':350*1024**2,'package_cap_bytes':4*1024**2,'arithmetic':'EXACT','scientific_acceptance':'NOT_PERFORMED','authority_changed':False}
+with (O/'preparation.json').open('xb') as f:f.write((json.dumps(v,indent=2,sort_keys=True)+'\n').encode())
+print('FROZEN',len(v['input_sha256']),flush=True)

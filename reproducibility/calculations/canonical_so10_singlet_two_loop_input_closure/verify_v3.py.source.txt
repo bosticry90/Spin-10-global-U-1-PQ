@@ -1,0 +1,201 @@
+"""SSI1 independent exact radical/Fraction convolutions, without native imports."""
+from pathlib import Path
+from hashlib import sha256
+from fractions import Fraction as F
+from itertools import product,combinations
+import ast,json,time,math,subprocess,threading,os
+T0=time.perf_counter();timer=threading.Timer(180,lambda:os._exit(124));timer.daemon=True;timer.start()
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_singlet_two_loop_input_closure'
+p=json.loads((O/'validation_preparation_v3.json').read_bytes())
+for raw,h in p['input_sha256'].items():assert sha256(Path(raw).read_bytes()).hexdigest()==h,raw
+prep=json.loads((O/'preparation_v2.json').read_bytes())
+for v in prep['historical_git_bindings']:
+ assert sha256(subprocess.check_output(['git','show',v['commit']+':'+v['path']],cwd=R)).hexdigest()==v['sha256']
+
+# Key (squarefree nonnegative radicand, imaginary-bit), exact rational weights.
+def clean(a):return {k:x for k,x in a.items() if x}
+def rat(q):return {} if not q else {(1,0):F(q)}
+def add(a,b):
+ c=dict(a)
+ for k,v in b.items():c[k]=c.get(k,F(0))+v
+ return clean(c)
+def scale(a,c):return clean({k:v*c for k,v in a.items()})
+def extract(n):
+ outside=1;inside=1;prime=2
+ while prime*prime<=n:
+  count=0
+  while n%prime==0:n//=prime;count+=1
+  outside*=prime**(count//2)
+  if count%2:inside*=prime
+  prime+=1
+ return outside,inside*n
+def multiply(a,b):
+ c={}
+ for(n,i),x in a.items():
+  for(m,j),y in b.items():
+   out,inside=extract(n*m);key=(inside,(i+j)%2)
+   c[key]=c.get(key,F(0))+x*y*out*(-1 if i and j else 1)
+ return clean(c)
+def inverse_monomial(a):
+ assert len(a)==1,'UNSUPPORTED_ALGEBRAIC_DENOMINATOR'
+ ((n,i),c),=a.items()
+ return {(n,i):F(-1 if i else 1,c*n)}
+def root(q):
+ assert q>=0
+ if q==0:return {}
+ outside,inside=extract(q.numerator*q.denominator)
+ return {(inside,0):F(outside,q.denominator)}
+def rational(a):
+ assert not a or set(a)=={(1,0)},a
+ return a.get((1,0),F(0))
+def conj(a):return {(n,i):(-c if i else c) for(n,i),c in a.items()}
+def realpart(a):return {(n,0):c for(n,i),c in a.items() if not i}
+def imagpart(a):return {(n,0):c for(n,i),c in a.items() if i}
+def parse(text):
+ def visit(n):
+  if isinstance(n,ast.Constant) and isinstance(n.value,int):return rat(n.value)
+  if isinstance(n,ast.Name) and n.id=='I':return {(1,1):F(1)}
+  if isinstance(n,ast.UnaryOp):
+   a=visit(n.operand)
+   if isinstance(n.op,ast.USub):return scale(a,-1)
+   assert isinstance(n.op,ast.UAdd);return a
+  if isinstance(n,ast.Call):
+   assert isinstance(n.func,ast.Name) and n.func.id=='sqrt' and len(n.args)==1
+   return root(rational(visit(n.args[0])))
+  if isinstance(n,ast.BinOp):
+   a,b=visit(n.left),visit(n.right)
+   if isinstance(n.op,ast.Add):return add(a,b)
+   if isinstance(n.op,ast.Sub):return add(a,scale(b,-1))
+   if isinstance(n.op,ast.Mult):return multiply(a,b)
+   if isinstance(n.op,ast.Div):return multiply(a,inverse_monomial(b))
+   if isinstance(n.op,ast.Pow):
+    exponent=rational(b);assert exponent.denominator==1
+    if exponent<0:a=inverse_monomial(a);exponent=-exponent
+    out=rat(1)
+    for _ in range(int(exponent)):out=multiply(out,a)
+    return out
+  raise AssertionError(ast.dump(n))
+ return visit(ast.parse(text,mode='eval').body)
+def equal(a,b):assert a==b,(a,b)
+
+data=json.loads((R/'calculations/canonical_so10_singlet_tadpole/original_v2_result.json').read_bytes())
+point=json.loads((R/'calculations/canonical_so10_finite_radial_control/primary_result.json').read_bytes())
+raw={}
+def getraw(name):
+ if name not in raw:raw[name]=parse(point['raw_coefficients'][name])
+ return raw[name]
+def coef(slot):
+ name,sep,part=slot.partition(':')
+ return imagpart(getraw(name)) if part=='im' else realpart(getraw(name))
+slots=data['slots'];assert len(slots)==34
+degrees={'mS2':2,'lambdaPhiS':2,'lambdaSigmaS':2,'lambdaVectorS':2,'lambdaS':4,'z6':1,'z4':1,'zK':1}
+phi={'phi','phiBar'};S={'S','SBar'};Gs=F(3,5);portal=F(49893,50000000)
+equal(getraw('lambdaVectorS'),rat(portal*F(3,10)))
+computed=[];full={};inner={};outer={};trace={};realcount=rank=positions=projected=0
+for b in data['block_inputs']:
+ n=len(b['metric']);metric=[F(x) for x in b['metric']]
+ a=[[{} for _ in range(n)] for _ in range(n)]
+ for slot,mat in b['raw_D8'].items():
+  c=coef(slot)
+  for i,j in product(range(n),repeat=2):a[i][j]=add(a[i][j],multiply(c,parse(mat[i][j])))
+ # Independent full34-slot degree contraction verifies raw Euler representation.
+ h=[[{} for _ in range(n)] for _ in range(n)]
+ for k,i,j,value in b['raw_H34_sparse']:
+  d=degrees.get(slots[k].split(':')[0],0)-int(b['sectors'][i] in S)-int(b['sectors'][j] in S)
+  assert d>=0
+  if d==0:continue  # exact derivative zero; mass constants remain physical inputs
+  h[i][j]=add(h[i][j],scale(multiply(coef(slots[k]),parse(value)),d))
+ assert a==h
+ D=[[multiply(a[i][j],inverse_monomial(root(metric[i]*metric[j]*Gs))) for j in range(n)] for i in range(n)]
+ for i,j in product(range(n),repeat=2):equal(D[i][j],conj(D[j][i]))
+ ids=[j for j,x in enumerate(b['sectors']) if x in phi]
+ w={};wi={};tr={}
+ for j in ids:
+  tr=add(tr,D[j][j])
+  for i in range(n):
+   term=multiply(conj(D[i][j]),D[i][j]);assert imagpart(term)=={}
+   w=add(w,term)
+   if i in ids:wi=add(wi,term)
+ # Nonnegativity follows exactly from the displayed sum of modulus squares.
+ assert imagpart(w)==imagpart(wi)=={}
+ mult=b['dimension'];full=add(full,scale(w,mult));inner=add(inner,scale(wi,mult))
+ outer=add(outer,scale(add(w,scale(wi,-1)),mult));trace=add(trace,scale(tr,mult))
+ rank+=mult*len(ids);realcount+=mult*n
+ positions+=sum(bool(D[i][j]) for i,j in product(range(n),repeat=2))
+ projected+=sum(bool(D[i][j]) for j in ids for i in range(n))
+ computed.append((b,D,w,wi,tr))
+assert len(computed)==35 and realcount==328 and rank==20
+assert 'mphi2' not in raw and set(raw)=={'lambdaS','lambdaVectorS','lambdaPhiS','lambdaSigmaS','z4','z6','zK'}
+C10=rational(full)/2;Cphi=rational(inner)/2;Cother=rational(outer)/2
+lower=10*portal**2*Gs
+assert C10==Cphi+Cother and C10>=Cphi>=lower>0
+equal(trace,scale(root(Gs),20*portal))
+assert Cother==0  # Actual point, not a blanket mixed-spectator exclusion.
+assert C10-lower==F(297,250)
+
+# Explicit factor check in a diagnostic isometric symmetric16-matrix basis.
+# Diagonal C_A=E_AA is NOT a Spin10 intertwiner realization.
+Y=[[F(1),F(1,2),F(0)],[F(1,2),F(2),F(1,3)],[F(0),F(1,3),F(3)]]
+K=sum(v*v for row in Y for v in row);assert K==F(265,18)
+ys=[]
+for imaginary in [0,1]:
+ for A in range(10):
+  entries={}
+  for i,j in product(range(3),repeat=2):
+   if Y[i][j]:entries[(i,j,A,A)]=multiply(scale(root(F(1,2)),Y[i][j]),{(1,imaginary):F(1)})
+  ys.append(entries)
+gram=[]
+for i,j in product(range(20),repeat=2):
+ value={}
+ for key in ys[i].keys()&ys[j].keys():value=add(value,multiply(conj(ys[i][key]),ys[j][key]))
+ q=rational(realpart(value));assert q==(K/2 if i==j else 0);gram.append(q)
+assert C10*K>0 and C10*0==0 and C10*K!=2*C10*K
+assert C10*Gs!=C10 and rank!=10
+
+# The graph is1PI: every nontrivial vertex cut has at least two crossing edges.
+edges=[(0,1),(0,2),(3,1),(2,3),(2,3)]
+cuts=[]
+for bits in range(1,15):
+ cuts.append(sum(((bits>>i)&1)!=((bits>>j)&1) for i,j in edges))
+assert min(cuts)==2 and len(edges)-4+1==2
+assert all(v not in [0,1] for edge in edges[3:] for v in edge)
+
+# Read the native output only after these independent exact calculations.
+native={}
+for role in ['primary','replay']:
+ cap=json.loads((O/(role+'_v2_capture.json')).read_bytes())
+ assert cap['execution_state']=='COMPLETED' and not cap['failed_or_incomplete_counted_as_PASS']
+ r=json.loads((O/(role+'_v2_result.json')).read_bytes());native[role]=r['elapsed_after_imports'];assert native[role]<120
+ assert F(r['C10_K10_coefficient_unweighted'])==C10
+ assert F(r['C10_phi_spectator'])==Cphi and F(r['C10_other_spectator'])==Cother
+ assert F(r['exact_portal_lower_bound_on_C10'])==lower
+ equal(parse(r['trace_actual_phi_cubic']),trace)
+ for row,(b,D,w,wi,tr) in zip(r['blocks'],computed):
+  assert row['label']==b['label'] and row['size']==len(D)
+  presented={(i,j):parse(v) for i,j,v in row['D_entries']}
+  for i,j in product(range(len(D)),repeat=2):equal(presented.get((i,j),{}),D[i][j])
+  equal(parse(row['W10_unweighted']),w);equal(parse(row['W10_phi_spectator']),wi);equal(parse(row['trace_phi_block']),tr)
+ assert len(r['blocks'])==35 and r['real_phi_projector_rank']==20
+ assert not r['actual_two_loop_integral_or_total_cancellation_computed']
+ assert not r['numerical_Yukawa_or_flavor_fit_adopted']
+ assert not r['quantum_control_E5_or_physical_promotion'] and not r['authority_changed']
+failed=json.loads((O/'primary_capture.json').read_bytes())
+assert failed['execution_state']=='FAILED' and failed['exit_code']!=0
+assert sha256((R/'project_state.json').read_bytes()).hexdigest()=='d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8'
+assert sum(f.stat().st_size for f in O.iterdir() if f.is_file())<4*1024**2
+elapsed=time.perf_counter()-T0;assert elapsed<180
+out={'schema':'SINGLET_TWO_LOOP_INPUT_CLOSURE_VALIDATION_V1','execution_state':'COMPLETED',
+ 'scientific_disposition':'QUALIFIED_NONZERO_ACTUAL_SCALAR_CARRIER_FOR_INTERNAL_YUKAWA_TWO_LOOP_TOPOLOGY_NOT_A_FULL_TWO_LOOP_AMPLITUDE',
+ 'input_sha256':p['input_sha256'],'historical_git_bindings':prep['historical_git_bindings'],
+ 'native_seconds_after_imports':native,'elapsed_after_imports':elapsed,
+ 'real_directions':realcount,'real_phi_projector_rank':rank,'full_D_nonzero_positions':positions,'projected_D_nonzero_positions':projected,
+ 'C10_unweighted':str(C10),'C10_phi_spectator':str(Cphi),'C10_other_spectator':str(Cother),
+ 'portal_lower_bound':str(lower),'exact_holomorphic_excess_over_portal':str(C10-lower),
+ 'all35_D_matrices_and_zero_complements_checked':True,'diagnostic_realification_Gram_factor_checked':True,
+ 'actual_Spin10_intertwiners_constructed_by_diagnostic':False,
+ 'V_one_particle_irreducible_with_two_loops_checked':True,
+ 'actual_total_two_loop_correction_or_cancellation_theorem_calculated':False,
+ 'numerical_flavor_fit_or_physical_benchmark_adopted':False,'quantum_control_or_E5_promoted':False,
+ 'failed_native_workers':1,'failed_verifier_workers':1,
+ 'parsed_derivative_slots':sorted(raw),'S_independent_mphi2_not_parsed_and_not_set_zero':('mphi2' not in raw),'authority_changed':False,'whole_goal_complete':False}
+print('RESULT '+json.dumps(out,sort_keys=True,separators=(',',':')),flush=True);timer.cancel()

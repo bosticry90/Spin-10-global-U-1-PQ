@@ -1,0 +1,8 @@
+from pathlib import Path
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_singlet_two_loop_input_closure'
+src=(O/'closure.py').read_text()
+old='assert w.is_Rational and wi.is_Rational and w>=wi>=0'
+new='assert s.simplify(s.im(w))==s.simplify(s.im(wi))==0 and w>=wi>=0'
+assert src.count(old)==1
+src=src.replace(old,new).replace("O/'preparation.json'","O/'preparation_v2.json'")
+with(O/'closure_v2.py').open('x',encoding='utf-8',newline='\n') as f:f.write(src)

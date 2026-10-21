@@ -1,0 +1,28 @@
+from pathlib import Path
+from hashlib import sha256
+import json
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_local_cutoff_comparison';C=Path(__file__).resolve().parent
+p=json.loads((O/'preparation_v3.json').read_bytes());d=lambda q:sha256(q.read_bytes()).hexdigest()
+for q,h in p['input_sha256'].items():assert d(Path(q))==h,q
+files=list(map(Path,p['input_sha256']))+[O/'preparation_v3.json']
+for role in ['primary','replay']:
+ cap=json.loads((O/(role+'_v3_capture.json')).read_bytes());assert cap['execution_state']=='COMPLETED' and cap['exit_code']==0
+ files.extend([O/(role+'_v3_capture.json'),O/(role+'_v3_result.json')])
+a,b=[json.loads((O/(r+'_v3_result.json')).read_bytes()) for r in ['primary','replay']]
+assert all(a[k]==b[k] for k in a if k not in ['role','elapsed_after_imports'])
+text=(O/'verify_v3.py').read_text().replace('validation_preparation_v3.json','validation_preparation_v4.json')
+# Prelaunch provenance correction: native-version changes must not rename old receipts.
+old="('graded_causal_qap','validation_receipt_v3.json')";assert old in text
+text=text.replace(old,"('graded_causal_qap','validation_receipt_v2.json')")
+with (O/'verify_v4.py').open('xb') as f:f.write(text.encode())
+text=(C/'run_validation_v3.py').read_text().replace('_v3','_v4')
+with (C/'run_validation_v4.py').open('xb') as f:f.write(text.encode())
+for name in ['verify_v4.py']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((O/name).read_bytes())
+ files.extend([O/name,O/(name+'.source.txt')])
+for name in ['prepare_validation_v4.py','run_validation_v4.py']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((C/name).read_bytes())
+ files.extend([C/name,O/(name+'.source.txt')])
+v={'schema':'LOCAL_CUTOFF_VALIDATION_PREPARATION_V4','input_sha256':{str(q):d(q) for q in files},'authority_changed':False,'prelaunch_historical_receipt_name_corrected':True,'earlier_verifier_versions_executed':False}
+with (O/'validation_preparation_v4.json').open('xb') as f:f.write((json.dumps(v,indent=2,sort_keys=True)+'\n').encode())
+print('VALIDATION_FROZEN',len(v['input_sha256']),flush=True)

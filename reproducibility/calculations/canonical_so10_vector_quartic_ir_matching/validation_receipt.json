@@ -1,0 +1,70 @@
+{
+  "UV_forests_or_complete_finite_C1_qualified": false,
+  "all144_tree_brackets_and_metric_orbit_maps_checked": true,
+  "all35_full_open_operators_and_zero_complements_checked": true,
+  "elapsed_after_imports": 3.13951080001425,
+  "execution_state": "COMPLETED",
+  "finite_scheme_or_physical_mass_adopted": false,
+  "full_EFT_or_E5_promoted": false,
+  "hard_double_poles": [
+    "-1152",
+    "-648",
+    "-450"
+  ],
+  "max_scaled_Mellin_partition_error": "1.80004190566e-73",
+  "other_negative_controls": [
+    {
+      "group": "U1",
+      "half_mixed_closure_detected": true,
+      "omitted_first_curvature_constant_zeta2_coefficient": "0",
+      "omitted_second_curvature_retains_d_log_terms": true,
+      "pure_light_double_pole": "0"
+    },
+    {
+      "group": "SU2",
+      "half_mixed_closure_detected": true,
+      "omitted_first_curvature_constant_zeta2_coefficient": "-432",
+      "omitted_second_curvature_retains_d_log_terms": true,
+      "pure_light_double_pole": "-72"
+    },
+    {
+      "group": "SU3",
+      "half_mixed_closure_detected": true,
+      "omitted_first_curvature_constant_zeta2_coefficient": "-540",
+      "omitted_second_curvature_retains_d_log_terms": true,
+      "pure_light_double_pole": "-162"
+    }
+  ],
+  "schema": "C1_VECTOR_QUARTIC_IR_MATCHING_VALIDATION_V1",
+  "scientific_acceptance": "NOT_PERFORMED",
+  "scientific_authority": "34/39_UNCHANGED",
+  "status": "QUALIFIED_ACTUAL_QUARTIC_MIXED_AND_ALL_LIGHT_IR_SUBTRACTION_WITH_BARE_HARD_REMAINDER",
+  "whole_mass_assignment_IR_partition_before_Laurent_and_IR_limits": true,
+  "wrong_antisymmetric_sign_controls": [
+    {
+      "group": 1,
+      "mass_slot": 3,
+      "wrong_antisymmetric_sign_trace_error": "6"
+    },
+    {
+      "group": 1,
+      "mass_slot": 4,
+      "wrong_antisymmetric_sign_trace_error": "6"
+    },
+    {
+      "group": 2,
+      "mass_slot": 1,
+      "wrong_antisymmetric_sign_trace_error": "3"
+    },
+    {
+      "group": 2,
+      "mass_slot": 3,
+      "wrong_antisymmetric_sign_trace_error": "6"
+    },
+    {
+      "group": 2,
+      "mass_slot": 4,
+      "wrong_antisymmetric_sign_trace_error": "6"
+    }
+  ]
+}

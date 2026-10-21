@@ -1,0 +1,9 @@
+{
+  "elapsed_after_imports": 38.38867329998175,
+  "packed_bytes": 55044,
+  "packed_sha256": "f991d9f3ec0ba1ad25b533b6074990fbb5dc27c40afbf52081a9a4943831a83c",
+  "raw_bytes": 282912,
+  "role": "primary",
+  "schema": "VSP1_COLOR",
+  "tables_sha256": "bbc5faacb1ea7472f75e3a3e439225b9c7bfb1299d1dbf78a9bfcf0297f115d6"
+}

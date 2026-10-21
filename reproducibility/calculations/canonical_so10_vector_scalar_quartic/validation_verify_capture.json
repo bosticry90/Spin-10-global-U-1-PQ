@@ -1,0 +1,89 @@
+{
+  "all_resource_samples": [
+    {
+      "private_bytes": 462848,
+      "seconds": 0.002479799964930862
+    },
+    {
+      "private_bytes": 73138176,
+      "seconds": 2.0083937000017613
+    },
+    {
+      "private_bytes": 65413120,
+      "seconds": 4.011347199964803
+    },
+    {
+      "private_bytes": 68538368,
+      "seconds": 6.016394999984186
+    },
+    {
+      "private_bytes": 69984256,
+      "seconds": 8.016516799980309
+    },
+    {
+      "private_bytes": 74407936,
+      "seconds": 10.030064199992921
+    },
+    {
+      "private_bytes": 74407936,
+      "seconds": 12.045122699986678
+    },
+    {
+      "private_bytes": 68214784,
+      "seconds": 14.051191099977586
+    },
+    {
+      "private_bytes": 69816320,
+      "seconds": 16.05784639995545
+    },
+    {
+      "private_bytes": 71163904,
+      "seconds": 18.058026999991853
+    },
+    {
+      "private_bytes": 69464064,
+      "seconds": 20.073277599993162
+    },
+    {
+      "private_bytes": 70516736,
+      "seconds": 22.0786972999922
+    },
+    {
+      "private_bytes": 70524928,
+      "seconds": 24.07976890000282
+    },
+    {
+      "private_bytes": 71577600,
+      "seconds": 26.085403999953996
+    }
+  ],
+  "calculation_completed": true,
+  "command": [
+    "C:\\Program Files\\Python310\\python.exe",
+    "-B",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_scalar_quartic\\verify.py"
+  ],
+  "execution_state": "COMPLETED",
+  "exit_code": 0,
+  "failed_or_incomplete_counted_as_PASS": false,
+  "launch": {
+    "creation_after_observation": true,
+    "creation_filetime": 134369896998285281,
+    "creation_query_error": null,
+    "memory": {
+      "available_pagefile": 12217491456,
+      "available_physical": 2968743936,
+      "load": 82,
+      "total_pagefile": 36658069504,
+      "total_physical": 16992980992
+    },
+    "minimum_available_commit_bytes": 367001600,
+    "observation_end_filetime": 134369896998276327,
+    "observation_start_filetime": 134369896998276327,
+    "pid": 20776,
+    "private_allocation_limit_bytes": 8589934592
+  },
+  "post_run_observations_qualified": true,
+  "private_allocation_limit_bytes": 8589934592,
+  "stdout_and_stderr": "STAGE third_sparse_index_contraction\nRESULT {\"authority\": \"34/39_UNCHANGED\", \"common_IR_identity\": \"FULL-OPENED_HS-OPENED_SH-EFT=HH at delta>0, including graph-local UV projections\", \"complete_C1_or_gauge_independence_or_E5_qualified\": false, \"controls\": {\"bad_frame_inverse\": 2348, \"drop_C_positive_eps_consistently\": \"R_MS_FINITE_INSENSITIVE; bare_and_CT_terms_individually_sensitive\", \"duplicate_CT\": \"nonzero_bare_pole_and_wrong_finite\", \"missing_CT\": \"nonzero_generic_and_actual_bare_pole\", \"omitted_EFT\": [\"bare_LL_poles\", [\"-27/25\", \"91/5\", \"0\"]], \"omitted_Goldstone\": \"actual_nonzero_finite_coefficients\", \"premature_D4_only_in_U_pair_consistently\": \"R_MS_FINITE_INSENSITIVE\", \"whole_family_zero_test\": \"NOT_USED; family_nonzero\", \"wrong_Wick_sign_and_factor\": \"nonzero_complete_amplitude_changes\", \"wrong_closed_D_or_premature_D4\": \"nonzero_actual_W_contractions\", \"wrong_color_sign\": \"actual_nonzero_operators_flip\"}, \"counts\": {\"gauge\": 33, \"physical\": 290, \"soft\": 5}, \"elapsed_after_imports\": 26.554734600009397, \"execution_state\": \"COMPLETED\", \"full_color_domain\": 2151680, \"max_scaled_route_error\": \"0.0\", \"schema\": \"VSP1_VALIDATION\", \"scientific_acceptance\": \"NOT_PERFORMED\", \"status\": \"QUALIFIED_VVSS_GRAPH_LOCAL_UV_AND_LIGHT_MATCHED_FINITE_F2\"}\n"
+}

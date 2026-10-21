@@ -1,0 +1,32 @@
+from pathlib import Path
+from hashlib import sha256
+import ast,json,subprocess
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_singlet_two_loop_input_closure';C=Path(__file__).resolve().parent
+digest=lambda p:sha256(p.read_bytes()).hexdigest();read=lambda p:json.loads(p.read_bytes())
+base='ffdacd9da45d48fd9bea240630bef0afb9621916'
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=R,text=True).strip()==base
+assert not subprocess.check_output(['git','diff','--name-only'],cwd=R).strip()
+assert not subprocess.check_output(['git','diff','--cached','--name-only'],cwd=R).strip()
+old=read(R/'calculations/canonical_so10_singlet_momentum_shape/validation_receipt.json');assert old['execution_state']=='COMPLETED'
+inputs=dict(old['input_sha256'])
+for path in [R/'calculations/canonical_so10_singlet_momentum_shape/validation_receipt.json',
+ R/'calculations/canonical_so10_singlet_momentum_shape/RESULT.md',
+ R/'calculations/canonical_so10_singlet_quartic_running/primary_result.json',
+ R/'calculations/canonical_so10_scalar_reconstruction/PARENT_ACTION_V1.md',
+ R/'calculations/canonical_so10_direct_two_loop_heavy_threshold/YUKAWA_CONVENTION_V1.md',
+ R/'docs/RESEARCH_EXECUTION_HANDOFF_V357.md',C.parent/'singlet-momentum-shape-v1-2026-10-19/post_commit.json',
+ O/'RECORD.md',O/'DERIVATION.md',O/'closure.py',C/'prepare.py',C/'run.py']:
+ if path.suffix=='.py':ast.parse(path.read_text(encoding='utf-8'))
+ inputs[str(path)]=digest(path)
+for path in [O/'RECORD.md',O/'DERIVATION.md',O/'closure.py',C/'prepare.py',C/'run.py']:
+ dest=O/(path.name+'.source.txt')
+ with dest.open('xb') as f:f.write(path.read_bytes())
+ inputs[str(dest)]=digest(dest)
+for raw,h in inputs.items():assert digest(Path(raw))==h,raw
+p={'schema':'SINGLET_TWO_LOOP_INPUT_CLOSURE_PREPARATION_V1','base_commit':base,'input_sha256':inputs,
+ 'historical_git_bindings':old['historical_git_bindings_checked'],'controller_sha256':digest(C/'run.py'),
+ 'native_seconds_after_imports':120,'independent_seconds_after_imports':180,
+ 'sampled_private_limit_bytes':8*1024**3,'minimum_available_commit_bytes':350*1024**2,'package_limit_bytes':4*1024**2,
+ 'scientific_acceptance':'NOT_PERFORMED','scope':'Actual scalar coupling support with conditional frozen Yukawa isometry; no integrated two-loop amplitude or numerical flavor'}
+with(O/'preparation.json').open('xb') as f:f.write((json.dumps(p,indent=2,sort_keys=True)+'\n').encode())
+print('FROZEN',len(inputs),flush=True)

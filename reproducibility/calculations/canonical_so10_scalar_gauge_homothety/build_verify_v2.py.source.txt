@@ -1,0 +1,11 @@
+from pathlib import Path
+C=Path(__file__).resolve().parent
+src=(C/'verify.py').read_text()
+old="assert s.diff(-(lam*v*v)*x*x/2+e*lam*x**4/4,x).subs(x,v)==lam*v**3*(e-1)"
+new="assert s.expand(s.diff(-(lam*v*v)*x*x/2+e*lam*x**4/4,x).subs(x,v)-lam*v**3*(e-1))==0"
+assert src.count(old)==1
+src=src.replace(old,new).replace("O/'validation_preparation.json'","O/'validation_preparation_v2.json'")
+src=src.replace("'failed_native_workers':0,'failed_verifier_workers':0","'failed_native_workers':0,'failed_verifier_workers':1")
+with(C/'verify_v2.py').open('x',encoding='utf-8',newline='\n') as f:f.write(src)
+run=(C/'run_validation.py').read_text().replace('validation_preparation.json','validation_preparation_v2.json').replace('validation_receipt.json','validation_receipt_v2.json').replace('validation_capture.json','validation_v2_capture.json').replace('validation_full_capture.json','validation_v2_full_capture.json').replace('verify.py','verify_v2.py').replace("print('QUALIFIED'","print('QUALIFIED_V2'")
+with(C/'run_validation_v2.py').open('x',encoding='utf-8',newline='\n') as f:f.write(run)

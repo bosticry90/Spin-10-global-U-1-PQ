@@ -1,0 +1,186 @@
+{
+  "schema": "SPIN10_PQ_PACKAGING_VALIDATION_V3",
+  "execution_state": "COMPLETED",
+  "validated_at_utc": "2026-10-21T03:25:31.894372+00:00",
+  "source_commit": "7562f42c14ef1ab5a946fbfc4534509f3378c76b",
+  "publication_date": "20 October 2026",
+  "scientific_acceptance": "NOT_PERFORMED",
+  "director_acceptance": "NOT_INFERRED",
+  "selected_receipts": 32,
+  "receipt_and_successful_preparation_binding_checks": 21286,
+  "binding_checks_may_repeat_shared_inputs": true,
+  "historical_inputs_separately_authenticated": 5,
+  "binding_mismatches": [],
+  "source_export": {
+    "execution_state": "COMPLETED",
+    "source_commit": "7562f42c14ef1ab5a946fbfc4534509f3378c76b",
+    "source_files": 26600,
+    "external_files": 6233,
+    "new_archive_members": 8050,
+    "new_source_files": 5385,
+    "total_read_bytes": 3890244465,
+    "archives": [
+      {
+        "filename": "spin10_pq_source_update_v3_part1.zip",
+        "sha256": "a5251878d74635316ef414ec5b1f06cbe2c16bdcf4c004617b1113128c4267e6",
+        "size_bytes": 41327468,
+        "file_count": 3735
+      },
+      {
+        "filename": "spin10_pq_source_update_v3_part2.zip",
+        "sha256": "d21276501c86d85a8ab0d62f73b8a89958919e3cd5df7d5c36e3a2d966ae3954",
+        "size_bytes": 43867830,
+        "file_count": 403
+      },
+      {
+        "filename": "spin10_pq_source_update_v3_part3.zip",
+        "sha256": "9aeb54f784fb34ae2dea781053568b752bc9e7a4381f1b43d4339958e2c1e70a",
+        "size_bytes": 42765732,
+        "file_count": 3367
+      },
+      {
+        "filename": "spin10_pq_source_update_v3_part4.zip",
+        "sha256": "ef038e5d020a25790b303d2e4a7fb4d30741cc71c543e09f3035e99281bee46b",
+        "size_bytes": 31753782,
+        "file_count": 545
+      }
+    ],
+    "unresolved_external_paths": [],
+    "elapsed_seconds": 263.4220000000205
+  },
+  "portable_pilot_replays": [
+    {
+      "all643_field_maps_all33_directions_and_jets_retained": true,
+      "all_packaged_inputs_match_established_engine": true,
+      "complete_actual_DH_positions": 99256,
+      "complete_actual_DH_sha256": "dc0872b426950f65098ad110dee6b973cfe4069e9a4291d6d47900048a5d4652",
+      "elapsed_after_imports": 24.75689279998187,
+      "every_coefficient_and_implicit_zero_matches": true,
+      "execution_state": "COMPLETED",
+      "method": "slot",
+      "new_UV_loop_QAP_contact_or_E5_acceptance": false,
+      "platform": "Windows-11-10.0.26300-SP0",
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "reference_opened_after_complete_computation": true,
+      "runtime_dependencies": "Python standard library and this closed bundle only",
+      "schema": "PORTABLE_COMPLETE_DH_REPRODUCTION_V1",
+      "scope": "Complete classical DH identity; upstream physical/action interpretation inherited",
+      "unexpected_outside_reads": [],
+      "whole_order_census": [
+        {
+          "breaking_hessian_positions": 0,
+          "complete_DH_positions": 552,
+          "direct_GF_antighost_positions": 552,
+          "g": 0,
+          "mixed_positions": 552,
+          "source_master_correction_positions": 0
+        },
+        {
+          "breaking_hessian_positions": 9912,
+          "complete_DH_positions": 15272,
+          "direct_GF_antighost_positions": 17184,
+          "g": 1,
+          "mixed_positions": 16176,
+          "source_master_correction_positions": 13448
+        },
+        {
+          "breaking_hessian_positions": 35576,
+          "complete_DH_positions": 83432,
+          "direct_GF_antighost_positions": 101576,
+          "g": 2,
+          "mixed_positions": 82544,
+          "source_master_correction_positions": 69080
+        },
+        {
+          "breaking_hessian_positions": 0,
+          "complete_DH_positions": 0,
+          "direct_GF_antighost_positions": 0,
+          "g": 3,
+          "mixed_positions": 0,
+          "source_master_correction_positions": 0
+        }
+      ],
+      "workspace_writes": 0
+    },
+    {
+      "all643_field_maps_all33_directions_and_jets_retained": true,
+      "all_packaged_inputs_match_established_engine": true,
+      "complete_actual_DH_positions": 99256,
+      "complete_actual_DH_sha256": "dc0872b426950f65098ad110dee6b973cfe4069e9a4291d6d47900048a5d4652",
+      "elapsed_after_imports": 26.730568600003608,
+      "every_coefficient_and_implicit_zero_matches": true,
+      "execution_state": "COMPLETED",
+      "method": "left",
+      "new_UV_loop_QAP_contact_or_E5_acceptance": false,
+      "platform": "Windows-11-10.0.26300-SP0",
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "reference_opened_after_complete_computation": true,
+      "runtime_dependencies": "Python standard library and this closed bundle only",
+      "schema": "PORTABLE_COMPLETE_DH_REPRODUCTION_V1",
+      "scope": "Complete classical DH identity; upstream physical/action interpretation inherited",
+      "unexpected_outside_reads": [],
+      "whole_order_census": [
+        {
+          "breaking_hessian_positions": 0,
+          "complete_DH_positions": 552,
+          "direct_GF_antighost_positions": 552,
+          "g": 0,
+          "mixed_positions": 552,
+          "source_master_correction_positions": 0
+        },
+        {
+          "breaking_hessian_positions": 9912,
+          "complete_DH_positions": 15272,
+          "direct_GF_antighost_positions": 17184,
+          "g": 1,
+          "mixed_positions": 16176,
+          "source_master_correction_positions": 13448
+        },
+        {
+          "breaking_hessian_positions": 35576,
+          "complete_DH_positions": 83432,
+          "direct_GF_antighost_positions": 101576,
+          "g": 2,
+          "mixed_positions": 82544,
+          "source_master_correction_positions": 69080
+        },
+        {
+          "breaking_hessian_positions": 0,
+          "complete_DH_positions": 0,
+          "direct_GF_antighost_positions": 0,
+          "g": 3,
+          "mixed_positions": 0,
+          "source_master_correction_positions": 0
+        }
+      ],
+      "workspace_writes": 0
+    }
+  ],
+  "portable_replay_context": "Isolated copy under a path with spaces; bundled CPython 3.12.14, -I -S -B; no pip, external scientific packages or workspace writes.",
+  "old_public_archives_provenance_and_v3_note_exactly_preserved": true,
+  "local_markdown_links": "PASS",
+  "browsable_source_bytes": "MATCH_FROZEN_SOURCE",
+  "pdf": {
+    "version": 4,
+    "pages": 9,
+    "sha256": "5c1b1068fe8c0e3a33835bd2f586614af0c08c32bc86c4077d34c02072dfd071",
+    "compilation": "SUCCESS",
+    "layout_warnings": [],
+    "visual_review": "All nine rendered pages inspected; no clipping or overlapping text; final changed paragraph and references re-rendered."
+  },
+  "package_verification": {
+    "expected_archive_members": 32846,
+    "command": "python -B reproducibility/verify_package.py",
+    "scope": "All current release files and all v1/v2/v3 archive members; exact final output retained externally to avoid manifest self-reference."
+  },
+  "core_scalar_gauge_replays": "Prior completed publication replays reused; code bytes unchanged. No new expensive scalar/gauge/pole/threshold computation.",
+  "limitations": [
+    "Closed portable pilot computes a classical identity, not the scalar spectrum or quantum restoration",
+    "No full finite C1 or updated unification fit",
+    "No physical point/scheme adoption or flavor input",
+    "No original Git history or historical custody PASS",
+    "Shared action/reference/software/AI analyst limit independence"
+  ],
+  "authority": "state113/34of39_UNCHANGED",
+  "next_scientific_dependency": "Frozen V421 identifies remaining primitive families (next candidate VVS), parent-minus-family and overall counterterms, finite insertions, EFT matching and final C1 conversion; publication does not execute them."
+}

@@ -1,0 +1,146 @@
+from pathlib import Path
+from hashlib import sha256
+from collections import defaultdict
+import json,gzip,time,threading,os,math
+import sympy as s
+R=Path(r'C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_bv_uv_residue_bridge';P=R/'tools/two_loop_qft_compiler_v1/m08_independent_replay_package_v1'
+read=lambda p:json.loads(p.read_bytes());digest=lambda p:sha256(p.read_bytes()).hexdigest()
+class Bits:
+ def __init__(self,odd):self.odd=list(odd);self.index={n:i for i,n in enumerate(odd)}
+ def add(self,*values):
+  out=defaultdict(lambda:s.S.Zero)
+  for v in values:
+   for b,c in v.items():out[b]+=c
+  return {b:s.expand(c) for b,c in out.items() if s.expand(c)!=0}
+ def mul(self,a,b):
+  out=defaultdict(lambda:s.S.Zero)
+  for i,c in a.items():
+   for j,d in b.items():
+    if i&j:continue
+    sg=(-1)**sum((j&((1<<k)-1)).bit_count() for k in range(len(self.odd)) if i>>k&1);out[i|j]+=sg*c*d
+  return {i:s.expand(c) for i,c in out.items() if s.expand(c)!=0}
+ def scale(self,a,c):return self.add({b:v*c for b,v in a.items()})
+ def v(self,n):return {1<<self.index[n]:s.S.One} if n in self.index else {0:s.Symbol(n)}
+ def derivative(self,a,n):
+  if n not in self.index:return self.add({b:s.diff(v,s.Symbol(n)) for b,v in a.items()})
+  bit=1<<self.index[n];return self.add({b^bit:(-1)**((b&(bit-1)).bit_count())*v for b,v in a.items() if b&bit})
+ def act(self,a,flow):return self.add(*(self.mul(v,self.derivative(a,n)) for n,v in flow.items()))
+ def serialize_words(self,a):
+  out={}
+  for mask,cv in a.items():
+   odds=[n for j,n in enumerate(self.odd) if mask>>j&1];sign=(-1)**sum(x>y for i,x in enumerate(odds) for y in odds[i+1:]);vs=sorted(cv.free_symbols,key=str)
+   if not vs:terms=[((),cv)]
+   else:terms=s.Poly(cv,*vs).terms()
+   for exps,coef in terms:
+    word=tuple(sorted(odds+[str(n) for n,e in zip(vs,exps) for _ in range(e)]));out[word]=out.get(word,0)+coef*sign
+  return [[list(w),str(c)] for w,c in sorted(out.items()) if c]
+def finite_control():
+ odd=['c','bar','Jx','Jy','Jb','h_c','h_bar','k_c','k_bar'];B=Bits(odd);v=B.v;add=B.add;mul=B.mul;sc=B.scale;names=['x','y','c','bar','b'];x,y,c,bar,b=map(v,names)
+ rr=add(mul(x,x),mul(y,y));source=add(mul(v('Jx'),mul(c,y)),sc(mul(v('Jy'),mul(c,x)),-1),sc(mul(v('Jbar'),b),-1));qfield={'x':mul(c,y),'y':sc(mul(c,x),-1),'c':{},'bar':sc(b,-1),'b':{}}
+ psi=mul(bar,add(mul(x,y),sc(b,-s.Rational(1,2))));S=add(mul(rr,rr),source,B.act(psi,qfield));q={n:B.derivative(S,'J'+n) for n in names}|{'J'+n:B.derivative(S,n) for n in names};assert not B.act(S,q)
+ h={n:v('h_'+n) for n in names};k={n:v('k_'+n) for n in names};H=B.act(B.act(S,h),k)
+ # Independent polarization in two commuting parameters,including the odd
+ # variables themselves. No native Exterior arithmetic or source code imported.
+ aa,bb=s.symbols('aa bb');polar={};even_sub={s.Symbol(n):s.Symbol(n)+aa*s.Symbol('h_'+n)+bb*s.Symbol('k_'+n) for n in ['x','y','b']}
+ for mask,cv in S.items():
+  term={0:s.expand(cv.subs(even_sub,simultaneous=True))}
+  for i,n in enumerate(odd):
+   if mask>>i&1:
+    factor=add(v(n),sc(v('h_'+n),aa),sc(v('k_'+n),bb)) if n in ['c','bar'] else v(n);term=mul(term,factor)
+  polar=add(polar,term)
+ polar=add({mask:s.expand(cv).coeff(aa,1).coeff(bb,1) for mask,cv in polar.items()});assert not add(polar,sc(H,-1))
+ lift=q|{pref+'_'+n:B.act(q[n],h if pref=='h' else k) for pref in ['h','k'] for n in names};assert not B.act(H,lift)
+ omit=lift|{'J'+n:{} for n in names};defect=B.act(H,omit);assert defect
+ wrong=lift|{'J'+n:sc(q['J'+n],-1) for n in names};wrongdefect=B.act(H,wrong);assert wrongdefect
+ old_wrong=q|{'J'+n:sc(q['J'+n],-1) for n in names};assert not B.act(S,old_wrong),'V1 control really was insensitive'
+ return B.serialize_words(H),B.serialize_words(defect),len(wrongdefect),len(B.serialize_words(S))
+p=s.symbols('p0:4');dot=p[0]+2*p[1]
+def gaussian_angular(poly):
+ total=0
+ for e,c in s.Poly(s.expand(poly),p).terms():
+  if any(v%2 for v in e):continue
+  # Gaussian Wick recursion divided by its radial moment in four dimensions.
+  half=sum(e)//2;moment=s.S.One
+  for v in e:
+   for j in range(v//2):moment*=s.Rational(2*j+1,2)
+  total+=c*moment/s.factorial(half+1)
+ return s.expand(total)
+def reciprocal_coefficients(m,sign,N):
+ u=s.Symbol('u');den=s.Poly((1+sign*2*dot*u+5*u*u)**m,u);out=[s.S.One]
+ for j in range(1,N+1):out.append(s.expand(-sum(den.nth(k)*out[j-k] for k in range(1,min(j,2*m)+1))))
+ return out
+def shifted(u,m,j,sign):
+ z=s.Symbol('z');num=s.Poly(s.prod((p[i]+sign*z*[1,2,0,0][i])**u[i] for i in range(4)),z);rec=reciprocal_coefficients(m,sign,j)
+ return s.expand(sum(num.nth(k)*rec[j-k] for k in range(min(j,sum(u))+1)))
+def main():
+ tick=time.perf_counter();timer=threading.Timer(180,lambda:os._exit(124));timer.daemon=True;timer.start();prep=read(O/'validation_preparation_v2.json');assert digest(Path(__file__))==prep['verifier_sha256']
+ for raw,h in prep['input_sha256'].items():assert digest(Path(raw))==h,raw
+ H,defect,wrongcount,Snum=finite_control();hhash=sha256(json.dumps(H,separators=(',',':')).encode()).hexdigest()
+ kinds=[((0,0,0,0),1),((1,0,0,0),1),((0,2,0,0),1),((1,1,0,0),1),((0,0,0,0),2),((0,1,1,1),2),((2,1,0,0),0)];checks=[]
+ for u,m in kinds:
+  for v,n in kinds:
+   j=sum(u)+sum(v)-2*(m+n)+4
+   A=gaussian_angular(shifted(u,m,j,-1)*s.prod(p[i]**v[i] for i in range(4))) if j>=0 else s.S.Zero
+   B=gaussian_angular(shifted(v,n,j,1)*s.prod(p[i]**u[i] for i in range(4))) if j>=0 else s.S.Zero
+   assert A==B;checks.append((u,m,v,n,j,str(A)))
+ # Heat-weighted commutator: radial proper-time derivative gives a compact
+ # positive integral;its t0 limit is nonzero by dominated convergence.
+ t,beta,vv=s.symbols('t beta vv',positive=True);finite=beta*s.integrate((1-vv)*s.exp(-t*beta*vv),(vv,0,1))/(16*s.pi**2);finite=s.simplify(finite)
+ assert s.limit(finite,t,0)==beta/(32*s.pi**2) and s.limit(-t*s.diff(finite,t),t,0)==0
+ assert gaussian_angular(-beta+4*(s.sqrt(beta)*p[0])**2)==0
+ # Independent supermatrix bit-fiber control;ordinary trace fails cyclicity.
+ B=Bits(['theta','omega']);theta=B.v('theta');omega=B.v('omega');left=B.mul(theta,omega);right=B.mul(omega,theta);assert left and not B.add(left,right) and B.add(left,B.scale(right,-1))
+ # Actual derivative jets,not just a synthetic jet test.
+ data=json.loads(gzip.decompress((R/'tools/portable_dh_v1/inputs.json.gz').read_bytes()));jets=[]
+ for out,rows in data['master_field_maps'].items():
+  for row in rows:
+   js=[n for n in row['word'] if '__' in n]
+   if not js:continue
+   assert len(js)==len(row['word'])==1 and out.startswith('B') and js[0].startswith('C');name,mu=js[0].split('__');assert len(mu)==1
+   cv=s.sympify(row['coefficient']);assert not cv.free_symbols;jets.append([out,name,int(mu),row['coefficient']])
+ assert len(jets)==180
+ # Bilinear integration-by-parts equality and its wrong-sign derivative.
+ x=s.Symbol('x');hh=x*x+1;kk=x**3-2*x
+ assert s.expand(s.diff(hh*kk,x)-s.diff(hh,x)*kk-hh*s.diff(kk,x))==0
+ assert s.expand(s.diff(hh*kk,x)-s.diff(hh,x)*kk+hh*s.diff(kk,x))!=0
+ # Consume new answers only after all independent calculations above.
+ natives=[read(O/(r+'_v2_result.json')) for r in ['primary','replay']]
+ def stripped(v):return {k:z for k,z in v.items() if k not in ['route','elapsed_after_imports','finite_heat_commutator_formula']}
+ assert stripped(natives[0])==stripped(natives[1])
+ for native in natives:
+  ctl=native['nonlinear_control'];assert ctl['hessian_sha256']==hhash and ctl['hessian_bilinear_terms']==len(H)==31 and ctl['master_terms']==Snum==10
+  assert ctl['frozen_QJ_Hessian_defect']==defect and ctl['unsigned_source_sign_Hessian_defect_terms']==wrongcount==20
+  assert not ctl['full_master_residual'] and not ctl['full_lifted_Hessian_residual']
+  for u,m,v,n,j,value in checks:
+   row=next(vv for vv in native['homogeneous_residue_shift_controls'] if vv['u']==list(u) and vv['m']==m and vv['v']==list(v) and vv['n']==n);assert row['AB']==row['BA']==value
+  assert native['all_first_jet_adjoint_entries']==jets and native['complete_source_Hessian_positions_authenticated']==73218 and native['complete_tangent_positions_authenticated']==70935
+  assert s.simplify(s.sympify(native['finite_heat_commutator_formula'],locals={'t':t,'beta':beta})-finite)==0
+  assert native['complete_formal_one_loop_log_UV_Slavnov_identity_mod_currents'] and not native['finite_sourcefree_Slavnov_QAP_measure_quantum_A5_E5_proved'] and not native['actual_unmeasured295_vector_coefficients_calculated']
+ # Authenticate the selected master/Hessian/symbol/local-log certificates and
+ # their same-route native bytes;do not rebind their historical policy.
+ parent=read(O/'preparation_v2.json')
+ for fact in parent['receipt_facts']:
+  rc=read(Path(fact['path']))
+  for k,v in fact['equals'].items():assert rc[k]==v
+  for role in ['primary','replay']:
+   for raw in fact['native_bindings'][role]:
+    key=raw if fact['table']=='input_sha256' else str(Path(raw).relative_to(R)).replace('\\','/')
+    assert rc[fact['table']][key]==digest(Path(raw))
+ for role in ['primary','replay']:
+  c=read(O/(role+'_v2_capture.json'));assert c['execution_state']=='COMPLETED' and c['exit_code']==0 and c['calculation_completed']
+ fail=read(O/'primary_capture.json');assert fail['execution_state']=='FAILED' and fail['exit_code']==1 and not fail['calculation_completed']
+ assert digest(R/'project_state.json')=='d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8'
+ review={
+ 'classical_identity':'Differentiating the integrated master with arbitrary even graded test directions includes QJ=EulerS;the source gradient cancels the nonlinear EulerS*Rsecond. Actual source-independentR and first jets match complete qualified kernels. Current divergences annihilated under frozen boundary assumptions,not raw density setzero.',
+ 'adjoint':'Even epsilon_left Q gives an even field matrixM with repository right-derivative tangent. Bilinear adjoint coefficient(-1)^(pi*(pj+1)) and (-partial)^alpha include derivative-on-coefficient terms. Actual180 derivative tangent coefficients constant;remaining Hessian/source jets stay through inherited full certificates.',
+ 'symbol_domain':'Weighted mixed inverse exists on Wick UV shell with rational classical local symbols. Full differential action and source kernels stay in this algebra,with finite homogeneous contributions per fixed local UV degree. Positive-dimensional mass reference-subtraction vertices retained:arbitrarily many may occur in a formal amplitude,but only finitely many affect degree-4. No Gaussiang0 or global positive mixed semigroup assumed.',
+ 'cyclicity':'Finite Grassmann fiber trace,compact x-IBP and homogeneous annulus p-IBP prove integrated graded cyclicity atdegree-4. A finite order bound per coefficient suffices. Weighted indices telescope; matrix Grassmann ordering remains. No zeta/finite trace cyclicity imported.',
+ 'UV_correspondence':'Apply qualified ordered multiheat local-log theorem and uniform UV remainder to complete even delta_epsilonV. Q fixes A,heat,Kref;finite local variation introduces no negative heat powers/logp. Born variation positions cancel1/n only at this residue,then complete inverseG reduces G deltaH to differential M/Msharp residues. Reference Gamma_ref[A] stays and hasQvariation0.',
+ 'completeness':'The argument is for all finite external/coupling/jet coefficients of the declared one-loop local-log family,not selected scalar/vector words or diagnostic cases. 49 moments and finite nonlinear control challenge implementations;universal identities and inherited complete model kernels establish coverage. It does not authenticate equality of the currently partial ordinary polynomial to the full determinant.',
+ 'finite_boundary':'Explicit noncyclic heat commutator has finite beta/(32piÃ‚Â²) but no logarithm. Original regulated QGamma1 insertion-sourcecorrection-Jacobian identity and finite/contact pieces remain. Logzero doesnotprove fullfiniteST,QAP,measure,A5 or physically viableGUT.',
+ 'preserved_limits':'Witness-specific formal UV construction;not adopted physical scheme. Coupling ring/no1g,background determinant,sources,auxiliaries,b0,kappa,quartet/physical warnings and all protected flags preserved. IR/Lorentzian/global/all-order conditions not supplied.'}
+ result={'schema':'BV_UV_RESIDUE_BRIDGE_VALIDATION_V2','execution_state':'COMPLETED','scientific_disposition':natives[0]['scientific_disposition'],'complete_formal_one_loop_log_UV_Slavnov_identity_mod_currents':True,'independent_bit_exterior_master_Hessian_and_even_polarization':True,'independent_49_rational_shift_recurrence_and_Gaussian_Wick_residues':True,'actual180_jets_and_graded_adjoint_review':True,'finite_heat_noncyclic_control_zero_log_nonzero_finite':True,'analytic_model_applicability_and_complete_coefficient_proof_review':review,'new_failed_native_workers':1,'new_failed_verifier_workers':1,'preserved_control_insensitivity_confirmed':True,'full_QAP_finite_sourcefree_Slavnov_E5_A5_proved':False,
+ 'checks_not_performed':['new295 vector color coefficients','rebuild partialGamma or508Euler values','fresh replay of inherited complete classical/master/source38/Hessian','finite or all-order ST/QAP/full mixing/contacts','Lorentzian/causal/adiabatic/global or general physical IR measure','physical scheme adoption,Lean certificate,independent human or experimental validation'],
+ 'input_sha256':prep['input_sha256'],'shared_error_limits':'Same physical/action/source/master/reference premises,qualified kernels,Python/SymPy and AI author. Native branches share word arithmetic;verifier uses different exterior storage/polarization and series recurrence. Agreement not independent validation of physical assumptions.','elapsed_after_imports':time.perf_counter()-tick}
+ print('VALIDATION '+json.dumps(result,sort_keys=True,separators=(',',':')),flush=True);timer.cancel()
+if __name__=='__main__':main()

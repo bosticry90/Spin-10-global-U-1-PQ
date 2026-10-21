@@ -1,0 +1,23 @@
+from pathlib import Path
+from hashlib import sha256
+import json
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_background_reference_normalization';C=Path(__file__).resolve().parent
+p=json.loads((O/'validation_preparation_v4.json').read_bytes());d=lambda q:sha256(q.read_bytes()).hexdigest()
+for q,h in p['input_sha256'].items():assert d(Path(q))==h,q
+cap=json.loads((O/'validation_v4_capture.json').read_bytes());assert cap['execution_state']=='FAILED' and cap['exit_code']==1
+files=list(map(Path,p['input_sha256']))+[O/'validation_preparation_v4.json',O/'validation_v4_capture.json',O/'VERIFIER_COMPARISON_V5.md']
+text=(O/'verify_v4.py').read_text().replace('validation_preparation_v4.json','validation_preparation_v5.json')
+old="assert pole==-Delta";assert text.count(old)==1;text=text.replace(old,"assert s.simplify(pole+Delta)==0")
+text=text.replace("'verifier_failures':0","'verifier_failures':1")
+with (O/'verify_v5.py').open('xb') as f:f.write(text.encode())
+text=(C/'run_validation_v4.py').read_text().replace('_v4','_v5')
+with (C/'run_validation_v5.py').open('xb') as f:f.write(text.encode())
+for name in ['verify_v5.py','VERIFIER_COMPARISON_V5.md']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((O/name).read_bytes())
+ files.extend([O/name,O/(name+'.source.txt')])
+for name in ['prepare_validation_v5.py','run_validation_v5.py']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((C/name).read_bytes())
+ files.extend([C/name,O/(name+'.source.txt')])
+v={'schema':'BACKGROUND_REFERENCE_VALIDATION_PREPARATION_V5','input_sha256':{str(q):d(q) for q in files},'authority_changed':False}
+with (O/'validation_preparation_v5.json').open('xb') as f:f.write((json.dumps(v,indent=2,sort_keys=True)+'\n').encode())
+print('VALIDATION_FROZEN_V5',len(v['input_sha256']),flush=True)

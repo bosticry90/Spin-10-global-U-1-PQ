@@ -4,7 +4,7 @@ from pathlib import Path, PurePosixPath
 import shutil
 import sys
 import zipfile
-from verify_package import ROOT, main as verify
+from verify_package import ROOT, CURRENT_SOURCE, main as verify
 
 
 def main():
@@ -15,7 +15,7 @@ def main():
         raise SystemExit("Destination must be new or empty; no files were modified.")
     if verify():
         raise SystemExit("Package verification failed; no files were extracted.")
-    manifest = json.loads((ROOT / "provenance/source_manifest_v2.json").read_text())
+    manifest = json.loads((ROOT / "provenance" / CURRENT_SOURCE).read_text(encoding="utf-8"))
     entries = manifest["files"] + manifest["external_files"] + manifest["historical_files"]
     for entry in entries:
         relative = PurePosixPath(entry["path"])

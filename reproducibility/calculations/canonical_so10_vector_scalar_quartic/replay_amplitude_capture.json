@@ -1,0 +1,58 @@
+{
+  "all_resource_samples": [
+    {
+      "private_bytes": 393216,
+      "seconds": 0.0004008000250905752
+    },
+    {
+      "private_bytes": 52658176,
+      "seconds": 2.009697999979835
+    },
+    {
+      "private_bytes": 57196544,
+      "seconds": 4.014263899996877
+    },
+    {
+      "private_bytes": 58871808,
+      "seconds": 6.016828100022394
+    },
+    {
+      "private_bytes": 58871808,
+      "seconds": 8.031837499991525
+    },
+    {
+      "private_bytes": 58871808,
+      "seconds": 10.04739189997781
+    }
+  ],
+  "calculation_completed": true,
+  "command": [
+    "C:\\Program Files\\Python310\\python.exe",
+    "-B",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_scalar_quartic\\amplitude.py",
+    "replay"
+  ],
+  "execution_state": "COMPLETED",
+  "exit_code": 0,
+  "failed_or_incomplete_counted_as_PASS": false,
+  "launch": {
+    "creation_after_observation": true,
+    "creation_filetime": 134369896685430802,
+    "creation_query_error": null,
+    "memory": {
+      "available_pagefile": 12214595584,
+      "available_physical": 3025690624,
+      "load": 82,
+      "total_pagefile": 36658069504,
+      "total_physical": 16992980992
+    },
+    "minimum_available_commit_bytes": 367001600,
+    "observation_end_filetime": 134369896685415434,
+    "observation_start_filetime": 134369896685415434,
+    "pid": 31176,
+    "private_allocation_limit_bytes": 8589934592
+  },
+  "post_run_observations_qualified": true,
+  "private_allocation_limit_bytes": 8589934592,
+  "stdout_and_stderr": "STAGE actual35blocks_matrix_functions\nSTAGE block_7\nSTAGE block_17\nSTAGE block_27\nSTAGE block_34\nRESULT {\"counts\": {\"gauge\": 33, \"physical\": 290, \"soft\": 5}, \"elapsed_after_imports\": 10.386823499982711, \"packed_bytes\": 22914, \"packed_sha256\": \"7bdbbc41eea578d1385027f4884173aba99ab397e8b1f595ec2795eb79439c7d\", \"raw_bytes\": 111146, \"role\": \"replay\", \"schema\": \"VSP1_AMPLITUDE\", \"tables_sha256\": \"b40617b4a8e5c609432e37a8e3791b7f4f8b0b96bb6ac039548fde8b998ad893\"}\n"
+}

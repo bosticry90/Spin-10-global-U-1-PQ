@@ -1,0 +1,19 @@
+{
+  "all_ordered_mass_pairs": 25,
+  "background_words": 8,
+  "color_coefficients": 225,
+  "double_poles": [
+    -1152,
+    -1152,
+    -1152
+  ],
+  "elapsed_after_imports": 6.4273803000105545,
+  "execution_state": "COMPLETED",
+  "full_C1_or_finite_hard_family_qualified": false,
+  "packed_bytes": 2008,
+  "packed_sha256": "be3f4adec9e9921017771c898f36b4c998aec6343c314f7bf9500db4395541e0",
+  "route": "primary",
+  "schema": "C1_VECTOR_QUARTIC_PRIMITIVE_NATIVE_V1",
+  "table_bytes": 7177,
+  "tables_sha256": "845898ee988a990b669034aa36f1727ca9edbd07520da4a71e8b22862721c49f"
+}

@@ -1,0 +1,42 @@
+{
+  "all_resource_samples": [
+    {
+      "private_bytes": 425984,
+      "seconds": 0.0012524999910965562
+    },
+    {
+      "private_bytes": 50143232,
+      "seconds": 2.0077111999853514
+    }
+  ],
+  "calculation_completed": true,
+  "command": [
+    "C:\\Program Files\\Python310\\python.exe",
+    "-B",
+    "C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_vector_quartic_ir_matching\\ir_match.py",
+    "primary"
+  ],
+  "execution_state": "COMPLETED",
+  "exit_code": 0,
+  "failed_or_incomplete_counted_as_PASS": false,
+  "launch": {
+    "creation_after_observation": true,
+    "creation_filetime": 134369805223291168,
+    "creation_query_error": null,
+    "memory": {
+      "available_pagefile": 12218363904,
+      "available_physical": 3264270336,
+      "load": 80,
+      "total_pagefile": 36658069504,
+      "total_physical": 16992980992
+    },
+    "minimum_available_commit_bytes": 367001600,
+    "observation_end_filetime": 134369805223249562,
+    "observation_start_filetime": 134369805223249562,
+    "pid": 1340,
+    "private_allocation_limit_bytes": 8589934592
+  },
+  "post_run_observations_qualified": true,
+  "private_allocation_limit_bytes": 8589934592,
+  "stdout_and_stderr": "STAGE restricted_tree_primary\nSTAGE curvature_primary_0\nSTAGE curvature_primary_1\nSTAGE curvature_primary_2\nRESULT {\"elapsed_after_imports\":1.5915039000101388,\"execution_state\":\"COMPLETED\",\"hard_double_poles\":[\"-1152\",\"-648\",\"-450\"],\"light_brackets_checked\":144,\"open_45x45_matrices\":35,\"packed_bytes\":6444,\"packed_sha256\":\"a79428e73a2e892735d1496303a016fb9ef05f347f30c797f2d9b9fd481d5b66\",\"restricted_nonzero_f\":60,\"route\":\"primary\",\"schema\":\"C1_VECTOR_QUARTIC_IR_MATCHING_NATIVE_V1\",\"table_bytes\":31109,\"tables_sha256\":\"5df713fe35560d8f12830225292b59c8aad80fd79864c5c2cbf9c3287513dd34\"}\n"
+}

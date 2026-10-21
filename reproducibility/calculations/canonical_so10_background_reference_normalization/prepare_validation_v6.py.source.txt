@@ -1,0 +1,27 @@
+from pathlib import Path
+from hashlib import sha256
+import json
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_background_reference_normalization';C=Path(__file__).resolve().parent
+p=json.loads((O/'validation_preparation_v5.json').read_bytes());d=lambda q:sha256(q.read_bytes()).hexdigest()
+for q,h in p['input_sha256'].items():assert d(Path(q))==h,q
+cap=json.loads((O/'validation_v5_capture.json').read_bytes());assert cap['execution_state']=='FAILED' and cap['exit_code']==1
+diag=json.loads((C/'pole_diagnostic.json').read_bytes());assert diag['integral_reduced']=='-M - z/6' and diag['integral_difference']=='0'
+files=list(map(Path,p['input_sha256']))+[O/'validation_preparation_v5.json',O/'validation_v5_capture.json',O/'VERIFIER_COMPARISON_V6.md',C/'pole_diagnostic.py',C/'pole_diagnostic.json']
+text=(O/'verify_v5.py').read_text().replace('validation_preparation_v5.json','validation_preparation_v6.json').replace("'verifier_failures':1","'verifier_failures':2")
+old="pole=s.limit(eps*s.gamma(-1+eps)*Delta**(1-eps),eps,0,dir='+');assert s.simplify(pole+Delta)==0"
+new="pole=s.simplify(s.limit(eps*s.gamma(-1+eps)*Delta**(1-eps),eps,0,dir='+'));assert s.simplify(pole+Delta)==0"
+assert old in text;text=text.replace(old,new).replace('assert error==-mass-z/6','assert s.simplify(error+mass+z/6)==0')
+start=text.index(' # Premature angular D=4');end=text.index(' # Actual noncommuting triple',start);cheap=text[start:end];text=text[:start]+text[end:]
+anchor=" a,b=[json.loads";where=text.index(anchor);text=text[:where]+" u=s.Symbol('u')\n"+cheap+text[where:]
+with (O/'verify_v6.py').open('xb') as f:f.write(text.encode())
+text=(C/'run_validation_v5.py').read_text().replace('_v5','_v6')
+with (C/'run_validation_v6.py').open('xb') as f:f.write(text.encode())
+for name in ['verify_v6.py','VERIFIER_COMPARISON_V6.md']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((O/name).read_bytes())
+ files.extend([O/name,O/(name+'.source.txt')])
+for name in ['prepare_validation_v6.py','run_validation_v6.py','pole_diagnostic.py','pole_diagnostic.json']:
+ with (O/(name+'.source.txt')).open('xb') as f:f.write((C/name).read_bytes())
+ files.extend([C/name,O/(name+'.source.txt')])
+v={'schema':'BACKGROUND_REFERENCE_VALIDATION_PREPARATION_V6','input_sha256':{str(q):d(q) for q in files},'authority_changed':False}
+with (O/'validation_preparation_v6.json').open('xb') as f:f.write((json.dumps(v,indent=2,sort_keys=True)+'\n').encode())
+print('VALIDATION_FROZEN_V6',len(v['input_sha256']),flush=True)

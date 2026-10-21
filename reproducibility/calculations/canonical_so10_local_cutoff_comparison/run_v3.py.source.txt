@@ -1,0 +1,19 @@
+from pathlib import Path
+from hashlib import sha256
+import json,sys,subprocess,os
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_local_cutoff_comparison';C=Path(__file__).resolve().parent
+sys.path.insert(0,str(R/'tools/two_loop_qft_compiler_v1/m08_independent_replay_package_v1'))
+from export_a10_e5_antighost_vector import capture
+from audit_a10_e5_antighost_vector import resource,line_json
+p=json.loads((O/'preparation_v3.json').read_bytes())
+for n,h in p['input_sha256'].items():assert sha256(Path(n).read_bytes()).hexdigest()==h,n
+query="@(Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'python.exe' -and $_.ProcessId -ne "+str(os.getpid())+" -and ($_.CommandLine -like '*canonical_so10_local_cutoff_comparison*' -or $_.CommandLine -like '*local-cutoff-comparison-v1-2026-10-19*') } | Select-Object ProcessId,CommandLine) | ConvertTo-Json -Compress"
+assert not subprocess.check_output(['pwsh','-NoProfile','-Command',query]).strip(),'LIVE_WORK_POLL_HANDLE'
+for role in ['primary','replay']:
+ cap=capture([sys.executable,'-B',str(O/'cutoff_v3.py'),role]);raw=(json.dumps(cap,sort_keys=True,separators=(',',':'))+'\n').encode()
+ for dest in [O/(role+'_v3_capture.json'),C/(role+'_v3_full_capture.json')]:
+  with dest.open('xb') as f:f.write(raw)
+ if cap['execution_state']!='COMPLETED':print(cap['stdout_and_stderr'],flush=True)
+ resource(cap);v=line_json(cap['stdout_and_stderr'],'RESULT ');assert v['elapsed_after_imports']<120
+ with (O/(role+'_v3_result.json')).open('xb') as f:f.write((json.dumps(v,sort_keys=True,separators=(',',':'))+'\n').encode())
+ print(role,'COMPLETED',v['elapsed_after_imports'],flush=True)

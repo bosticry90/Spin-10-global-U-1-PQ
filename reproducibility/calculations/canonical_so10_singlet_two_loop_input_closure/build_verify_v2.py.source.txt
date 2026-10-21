@@ -1,0 +1,21 @@
+from pathlib import Path
+R=Path('C:/Users/psboy/Documents/ToE-Next');O=R/'calculations/canonical_so10_singlet_two_loop_input_closure';C=Path(__file__).resolve().parent
+src=(C/'verify.py').read_text()
+src=src.replace("O/'validation_preparation.json'","O/'validation_preparation_v2.json'")
+old="raw={k:parse(v) for k,v in point['raw_coefficients'].items()}"
+new="""raw={}
+def getraw(name):
+ if name not in raw:raw[name]=parse(point['raw_coefficients'][name])
+ return raw[name]"""
+assert src.count(old)==1;src=src.replace(old,new)
+src=src.replace("imagpart(raw[name]) if part=='im' else realpart(raw[name])","imagpart(getraw(name)) if part=='im' else realpart(getraw(name))")
+src=src.replace("equal(raw['lambdaVectorS'],rat(portal*F(3,10)))","equal(getraw('lambdaVectorS'),rat(portal*F(3,10)))")
+old="""  assert d>=0
+  h[i][j]=add(h[i][j],scale(multiply(coef(slots[k]),parse(value)),d))"""
+new="""  assert d>=0
+  if d==0:continue  # exact derivative zero; mass constants remain physical inputs
+  h[i][j]=add(h[i][j],scale(multiply(coef(slots[k]),parse(value)),d))"""
+assert src.count(old)==1;src=src.replace(old,new)
+src=src.replace("'failed_native_workers':1,'failed_verifier_workers':0","'failed_native_workers':1,'failed_verifier_workers':1,\n 'parsed_derivative_slots':sorted(raw),'S_independent_mphi2_not_parsed_and_not_set_zero':('mphi2' not in raw)")
+src=src.replace("assert len(computed)==35 and realcount==328 and rank==20","assert len(computed)==35 and realcount==328 and rank==20\nassert 'mphi2' not in raw and set(raw)=={'lambdaS','lambdaVectorS','z4','z6','zK'}")
+with(C/'verify_v2.py').open('x',encoding='utf-8',newline='\n') as f:f.write(src)
