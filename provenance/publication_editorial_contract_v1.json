@@ -1,0 +1,36 @@
+{
+  "schema": "SPIN10_PQ_PUBLICATION_EDITORIAL_CONTRACT_V1",
+  "frozen_at_utc": "2026-10-21T03:39:54.656561+00:00",
+  "publication_baseline": "045c26b346a74677af73511925f8ac70705bc1c0",
+  "authorization": "Human owner previously authorized publication updates and now requested a final accuracy/current-status review of the same repository.",
+  "source_commit": "7562f42c14ef1ab5a946fbfc4534509f3378c76b",
+  "question": "Remove possible experimental connotations from two uses of measured in the public technical note.",
+  "changes": [
+    "measured mismatch -> calculated mismatch",
+    "measured singlet cut -> computed singlet cut",
+    "Version 4 -> Version 4.1, editorial clarification only"
+  ],
+  "authority_ceiling": "EDITORIAL_ONLY_NO_SCIENTIFIC_PROMOTION",
+  "immutable_inputs": "All previous provenance, source archives, scientific records, authority and source checkpoint remain unchanged.",
+  "expected_evidence": [
+    "Original Version 4 note preserved exactly",
+    "Both PDFs have nine pages; all other extracted text unchanged",
+    "Unchanged pages have identical rendered pixels; changed pages inspected",
+    "New release manifest and complete package verifier pass",
+    "Normal push only to authorized publication repository and anonymous public checks"
+  ],
+  "failure_conditions": [
+    "Unexpected scientific/source/input drift",
+    "Changed scientific numerical claim",
+    "PDF text/layout mismatch",
+    "Modified old provenance or archives",
+    "Unexpected remote history"
+  ],
+  "limits": {
+    "compile_seconds_each": 60,
+    "compile_passes": 2,
+    "verification_seconds": 180,
+    "new_source_calculations": 0
+  },
+  "currentness": "Handoff V421 is highest committed; untracked VVS support has no final receipt or RESULT and remains excluded."
+}

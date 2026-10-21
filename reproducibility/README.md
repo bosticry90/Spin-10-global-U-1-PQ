@@ -1,6 +1,6 @@
 # Reproduce the bounded calculations
 
-The [Version 4 technical note](../paper/spin10_pq_technical_note.pdf) reports evidence through source checkpoint `7562f42c14ef1ab5a946fbfc4534509f3378c76b`. The earlier public notes are preserved in [paper/archive](../paper/archive/). The new source update retains the unchanged original archives and overlays new or changed evidence. Publication changes no scientific authority or acceptance.
+The [Version 4.1 technical note](../paper/spin10_pq_technical_note.pdf) reports evidence through source checkpoint `7562f42c14ef1ab5a946fbfc4534509f3378c76b`. The earlier public notes are preserved in [paper/archive](../paper/archive/). The new source update retains the unchanged original archives and overlays new or changed evidence. Publication changes no scientific authority or acceptance.
 
 ## Check the package first
 
@@ -106,7 +106,7 @@ This pilot requires **Python 3.11+**, independently of the older Python 3.10 sca
 
 ## What was checked for this update
 
-The [claim authentication](../provenance/claim_authentication_v3.json) checks the selected completed receipts and their byte, input, external and supplemental SHA-256 maps. Historical policy hashes are authenticated at their recorded Git objects, separately from current AGENTS.md. The [publication validation](../provenance/packaging_validation_v3.json) records package/member checks, actual short replays, PDF compilation and visual inspection, checks omitted and preserved packaging failures.
+The [claim authentication](../provenance/claim_authentication_v3.json) checks the selected completed receipts and their byte, input, external and supplemental SHA-256 maps. Historical policy hashes are authenticated at their recorded Git objects, separately from current AGENTS.md. The [original publication validation](../provenance/packaging_validation_v3.json) records package/member checks, actual short replays, PDF compilation and visual inspection, checks omitted and preserved packaging failures. The [Version 4.1 editorial review](../provenance/editorial_review_v1.json) records the wording correction, current-status comparison and PDF checks; it reuses the unchanged prior scientific replay evidence.
 
 No expensive Hessian, complete contact, quartic, singlet-pole or quantum calculation was repeated for publication. Receipt authentication is not a fresh scientific replay. Full original Git history is absent: historical Git-custody checks cannot be recreated from this flat export alone. Original custody exit 2/seven unresolved references remains unresolved, not PASS.
 
@@ -115,3 +115,5 @@ The archived project_state.json remains a fixed original input at version 113. I
 The singlet momentum combinations have different local-subtraction sensitivity from the retained 140% pole shift. The two-loop internal Yukawa carrier supplies a real missing input; no scalar-only truncation is promoted to a complete two-loop error bound. The four primitive amplitude families have different UV/IR completion scopes, not a common fully renormalized threshold status.
 
 The new point's global quartic and contact certificates are classical, point-specific results. Its large singlet correction is a warning against a small-correction expansion, not a reliable predicted mass or an exclusion of every input prescription. Preferred vacuum, quantum control, complete gauge/IR scattering, finite thresholds and realistic phenomenology remain open. Different routes share assumptions, inputs, software and an AI-assisted solo analyst; they are not external verification.
+
+Version 4.1 is an editorial clarification of Version 4: the mismatch and singlet cut are described as calculated/computed, without an experimental connotation. Scientific results and the frozen checkpoint are unchanged. The original Version 4 note is preserved in paper/archive; prior packaging receipts remain historical evidence.

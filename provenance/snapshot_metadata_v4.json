@@ -1,0 +1,42 @@
+{
+  "schema": "SPIN10_PQ_PUBLICATION_METADATA_V4",
+  "published_note_version": "4.1",
+  "publication_date": "20 October 2026",
+  "source_commit": "7562f42c14ef1ab5a946fbfc4534509f3378c76b",
+  "source_handoff": "V421",
+  "publication_baseline": "c35d22498c7f609fd49fd8c5e7cf244454ca452c",
+  "source_state_version": 113,
+  "source_state_sha256": "d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8",
+  "source_files": 26600,
+  "external_files": 6233,
+  "historical_files": 7,
+  "authorization": "Explicit human request to update the same public repository.",
+  "scientific_acceptance": "NOT_PERFORMED_BY_PUBLICATION",
+  "human_scientific_authority": "UNCHANGED",
+  "changes": [
+    "Subtraction-independent same-point singlet momentum diagnostics and two-loop internal Yukawa input limitation",
+    "Complete formal local one-loop UV Slavnov result and actual bosonic counterterm closure in declared domains",
+    "Constructed graded compact causal/QAP and finite normalization/reference results, with retained source/global limitations",
+    "Four scoped BFT primitive amplitude families at the OLDER positive-Higgs point; no full finite C1 or unification refit",
+    "Closed portable standard-library 99256-position classical Hessian pilot"
+  ],
+  "point_separation": {
+    "classical_and_singlet": "canonical_so10_coherent_joint_witness exploratory point",
+    "C1_threshold": "canonical_so10_positive_higgs/POINT.json SHA256 476645438ea8a7ada42fea90e80174b772d45ce3e729d013d134e9848950c816; historical perturbativity failure retained"
+  },
+  "shared_limits": [
+    "Action/representation/reference and inherited proofs",
+    "Some common arithmetic/software and a solo AI-assisted analyst",
+    "No outside scientist, empirical or whole-model proof-assistant validation"
+  ],
+  "historical_custody": "Original Git history absent; custody exit 2/seven unresolved references remains unresolved, not PASS. Exact historical policy/README/harness objects are separately authenticated; old manifests are not rebound.",
+  "omitted": [
+    "No expensive original spectrum/pole/threshold or full quantum replays",
+    "No physical input/scheme adoption, numerical flavor fit or scalar search",
+    "No complete finite C1, gauge-unification refit or physical-viability verdict"
+  ],
+  "work_after_frozen_checkpoint": "EXCLUDED",
+  "previous_metadata": "snapshot_metadata_v3.json",
+  "previous_metadata_sha256": "00f403f6d9a921e427c5c174f519f770f6da201efe43ae575970c9d181d0c107",
+  "editorial_change": "Calculated/computed wording replaces two uses of measured; no scientific change."
+}

@@ -1,0 +1,72 @@
+{
+  "schema": "SPIN10_PQ_EDITORIAL_REVIEW_V1",
+  "execution_state": "COMPLETED",
+  "reviewed_at_utc": "2026-10-21T03:42:29.518384+00:00",
+  "publication_date": "20 October 2026",
+  "published_note_version": "4.1",
+  "publication_baseline": "045c26b346a74677af73511925f8ac70705bc1c0",
+  "source_commit": "7562f42c14ef1ab5a946fbfc4534509f3378c76b",
+  "source_handoff": "V421",
+  "authority": "state113/34of39_UNCHANGED",
+  "scientific_acceptance": "NOT_PERFORMED",
+  "review_scope": "Accuracy of reporting against completed frozen records and live Git/status; not fresh independent scientific validation.",
+  "finding": "Two public uses of measured could imply empirical evidence; replaced by calculated/computed. No material numerical or scientific-status discrepancy found against frozen records.",
+  "scientific_results_changed": false,
+  "status_checks": [
+    "Initial Higgs-quartic failure and older positive-point perturbativity failure retained",
+    "New classical point and old gauge/C1 point kept separate",
+    "140% pole shift and 1.94%/20.27% momentum diagnostics kept distinct",
+    "Four scoped primitive families not full finite C1 or unification",
+    "Formal one-loop domains not full E5/A5 acceptance",
+    "Global quartic bound not preferred vacuum or quantum viability",
+    "AI routes disclose shared inputs/software/authorship"
+  ],
+  "source_recovery": {
+    "preflight": "AUTHENTICATED_DECLARED_BYTES_ONLY",
+    "bindings": 452,
+    "source_state_sha256": "d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8",
+    "highest_handoff_at_review": "V421",
+    "untracked_VVS_support": "NO_FINAL_RECEIPT_OR_RESULT; PRESERVED_AND_EXCLUDED"
+  },
+  "prior_unchanged_release_files_checked": 1081,
+  "prior_provenance_and_archives": "BYTE_FOR_BYTE_UNCHANGED",
+  "original_v4_note": "EXACT_BASELINE_COPY_PRESERVED_IN_PAPER_ARCHIVE",
+  "pdf": {
+    "version": "4.1",
+    "pages": 9,
+    "sha256": "a60c8932445aac390617bca1201a5853cd6f43c64b6e448c5346ea32647d59aa",
+    "compilation": "SUCCESS",
+    "layout_warnings": [],
+    "comparison": {
+      "execution_state": "COMPLETED",
+      "pages": 9,
+      "changed_pages": [
+        1,
+        4,
+        9
+      ],
+      "all_other_page_pixels": "IDENTICAL",
+      "text_changes": "ONLY_FROZEN_EDITORIAL_REPLACEMENTS",
+      "scientific_numeric_claims": "UNCHANGED",
+      "visual_review_changed_pages": "INSPECTED_NO_CLIPPING_OVERLAP_OR_LAYOUT_DEFECTS"
+    }
+  },
+  "prior_packaging_validation": {
+    "path": "packaging_validation_v3.json",
+    "sha256": "810ff2c3fe1f1d5442a3a00fc8f5aa67ef3dfcf48a2d0b47761c6fa18108e139",
+    "scope": "Retains completed receipt-binding checks and actual portable replays; these scientific computations are not rerun for this editorial revision."
+  },
+  "source_reconstruction": "Prior complete 32840-file reconstruction reused; all source archives and manifests unchanged.",
+  "package_verification": {
+    "command": "python -B reproducibility/verify_package.py",
+    "scope": "All current release bytes and all 32846 archive members; exact final output retained outside package to avoid circular self-reference."
+  },
+  "limits": [
+    "No independent whole-model proof",
+    "No expensive Hessian, pole, threshold or quantum replay",
+    "No new numerical physics result or unification refit",
+    "Uncommitted/unqualified live research excluded",
+    "Historical custody exit 2/seven unresolved references remains unresolved"
+  ],
+  "next_scientific_dependency": "Qualify VVS support/kernel/soft and counterterm obligations under the separate research process; publication does not execute or accept it."
+}

@@ -2,7 +2,7 @@
 
 This repository shares an AI-assisted investigation of a candidate grand unified model. The plain-language explanation below describes the idea, the progress and the limitations. The technical note and reproducibility materials provide the equations, code and evidence.
 
-**[Read the nine-page technical note, Version 4](paper/spin10_pq_technical_note.pdf)** · [Editable LaTeX source](paper/spin10_pq_technical_note.tex) · [Reproduction guide](reproducibility/README.md)
+**[Read the nine-page technical note, Version 4.1](paper/spin10_pq_technical_note.pdf)** · [Editable LaTeX source](paper/spin10_pq_technical_note.tex) · [Reproduction guide](reproducibility/README.md)
 
 ## A plain-language explanation
 
@@ -72,7 +72,7 @@ Global quartic positivity is now certified at one exploratory point. The preferr
 
 ## What the materials contain
 
-- The updated Version 4 note and editable source, with public Versions 2 and 3 preserved in [paper/archive](paper/archive/).
+- The updated Version 4.1 note and editable source, with public Versions 2, 3 and 4 preserved in [paper/archive](paper/archive/).
 - Browsable scalar/gauge calculation programs, frozen scalar points, and recorded results.
 - The unchanged original source archives plus a versioned update covering the frozen tracked source tree and referenced external research-control materials, including failed attempts.
 - A [closed portable Hessian pilot](reproducibility/portable_dh_v1/README.md), requiring Python 3.11+ and only the standard library.
