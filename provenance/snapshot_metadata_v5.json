@@ -1,0 +1,29 @@
+{
+  "schema": "SPIN10_PQ_PUBLICATION_METADATA_V5",
+  "published_note_version": 5,
+  "publication_date": "22 October 2026",
+  "source_commit": "7db0a6cbbcffc14009e7641afcfb4e9d5d408a78",
+  "source_handoff": "V514",
+  "source_state_version": 113,
+  "source_state_sha256": "d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8",
+  "source_files": 31149,
+  "external_files": 6362,
+  "historical_files": 7,
+  "scientific_acceptance": "NOT_PERFORMED_BY_PUBLICATION",
+  "changes": [
+    "All nine retained bosonic primitives and fixed-reference finite assembly",
+    "Bosonic hierarchy failure at three couplings and limited frozen common-log minimax bound",
+    "Symbolic fermion UV normalizations and selected parity-even closed-loop finite Ward functional",
+    "Distinct old threshold and new classical-witness scopes retained"
+  ],
+  "work_after_frozen_checkpoint": "EXCLUDED",
+  "authority": "34/39_UNCHANGED",
+  "limitations": [
+    "No full massive matter C1 or unification refit",
+    "No quantum-control or viable-vacuum promotion",
+    "No new point or physical finite scheme",
+    "No full chiral QAP/measure/phase or E5/A5",
+    "Historical custody exit 2/seven unresolved references remains unresolved",
+    "Shared action, inputs, software and AI authorship limit independence"
+  ]
+}

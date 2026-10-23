@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\Users\psboy\.codex\visualizations\2026\10\14\01a13ca8-898d-7d80-8685-b09d5fa9c214\publication\Spin-10-global-U-1-PQ\reproducibility\assemble_source.py", line 41, in <module>
+    main()
+  File "C:\Users\psboy\.codex\visualizations\2026\10\14\01a13ca8-898d-7d80-8685-b09d5fa9c214\publication\Spin-10-global-U-1-PQ\reproducibility\assemble_source.py", line 16, in main
+    if verify():
+  File "C:\Users\psboy\.codex\visualizations\2026\10\14\01a13ca8-898d-7d80-8685-b09d5fa9c214\publication\Spin-10-global-U-1-PQ\reproducibility\verify_package.py", line 46, in main
+    release = read_json(ROOT / "provenance/publication_manifest_v5.json")
+  File "C:\Users\psboy\.codex\visualizations\2026\10\14\01a13ca8-898d-7d80-8685-b09d5fa9c214\publication\Spin-10-global-U-1-PQ\reproducibility\verify_package.py", line 13, in read_json
+    return json.loads(path.read_text(encoding="utf-8"))
+  File "C:\Program Files\Python310\lib\pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "C:\Program Files\Python310\lib\pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\psboy\\.codex\\visualizations\\2026\\10\\14\\01a13ca8-898d-7d80-8685-b09d5fa9c214\\publication\\Spin-10-global-U-1-PQ\\provenance\\publication_manifest_v5.json'

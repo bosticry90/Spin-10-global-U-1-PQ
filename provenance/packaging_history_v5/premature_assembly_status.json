@@ -1,0 +1,8 @@
+{
+  "execution_state": "FAILED_PACKAGING_STARTUP",
+  "exit_code": 1,
+  "cause": "Assembly was started before publication_manifest_v5.json had been created by the still-running sealer",
+  "files_extracted": 0,
+  "scientific_calculation_executed": false,
+  "correction": "Wait for successful sealing completion, preserve captures, refresh the release manifest and rerun the unchanged assembler"
+}

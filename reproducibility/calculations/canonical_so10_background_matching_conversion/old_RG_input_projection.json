@@ -1,0 +1,44 @@
+{
+  "excluded": "finite_threshold_demand;one_loop_C0_at_mu_eq_omega;diagnostic coupling;all physical targets",
+  "operands": {
+    "SM_B_row_sums_at_unified_coupling": [
+      "387/25",
+      "281/15",
+      "-102/5"
+    ],
+    "parent_B_two_loop_yukawa_independent": "10405/6",
+    "parent_b_one_loop": "-34/3",
+    "rg_log_kernel": [
+      {
+        "L2_coefficient": "214369/3600",
+        "L_coefficient_without_C0_term": "-257803/1200",
+        "delta_B_yukawa_independent": "-257803/150",
+        "delta_b": "463/30"
+      },
+      {
+        "L2_coefficient": "2401/144",
+        "L_coefficient_without_C0_term": "-51463/240",
+        "delta_B_yukawa_independent": "-51463/30",
+        "delta_b": "49/6"
+      },
+      {
+        "L2_coefficient": "169/36",
+        "L_coefficient_without_C0_term": "-52637/240",
+        "delta_B_yukawa_independent": "-52637/30",
+        "delta_b": "13/3"
+      }
+    ]
+  },
+  "schema": "BMC1_ALLOWLISTED_OLD_RG_INPUT_PROJECTION",
+  "source": "calculations/canonical_so10_direct_two_loop_heavy_threshold/two_loop_boundary.json",
+  "source_pointers": [
+    "/part_A_gauge_scalar/parent_b_one_loop",
+    "/part_A_gauge_scalar/parent_B_two_loop_yukawa_independent",
+    "/part_A_gauge_scalar/SM_B_row_sums_at_unified_coupling",
+    "/part_A_gauge_scalar/rg_log_kernel/*/delta_b",
+    "/part_A_gauge_scalar/rg_log_kernel/*/delta_B_yukawa_independent",
+    "/part_A_gauge_scalar/rg_log_kernel/*/L2_coefficient",
+    "/part_A_gauge_scalar/rg_log_kernel/*/L_coefficient_without_C0_term"
+  ],
+  "source_sha256": "313e91a625e267f85d44143f6818b76e519a0789051b1fd6c110b00ab96ab4f6"
+}

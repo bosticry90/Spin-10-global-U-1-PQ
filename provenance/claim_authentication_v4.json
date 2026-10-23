@@ -1,0 +1,883 @@
+{
+  "schema": "SPIN10_PQ_CLAIM_AUTHENTICATION_V4",
+  "execution_state": "COMPLETED",
+  "scope": "Actual selected receipts plus explicitly named successful/final preparation maps. Historical failed preparations/captures are preserved but not relabeled passing. Byte authentication is not scientific replay or acceptance.",
+  "source_commit": "7db0a6cbbcffc14009e7641afcfb4e9d5d408a78",
+  "checks": [
+    {
+      "path": "calculations/canonical_so10_radial_input_control/validation_receipt.json",
+      "sha256": "be3f09d69147f3f82456fd3ec782f9943d2e4d697d3152566cac874a393d51fb",
+      "status": "COMPLETED_WITH_FIXED_INPUT_TREE_PERTURBATIVITY_SCREEN_FAIL",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 52,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_coherent_joint_witness/validation_receipt.json",
+      "sha256": "19593382e7cb5b0e941e7fd03860e6d3e99ba90b07939f39d1561aba3432ef39",
+      "status": "COMPLETED_FINITE_LISTED_NECESSARY_SET_WITNESS",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 72,
+      "historical_inputs": [
+        {
+          "original_path": "AGENTS.md",
+          "expected_sha256": "a7f0b33fc689063729de891031a88c1c2fe57473142af290471efd657f00de58",
+          "historical_commit": "b115b72b5e03efcc18b8a599c680545f3fb560c1",
+          "archive_path": "historical/b115b72b5e03efcc18b8a599c680545f3fb560c1/AGENTS.md"
+        },
+        {
+          "original_path": "AGENTS.override.md",
+          "expected_sha256": "3bf9d44b7b3b7b8748d501b83869180ad010307c87e529056ef2de514b1d495e",
+          "historical_commit": "70cec201a3f1a250bf68e040e40bcab712d3697c",
+          "archive_path": "historical/70cec201a3f1a250bf68e040e40bcab712d3697c/AGENTS.override.md"
+        },
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        },
+        {
+          "original_path": "docs/RESEARCH_AUTONOMY_DIRECTIVE_V1.md",
+          "expected_sha256": "0f11a4947b7c4e125a3bbe8375fd725ae6492c87ddd82366202a2f8389415deb",
+          "historical_commit": "70cec201a3f1a250bf68e040e40bcab712d3697c",
+          "archive_path": "historical/70cec201a3f1a250bf68e040e40bcab712d3697c/docs/RESEARCH_AUTONOMY_DIRECTIVE_V1.md"
+        },
+        {
+          "original_path": "tools/research_session_preflight.py",
+          "expected_sha256": "095f96c8312bddf4e69c3bc144d760f06cf46b5328299e346c8278c0b08a050a",
+          "historical_commit": "76affe53da3efe7e66bd5e35dc03af1467ee88bd",
+          "archive_path": "historical/76affe53da3efe7e66bd5e35dc03af1467ee88bd/tools/research_session_preflight.py"
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_complete_contact_bound/validation_receipt.json",
+      "sha256": "704b743cf72b43e30d1b653be03b1615fc666ccd953372fa84f93815046d624a",
+      "status": "COMPLETED_FULL_SCALAR_CONTACT_UPPER_BELOW_HALF",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 43,
+      "historical_inputs": [
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        },
+        {
+          "original_path": "tools/research_session_preflight.py",
+          "expected_sha256": "095f96c8312bddf4e69c3bc144d760f06cf46b5328299e346c8278c0b08a050a",
+          "historical_commit": "76affe53da3efe7e66bd5e35dc03af1467ee88bd",
+          "archive_path": "historical/76affe53da3efe7e66bd5e35dc03af1467ee88bd/tools/research_session_preflight.py"
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_finite_full_bfb/validation_receipt.json",
+      "sha256": "589df5631aa29a53b6ea544f5b595beb3ac92f67c623fd32548a335ccd95c882",
+      "status": "COMPLETED_STRICT_GLOBAL328_QUARTIC_CERTIFICATE",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 52,
+      "historical_inputs": [
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        },
+        {
+          "original_path": "tools/research_session_preflight.py",
+          "expected_sha256": "095f96c8312bddf4e69c3bc144d760f06cf46b5328299e346c8278c0b08a050a",
+          "historical_commit": "76affe53da3efe7e66bd5e35dc03af1467ee88bd",
+          "archive_path": "historical/76affe53da3efe7e66bd5e35dc03af1467ee88bd/tools/research_session_preflight.py"
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_singlet_pole_control/validation_receipt.json",
+      "sha256": "f1d255b39cd857262dc8652c5a33d2eb95083c88f7c6dcd8283e643454ae9b59",
+      "status": "COMPLETED_FORMAL_ONE_LOOP_POLE_CORRECTION_EXCEEDS_TREE_MASS_SQUARED",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 53,
+      "historical_inputs": [
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        },
+        {
+          "original_path": "tools/research_session_preflight.py",
+          "expected_sha256": "095f96c8312bddf4e69c3bc144d760f06cf46b5328299e346c8278c0b08a050a",
+          "historical_commit": "76affe53da3efe7e66bd5e35dc03af1467ee88bd",
+          "archive_path": "historical/76affe53da3efe7e66bd5e35dc03af1467ee88bd/tools/research_session_preflight.py"
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_singlet_pole_rg_check/validation_receipt.json",
+      "sha256": "f06f0d80ba537c35a86f19fdeec53a2ef4ba369f8e67191f3003d9d480b8e845",
+      "status": "COMPLETED_LOCAL_ONE_LOOP_POLE_RG_CANCELLATION_WITH_INDUCED_PORTALS",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 38,
+      "historical_inputs": [
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        },
+        {
+          "original_path": "tools/research_session_preflight.py",
+          "expected_sha256": "095f96c8312bddf4e69c3bc144d760f06cf46b5328299e346c8278c0b08a050a",
+          "historical_commit": "76affe53da3efe7e66bd5e35dc03af1467ee88bd",
+          "archive_path": "historical/76affe53da3efe7e66bd5e35dc03af1467ee88bd/tools/research_session_preflight.py"
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_pq_anomaly_screen/validation_receipt.json",
+      "sha256": "7f8c3b3f2bb2f8ceb35648a942a8f5c7cea15432dd2deba3b590daef2f7c000d",
+      "status": "COMPLETED_UV_ANOMALY_AND_CONDITIONAL_ORDINARY_ORBIT_SCREEN_ONLY",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 29,
+      "historical_inputs": [
+        {
+          "original_path": "tools/research_session_preflight.py",
+          "expected_sha256": "095f96c8312bddf4e69c3bc144d760f06cf46b5328299e346c8278c0b08a050a",
+          "historical_commit": "76affe53da3efe7e66bd5e35dc03af1467ee88bd",
+          "archive_path": "historical/76affe53da3efe7e66bd5e35dc03af1467ee88bd/tools/research_session_preflight.py"
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_local_gauge_anomaly/validation_receipt.json",
+      "sha256": "cf2cb5b63cc835822f0d143c465ec97123337f9a203c991982bcdee0ee2c4e0b",
+      "status": "COMPLETED_VANISHING_PERTURBATIVE_LOCAL_REPRESENTATION_ANOMALY_TRACE_SCREEN_ONLY",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 28,
+      "historical_inputs": [
+        {
+          "original_path": "tools/research_session_preflight.py",
+          "expected_sha256": "095f96c8312bddf4e69c3bc144d760f06cf46b5328299e346c8278c0b08a050a",
+          "historical_commit": "76affe53da3efe7e66bd5e35dc03af1467ee88bd",
+          "archive_path": "historical/76affe53da3efe7e66bd5e35dc03af1467ee88bd/tools/research_session_preflight.py"
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_ub12_background_locality/validation_v2_receipt.json",
+      "sha256": "e39153fbb6f77e59b4f688b101096ed6a0baf2dd3247820b9b7292682173cd43",
+      "status": "ACTUAL_COMMUTATION_AND_CONDITIONAL_LOCAL_BACKGROUND_UNIQUENESS_ONLY",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 376,
+      "historical_inputs": [
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_ub12_reference_symbol/validation_receipt.json",
+      "sha256": "a1d0ae0b83d556c6103cdfc587af8411fd605407aed47d4e3ec67097dc798f14",
+      "status": "ACTUAL_MIXED_WEIGHTED_PRINCIPAL_INVERTIBILITY_QUALIFIED_ACTUAL_BACKGROUND_LOCALITY_UNPROVED",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 412,
+      "historical_inputs": [
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_local_covariant_reference_witness/validation_v2_receipt.json",
+      "sha256": "271707fd55abc61eff288b45791f9796babacd5efe3b9b442a381a07cbac6bc1",
+      "status": "EXPLICIT_LOCAL_COVARIANT_REFERENCE_WITNESS_QUALIFIED_NOT_ADOPTED_QUANTUM_SCHEME",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 452,
+      "historical_inputs": [
+        {
+          "original_path": "README.md",
+          "expected_sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+          "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+          "archive_path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md"
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_singlet_momentum_shape/validation_receipt.json",
+      "sha256": "b0069380f587a6fa297582d987042a637fd14ccc3248a89609d4089f2e7987d3",
+      "status": "QUALIFIED_COMPLETE_SAME_POINT_ONE_LOOP_AFFINE_SUBTRACTION_INDEPENDENT_SINGLET_MOMENTUM_COMBINATIONS_NOT_QUANTUM_CONTROL",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 69,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_singlet_two_loop_input_closure/validation_receipt_v3.json",
+      "sha256": "62b561d1c4affb5745a9ef396f13cbca2c9d832f0f5d563239b28420e328f0e3",
+      "status": "QUALIFIED_NONZERO_ACTUAL_SCALAR_CARRIER_FOR_INTERNAL_YUKAWA_TWO_LOOP_TOPOLOGY_NOT_A_FULL_TWO_LOOP_AMPLITUDE",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 130,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_scalar_gauge_homothety/validation_receipt_v2.json",
+      "sha256": "543d34670bb931a583e78947e146d7435a29ebefe87e0d1fc206e050963b58be",
+      "status": "QUALIFIED_ANALYTIC_SCALAR_FAMILY_CLASSICAL_TRANSFER_AND_CONDITIONAL_BOSONIC_NONRESCUE_NOT_QUANTUM_MODEL_VERDICT",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 191,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_bv_uv_residue_bridge/validation_receipt.json",
+      "sha256": "7e284959c52aec190afafe7273540ed07423e00f6a2af2a5c0870b2dca69aa5d",
+      "status": "COMPLETE_FORMAL_ONE_LOOP_LOCAL_LOG_SLAVNOV_IDENTITY_IN_EXPLICIT_LOCAL_HEAT_REFERENCE_FAMILY_NOT_FINITE_OR_FULL_E5",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_bv_uv_residue_bridge/validation_preparation_v3.json",
+          "sha256": "3d9a0a0201f927bf9fbfa435b8e17a407243626c4b538a2bc11d601caceff1da"
+        }
+      ],
+      "authenticated_input_bindings": 144,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_physical_counterterm_span/validation_receipt.json",
+      "sha256": "1291f60f6809bb3f413a6a0f47f0c1ac6d49cdd161eddd62e66c4bbab22b7049",
+      "status": "ACTUAL_FORMAL_PARITY_EVEN_ONE_LOOP_PHYSICAL_PARAMETER_SPAN_AND_FIRST_ORDER_NORMALIZATION_RECONSTRUCTION_WITH_SEPARATE_BACKGROUND_VACUUM_NORMALIZATIONS_NOT_FULL_E5",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 100,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_one_loop_acceptance_reconciliation/validation_receipt.json",
+      "sha256": "0fae03efd84d5faf2cdbe597242fdd20c6f4738e4869bcd679997c9b9b570d60",
+      "status": "QUALIFIED_BOUNDED_ACCEPTANCE_RECONCILIATION_AND_STRICT_FORMAL_FIRST_ORDER_REPLACEMENT_NOT_UNIVERSAL_E5",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 618,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_graded_causal_qap/validation_receipt_v2.json",
+      "sha256": "70f5493cdb124a095d4b9bd7a1bbf06f1afa438529865f723f73a51a89f44b79",
+      "status": "GRADED_COMPACT_ONE_LOOP_ANOMALOUS_INSERTION_PRINCIPLE_AND_NONTRIVIAL_FINITE_CHART_TRANSPORT",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 76,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_background_reference_normalization/validation_receipt_v6.json",
+      "sha256": "77699e6902ce3f3cb9f4c066cd86d3c1eb784dc3a76f48d8e9807bdcabdfb941",
+      "status": "JOINT_FINITE_NORMALIZATION_TRANSPORT_AND_EXPLICIT_PERTURBATIVE_REFERENCE_MEMBER",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 135,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_local_cutoff_comparison/validation_receipt_v4.json",
+      "sha256": "9dad3b5e2449fd68c30e85a1c743781dbdc9caee176fd6c6e35a713c4a81275a",
+      "status": "LOCAL_CUTOFF_INTERTWINER_WITH_GRADED_SOURCE_TRANSPORT_AND_COUNTEREXAMPLE_TO_GLOBAL_FUNCTIONAL_IMPLICATION",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 106,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_vector_quartic_primitive/validation_receipt_v3.json",
+      "sha256": "fb2c3f4557b203c4975b020f5bc0b1c583106385c2ddeab0c485b2b330744cd3",
+      "status": "QUALIFIED_COMPLETE_REGULATED_BARE_QUARTIC_AND_ACTUAL_ONE_SOFT_INVERSE_IR_CLOSURE",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 0,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_vector_quartic_ir_matching/validation_receipt_v2.json",
+      "sha256": "c0f72f4fd5f17011d1fbcdb7e2c291c47189f237b45b0858b28d1ff8ce46d734",
+      "status": "QUALIFIED_ACTUAL_QUARTIC_MIXED_AND_ALL_LIGHT_IR_SUBTRACTION_WITH_BARE_HARD_REMAINDER",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_vector_quartic_ir_matching/validation_preparation_v2.json",
+          "sha256": "c3e75632cc45bf0172f13f47c296036205828e4e1d2e4ee2567662b0c74b8498"
+        }
+      ],
+      "authenticated_input_bindings": 13,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_vector_scalar_quartic/validation_receipt.json",
+      "sha256": "7fc8e23487ea5eb31a32e6351c62688be3b6d0558e3bebe047b0811b4d77f5e8",
+      "status": "QUALIFIED_VVSS_GRAPH_LOCAL_UV_AND_LIGHT_MATCHED_FINITE_F2",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_vector_scalar_quartic/validation_preparation.json",
+          "sha256": "461df85195e2b6c3db03e8ab2e5b57c196741010e6caac97be8df78fd1a704b8"
+        }
+      ],
+      "authenticated_input_bindings": 2373,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_vector_scalar_quartic/controls_receipt.json",
+      "sha256": "e105de9d331645ccbfdf5e08819bb36381009490911df7bb9d3b91eb86268ca7",
+      "status": "QUALIFIED_ACTUAL_MASS_OMISSION_AND_COMMON_IR_CONTROLS",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_vector_scalar_quartic/control_preparation.json",
+          "sha256": "4a01771b50f996dee2473792253889daed5faa2f96115b007742cdaae50b7c46"
+        }
+      ],
+      "authenticated_input_bindings": 2381,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_scalar_current_vss_assembly/validation_receipt.json",
+      "sha256": "6b47bd50b75902c2f662921d04ffc4e6fbd348193f69c9493b141b05b0ac7410",
+      "status": "QUALIFIED_COMPLETE_COMMON_SCALE_VSS_PRIMITIVE",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_scalar_current_vss_assembly/validation_preparation.json",
+          "sha256": "d1e806105a610c0e124f81ec5d9678d77546c6bcabe23152e25f367376283332"
+        }
+      ],
+      "authenticated_input_bindings": 4,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_ghost_scalar_charge_kernel/validation_receipt.json",
+      "sha256": "d4ab813f970df5dabfb7b814ce62df09f2abb721a5fe78eccef407b4ff23baee",
+      "status": "QUALIFIED_COMPLETE_ORDERED_GHOST_SCALAR_CHARGE_OPERATORS",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_ghost_scalar_charge_kernel/validation_preparation.json",
+          "sha256": "9ba7ce0065116d32716a0ea7c1e75c2003c9b401dcbebf5357b14ccd2348a34c"
+        }
+      ],
+      "authenticated_input_bindings": 3269,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_ghost_scalar_sunset/measure_receipt.json",
+      "sha256": "261d97642d3ee08b45b1fee2fc8aa1899f8fe731bb965055191d4b6202d2f39b",
+      "status": "QUALIFIED_COMPLETE_GHOST_SCALAR_SPECTRAL_MEASURE",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_ghost_scalar_sunset/measure_comparison_preparation.json",
+          "sha256": "37f2fd1cec8e2d938923b9105106075401887146612a28399e2c7376d5578fd2"
+        }
+      ],
+      "authenticated_input_bindings": 3297,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_ghost_scalar_sunset/validation_receipt.json",
+      "sha256": "6a03b1c5935ddf03d5f33f1f77cc18e7bc178aa30ca521b5fb814f624bc9b970",
+      "status": "QUALIFIED_COMPLETE_COMMON_SCALE_GHOST_SCALAR_PRIMITIVE",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_ghost_scalar_sunset/finalization_preparation.json",
+          "sha256": "45320158b78cbd7cb965cc176f1b3d5fc580283f8559479cca7cc57af5ae390c"
+        }
+      ],
+      "authenticated_input_bindings": 3314,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_ghost_scalar_sunset/control_receipt.json",
+      "sha256": "c5f472e97a4ab8155c3f32da2791947fad8857acf399c2d8044f9185d975b53a",
+      "status": "QUALIFIED_COMPLETE_FINITE_OMISSION_CONTROLS",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_ghost_scalar_sunset/controls_preparation.json",
+          "sha256": "43df821095c76e99249547fdfeb0ba9c0dc2dfe339eb591f62f9acc578027fc7"
+        }
+      ],
+      "authenticated_input_bindings": 3322,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_background_threshold_inputs/validation_receipt_v2.json",
+      "sha256": "fd1afe95d714f99d37828660f146bdc1b71c6ae13b014de16d51123766f561e6",
+      "status": "PASS_BOUNDED_KINEMATIC_INPUT_AND_TOPOLOGY_ONLY",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 0,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_actual_normalization_assembly/validation_receipt.json",
+      "sha256": "57e773e9bd8ac3d4cbd884a019001f609e0bf7999021bdd783b3d83c7935ef5c",
+      "status": "COMPLETE_FORMAL_FIRST_ORDER_ONE_LOOP_ACTUAL_COUNTERTERM_SLAVNOV_BACKGROUND_AND_COMPLETED_GEOMETRIC_WARD_ASSEMBLY_NOT_FULL_E5",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 77,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/research_integration_portable_dh/validation_receipt.json",
+      "sha256": "bc6516cd81196091a5a566c0b4a61ecf1ab1b43467c29d6a9b6766abd6261b6c",
+      "status": "QUALIFIED_WHOLE_DH_PORTABLE_REPRODUCTION_AND_HISTORICAL_README_INTEGRATION_ONLY",
+      "completed_preparation_bindings": [],
+      "authenticated_input_bindings": 60,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_vector_vector_scalar_sunset/validation_receipt.json",
+      "sha256": "18b66c847c5b09c937953b939e0d34469753c5b2c0262ffc15ad646f443402aa",
+      "status": "QUALIFIED_COMPLETE_COMMON_SCALE_VVS_PRIMITIVE",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_vector_vector_scalar_sunset/finalization_preparation.json",
+          "sha256": "343bce768c5649b916ea4ae2d6fb707ae5c30d55cea8f68b8f4710f1acbda9a7"
+        }
+      ],
+      "authenticated_input_bindings": 3478,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_ghost_vector_sunset/validation_receipt.json",
+      "sha256": "5598f0b25d67a8fa864a8689e4d3619d24623f00d42aa24d93d62706983d2f09",
+      "status": "QUALIFIED_COMPLETE_GHOST_VECTOR_MATCHED_PRIMITIVE_WITH_ORIGINAL_FORESTS",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_ghost_vector_sunset/validation_v2_preparation.json",
+          "sha256": "f6198737ff9770b5d5f2e711a78c5ff41dafb9a7c3bb0971a3f9696bb92577db"
+        }
+      ],
+      "authenticated_input_bindings": 3663,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_three_vector_sunset/validation_receipt_v2.json",
+      "sha256": "82dbc81907516a52c5254eaa4d1d591bae42862b76b4a1d4a9b2ebb89f06c8e8",
+      "status": "QUALIFIED_COMPLETE_THREE_VECTOR_MATCHED_PRIMITIVE_WITH_ORIGINAL_FORESTS",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_three_vector_sunset/validation_v2_preparation.json",
+          "sha256": "9de84918fbef447f53fb22cff0275df1efad0f60afedd392ddb6a756faeb02b3"
+        }
+      ],
+      "authenticated_input_bindings": 3776,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_scalar_quartic_amplitude/validation_receipt.json",
+      "sha256": "25737305b6729d56a353df89196d478bbc508022cdc4d5587a78cb72adc78242",
+      "status": "QUALIFIED_COMPLETE_SCALAR_QUARTIC_MATCHED_PRIMITIVE",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_scalar_quartic_amplitude/validation_preparation.json",
+          "sha256": "aa71a68f5aa09b0cb727b46138461b033ff4c7a69e77b24b16c09e80fc348517"
+        }
+      ],
+      "authenticated_input_bindings": 2581,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_scalar_cubic_amplitude/validation_receipt.json",
+      "sha256": "298979190845132e09dfcba4a2ac87c8896176a01e965e15310e64958aa5c463",
+      "status": "QUALIFIED_COMPLETE_SCALAR_CUBIC_MATCHED_PRIMITIVE",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_scalar_cubic_amplitude/validation_preparation.json",
+          "sha256": "b6081e625c61cabc0443fbfa470a9078f36a18db0023a3dfa009f6bb5651fb09"
+        }
+      ],
+      "authenticated_input_bindings": 3798,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_nine_family_uv_assembly/validation_receipt.json",
+      "sha256": "834a79eb5cf5f0009bc7b7f1a9a3d9b339db92abd92a79c0b1ac50b4d75df14a",
+      "status": "QUALIFIED_SIMULTANEOUS_NINE_FAMILY_ORIGINAL_FOREST_POLE_AND_COMMON_SCALE_ASSEMBLY",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_nine_family_uv_assembly/validation_preparation.json",
+          "sha256": "b2d821ade2394f55c065587cc8c1e14acecb598afbdb418081aa428bdfcfe4ae"
+        }
+      ],
+      "authenticated_input_bindings": 4529,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_hard_pole_remainder/validation_receipt.json",
+      "sha256": "b7f6e4b4f8e2cd8731429c87bef62d878fcd28932d879fac9e2571cf9c85a5d1",
+      "status": "QUALIFIED_PRESCRIBED_HARD_POLE_CLOSURE_OVERALL_MS_POLE_AND_FINITE_INPUT_WITNESS",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_hard_pole_remainder/validation_preparation.json",
+          "sha256": "93f27d84021b1d9696da4b1691cc34a2b3792bd2ef13dde570dc1b79abf773fe"
+        }
+      ],
+      "authenticated_input_bindings": 5172,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_msbar_tadpole_allocation/validation_receipt_v3.json",
+      "sha256": "c2f1facbb3e9c9f0d6677772b5aa42f45cab07d8de8253cd1c79d95d4522d054",
+      "status": "QUALIFIED_MSBAR_PARENT_CONSTRAINT_AND_CORRELATED_RADIAL_TADPOLE_ALLOCATION",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_msbar_tadpole_allocation/validation_preparation_v3.json",
+          "sha256": "91553137e8448a043dd94331e84fb15770c1a8027e075fe5d791f3ecef53415a"
+        }
+      ],
+      "authenticated_input_bindings": 5249,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_background_matching_conversion/validation_receipt.json",
+      "sha256": "4841b39f3f0040ea074e5ec946c68cb52c5ec6f74bfafd973f55392e42249e7d",
+      "status": "QUALIFIED_BACKGROUND_F2_COUPLING_CONVERSION_AND_RUNNING_INPUT_RG_LAW",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_background_matching_conversion/validation_preparation.json",
+          "sha256": "f341b9fbea85c8e7a25b64dfe65d4bcefe720b54c5acd16d7ab9f681c6f0944d"
+        }
+      ],
+      "authenticated_input_bindings": 5283,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_stationary_rg_pullback/validation_receipt_v3.json",
+      "sha256": "55f3dcef974cca087b665b31ae9eeb43b0fdd063ee0774f31a831f6af16a35c5",
+      "status": "QUALIFIED_STATIONARY_PARENT_RG_PULLBACK_AND_SCOPED_SCALE_IDENTITY",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_stationary_rg_pullback/validation_preparation_v3.json",
+          "sha256": "a0375c2a3a98cea0aa5d71b7ec57c8c9a301e6bd6644a4e1157af94a1240e137"
+        }
+      ],
+      "authenticated_input_bindings": 5338,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_finite_assembly_nielsen/validation_receipt_v2.json",
+      "sha256": "a040bc45a564acd896ec766ea2f108f27ef47c3697fa0642b63e5bc1dd1f9d5b",
+      "status": "QUALIFIED_FIXED_XI_FINITE_BOSONIC_ASSEMBLY_AND_FIRST_NIELSEN_KERNEL",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_finite_assembly_nielsen/validation_preparation_v2.json",
+          "sha256": "04eb638a01f72bbda5e92952e7326828a5b446cc81c3b2b21f360efb798bdcae"
+        }
+      ],
+      "authenticated_input_bindings": 5384,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_source_region_matching/validation_receipt_v3.json",
+      "sha256": "29c52102d9d720777cc6bcc37a9e93c7f1a6b52d8e1a3604062ecbc02e36a3ef",
+      "status": "QUALIFIED_FORMAL_SOURCE_REGION_MATCHING_AND_LOCAL_BOSONIC_WIDTH_IDENTITY",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_source_region_matching/validation_preparation_v3.json",
+          "sha256": "3d831bb3fced365b5fd24ef06f12151c5bc020d732369b06bf9b34b33e76a367"
+        }
+      ],
+      "authenticated_input_bindings": 5772,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_finite_threshold_controls/validation_receipt.json",
+      "sha256": "8d8fbb13f31dee6b2677b3e16939d2d0382d453bcaf2043a948a9417d033a2db",
+      "status": "QUALIFIED_FINITE_THRESHOLD_BASIS_COINCIDENCE_AND_ONE_LOOP_CONTROLS",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_finite_threshold_controls/validation_preparation.json",
+          "sha256": "eaa5ab4e2f084579740da8dc37a746330741600598a6296953df1286fabda818"
+        }
+      ],
+      "authenticated_input_bindings": 5801,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_bosonic_loop_hierarchy/validation_receipt.json",
+      "sha256": "5ac4b5961476d7aa152fdd3e0fd0ca3fed7a707834e086816120ebd6064f5e9f",
+      "status": "QUALIFIED_BOSONIC_LOOP_HIERARCHY_DIAGNOSTIC",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_bosonic_loop_hierarchy/validation_preparation.json",
+          "sha256": "b974eaf6edf0210732d7dbee4a288198175d0e82ac8e571ad6189dcbb850a130"
+        }
+      ],
+      "authenticated_input_bindings": 6037,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_bosonic_interior_assembly/validation_receipt.json",
+      "sha256": "520873c187f7a35e24130ca5c7112ab4bb326a863d673e8a13915c2fb0ba62e4",
+      "status": "QUALIFIED_BOSONIC_INTERIOR_ASSEMBLY_AND_HIERARCHY_DIAGNOSTIC",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_bosonic_interior_assembly/validation_preparation.json",
+          "sha256": "8ec204017b1880d9e836932189adf2536eabcef9cb41ae8a6f275a62ed4f09dc"
+        }
+      ],
+      "authenticated_input_bindings": 6501,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_common_scale_bound/validation_receipt.json",
+      "sha256": "6d023c609cd577486d510fdf8b61d95cc39fa3c76b37bdacbcd852528758380c",
+      "status": "QUALIFIED_FROZEN_BOSONIC_COMMON_SCALE_MINIMAX_BOUND",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_common_scale_bound/validation_preparation.json",
+          "sha256": "ac88f354befaa631fc9be769d487cd5283bbb2c108beca54cb9d1980edec6045"
+        }
+      ],
+      "authenticated_input_bindings": 6531,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_benchmark_scope_reconciliation/validation_receipt.json",
+      "sha256": "761370ea8b70482f3e55d82794b075a97c04e7921d5444a3d6dfc1d469cd4ed3",
+      "status": "QUALIFIED_DISTINCT_REFERENCE_SCOPES_AND_NAVIGATION_CORRECTION",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_benchmark_scope_reconciliation/validation_preparation.json",
+          "sha256": "34ab76ee7bcafef38e9d321147e75f16cece06f0408ce775af2880b354a5a119"
+        }
+      ],
+      "authenticated_input_bindings": 6579,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_singlet_portal_scope/validation_receipt.json",
+      "sha256": "2eb1e68f517630a397ede5de7dc716b3a2df3424c174446da6fe797a6d67cb72",
+      "status": "QUALIFIED_PORTAL_SUPPORT_AND_EXISTING_FINITE_SINGLET_SCOPE",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_singlet_portal_scope/validation_preparation.json",
+          "sha256": "4097ecc16203367eff32a556728796be45cef0207690c1a6aa2027445c367c58"
+        }
+      ],
+      "authenticated_input_bindings": 1573,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_yukawa_counterterm_assembly/validation_receipt.json",
+      "sha256": "323d78b8262e0b9ec86ca55fdcf1a59b2e6328a0fcf17926dac0e547ac364980",
+      "status": "QUALIFIED_FULL_ONE_LOOP_YUKAWA_PARAMETER_POLE_ASSEMBLY",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_yukawa_counterterm_assembly/validation_preparation.json",
+          "sha256": "b4f2f00128c38bf972ea469413f088497bc145d6ef8c0aa04be9fa64babb65fe"
+        }
+      ],
+      "authenticated_input_bindings": 57,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_matter_source_uv_assembly/validation_receipt.json",
+      "sha256": "c1c90fa9529f19d83270d17ce3348603c907d14ba2bd5ea42a6af57eae6cae24",
+      "status": "QUALIFIED_COMPLETE_PROPER_MATTER_SOURCE_UV_NORMALIZATION_PROJECTION",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_matter_source_uv_assembly/validation_preparation.json",
+          "sha256": "476c49258a8a44855c2dfbf9babe01494ff7fedce80f3d31c0a905ee26790242"
+        }
+      ],
+      "authenticated_input_bindings": 57,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_matter_gauge_vertex_normalization/validation_receipt.json",
+      "sha256": "f810177f27a764e22461663140f480ecfd32a7edea5432f453dfb2ef71c96c5f",
+      "status": "QUALIFIED_COMPLETE_PROPER_FERMION_GAUGE_VERTEX_UV_AND_FIXED_NORMALIZATION_PROJECTION",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_matter_gauge_vertex_normalization/validation_preparation.json",
+          "sha256": "9768e11d22c858d40cbee70bf5973f1c03db8bf902ba36f673fef3fd741bd417"
+        }
+      ],
+      "authenticated_input_bindings": 70,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_fermion_pure_gauge_uv/validation_receipt_v2.json",
+      "sha256": "db17ab190e6514f24dc7c5604f8d95e4a9c7aec2185d1f0d768d304108f4eb24",
+      "status": "QUALIFIED_COMPLETE_PARITY_EVEN_MASS_INDEPENDENT_PURE_GAUGE_FERMION_UV_FUNCTIONAL",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_fermion_pure_gauge_uv/validation_preparation_v2.json",
+          "sha256": "8193262f6aa014740c1867aed6f1ffa49c0f2d36dc4b986fb56f61e27c3ad8f9"
+        }
+      ],
+      "authenticated_input_bindings": 60,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_fermion_gauge_finite_difference/validation_receipt.json",
+      "sha256": "da5644b4687151b487c1fb439b23fdb96eba8fbcd40ee04a9c8c89bf8ac60e45",
+      "status": "QUALIFIED_COMPLETE_PHYSICAL_MOMENTUM_PARITY_EVEN_GAUGE_FINITE_DIFFERENCE",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_fermion_gauge_finite_difference/validation_preparation.json",
+          "sha256": "e52b33b3dd7b3fd0615dfdc7866c7ba2246a423880af570019a654508604f536"
+        }
+      ],
+      "authenticated_input_bindings": 51,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_finite_gauge_ward_functional/validation_receipt.json",
+      "sha256": "6c5f81322d000f635bf0c40e245f34758e2035dc2886df6a29bcd5c3f7b56adc",
+      "status": "QUALIFIED_COMPACT_FINITE_GAUGE_DIFFERENCE_AND_ALGEBRAIC_WARD_IMAGE",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_finite_gauge_ward_functional/validation_preparation.json",
+          "sha256": "5fa7eb1b9f76b06450618406edceb94b3fab8a161d630f449328544255a76568"
+        }
+      ],
+      "authenticated_input_bindings": 46,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_scalar_yukawa_reference/validation_receipt.json",
+      "sha256": "f4e94141cb63ee12ac955b3460ced5a4b1cadd3b76a1d3047ae8a138b63c42a7",
+      "status": "QUALIFIED_RESTRICTED_PARITY_EVEN_YUKAWA_REFERENCE_AND_SCALAR_FINITE_BUBBLE",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_scalar_yukawa_reference/validation_preparation.json",
+          "sha256": "a976c424f7490ebcab1dc2980ecefc5f2f2810cfbc7d6a76122791f3beec0217"
+        }
+      ],
+      "authenticated_input_bindings": 46,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_mixed_bosonic_finite_difference/validation_receipt.json",
+      "sha256": "d974e7df796c37b17d84892fa58c887c50954c6c3ce3c941ef2ecaad41dad094",
+      "status": "QUALIFIED_COMPLETE_MIXED_BOSONIC_PARITY_EVEN_FINITE_DIFFERENCE",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_mixed_bosonic_finite_difference/validation_preparation.json",
+          "sha256": "34fc8241e9d1a7b2e44689c8437e7be9b80851f35ab5438ec2d20f9807738e2f"
+        }
+      ],
+      "authenticated_input_bindings": 48,
+      "historical_inputs": [],
+      "mismatches": []
+    },
+    {
+      "path": "calculations/canonical_so10_bosonic_fermion_finite_ward/validation_receipt.json",
+      "sha256": "49a9e814cde68fd165d1d42732cc12b2fc1421be8407b48290da23d0c65a6e0a",
+      "status": "QUALIFIED_COMPLETE_SELECTED_BOSONIC_FERMION_FINITE_FUNCTIONAL_AND_WARD_IMAGE",
+      "completed_preparation_bindings": [
+        {
+          "path": "calculations/canonical_so10_bosonic_fermion_finite_ward/validation_preparation.json",
+          "sha256": "cf2679c350e66c20ec4fa11008c66afc105efc5ba8bb5c64123df184878ded53"
+        }
+      ],
+      "authenticated_input_bindings": 48,
+      "historical_inputs": [],
+      "mismatches": []
+    }
+  ],
+  "historical_inputs": [
+    {
+      "path": "historical/b115b72b5e03efcc18b8a599c680545f3fb560c1/AGENTS.md",
+      "original_path": "AGENTS.md",
+      "sha256": "a7f0b33fc689063729de891031a88c1c2fe57473142af290471efd657f00de58",
+      "size_bytes": 3793,
+      "historical_commit": "b115b72b5e03efcc18b8a599c680545f3fb560c1",
+      "export_file": "C:\\Users\\psboy\\.codex\\visualizations\\2026\\10\\14\\01a13ca8-898d-7d80-8685-b09d5fa9c214\\publication\\historical_inputs_v4\\b115b72b5e03efcc18b8a599c680545f3fb560c1\\AGENTS.md"
+    },
+    {
+      "path": "historical/70cec201a3f1a250bf68e040e40bcab712d3697c/AGENTS.override.md",
+      "original_path": "AGENTS.override.md",
+      "sha256": "3bf9d44b7b3b7b8748d501b83869180ad010307c87e529056ef2de514b1d495e",
+      "size_bytes": 3090,
+      "historical_commit": "70cec201a3f1a250bf68e040e40bcab712d3697c",
+      "export_file": "C:\\Users\\psboy\\.codex\\visualizations\\2026\\10\\14\\01a13ca8-898d-7d80-8685-b09d5fa9c214\\publication\\historical_inputs_v4\\70cec201a3f1a250bf68e040e40bcab712d3697c\\AGENTS.override.md"
+    },
+    {
+      "path": "historical/cadfca2dcf82c34f03b3e7ab0a68248c80c092be/README.md",
+      "original_path": "README.md",
+      "sha256": "4a00e15665bebfc23fb0ae9338770c22d1260610bde6435415c09e21a5a43792",
+      "size_bytes": 71801,
+      "historical_commit": "cadfca2dcf82c34f03b3e7ab0a68248c80c092be",
+      "archive": "spin10_pq_source_update_v3_history.zip",
+      "storage": "UPDATE_V3"
+    },
+    {
+      "path": "historical/70cec201a3f1a250bf68e040e40bcab712d3697c/docs/RESEARCH_AUTONOMY_DIRECTIVE_V1.md",
+      "original_path": "docs/RESEARCH_AUTONOMY_DIRECTIVE_V1.md",
+      "sha256": "0f11a4947b7c4e125a3bbe8375fd725ae6492c87ddd82366202a2f8389415deb",
+      "size_bytes": 7890,
+      "historical_commit": "70cec201a3f1a250bf68e040e40bcab712d3697c",
+      "export_file": "C:\\Users\\psboy\\.codex\\visualizations\\2026\\10\\14\\01a13ca8-898d-7d80-8685-b09d5fa9c214\\publication\\historical_inputs_v4\\70cec201a3f1a250bf68e040e40bcab712d3697c\\docs\\RESEARCH_AUTONOMY_DIRECTIVE_V1.md"
+    },
+    {
+      "path": "historical/76affe53da3efe7e66bd5e35dc03af1467ee88bd/tools/research_session_preflight.py",
+      "original_path": "tools/research_session_preflight.py",
+      "sha256": "095f96c8312bddf4e69c3bc144d760f06cf46b5328299e346c8278c0b08a050a",
+      "size_bytes": 4745,
+      "historical_commit": "76affe53da3efe7e66bd5e35dc03af1467ee88bd",
+      "archive": "spin10_pq_source_update_v3_history.zip",
+      "storage": "UPDATE_V3"
+    }
+  ],
+  "scientific_acceptance": "NOT_PERFORMED",
+  "elapsed_seconds": 9.453000000001339
+}

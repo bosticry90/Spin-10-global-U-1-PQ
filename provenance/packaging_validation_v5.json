@@ -1,0 +1,77 @@
+{
+  "schema": "SPIN10_PQ_PACKAGING_VALIDATION_V5",
+  "execution_state": "COMPLETED",
+  "validated_at_utc": "2026-10-23T03:18:33.523074+00:00",
+  "publication_date": "22 October 2026",
+  "note_version": 5,
+  "source_commit": "7db0a6cbbcffc14009e7641afcfb4e9d5d408a78",
+  "handoff": "V514",
+  "scientific_acceptance": "NOT_PERFORMED",
+  "director_acceptance": "NOT_INFERRED",
+  "receipt_authentication": {
+    "selected_receipts": 59,
+    "binding_checks": 108814,
+    "counts_repeat_shared_inputs": true,
+    "historical_inputs": 5,
+    "mismatches": []
+  },
+  "source_export": {
+    "execution_state": "COMPLETED",
+    "source_commit": "7db0a6cbbcffc14009e7641afcfb4e9d5d408a78",
+    "source_files": 31149,
+    "external_files": 6362,
+    "new_archive_members": 4678,
+    "new_source_files": 4549,
+    "total_read_bytes": 3649088003,
+    "archives": [
+      {
+        "filename": "spin10_pq_source_update_v4_part1.zip",
+        "sha256": "c9c67492fbde65971eeca4dbb1acd1667ea143811c6d69df108bb084fc9fab10",
+        "size_bytes": 43382247,
+        "file_count": 3043
+      },
+      {
+        "filename": "spin10_pq_source_update_v4_part2.zip",
+        "sha256": "ddf43d111ea3c3e60d00b69bc29914394c7ca3ce9c7bc1adb75c3755d2f82d29",
+        "size_bytes": 23704704,
+        "file_count": 1635
+      }
+    ],
+    "unresolved_external_paths": [],
+    "elapsed_seconds": 105.21899999999732
+  },
+  "old_unchanged_release_files_checked": 1088,
+  "all_previous_provenance_archives_and_original_v4_1_note": "EXACTLY_PRESERVED",
+  "browsable_calculations": "MATCH_FROZEN_SOURCE_BYTES",
+  "pdf": {
+    "version": 5,
+    "pages": 11,
+    "sha256": "b8e5938e5f3623d7caff17c2055a5df7718c73e2f94232fcd52016f4fe6b13e6",
+    "compilation": "SUCCESS",
+    "layout_warnings": [],
+    "visual_review": "ALL_11_RENDERED_PAGES_INSPECTED_NO_CLIPPING_OR_OVERLAP"
+  },
+  "scope_checks": {
+    "bosonic_primitive_families": 9,
+    "interior_hierarchy_failures": 3,
+    "full_C1_calculated": false,
+    "full_chiral_or_physical_matching_qualified": false
+  },
+  "reused_portable_pilot": "Both preceding-release replays retained; code, inputs and original receipt/captures unchanged and byte-checked. No repeated scientific execution.",
+  "package_verification": {
+    "expected_archive_members": 37524,
+    "command": "python -B reproducibility/verify_package.py",
+    "scope": "Every current release file and all four source-manifest layers. Exact final output retained outside package to avoid circular manifest self-reference."
+  },
+  "limitations": [
+    "Byte authentication is not fresh scientific replay or acceptance",
+    "No expensive scalar/pole/threshold/fermion integrals repeated",
+    "No full massive matter C1 or new unification fit",
+    "No point, finite scheme or benchmark adoption",
+    "No E5/A5 promotion or flavor resumption",
+    "Historical Git history absent; custody exit2/seven unresolved references not PASS",
+    "Shared action, data, software and AI authorship limit independent assurance"
+  ],
+  "authority": "state113/34of39_UNCHANGED",
+  "next_smallest_scientific_dependency": "V514 calls for open-fermion finite-comparison prerequisites and complete gauge/Yukawa two-point finite inputs; this publication does not execute or qualify them."
+}

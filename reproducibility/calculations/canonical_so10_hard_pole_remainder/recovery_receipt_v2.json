@@ -1,0 +1,12 @@
+{
+  "adversarial_receipt_sha256": "8fb77a5fa817bdad7416d8ee4c5ca6996b6e424979e47fffb95126f99214373b",
+  "controller_failure_sha256": "14ae5930d5c568b0ccabff7709e40a802d5d4dd23894c8ddddde6405cdcb5822",
+  "elapsed_seconds": 1.5524605000391603,
+  "execution_state": "COMPLETED",
+  "failed_controller_preserved": true,
+  "native_capture_sha256": "5e9c77f56c046038bf988f7b2d984566e75d764580a2e6e67727cd5956a8397f",
+  "old_completed_RESULT_preserved_exactly": true,
+  "schema": "HPR1_METADATA_RECOVERY",
+  "scientific_acceptance": "NOT_PERFORMED",
+  "scientific_calculations_rerun": 0
+}

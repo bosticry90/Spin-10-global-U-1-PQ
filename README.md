@@ -2,7 +2,7 @@
 
 This repository shares an AI-assisted investigation of a candidate grand unified model. The plain-language explanation below describes the idea, the progress and the limitations. The technical note and reproducibility materials provide the equations, code and evidence.
 
-**[Read the nine-page technical note, Version 4.1](paper/spin10_pq_technical_note.pdf)** · [Editable LaTeX source](paper/spin10_pq_technical_note.tex) · [Reproduction guide](reproducibility/README.md)
+**[Read the technical note, Version 5](paper/spin10_pq_technical_note.pdf)** · [Editable LaTeX source](paper/spin10_pq_technical_note.tex) · [Reproduction guide](reproducibility/README.md)
 
 ## A plain-language explanation
 
@@ -24,9 +24,9 @@ The tests have also exposed real problems. An earlier Higgs tuning failed when o
 
 At the newer classical point, a one-loop correction to the singlet’s squared mass is larger than its tree-level value in the declared expansion. Newer momentum-based checks measure different aspects of the same response and give smaller values. They do not erase the large shift or establish that higher-order corrections are controlled.
 
-Gauge unification remains unresolved. The existing approximate calculation does not make the three force couplings meet. Parts of the more complete two-loop calculation have now been worked out, but essential pieces remain. No successful physical unification benchmark or definitive exclusion of the whole construction follows from the present calculation.
+Gauge unification remains unresolved. The earlier approximate calculation does not make the three force couplings meet. The two-loop calculation involving force and scalar fields is now assembled at the older parameter choice. At three tested settings, its corrections are larger than the starting terms, so these expressions do not support a controlled prediction. The complete matter contribution and physical matching remain unfinished. This does not exclude every parameter choice of the construction.
 
-Recent symmetry and quantum-consistency results strengthen the investigation within their stated mathematical domains. They do not yet establish the complete physical quantum theory. The short technical note explains those boundaries.
+Recent work also organizes how fermion interactions and symmetry relations behave under quantum corrections. It supplies symbolic normalization results and a restricted finite comparison, with the remaining assumptions stated explicitly. These results do not establish the complete physical quantum theory or erase the failed tests. The technical note explains those boundaries.
 
 ### What role does AI play?
 
@@ -45,7 +45,7 @@ For details, start with the technical note and reproduction guide linked above. 
 The scalar content is a real 54, a complex self-dual 126, a complex 10, and a complex singlet, with global Peccei–Quinn selection rules and no supersymmetry.
 
 
-Updated 20 October 2026, from source checkpoint `7562f42c14ef1ab5a946fbfc4534509f3378c76b`. The earlier positive-quartic point subsequently failed a perturbativity screen. A different exploratory point has stronger classical certificates but a large one-loop singlet correction. Neither is an established physical benchmark.
+Updated 22 October 2026, from source checkpoint `7db0a6cbbcffc14009e7641afcfb4e9d5d408a78`. The earlier positive-quartic point subsequently failed a perturbativity screen. A different exploratory point has stronger classical certificates but a large one-loop singlet correction. Neither is an established physical benchmark.
 
 The construction follows established GUT and PQ literature, especially [Babu and Khan (2015)](https://arxiv.org/abs/1507.06712). Its scalar potential is a separately specified source-derived variant. Published benchmarks, fermion fits, and unification conclusions are not adopted as results for this variant. No new unification principle or exhaustive novelty claim is asserted.
 
@@ -64,7 +64,10 @@ The construction follows established GUT and PQ literature, especially [Babu and
 | Gauge matching at earlier positive-quartic point | Maximum inverse-coupling residual ≈ 1.060 at one loop; ≈ 0.745 with two-loop SM running and one-loop thresholds | A mismatch for those inputs; finite two-loop heavy constants remain incomplete. These residuals do not apply to the new point |
 | Gauge/PQ structure | Local perturbative Spin(10) gauge-anomaly traces vanish; PQ coefficients N = 12, E = 32, E/N = 8/3; conditional wall count 3 | Representation and ordinary-orbit results; global completion and physical axion cosmology remain open |
 | Formal one-loop consistency | Complete local logarithmic UV Slavnov identity, actual parity-even bosonic counterterm closure, and constructed compact causal/QAP/normalization results in their declared domains | Material progress beyond the previous locality prerequisite; full source/global/physical E5/A5 requirements remain unqualified |
-| Two-loop threshold primitives | VVVV, VVSS, VSS and ghost–scalar families have scoped amplitude results at the older +0.10486 point | An inventory of four of nine families, not four complete physical thresholds; full finite C1 and unification remain unresolved |
+| Bosonic loop hierarchy | At gauge coupling squared 1/2, 3/4 and 1, the two-loop kinetic term exceeds tree and one loop in all three factors | These tested bosonic truncations fail the necessary hierarchy screen; no general model exclusion |
+| Bosonic two-loop assembly | All nine retained primitive families, prescribed finite subtraction and the heavy-tadpole bridge are assembled at the older point | A fixed-reference bosonic coefficient, not complete massive matter C1 or physical unification |
+| Frozen common-scale test | Minimum common-log maximum two-loop/tree magnitude is about 3.20, 4.83 and 6.93 at those couplings | Changing only the explicit logarithm cannot repair the frozen hierarchy; this is not full RG evolution |
+| Symbolic fermion progress | One-loop Yukawa/source/gauge UV normalization and a selected closed-loop parity-even finite functional with its algebraic Ward image | No numerical flavor fit, complete chiral prescription or finite massive matter threshold |
 
 The initial Stage 2 failure does not refute every point of the construction. Gauge matching uses the earlier +0.10486 point, whose subsequent perturbativity failure is retained. Its spectrum, thresholds and loop results are not transferred to the newer exploratory point. Missing finite thresholds are not assumed to rescue the mismatch. Diagnostic fitted scales are not physical predictions.
 
@@ -72,13 +75,13 @@ Global quartic positivity is now certified at one exploratory point. The preferr
 
 ## What the materials contain
 
-- The updated Version 4.1 note and editable source, with public Versions 2, 3 and 4 preserved in [paper/archive](paper/archive/).
+- The updated Version 5 note and editable source, with public Versions 2, 3, 4 and 4.1 preserved in [paper/archive](paper/archive/).
 - Browsable scalar/gauge calculation programs, frozen scalar points, and recorded results.
 - The unchanged original source archives plus a versioned update covering the frozen tracked source tree and referenced external research-control materials, including failed attempts.
 - A [closed portable Hessian pilot](reproducibility/portable_dh_v1/README.md), requiring Python 3.11+ and only the standard library.
 - SHA-256 manifests and a verifier that authenticate packaged bytes without executing or scientifically accepting the calculations.
 
-This publication is a fixed snapshot of committed evidence through the stated checkpoint. The [V421 handoff](reproducibility/RESEARCH_EXECUTION_HANDOFF_V421.md) supplies the frozen continuation context; work after that checkpoint is excluded. Classical certificates and conditional quantum results retain their precise assumptions; earlier failed and blocked evidence remains classified as such. Formal scientific authority remains version 113, at 34 of 39 ledger items. Historical custody is not a global pass.
+This publication is a fixed snapshot of committed evidence through the stated checkpoint. The [V514 handoff](reproducibility/RESEARCH_EXECUTION_HANDOFF_V514.md) supplies the frozen continuation context; work after that checkpoint is excluded. Classical certificates and conditional quantum results retain their precise assumptions; earlier failed and blocked evidence remains classified as such. Formal scientific authority remains version 113, at 34 of 39 ledger items. Historical custody is not a global pass.
 
 The [reproduction guide](reproducibility/README.md) distinguishes byte checks, quick computational checks, expensive replays, and historical Git-custody limits. It records exactly which checks were performed for packaging.
 
@@ -95,6 +98,6 @@ This is solo work shared by the repository owner, with LLM assistance in calcula
 - M. Luo and Y. Xiao, *Two-loop Renormalization Group Equations in the Standard Model*, Phys. Rev. Lett. 90, 011601 (2003). [arXiv:hep-ph/0207271](https://arxiv.org/abs/hep-ph/0207271).
 - D. Buttazzo et al., *Investigating the near-criticality of the Higgs boson*, JHEP 12 (2013) 089. [arXiv:1307.3536](https://arxiv.org/abs/1307.3536).
 
-The C1 amplitude program uses the older point and a fixed background-field Feynman-gauge reference; it is separate from the newer exploratory point and the formal 643-field nonlinear-source construction. No old spectrum, partial primitive or normalization prescription is silently transferred between them. Remaining graph families, counterterm remainders, finite insertions, EFT matching and the final conversion to C1 are not set to zero.
+The C1 amplitude program uses the older point and a fixed background-field Feynman-gauge reference; it is separate from the newer exploratory point and the formal 643-field nonlinear-source construction. No old spectrum or normalization prescription is silently transferred between them. The retained bosonic inventory now includes all nine families and their prescribed finite assembly. Complete massive matter matching and physical admissibility remain open; absent terms are not assigned favorable values.
 
-For discussion, useful questions are how to define controlled physical inputs while retaining the singlet cut, and how to finish the primitive/counterterm/EFT layers without double counting.
+For discussion, useful questions are how to define controlled quantum inputs while retaining the singlet cut, and how to complete massive matter matching without treating missing contributions as adjustable corrections.

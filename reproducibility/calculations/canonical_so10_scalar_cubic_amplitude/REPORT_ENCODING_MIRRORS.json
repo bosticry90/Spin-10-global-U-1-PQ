@@ -1,0 +1,16 @@
+[
+  {
+    "UTF8_readable_copy": "calculations\\canonical_so10_scalar_cubic_spectral_measure\\RESULT_UTF8.md",
+    "UTF8_sha256": "155df34434118a8d36acf3ce20981f11cf74b7575a270349e77b62ac51cd425c",
+    "frozen_cp1252_sha256": "ca62fffb029d7a7faddb80f7fcd5bb4dc32a8faffe4ba950e77216ccf2808d6c",
+    "original": "calculations\\canonical_so10_scalar_cubic_spectral_measure\\RESULT.md",
+    "same_decoded_text": true
+  },
+  {
+    "UTF8_readable_copy": "calculations\\canonical_so10_scalar_cubic_units\\RESULT_UTF8.md",
+    "UTF8_sha256": "933d0e1cb4a58497bff4f98350983ebb375d64a11c894a4ecb61a1b8ee7d21b0",
+    "frozen_cp1252_sha256": "42bd69448de65b08f02342314461087a98ec89522fe25814bbc89eac353e87be",
+    "original": "calculations\\canonical_so10_scalar_cubic_units\\RESULT.md",
+    "same_decoded_text": true
+  }
+]

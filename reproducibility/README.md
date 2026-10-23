@@ -1,6 +1,6 @@
 # Reproduce the bounded calculations
 
-The [Version 4.1 technical note](../paper/spin10_pq_technical_note.pdf) reports evidence through source checkpoint `7562f42c14ef1ab5a946fbfc4534509f3378c76b`. The earlier public notes are preserved in [paper/archive](../paper/archive/). The new source update retains the unchanged original archives and overlays new or changed evidence. Publication changes no scientific authority or acceptance.
+The [Version 5 technical note](../paper/spin10_pq_technical_note.pdf) reports evidence through source checkpoint `7db0a6cbbcffc14009e7641afcfb4e9d5d408a78`. The earlier public notes are preserved in [paper/archive](../paper/archive/). The new source update retains the unchanged original archives and overlays new or changed evidence. Publication changes no scientific authority or acceptance.
 
 ## Check the package first
 
@@ -49,7 +49,7 @@ The unchanged **base** contains 15,909 selected source files at original checkpo
 - [Base part 1](spin10_pq_source_snapshot_v1_part1.zip).
 - [Base part 2](spin10_pq_source_snapshot_v1_part2.zip).
 
-The [Version 3 source manifest](../provenance/source_manifest_v3.json) binds the unchanged v2 manifest and lists the new update archives and complete current source view. The v2 manifest binds the original v1 base manifest. Every old archive/manifest is retained. Each ZIP is an ordinary independent archive. Extract both base parts into a new directory, then extract all v2 updates followed by all v3 updates into that SAME directory, allowing its named replacements. Remove only paths explicitly listed in removed_paths if you need an exact current source view. Base-only historical files otherwise remain archival residue. A short extraction path is useful on Windows.
+The [Version 4 source manifest](../provenance/source_manifest_v4.json) binds the unchanged v3 manifest, which binds v2 and lists the new update archives and complete current source view. The v2 manifest binds the original v1 base manifest. Every old archive/manifest is retained. Each ZIP is an ordinary independent archive. Extract both base parts into a new directory, then extract all v2 updates followed by all v3 updates and finally all v4 updates into that SAME directory, allowing its named replacements. Remove only paths explicitly listed in removed_paths if you need an exact current source view. Base-only historical files otherwise remain archival residue. A short extraction path is useful on Windows.
 
 For exact assembly, an optional standard-library helper verifies the whole release first and requires a new, empty destination:
 
@@ -57,7 +57,7 @@ For exact assembly, an optional standard-library helper verifies the whole relea
 python -B reproducibility/assemble_source.py C:/spin10-source
 ```
 
-The update exports all tracked source paths at the frozen checkpoint; it includes the completed evidence through V421; work after the frozen checkpoint is excluded. Broad provenance and intermediate records are retained to avoid omitting dependencies; archive inclusion is not endorsement of every historical claim.
+The update exports all tracked source paths at the frozen checkpoint; it includes the completed evidence through V514; work after the frozen checkpoint is excluded. Broad provenance and intermediate records are retained to avoid omitting dependencies; archive inclusion is not endorsement of every historical claim.
 
 The separate `external/research-control-records/` namespace contains referenced external preparation/verifier/control folders, including preserved failures. Its manifest records the original absolute paths. Historical policy bytes are stored separately under `historical/<commit>/`. Neither namespace substitutes its files for live policy or silently rewrites historical manifests.
 
@@ -102,18 +102,37 @@ python -I -S -B run.py --method slot
 python -I -S -B run.py --method left
 ```
 
-This pilot requires **Python 3.11+**, independently of the older Python 3.10 scalar environment. It uses the standard library, relative inputs and exact arithmetic. Each method computes all 99,256 positions of the retained classical gauge-fixing/Hessian identity before reading the expected table. It does not reproduce the scalar mass spectrum, full quantum action, upstream physical assumptions or E5/A5. Both methods are executed in an isolated copy for this release.
+This pilot requires **Python 3.11+**, independently of the older Python 3.10 scalar environment. It uses the standard library, relative inputs and exact arithmetic. Each method computes all 99,256 positions of the retained classical gauge-fixing/Hessian identity before reading the expected table. It does not reproduce the scalar mass spectrum, full quantum action, upstream physical assumptions or E5/A5. Both methods were executed in an isolated copy for the previous release; their unchanged code/input bytes and completed captures are reused for this update.
 
 ## What was checked for this update
 
-The [claim authentication](../provenance/claim_authentication_v3.json) checks the selected completed receipts and their byte, input, external and supplemental SHA-256 maps. Historical policy hashes are authenticated at their recorded Git objects, separately from current AGENTS.md. The [original publication validation](../provenance/packaging_validation_v3.json) records package/member checks, actual short replays, PDF compilation and visual inspection, checks omitted and preserved packaging failures. The [Version 4.1 editorial review](../provenance/editorial_review_v1.json) records the wording correction, current-status comparison and PDF checks; it reuses the unchanged prior scientific replay evidence.
+The [current claim authentication](../provenance/claim_authentication_v4.json) checks the selected completed receipts and their byte, input, external and supplemental SHA-256 maps. Historical policy hashes are authenticated at their recorded Git objects, separately from current AGENTS.md. The [original publication validation](../provenance/packaging_validation_v3.json) records package/member checks, actual short replays, PDF compilation and visual inspection, checks omitted and preserved packaging failures. The earlier [Version 4.1 editorial review](../provenance/editorial_review_v1.json) records the wording correction, current-status comparison and PDF checks; it reuses the unchanged prior scientific replay evidence.
 
 No expensive Hessian, complete contact, quartic, singlet-pole or quantum calculation was repeated for publication. Receipt authentication is not a fresh scientific replay. Full original Git history is absent: historical Git-custody checks cannot be recreated from this flat export alone. Original custody exit 2/seven unresolved references remains unresolved, not PASS.
 
 The archived project_state.json remains a fixed original input at version 113. It creates no second live authority ledger. Earlier failed benchmarks, closed parameter families, blocked quantum stages and paused flavor retain their classifications.
 
-The singlet momentum combinations have different local-subtraction sensitivity from the retained 140% pole shift. The two-loop internal Yukawa carrier supplies a real missing input; no scalar-only truncation is promoted to a complete two-loop error bound. The four primitive amplitude families have different UV/IR completion scopes, not a common fully renormalized threshold status.
+The singlet momentum combinations have different local-subtraction sensitivity from the retained 140% pole shift. The two-loop internal Yukawa carrier supplies a real missing input; no scalar-only truncation is promoted to a complete two-loop error bound. All nine retained bosonic families and their fixed-reference finite assembly are now included. The hierarchy test fails at the three retained couplings; full massive matter C1 and physical matching remain open.
 
 The new point's global quartic and contact certificates are classical, point-specific results. Its large singlet correction is a warning against a small-correction expansion, not a reliable predicted mass or an exclusion of every input prescription. Preferred vacuum, quantum control, complete gauge/IR scattering, finite thresholds and realistic phenomenology remain open. Different routes share assumptions, inputs, software and an AI-assisted solo analyst; they are not external verification.
 
 Version 4.1 is an editorial clarification of Version 4: the mismatch and singlet cut are described as calculated/computed, without an experimental connotation. Scientific results and the frozen checkpoint are unchanged. The original Version 4 note is preserved in paper/archive; prior packaging receipts remain historical evidence.
+
+## Update of 22 October 2026
+
+The [current packaging validation](../provenance/packaging_validation_v5.json) records this release's checks and omissions. All previous manifests, receipts and source archives remain unchanged. The exact current assembly uses source layers v1 through v4:
+
+- [v4 update part 1](spin10_pq_source_update_v4_part1.zip).
+- [v4 update part 2](spin10_pq_source_update_v4_part2.zip).
+
+| Current evidence | Records |
+| --- | --- |
+| Complete retained bosonic finite assembly | [Fixed-reference assembly](calculations/canonical_so10_finite_assembly_nielsen/RESULT.md), [nine-family UV sum](calculations/canonical_so10_nine_family_uv_assembly/RESULT.md), [formal source-region/width domain](calculations/canonical_so10_source_region_matching/RESULT.md) |
+| Failed bosonic hierarchy and scale screen | [Endpoints](calculations/canonical_so10_bosonic_loop_hierarchy/RESULT.md), [actual interior point](calculations/canonical_so10_bosonic_interior_assembly/RESULT.md), [frozen common-log bound](calculations/canonical_so10_common_scale_bound/RESULT.md) |
+| Point and singlet attribution | [Distinct reference scopes](calculations/canonical_so10_benchmark_scope_reconciliation/RESULT.md), [existing finite-witness portal/singlet evidence](calculations/canonical_so10_singlet_portal_scope/RESULT.md) |
+| Symbolic matter UV normalization | [Yukawa parameter poles](calculations/canonical_so10_yukawa_counterterm_assembly/RESULT.md), [proper source projection](calculations/canonical_so10_matter_source_uv_assembly/RESULT.md), [proper gauge-vertex projection](calculations/canonical_so10_matter_gauge_vertex_normalization/RESULT.md) |
+| Selected finite fermion comparison | [Scalar reference](calculations/canonical_so10_scalar_yukawa_reference/RESULT.md), [mixed finite families](calculations/canonical_so10_mixed_bosonic_finite_difference/RESULT.md), [complete selected bosonic functional and algebraic Ward image](calculations/canonical_so10_bosonic_fermion_finite_ward/RESULT.md) |
+
+The bosonic threshold uses the old eta=3/10 reference. Its loop failure is not a calculation at the distinct eta=1/10000 classical witness. The latter's qualified 140% singlet warning was already present and remains. A completed verification receipt can correctly authenticate a failed physical screen.
+
+The fermion comparison is mass-independent, parity-even, closed-loop and restricted to its declared Euclidean domain. Its algebraic Ward image is not a newly integrated quantum breaking insertion, a complete chiral regulator or a full massive physical threshold. Numerical flavor remains paused. Newer live work after the frozen checkpoint is excluded.

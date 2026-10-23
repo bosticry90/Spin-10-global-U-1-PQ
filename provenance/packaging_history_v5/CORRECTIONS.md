@@ -1,0 +1,3 @@
+Two initial PDF line-width warnings were corrected by rewriting a reference sentence and replacing an unbreakable locator paragraph. The initial TeX and complete log are preserved. Final compilation has no layout warnings; all eleven rendered pages were inspected. No scientific calculation or frozen input was changed.
+
+A premature assembly launch failed because the publication manifest was not ready. It wrote no extracted files. Complete stdout/stderr and its classification are preserved here. The sealing operation then completed; the unchanged assembly helper was rerun against the complete manifest. This is a packaging coordination failure, not a scientific result.

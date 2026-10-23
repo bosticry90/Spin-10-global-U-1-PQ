@@ -1,0 +1,12 @@
+{
+  "capture_sha256": "a015cde79c8590a5dc486c29e3f19963b16c4ef0685fdf6f191edf9d12f55272",
+  "execution_state": "FAILED",
+  "first_failure": "symbolic positive-mass homogeneity identity comparison; direct finite homogeneity tolerance already passed before this assertion",
+  "next_action": "exact positive-log normal form with residual certificate; same physics/tolerances/resource caps",
+  "schema": "V3A1_FAILURE",
+  "scientific_qualification": "NOT_ISSUED",
+  "unexecuted": [
+    "original replay",
+    "original validation"
+  ]
+}

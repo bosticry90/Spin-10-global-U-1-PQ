@@ -1,0 +1,15 @@
+{
+  "actual_frozen_native_status": "QUALIFIED_HPR1_EXPLICIT_POLE_AND_FINITE_MUTATIONS",
+  "calculation_rerun": false,
+  "classification": "COPIED_EXPECTED_STATUS_LITERAL_MISMATCH",
+  "completed_native_capture_sha256": "5e9c77f56c046038bf988f7b2d984566e75d764580a2e6e67727cd5956a8397f",
+  "execution_state": "FAILED",
+  "exit_code": 1,
+  "expected_wrong_status": "QUALIFIED_HPR1_MUTATION_CONTROLS",
+  "failed_controller_counted_as_PASS": false,
+  "failed_controller_sha256": "395b2bd85c672493fd705d30637064da186708b69ff96856de57e8d6bd2d5abb",
+  "observed_controller_output": "Traceback (most recent call last):\n  File \"C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_hard_pole_remainder\\run_supplement.py\", line 17, in <module>\n    assert v[0]['status']=='QUALIFIED_HPR1_MUTATION_CONTROLS' and v[0]['elapsed_after_imports']<600\nAssertionError\n",
+  "schema": "HPR1_CONTROLLER_FAILURE",
+  "scientific_worker_execution_state": "COMPLETED",
+  "tool_chunk_id": "4a6436"
+}

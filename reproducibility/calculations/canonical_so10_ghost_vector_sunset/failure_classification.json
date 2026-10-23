@@ -1,0 +1,12 @@
+{
+  "classification": "INPUT_SERIALIZATION_READER_ERROR; NOT_PHYSICS_COUNTEREXAMPLE",
+  "controller": "FAILED_AFTER_PRESERVING_NATIVE_FAILURE",
+  "correction": "data_v2 uses json.loads(read_bytes()). All immutable receipt bytes, field names, kernel values, precision and acceptance conditions unchanged.",
+  "error": "light_kernel called gzip unpacker on the actual uncompressed GVM1 JSON receipt.",
+  "native_capture_sha256": "debbf0e225f66b113035ee8bb0e4312d9397548a46db3a24483e293b48c2b2ac",
+  "native_primary_execution": "FAILED",
+  "native_primary_exit": 1,
+  "schema": "GVA1_PRESERVED_FAILURE",
+  "scientific_acceptance": "NOT_PERFORMED",
+  "unfinished_results": "No primary assembled table saved. Original replay and verifier UNEXECUTED. No intermediate native computation counted as completed evidence."
+}
