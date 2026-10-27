@@ -2,7 +2,7 @@
 
 This repository shares an AI-assisted investigation of a candidate grand unified model. The plain-language explanation below describes the idea, the progress and the limitations. The technical note and reproducibility materials provide the equations, code and evidence.
 
-**[Read the technical note, Version 5](paper/spin10_pq_technical_note.pdf)** · [Editable LaTeX source](paper/spin10_pq_technical_note.tex) · [Reproduction guide](reproducibility/README.md)
+**[Read the technical note, Version 6](paper/spin10_pq_technical_note.pdf)** · [Editable LaTeX source](paper/spin10_pq_technical_note.tex) · [Reproduction guide](reproducibility/README.md)
 
 ## A plain-language explanation
 
@@ -26,13 +26,13 @@ At the newer classical point, a one-loop correction to the singlet’s squared m
 
 Gauge unification remains unresolved. The earlier approximate calculation does not make the three force couplings meet. The two-loop calculation involving force and scalar fields is now assembled at the older parameter choice. At three tested settings, its corrections are larger than the starting terms, so these expressions do not support a controlled prediction. The complete matter contribution and physical matching remain unfinished. This does not exclude every parameter choice of the construction.
 
-Recent work also organizes how fermion interactions and symmetry relations behave under quantum corrections. It supplies symbolic normalization results and a restricted finite comparison, with the remaining assumptions stated explicitly. These results do not establish the complete physical quantum theory or erase the failed tests. The technical note explains those boundaries.
+Recent work extends selected one-loop symmetry and normalization calculations, including a bounded local symmetry relation and products of auxiliary source insertions. The newest analysis makes a remaining gap explicit: checking those pieces does not yet establish the full connected response when the fields themselves adjust. Tadpole, mean-response and joint infrared requirements remain unresolved. These results do not establish the complete quantum theory or erase the earlier failed tests.
 
 ### What role does AI play?
 
 This is a solo, AI-assisted investigation. LLMs helped develop derivations, write calculation and verification code, and prepare the explanations. The repository owner directs the project and retains responsibility for scientific interpretation and acceptance.
 
-Different computational routes can catch mistakes, but they share model assumptions, some inputs and software, and AI-assisted authorship. They are not independent scientists or outside confirmation. Failed calculations and corrections are part of the record. A program returning “PASS” supports only the test it actually performed.
+Different computational routes can catch mistakes, but they share model assumptions, some inputs and software, and AI-assisted authorship. They are not independent scientists or outside confirmation. Failed calculations and corrections are part of the record. A program returning “PASS” supports only the test it actually performed. In one recent finite test, two methods agreed because both shared the same wrong translation from an action to a Hessian. Direct evaluation of that test action caught the mistake. The corrected test and rejected outputs are preserved; agreement alone was insufficient.
 
 ### What can a reader reasonably conclude?
 
@@ -45,7 +45,7 @@ For details, start with the technical note and reproduction guide linked above. 
 The scalar content is a real 54, a complex self-dual 126, a complex 10, and a complex singlet, with global Peccei–Quinn selection rules and no supersymmetry.
 
 
-Updated 22 October 2026, from source checkpoint `7db0a6cbbcffc14009e7641afcfb4e9d5d408a78`. The earlier positive-quartic point subsequently failed a perturbativity screen. A different exploratory point has stronger classical certificates but a large one-loop singlet correction. Neither is an established physical benchmark.
+Updated 26 October 2026, from source checkpoint `e08257cd2133031e11b255a1ec17173ddb85628a`. The earlier positive-quartic point subsequently failed a perturbativity screen. A different exploratory point has stronger classical certificates but a large one-loop singlet correction. Neither is an established physical benchmark.
 
 The construction follows established GUT and PQ literature, especially [Babu and Khan (2015)](https://arxiv.org/abs/1507.06712). Its scalar potential is a separately specified source-derived variant. Published benchmarks, fermion fits, and unification conclusions are not adopted as results for this variant. No new unification principle or exhaustive novelty claim is asserted.
 
@@ -67,7 +67,9 @@ The construction follows established GUT and PQ literature, especially [Babu and
 | Bosonic loop hierarchy | At gauge coupling squared 1/2, 3/4 and 1, the two-loop kinetic term exceeds tree and one loop in all three factors | These tested bosonic truncations fail the necessary hierarchy screen; no general model exclusion |
 | Bosonic two-loop assembly | All nine retained primitive families, prescribed finite subtraction and the heavy-tadpole bridge are assembled at the older point | A fixed-reference bosonic coefficient, not complete massive matter C1 or physical unification |
 | Frozen common-scale test | Minimum common-log maximum two-loop/tree magnitude is about 3.20, 4.83 and 6.93 at those couplings | Changing only the explicit logarithm cannot repair the frozen hierarchy; this is not full RG evolution |
-| Symbolic fermion progress | One-loop Yukawa/source/gauge UV normalization and a selected closed-loop parity-even finite functional with its algebraic Ward image | No numerical flavor fit, complete chiral prescription or finite massive matter threshold |
+| Symbolic fermion progress | Selected finite open-spinor/vertex comparisons and an exact-once marginal normalization family extend the earlier UV/closed-loop results | Declared one-loop Euclidean domains; no numerical flavor fit, full chiral prescription or massive matter threshold |
+| Local Ward and proper source products | A bounded first-u local relative T/F relation and a common proper nonminimal-source product extension are constructed under their analytic premises | Not a full connected Ward/QAP theorem; source-quadratic finite freedom and broader domains remain open |
+| Connected-response boundary | Actual classical endpoints, nonlinear finite integration tests and a conditional adjoint reduction are checked | Full nonlinear mean/tadpole transport and general-Schwartz joint sewing are not established |
 
 The initial Stage 2 failure does not refute every point of the construction. Gauge matching uses the earlier +0.10486 point, whose subsequent perturbativity failure is retained. Its spectrum, thresholds and loop results are not transferred to the newer exploratory point. Missing finite thresholds are not assumed to rescue the mismatch. Diagnostic fitted scales are not physical predictions.
 
@@ -75,13 +77,13 @@ Global quartic positivity is now certified at one exploratory point. The preferr
 
 ## What the materials contain
 
-- The updated Version 5 note and editable source, with public Versions 2, 3, 4 and 4.1 preserved in [paper/archive](paper/archive/).
+- The updated Version 6 note and editable source, with public Versions 2, 3, 4, 4.1 and 5 preserved in [paper/archive](paper/archive/).
 - Browsable scalar/gauge calculation programs, frozen scalar points, and recorded results.
 - The unchanged original source archives plus a versioned update covering the frozen tracked source tree and referenced external research-control materials, including failed attempts.
 - A [closed portable Hessian pilot](reproducibility/portable_dh_v1/README.md), requiring Python 3.11+ and only the standard library.
 - SHA-256 manifests and a verifier that authenticate packaged bytes without executing or scientifically accepting the calculations.
 
-This publication is a fixed snapshot of committed evidence through the stated checkpoint. The [V514 handoff](reproducibility/RESEARCH_EXECUTION_HANDOFF_V514.md) supplies the frozen continuation context; work after that checkpoint is excluded. Classical certificates and conditional quantum results retain their precise assumptions; earlier failed and blocked evidence remains classified as such. Formal scientific authority remains version 113, at 34 of 39 ledger items. Historical custody is not a global pass.
+This publication is a fixed snapshot of committed evidence through the stated checkpoint. The [V661 handoff](reproducibility/RESEARCH_EXECUTION_HANDOFF_V661.md) supplies the frozen continuation context; work after that checkpoint is excluded. Classical certificates and conditional quantum results retain their precise assumptions; earlier failed and blocked evidence remains classified as such. Formal scientific authority remains version 113, at 34 of 39 ledger items. Historical custody is not a global pass.
 
 The [reproduction guide](reproducibility/README.md) distinguishes byte checks, quick computational checks, expensive replays, and historical Git-custody limits. It records exactly which checks were performed for packaging.
 

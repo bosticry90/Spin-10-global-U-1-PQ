@@ -1,6 +1,6 @@
 # Reproduce the bounded calculations
 
-The [Version 5 technical note](../paper/spin10_pq_technical_note.pdf) reports evidence through source checkpoint `7db0a6cbbcffc14009e7641afcfb4e9d5d408a78`. The earlier public notes are preserved in [paper/archive](../paper/archive/). The new source update retains the unchanged original archives and overlays new or changed evidence. Publication changes no scientific authority or acceptance.
+The [Version 6 technical note](../paper/spin10_pq_technical_note.pdf) reports evidence through source checkpoint `e08257cd2133031e11b255a1ec17173ddb85628a`. The earlier public notes are preserved in [paper/archive](../paper/archive/). The new source update retains the unchanged original archives and overlays new or changed evidence. Publication changes no scientific authority or acceptance.
 
 ## Check the package first
 
@@ -14,7 +14,7 @@ This reads every release file and every member of the base and update archives, 
 
 ## Read the current results
 
-The final [handoff V421](RESEARCH_EXECUTION_HANDOFF_V421.md) records the current frozen continuation. State version 113 and formal authority 34/39 are unchanged. The current completed results include formal one-loop UV/normalization constructions, compact-domain graded causal/QAP work, additional singlet momentum diagnostics, and four scoped two-loop primitive amplitude families. Full finite C1, unification and physical viability remain unresolved.
+The [handoff V661](RESEARCH_EXECUTION_HANDOFF_V661.md) records the current frozen continuation. State version 113 and formal authority 34/39 are unchanged. The completed results include formal one-loop UV/normalization constructions, compact-domain graded causal/QAP work, singlet momentum diagnostics, all nine retained bosonic two-loop families and their fixed-reference finite assembly, and selected local Ward/proper-source-product extensions. The connected-response bridge, full massive matter C1, unification and physical viability remain unresolved. The dated sections below distinguish the successive snapshots and their limits.
 
 The C1 program uses the older positive-Higgs point (hash 476645438ea8a7ada42fea90e80174b772d45ce3e729d013d134e9848950c816) and its specified background-field Feynman-gauge reference. The newer classical witness and its singlet diagnostics use different scalar inputs. The 643-field formal nonlinear-source construction is another precisely defined computational scope. Do not transfer results or assume equivalence between them.
 
@@ -49,7 +49,7 @@ The unchanged **base** contains 15,909 selected source files at original checkpo
 - [Base part 1](spin10_pq_source_snapshot_v1_part1.zip).
 - [Base part 2](spin10_pq_source_snapshot_v1_part2.zip).
 
-The [Version 4 source manifest](../provenance/source_manifest_v4.json) binds the unchanged v3 manifest, which binds v2 and lists the new update archives and complete current source view. The v2 manifest binds the original v1 base manifest. Every old archive/manifest is retained. Each ZIP is an ordinary independent archive. Extract both base parts into a new directory, then extract all v2 updates followed by all v3 updates and finally all v4 updates into that SAME directory, allowing its named replacements. Remove only paths explicitly listed in removed_paths if you need an exact current source view. Base-only historical files otherwise remain archival residue. A short extraction path is useful on Windows.
+The [Version 5 source manifest](../provenance/source_manifest_v5.json) lists the new update archives and complete current source view. It binds the unchanged v4 manifest; the retained chain continues through v3 and v2 to the original v1 base manifest. Every old archive/manifest is retained. Each ZIP is an ordinary independent archive. Extract both base parts into a new directory, then extract all v2 updates followed by all v3 and v4 updates, then all v5 updates into that SAME directory, allowing its named replacements. Remove only paths explicitly listed in removed_paths if you need an exact current source view. Base-only historical files otherwise remain archival residue. A short extraction path is useful on Windows.
 
 For exact assembly, an optional standard-library helper verifies the whole release first and requires a new, empty destination:
 
@@ -57,7 +57,7 @@ For exact assembly, an optional standard-library helper verifies the whole relea
 python -B reproducibility/assemble_source.py C:/spin10-source
 ```
 
-The update exports all tracked source paths at the frozen checkpoint; it includes the completed evidence through V514; work after the frozen checkpoint is excluded. Broad provenance and intermediate records are retained to avoid omitting dependencies; archive inclusion is not endorsement of every historical claim.
+The update exports all tracked source paths at the frozen checkpoint; it includes the completed evidence through V661; work after the frozen checkpoint is excluded. Broad provenance and intermediate records are retained to avoid omitting dependencies; archive inclusion is not endorsement of every historical claim.
 
 The separate `external/research-control-records/` namespace contains referenced external preparation/verifier/control folders, including preserved failures. Its manifest records the original absolute paths. Historical policy bytes are stored separately under `historical/<commit>/`. Neither namespace substitutes its files for live policy or silently rewrites historical manifests.
 
@@ -106,7 +106,7 @@ This pilot requires **Python 3.11+**, independently of the older Python 3.10 sca
 
 ## What was checked for this update
 
-The [current claim authentication](../provenance/claim_authentication_v4.json) checks the selected completed receipts and their byte, input, external and supplemental SHA-256 maps. Historical policy hashes are authenticated at their recorded Git objects, separately from current AGENTS.md. The [original publication validation](../provenance/packaging_validation_v3.json) records package/member checks, actual short replays, PDF compilation and visual inspection, checks omitted and preserved packaging failures. The earlier [Version 4.1 editorial review](../provenance/editorial_review_v1.json) records the wording correction, current-status comparison and PDF checks; it reuses the unchanged prior scientific replay evidence.
+The [current claim authentication](../provenance/claim_authentication_v5.json) checks the selected completed receipts and their byte, input, external and supplemental SHA-256 maps. Historical policy hashes are authenticated at their recorded Git objects, separately from current AGENTS.md. The [original publication validation](../provenance/packaging_validation_v3.json) records package/member checks, actual short replays, PDF compilation and visual inspection, checks omitted and preserved packaging failures. The earlier [Version 4.1 editorial review](../provenance/editorial_review_v1.json) records the wording correction, current-status comparison and PDF checks; it reuses the unchanged prior scientific replay evidence.
 
 No expensive Hessian, complete contact, quartic, singlet-pole or quantum calculation was repeated for publication. Receipt authentication is not a fresh scientific replay. Full original Git history is absent: historical Git-custody checks cannot be recreated from this flat export alone. Original custody exit 2/seven unresolved references remains unresolved, not PASS.
 
@@ -120,7 +120,7 @@ Version 4.1 is an editorial clarification of Version 4: the mismatch and singlet
 
 ## Update of 22 October 2026
 
-The [current packaging validation](../provenance/packaging_validation_v5.json) records this release's checks and omissions. All previous manifests, receipts and source archives remain unchanged. The exact current assembly uses source layers v1 through v4:
+The [Version 5 packaging validation](../provenance/packaging_validation_v5.json) records that release's checks and omissions. All previous manifests, receipts and source archives remain unchanged. That release's assembly used source layers v1 through v4:
 
 - [v4 update part 1](spin10_pq_source_update_v4_part1.zip).
 - [v4 update part 2](spin10_pq_source_update_v4_part2.zip).
@@ -135,4 +135,33 @@ The [current packaging validation](../provenance/packaging_validation_v5.json) r
 
 The bosonic threshold uses the old eta=3/10 reference. Its loop failure is not a calculation at the distinct eta=1/10000 classical witness. The latter's qualified 140% singlet warning was already present and remains. A completed verification receipt can correctly authenticate a failed physical screen.
 
-The fermion comparison is mass-independent, parity-even, closed-loop and restricted to its declared Euclidean domain. Its algebraic Ward image is not a newly integrated quantum breaking insertion, a complete chiral regulator or a full massive physical threshold. Numerical flavor remains paused. Newer live work after the frozen checkpoint is excluded.
+The fermion comparison reported in that release is mass-independent, parity-even, closed-loop and restricted to its declared Euclidean domain. Its algebraic Ward image is not a newly integrated quantum breaking insertion, a complete chiral regulator or a full massive physical threshold. Numerical flavor remains paused. Work after that release's checkpoint was excluded; the following update records subsequent evidence through the current frozen checkpoint.
+
+## Update of 26 October 2026
+
+The [current packaging validation](../provenance/packaging_validation_v6.json) records this release. The exact current source view is frozen at handoff V661; layers v1 through v5 and all original scientific records remain separate and unchanged. New downloads:
+
+- [spin10_pq_source_update_v5_part1.zip](spin10_pq_source_update_v5_part1.zip).
+- [spin10_pq_source_update_v5_part2.zip](spin10_pq_source_update_v5_part2.zip).
+- [spin10_pq_source_update_v5_part3.zip](spin10_pq_source_update_v5_part3.zip).
+- [spin10_pq_source_update_v5_part4.zip](spin10_pq_source_update_v5_part4.zip).
+- [spin10_pq_source_update_v5_part5.zip](spin10_pq_source_update_v5_part5.zip).
+- [spin10_pq_source_update_v5_part6.zip](spin10_pq_source_update_v5_part6.zip).
+- [spin10_pq_source_update_v5_part7.zip](spin10_pq_source_update_v5_part7.zip).
+- [spin10_pq_source_update_v5_part8.zip](spin10_pq_source_update_v5_part8.zip).
+- [spin10_pq_source_update_v5_part9.zip](spin10_pq_source_update_v5_part9.zip).
+- [spin10_pq_source_update_v5_part10.zip](spin10_pq_source_update_v5_part10.zip).
+- [spin10_pq_source_update_v5_history.zip](spin10_pq_source_update_v5_history.zip).
+
+| New scope | Evidence and boundaries |
+| --- | --- |
+| Open fermion and shared normalization | [Physical spinor/kinetic comparison](calculations/canonical_so10_open_fermion_finite_kinetic/RESULT.md), [finite proper Yukawa vertex](calculations/canonical_so10_finite_yukawa_vertex_comparison/RESULT.md), [exact-once selected marginal family](calculations/canonical_so10_joint_marginal_fermion_normalization/RESULT.md) |
+| Local relative Ward relation | [Dimensional/common-domain reconciliation](calculations/canonical_so10_u_dimensional_reconciliation/RESULT.md), [defect-inclusive first-u relation](calculations/canonical_so10_u_projected_ward_terms/RESULT.md) |
+| Proper source products | [Common extension and corrected shared-error fixture](calculations/canonical_so10_nonminimal_source_products/RESULT.md), [binding proper/connected distinction](calculations/canonical_so10_nonminimal_source_products/SOURCE_PRODUCT_SCOPE.md) |
+| Remaining connected bridge | [Endpoints and nonlinear sewing](calculations/canonical_so10_connected_source_sewing/RESULT.md), [covariance-label clarification](calculations/canonical_so10_connected_source_sewing/COVARIANCE_CLARIFICATION.md), [conditional adjoint proof](calculations/canonical_so10_connected_source_sewing/ADJOINT_PROOF.md) |
+
+The newest first-u constructions are one-loop, Euclidean, coefficientwise formal families with independent Schwartz test slots and positive scalar reference masses. UV finite part precedes IR removal; reference masses are not physical masses. Proper products at fixed means do not by themselves qualify connected W products. Full tadpole/mean transport, joint sewing, source reality, global phase, broader Ward/QAP and physical-vacuum obligations remain open.
+
+Two source-product matrix routes shared an incorrect finite-fixture action-to-Hessian translation. Direct Wick/Berezin evaluation caught it; the actual model's established Hessian convention was retained. An intermediate nullspace's background-covariance label was also rejected and replaced by a separately derived conditional adjoint statement. All original failures, clarification documents and accepted versions remain available.
+
+Some preparatory receipts authenticate user-supplied review attachments outside the scientific source tree. Their hashes are checked, but those original attachment files are not copied as standalone public files. Reproducing every original preparation/custody operation can require these originals and historical Git state. The closed portable pilot remains the explicitly self-contained replay; do not bypass historical integrity guards or infer full portability from a package hash check.

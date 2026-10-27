@@ -1,0 +1,34 @@
+{
+  "schema": "SPIN10_PQ_PUBLICATION_METADATA_V6",
+  "published_note_version": 6,
+  "publication_date": "26 October 2026",
+  "source_commit": "e08257cd2133031e11b255a1ec17173ddb85628a",
+  "source_handoff": "V661",
+  "source_state_version": 113,
+  "source_state_sha256": "d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8",
+  "source_files": 40433,
+  "external_files": 7870,
+  "historical_files": 9,
+  "scientific_acceptance": "NOT_PERFORMED_BY_PUBLICATION",
+  "authority": "34/39_UNCHANGED",
+  "changes": [
+    "Further selected one-loop finite fermion/source normalization",
+    "Bounded local relative first-u Ward relation",
+    "Common proper nonminimal-source product family with source2 freedom retained",
+    "Actual connected endpoints and nonlinear finite tests; tadpole/mean/joint sewing still unqualified",
+    "Shared finite-fixture semantic error and covariance-label correction disclosed"
+  ],
+  "retained_physical_status": [
+    "Old bosonic hierarchy fails at tested couplings",
+    "Distinct finite witness retains large singlet correction",
+    "No full massive matter C1, physical unification or viable quantum vacuum"
+  ],
+  "work_after_frozen_checkpoint": "EXCLUDED",
+  "shared_limits": "Action, analytic/domain premises, inputs, software and AI authorship; no independent scientist, whole-model proof assistant or experiment",
+  "omissions": [
+    "No new scientific integrals or fit",
+    "No physical point/scheme adoption",
+    "No full connected QAP/measure/global-phase proof",
+    "Original Git custody and standalone review attachments not reproduced"
+  ]
+}

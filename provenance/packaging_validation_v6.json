@@ -1,0 +1,147 @@
+{
+  "schema": "SPIN10_PQ_PACKAGING_VALIDATION_V6",
+  "execution_state": "COMPLETED",
+  "validated_at_utc": "2026-10-27T03:38:58.191034+00:00",
+  "publication_date": "26 October 2026",
+  "note_version": 6,
+  "source_commit": "e08257cd2133031e11b255a1ec17173ddb85628a",
+  "handoff": "V661",
+  "scientific_acceptance": "NOT_PERFORMED",
+  "director_acceptance": "NOT_INFERRED",
+  "receipt_authentication": {
+    "selected_receipts": 79,
+    "binding_checks": 111841,
+    "counts_repeat_shared_inputs": true,
+    "historical_inputs": 7,
+    "mismatches": []
+  },
+  "source_export": {
+    "execution_state": "COMPLETED",
+    "source_commit": "e08257cd2133031e11b255a1ec17173ddb85628a",
+    "source_files": 40433,
+    "external_files": 7870,
+    "new_archive_members": 10794,
+    "new_source_files": 9286,
+    "total_read_bytes": 4353267258,
+    "archives": [
+      {
+        "filename": "spin10_pq_source_update_v5_part1.zip",
+        "sha256": "9282bc6a75bc9c44f35aaae2204ed2b9038f8d26a976b5505f7f32e0e137dc3c",
+        "size_bytes": 38976875,
+        "file_count": 1082
+      },
+      {
+        "filename": "spin10_pq_source_update_v5_part2.zip",
+        "sha256": "b5bd9946d5e321681a60d559a6a70133f239adcb417ccfd7c6dd350af15f3531",
+        "size_bytes": 42958526,
+        "file_count": 1160
+      },
+      {
+        "filename": "spin10_pq_source_update_v5_part3.zip",
+        "sha256": "53aca53778d22c3f45db8d819a8ebb10c6fd45e572a50500f7dd1bbc3d7583c7",
+        "size_bytes": 43485388,
+        "file_count": 1599
+      },
+      {
+        "filename": "spin10_pq_source_update_v5_part4.zip",
+        "sha256": "315103676a010b516ccb1ba052d6b7ad038549fbfae1041e9cd8690716eb72dc",
+        "size_bytes": 43465739,
+        "file_count": 1444
+      },
+      {
+        "filename": "spin10_pq_source_update_v5_part5.zip",
+        "sha256": "fbfdd8c8137976124b11408d4e86b45d22d194f6e3ecad12a16ed75d09404cd3",
+        "size_bytes": 43486606,
+        "file_count": 972
+      },
+      {
+        "filename": "spin10_pq_source_update_v5_part6.zip",
+        "sha256": "e23edb21defd94c29c594660fe44129b8154577f0393ee1e0d6e30c48aad1fb3",
+        "size_bytes": 43601597,
+        "file_count": 1183
+      },
+      {
+        "filename": "spin10_pq_source_update_v5_part7.zip",
+        "sha256": "ff86eb6b8789598eb947001b02cbb3b71200e69d20359dd2d609cacd641a1766",
+        "size_bytes": 42662670,
+        "file_count": 702
+      },
+      {
+        "filename": "spin10_pq_source_update_v5_part8.zip",
+        "sha256": "35c6e89bdb3975dbf395ba0588bb3fd70133d154627f5c384818b9b49644091c",
+        "size_bytes": 43351847,
+        "file_count": 1513
+      },
+      {
+        "filename": "spin10_pq_source_update_v5_part9.zip",
+        "sha256": "a6963652dd9b7d64a85464dca2a9c653f8436299c742dfc6ce40a215ca2ebe1a",
+        "size_bytes": 43358839,
+        "file_count": 747
+      },
+      {
+        "filename": "spin10_pq_source_update_v5_part10.zip",
+        "sha256": "35726b2e2c52720cfb6c5b081b803172d81d1d1d1ce40c0cc54d4bb866682610",
+        "size_bytes": 23583159,
+        "file_count": 392
+      }
+    ],
+    "unresolved_external_paths": [],
+    "elapsed_seconds": 318.40600000001723
+  },
+  "historical_append": {
+    "execution_state": "COMPLETED",
+    "new_historical_members": 2,
+    "archive": {
+      "filename": "spin10_pq_source_update_v5_history.zip",
+      "sha256": "0895a747b02730a45c468876b4d49931eecb1737e0ff4a6d98f3fb59d17b7fba",
+      "size_bytes": 9356,
+      "file_count": 2
+    },
+    "scope": "Exact old CHARTER/conventions Git bytes, separately named; current source and old manifests are not rebound."
+  },
+  "old_unchanged_release_files_checked": 2021,
+  "all_previous_provenance_archives_and_original_v5_note": "EXACTLY_PRESERVED",
+  "browsable_calculations": {
+    "files_checked": 2744,
+    "result": "MATCH_FROZEN_SOURCE_BYTES"
+  },
+  "pdf": {
+    "version": 6,
+    "pages": 13,
+    "sha256": "009594918513042f9ec793e3c44efc6d11323b1232867e6678636ddf3d05446f",
+    "compilation": "SUCCESS",
+    "layout_warnings": [],
+    "visual_review": "ALL_13_RENDERED_PAGES_INSPECTED_NO_CLIPPING_OR_OVERLAP"
+  },
+  "scope_checks": {
+    "selected_local_first_u_relation": true,
+    "proper_source_product_extension_in_scope": true,
+    "connected_endpoints_and_finite_nonlinear_identity_in_scope": true,
+    "native_background_covariance_label": "NOT_ACCEPTED",
+    "actual_tadpole_membership": "NOT_ESTABLISHED",
+    "full_connected_extension": "NOT_ESTABLISHED",
+    "full_quantum_or_physical_claim": false
+  },
+  "reused_portable_pilot": "Both preceding-release replays retained; code, inputs and original receipt/captures unchanged and byte-checked. No repeated scientific execution.",
+  "package_verification": {
+    "expected_archive_members": 48320,
+    "current_assembled_files": 48312,
+    "current_assembled_bytes": 5348400850,
+    "command": "python -B reproducibility/verify_package.py",
+    "scope": "Every current release file and all five source-manifest layers. Final verification and fresh assembly/hash-audit outputs retained outside package to avoid circular manifest self-reference."
+  },
+  "limitations": [
+    "Byte authentication is not fresh scientific replay or acceptance",
+    "No expensive scalar/pole/threshold/fermion integrals repeated",
+    "No full massive matter C1 or new unification fit",
+    "No point, finite scheme or benchmark adoption",
+    "No E5/A5 promotion, blocked-stage activation or flavor resumption",
+    "Historical Git history and standalone original review attachments absent; custody exit2/seven unresolved references not PASS",
+    "Preparatory attachment hashes authenticated; full original custody/preparation replay can require their originals",
+    "Shared action, analytic premises, data, software and AI authorship limit independent assurance"
+  ],
+  "authority": "state113/34of39_UNCHANGED",
+  "state_sha256": "d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8",
+  "next_smallest_scientific_dependency": "V661 leaves actual renormalized auxiliary tadpole membership and the nonlinear connected mean/joint sewing domain unresolved. Publication records these dependencies without executing or promoting them.",
+  "final_editorial_check": "One punctuation correction after initial sealing; recompiled with no warnings and final page12 visually rechecked. Source evidence unchanged."
+}

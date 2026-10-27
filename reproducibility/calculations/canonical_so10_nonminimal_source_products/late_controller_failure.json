@@ -1,0 +1,1 @@
+{"execution_state":"FAILED_OR_INCOMPLETE","failure_relabelled_PASS":false,"traceback":"Traceback (most recent call last):\n  File \"C:\\Users\\psboy\\Documents\\ToE-Next\\calculations\\canonical_so10_nonminimal_source_products\\run_late.py\", line 20, in <module>\n    seal=read(root/'final_review_validation_receipt.json')['new_files_sha256']\nKeyError: 'new_files_sha256'\n"}

@@ -1,0 +1,40 @@
+{
+  "schema": "SPIN10_PQ_PUBLICATION_UPDATE_V7",
+  "frozen_at_utc": "2026-10-27T03:20:17.164524+00:00",
+  "user_facing_date": "26 October 2026",
+  "authorization": "Human owner explicitly requested update of https://github.com/bosticry90/Spin-10-global-U-1-PQ",
+  "source_commit": "e08257cd2133031e11b255a1ec17173ddb85628a",
+  "publication_baseline": "9f94d57d1589689e0b52ea4615f1a43ca1219857",
+  "state_sha256": "d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8",
+  "live_policy_sha256": "187b276c38152e7cef292be6c8294da8b1887ddd0cc35492cf44f291888e9c98",
+  "question": "Update standalone reporting and reproduction of completed evidence, preserving point-specific failures, strict loop/domain distinctions and incomplete finite C1.",
+  "scope": "Exact current tracked source view with existing v1/v2/v3/v4 archives reused; append new/changed source and referenced external control directories. Bind selected actual receipts and historical inputs separately. Preserve public Version 5 and every older archive/manifest. No later live work is chased.",
+  "expected_evidence": [
+    "Selected actual receipts authenticated without scientific reruns",
+    "Every new source file authenticated against frozen Git, with only existing line-ending differences recorded",
+    "Every archive member and release file verified",
+    "Version 6 note compiled/rendered/visually checked",
+    "Prior portable pilot replays reused only after their input and code bytes are verified unchanged",
+    "Staged bytes match checked files; normal push only to authorized publication repository and anonymous public verification"
+  ],
+  "failure_conditions": [
+    "Substantive frozen-source drift",
+    "Missing selected evidence binding",
+    "Unqualified claim or point/scheme transfer",
+    "Truncated evidence or mismatched package bytes",
+    "Unexpected public remote history"
+  ],
+  "authority_ceiling": "PUBLICATION_ONLY_NO_SCIENTIFIC_PROMOTION",
+  "resource_limits": {
+    "seconds": 1800,
+    "total_source_external_bytes": 8000000000,
+    "new_compressed_bytes": 650000000,
+    "new_archive_part_bytes": 48000000
+  },
+  "omissions": [
+    "No expensive original Hessian, finite threshold, pole or quantum replay",
+    "No flavor resumption, new point/scheme, full C1 answer or unification refit",
+    "No original Git history or custody PASS",
+    "No source-repository edits, push or stage activation"
+  ]
+}

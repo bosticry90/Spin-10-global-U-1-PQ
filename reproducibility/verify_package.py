@@ -6,7 +6,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT_SOURCE = "source_manifest_v4.json"
+CURRENT_SOURCE = "source_manifest_v5.json"
 
 
 def read_json(path):
@@ -43,7 +43,7 @@ def source_layers():
 
 
 def main():
-    release = read_json(ROOT / "provenance/publication_manifest_v5.json")
+    release = read_json(ROOT / "provenance/publication_manifest_v6.json")
     layers = source_layers()
     mismatches = []
     for entry in release["release_files"]:

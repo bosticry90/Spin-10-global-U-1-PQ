@@ -1,0 +1,38 @@
+{
+  "commit": "9f94d57d1589689e0b52ea4615f1a43ca1219857",
+  "public_files": [
+    {
+      "path": "README.md",
+      "sha256": "833f939c51a4afc94477560ae96a78a4edf35fdb034de3e920c1a801a4f37244",
+      "expected_sha256": "833f939c51a4afc94477560ae96a78a4edf35fdb034de3e920c1a801a4f37244"
+    },
+    {
+      "path": "reproducibility/README.md",
+      "sha256": "c5d2d98dadc3e7461fc47c560213ad5e3e056be34245a6d3116e7ea39ddcd111",
+      "expected_sha256": "c5d2d98dadc3e7461fc47c560213ad5e3e056be34245a6d3116e7ea39ddcd111"
+    },
+    {
+      "path": "paper/spin10_pq_technical_note.pdf",
+      "sha256": "b8e5938e5f3623d7caff17c2055a5df7718c73e2f94232fcd52016f4fe6b13e6",
+      "expected_sha256": "b8e5938e5f3623d7caff17c2055a5df7718c73e2f94232fcd52016f4fe6b13e6"
+    },
+    {
+      "path": "provenance/snapshot_metadata_v5.json",
+      "sha256": "ead7c7796536171cf08852705c79829bdd690e7625e7241ef2ec1a92c3eacaa8",
+      "expected_sha256": "ead7c7796536171cf08852705c79829bdd690e7625e7241ef2ec1a92c3eacaa8"
+    },
+    {
+      "path": "provenance/claim_authentication_v4.json",
+      "sha256": "bdf806f50dc05d84541427680ea6281b6fbdce8776a58f8f3514e643bbcc6929",
+      "expected_sha256": "bdf806f50dc05d84541427680ea6281b6fbdce8776a58f8f3514e643bbcc6929"
+    },
+    {
+      "path": "provenance/packaging_validation_v5.json",
+      "sha256": "0d9872b1fbf1781c7ba7ab1968d07f6087a04d712e1255a28e0bb6f0556c4dc6",
+      "expected_sha256": "0d9872b1fbf1781c7ba7ab1968d07f6087a04d712e1255a28e0bb6f0556c4dc6"
+    }
+  ],
+  "source_receipt_checks": 59,
+  "mismatches": [],
+  "scientific_calculations_rerun": false
+}
