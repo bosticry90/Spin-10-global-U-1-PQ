@@ -1,0 +1,55 @@
+{
+  "schema": "SPIN10_PQ_PACKAGING_VALIDATION_V7",
+  "execution_state": "COMPLETED",
+  "scope": "Publication validation with full archive check and a final editorial-only rebind.",
+  "validated_at_utc": "2026-11-10T04:02:13.520233+00:00",
+  "note_version": 7,
+  "source_commit": "9a0cd951c49f0ca497a0c864b71af99631e5599b",
+  "handoff": "V1166",
+  "pdf": {
+    "pages": 14,
+    "sha256": "e65e9bf0c2c2110e0a6cd1c9209ec18d093e27f6cb5ec1f25599cfd7ab889205",
+    "compilation": "SUCCESS",
+    "layout_warnings": [],
+    "layout": "Pages 1 and 11\u201314 visually inspected; pages 2\u201310 match the previously inspected Version 6 body and differ only in date header. The first page-9 comparison used an earlier render; repeating against the archived final PDF confirmed the body match."
+  },
+  "tracked_delta": {
+    "files": 11159,
+    "bytes": 563989057,
+    "new_archive_parts": 9,
+    "compressed_bytes": 372660762,
+    "historical_bound_outputs_added": 12
+  },
+  "receipt_authentication": {
+    "owning_receipts": 7,
+    "bound_output_checks": 126,
+    "scope": "At original owning commits. Referenced owner receipt paths checked for presence; no transitive re-execution."
+  },
+  "reuse": "Earlier public notes, manifests, archives, pilot inputs and captures retained; no scientific calculations rerun.",
+  "external_scope": "Historical external control collection carried forward through V661. No newly referenced out-of-tree control records exported or authenticated for this update.",
+  "authority": "state113/34of39_UNCHANGED",
+  "scientific_acceptance": "NOT_PERFORMED",
+  "remaining": [
+    "Weak fixed-state limit and V915 counterexample",
+    "Arbitrary marked contacts and higher-loop restoration",
+    "Full E5/A5 and interacting vacuum phase",
+    "Full massive matter matching, gauge unification and physical viability",
+    "Historical custody exit 2 with seven unresolved references"
+  ],
+  "post_seal_verification": "Run the package verifier over all six source layers and release files, then check staged bytes and public download endpoints. Do not modify the sealed manifest to insert its own results.",
+  "sealed_archive_verification": {
+    "archive_members_checked": 59491,
+    "byte_authentication": "AUTHENTICATED_PACKAGED_BYTES",
+    "current_source_files": 51591,
+    "director_acceptance": "NOT_INFERRED",
+    "execution_state": "COMPLETED",
+    "external_files": 7870,
+    "historical_files": 21,
+    "mismatches": [],
+    "release_files_checked": 2992,
+    "scientific_acceptance": "NOT_PERFORMED",
+    "scientific_calculations_rerun": false,
+    "source_manifest_layers": 6
+  },
+  "final_editorial_delta": "Clarified when the portable pilot was run, recompiled with zero warnings and inspected final page 13. No source layer or research evidence changed after the full package check. Final release hashes are checked against the staged index."
+}

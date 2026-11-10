@@ -1,0 +1,29 @@
+{
+  "schema": "SPIN10_PQ_PUBLICATION_METADATA_V7",
+  "published_note_version": 7,
+  "publication_date": "9 November 2026",
+  "source_commit": "9a0cd951c49f0ca497a0c864b71af99631e5599b",
+  "source_handoff": "V1166",
+  "source_state_version": 113,
+  "source_state_sha256": "d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8",
+  "authority": "34/39_UNCHANGED",
+  "source_files": 51591,
+  "external_files": 7870,
+  "historical_files": 21,
+  "tracked_delta": 11159,
+  "scientific_acceptance": "NOT_PERFORMED_BY_PUBLICATION",
+  "bounded_progress": [
+    "Absolute compact connected functional",
+    "Direct unmarked Lorentzian forest and absolute W1",
+    "Unmarked W3/W4/modified-W5 continuation",
+    "Actual single auxiliary mark",
+    "Specified finite W6 nonlinear ghost/source replacement with nonzero repeated connected response"
+  ],
+  "preserved_limits": [
+    "Selected V915 fixed-state profile counterexample survives",
+    "Full E5/A5, higher-loop restoration, arbitrary products and interacting vacuum phase unresolved",
+    "Prior scalar and bosonic control failures and missing full matter C1 unchanged",
+    "Physical viability and gauge unification unresolved",
+    "External control records carried forward through V661 only; original custody not reproduced"
+  ]
+}

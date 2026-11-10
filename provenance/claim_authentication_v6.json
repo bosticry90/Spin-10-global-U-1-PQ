@@ -1,0 +1,259 @@
+{
+  "schema": "SPIN10_PQ_SELECTED_PACKET_AUTHENTICATION_V7",
+  "execution_state": "COMPLETED",
+  "source_commit": "9a0cd951c49f0ca497a0c864b71af99631e5599b",
+  "checks": [
+    {
+      "handoff": "V915",
+      "owning_commit": "d2683e50ff5e317b8a8400abe9fae648eddd481c",
+      "path": "calculations/canonical_so10_full_selected_causal_profile_v1/validation_receipt.json",
+      "sha256": "488f52c80c6c469671028500ad5d1c514e92ef807bcf4c61a3fd8e0e380d5d53",
+      "evidence_validation": "PASS_FULL_SELECTED_CAUSAL_PROFILE_DEPENDENCE",
+      "checks": {
+        "exponents": {
+          "hard_shell_bound": "delta**2*(delta/r)**(e+2*n-2)",
+          "minimum_extra_mixed_degree": 2,
+          "real_ghost_bound": "delta**2*(delta/r)**(e-2)",
+          "real_mixed_tip_bound": "delta**2*(delta/r)**(2-b)",
+          "regular_mixed_delta_model_degree": -4,
+          "regular_mixed_physical_power": 3
+        },
+        "kinetic": {
+          "kinetic_angular_carrier": "3*w*s2/16",
+          "last_kinetic_contact_sensitive_W_count": 2,
+          "original_two_switch_forest_retained": true,
+          "width_zero_control": "blind for this diagnostic"
+        },
+        "reference_combination": "300*log(M_Sigma/M_Phi)"
+      },
+      "bound_output_bytes_checked": 18,
+      "referenced_receipt_paths_present": 10,
+      "historical_outputs": [
+        "historical/d2683e50ff5e317b8a8400abe9fae648eddd481c/README.md",
+        "historical/d2683e50ff5e317b8a8400abe9fae648eddd481c/docs/COMMON_RESTORATION_CAMPAIGN_V1.md"
+      ],
+      "custody": "SEVEN_UNRESOLVED_NOTPASS"
+    },
+    {
+      "handoff": "V1155",
+      "owning_commit": "e7e4a628ba99392e26b0196e13b0f167bc33f517",
+      "path": "calculations/canonical_so10_e5_absolute_compact_ward_v1/validation_receipt.json",
+      "sha256": "74a27682d5a85cc12e31d73666e1a3cd5850d193dffb8cc3fb2c423d93e1e75f",
+      "evidence_validation": "PASS_BOUNDED_E5_ABSOLUTE_COMPACT_WARD",
+      "checks": {
+        "absolute_envelope_controls": true,
+        "literal_source_ports": [
+          45,
+          334
+        ],
+        "pure_mean_zero_ghost_blocks": [
+          48,
+          132,
+          288
+        ],
+        "reference_form_factor_slope": "-1/(30*M)",
+        "zero_mean_source_cycle_exclusion": true
+      },
+      "bound_output_bytes_checked": 18,
+      "referenced_receipt_paths_present": 288,
+      "historical_outputs": [
+        "historical/e7e4a628ba99392e26b0196e13b0f167bc33f517/README.md",
+        "historical/e7e4a628ba99392e26b0196e13b0f167bc33f517/docs/COMMON_RESTORATION_CAMPAIGN_V1.md"
+      ],
+      "custody": "SEVEN_UNRESOLVED_NOTPASS"
+    },
+    {
+      "handoff": "V1162",
+      "owning_commit": "5fbd447e8b6417db2afbc795a012ea9d78d17581",
+      "path": "calculations/canonical_so10_e5_uncut_ordinary_lorentzian_forest_v1/validation_receipt.json",
+      "sha256": "eeda8d918398e7b5a60bd949da2c6b6e62f57a374a0f71231eb1ba0541e923be",
+      "evidence_validation": "PASS_BOUNDED_E5_UNCUT_ORDINARY_LORENTZIAN_FOREST",
+      "checks": {
+        "cut_triangle_signed_assignments": [
+          27,
+          63,
+          0
+        ],
+        "literal_cubic_pivot": "sqrt(10)/4",
+        "radial_and_forced_point_controls": true,
+        "tied_tree_margin_before_and_after": [
+          0,
+          2
+        ],
+        "weighted_gap_identity": true
+      },
+      "bound_output_bytes_checked": 18,
+      "referenced_receipt_paths_present": 297,
+      "historical_outputs": [
+        "historical/5fbd447e8b6417db2afbc795a012ea9d78d17581/README.md",
+        "historical/5fbd447e8b6417db2afbc795a012ea9d78d17581/docs/COMMON_RESTORATION_CAMPAIGN_V1.md"
+      ],
+      "custody": "SEVEN_UNRESOLVED_NOTPASS"
+    },
+    {
+      "handoff": "V1163",
+      "owning_commit": "c5202b70105ad496bf863a249c5c750618fb1327",
+      "path": "calculations/canonical_so10_e5_uncut_absolute_ward_pair_v1/validation_receipt.json",
+      "sha256": "63748cb80cfb8e7a39daff2077792730ebbef62b437d23e95d34d9c3bc3bbf6a",
+      "evidence_validation": "PASS_BOUNDED_E5_UNCUT_ABSOLUTE_WARD_PAIR",
+      "checks": {
+        "literal_nonzero_witness": [
+          "-8*g10*xi",
+          "-8*I*g10*xi",
+          "4*I*g10*xi"
+        ],
+        "signed_proper_and_connected_pair": true,
+        "unmatched_finite_polynomial_is_visible": true,
+        "zero_shifted_massless_power_after_dimension_jet": true
+      },
+      "bound_output_bytes_checked": 18,
+      "referenced_receipt_paths_present": 297,
+      "historical_outputs": [
+        "historical/c5202b70105ad496bf863a249c5c750618fb1327/README.md",
+        "historical/c5202b70105ad496bf863a249c5c750618fb1327/docs/COMMON_RESTORATION_CAMPAIGN_V1.md"
+      ],
+      "custody": "SEVEN_UNRESOLVED_NOTPASS"
+    },
+    {
+      "handoff": "V1164",
+      "owning_commit": "6cf3262270c9976e9732f1407533c2815639efc9",
+      "path": "calculations/canonical_so10_e5_direct_unmarked_ward_wick_v1/validation_receipt.json",
+      "sha256": "b4c6ac8c64d8dcfc79a667f8f8062ab3dfbef3227b97e5c70a249870aaa54be7",
+      "evidence_validation": "PASS_BOUNDED_E5_DIRECT_UNMARKED_WARD_WICK",
+      "checks": {
+        "common_shell_metric_and_reference_controls": true,
+        "even_affine_and_source_rows": [
+          48,
+          7800,
+          48960
+        ],
+        "first_dimension_jet_matches_anisotropic_finite_part": true,
+        "fixed_chart_phase_products": [
+          553,
+          90
+        ],
+        "normalized_ellipsoid_mixed_derivative": "1/4"
+      },
+      "bound_output_bytes_checked": 18,
+      "referenced_receipt_paths_present": 297,
+      "historical_outputs": [
+        "historical/6cf3262270c9976e9732f1407533c2815639efc9/README.md",
+        "historical/6cf3262270c9976e9732f1407533c2815639efc9/docs/COMMON_RESTORATION_CAMPAIGN_V1.md"
+      ],
+      "custody": "SEVEN_UNRESOLVED_NOTPASS"
+    },
+    {
+      "handoff": "V1165",
+      "owning_commit": "599b903d8c298c50ffc515a1753eec0b42aacbc8",
+      "path": "calculations/canonical_so10_e5_direct_single_marked_master_v3/validation_receipt.json",
+      "sha256": "cdba820d7a490e4bf7c28ffdd666edc74715996ce0c4320ba943ea6f4b7daf9f",
+      "evidence_validation": "PASS_BOUNDED_E5_DIRECT_SINGLE_MARKED_MASTER",
+      "checks": {
+        "direct_shear_and_retained_log_controls": true,
+        "literal_broken_retained_rows": [
+          33,
+          334,
+          3344
+        ],
+        "nonzero_width_tree_carrier": "sqrt(10)*g10*xi/10",
+        "three_ordered_mixed_terms": true
+      },
+      "bound_output_bytes_checked": 18,
+      "referenced_receipt_paths_present": 297,
+      "historical_outputs": [
+        "historical/599b903d8c298c50ffc515a1753eec0b42aacbc8/README.md",
+        "historical/599b903d8c298c50ffc515a1753eec0b42aacbc8/docs/COMMON_RESTORATION_CAMPAIGN_V1.md"
+      ],
+      "custody": "SEVEN_UNRESOLVED_NOTPASS"
+    },
+    {
+      "handoff": "V1166",
+      "owning_commit": "9a0cd951c49f0ca497a0c864b71af99631e5599b",
+      "path": "calculations/canonical_so10_e5_uncut_nonlinear_source_replacement_v1/validation_receipt.json",
+      "sha256": "79e3eb96e2b0e8b9b4fff0f9b3ae764d1714c284582054aa548c8001caacd2a8",
+      "evidence_validation": "PASS_BOUNDED_E5_UNCUT_NONLINEAR_SOURCE_REPLACEMENT",
+      "checks": {
+        "absolute_rooted_repeated_coefficient": true,
+        "canonical_quadratic_trace_factor": 8,
+        "literal_transport_data": [
+          138,
+          276,
+          648
+        ],
+        "uncut_same_label_and_mixed_log_residues": [
+          4,
+          8
+        ]
+      },
+      "bound_output_bytes_checked": 18,
+      "referenced_receipt_paths_present": 297,
+      "historical_outputs": [],
+      "custody": "SEVEN_UNRESOLVED_NOTPASS"
+    }
+  ],
+  "scope": "Exact owning tracked output map hashes and existence of referenced owner receipt paths; no transitive preparation replay or scientific acceptance.",
+  "source_files": 51591,
+  "delta_files": 11159,
+  "delta_git_bytes": 563989057,
+  "external_files_retained": 7870,
+  "historical_files": 21,
+  "browsable_files": 126,
+  "archives": [
+    {
+      "filename": "spin10_pq_source_update_v6_part1.zip",
+      "sha256": "50a801fd4b774559cf97e16b120bde2f8289bb1efe2cca808dfed2feb410ae17",
+      "size_bytes": 40692548,
+      "file_count": 2880
+    },
+    {
+      "filename": "spin10_pq_source_update_v6_part2.zip",
+      "sha256": "d303dbfad5b791d79237f2618c77da4f776330abd4394d778a51c0317ee4d82f",
+      "size_bytes": 41836967,
+      "file_count": 817
+    },
+    {
+      "filename": "spin10_pq_source_update_v6_part3.zip",
+      "sha256": "1b411ffd56f1c2a12df78c228d6ac760373c778af480d352387f55ae4a39d302",
+      "size_bytes": 42460931,
+      "file_count": 2203
+    },
+    {
+      "filename": "spin10_pq_source_update_v6_part4.zip",
+      "sha256": "78481b57fd6f2a3a09818aafe60136e6861a81eafc36a58f4cb0b43f0ecdb013",
+      "size_bytes": 43361140,
+      "file_count": 31
+    },
+    {
+      "filename": "spin10_pq_source_update_v6_part5.zip",
+      "sha256": "a0ea902051543f8a2d95be174933180309493700ceadf0d487d15754d4ca248c",
+      "size_bytes": 42110906,
+      "file_count": 754
+    },
+    {
+      "filename": "spin10_pq_source_update_v6_part6.zip",
+      "sha256": "aa7bd4ebe1af694f8ab9d33ca44700fb0ea702902527e4045bc5053542255c9f",
+      "size_bytes": 40929140,
+      "file_count": 2113
+    },
+    {
+      "filename": "spin10_pq_source_update_v6_part7.zip",
+      "sha256": "e64a892c74acba90089aa8d2c1279d2e2cd4e097ff6aa8442cb5627aa8ac2e69",
+      "size_bytes": 42845946,
+      "file_count": 386
+    },
+    {
+      "filename": "spin10_pq_source_update_v6_part8.zip",
+      "sha256": "b0e831b65c7a6e064d4fa95cdd99660aca942838fc321019287774d445efde34",
+      "size_bytes": 39843264,
+      "file_count": 343
+    },
+    {
+      "filename": "spin10_pq_source_update_v6_part9.zip",
+      "sha256": "31ff96769225cf93eae5aa5ed9eba5c1c8eaef0f3b0f920a98b8cf9fa0352a6f",
+      "size_bytes": 38579920,
+      "file_count": 1644
+    }
+  ],
+  "elapsed_seconds": 259.85899999999674,
+  "scientific_acceptance": "NOT_PERFORMED"
+}

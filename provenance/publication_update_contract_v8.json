@@ -1,0 +1,32 @@
+{
+  "schema": "SPIN10_PQ_PUBLICATION_UPDATE_V8",
+  "publication_date": "9 November 2026",
+  "source_commit": "9a0cd951c49f0ca497a0c864b71af99631e5599b",
+  "source_base": "e08257cd2133031e11b255a1ec17173ddb85628a",
+  "publication_base": "d26eb467d2e48ca165af478d8e5f6fa074858585",
+  "handoff": "V1166",
+  "state_sha256": "d610f07422ff491118a0303c4773661e96bc0d76cf73d9e1a2ec8d148c0977c8",
+  "live_policy_sha256": "187b276c38152e7cef292be6c8294da8b1887ddd0cc35492cf44f291888e9c98",
+  "scope": "Publish updated discussion note, plain-language explanation and all newly committed tracked source bytes, with selected owning receipt maps authenticated. Preserve prior archive layers and scientific limits. Historical external controls carried forward through V661 only; no new standalone external records or private attachments exported.",
+  "authority_ceiling": "PUBLICATION_ONLY_NO_SCIENTIFIC_PROMOTION",
+  "limits": {
+    "export_seconds": 900,
+    "new_git_blob_bytes": 600000000,
+    "compressed_bytes": 450000000,
+    "part_bytes": 47000000
+  },
+  "failure_conditions": [
+    "Git base differs",
+    "Source blob or selected owning output binding mismatch",
+    "Archive limit exceeded",
+    "Publication verification or layout fails",
+    "Scope conflates direct formal one-loop and weak fixed-state limit"
+  ],
+  "checks_expected": [
+    "Verify tracked delta and all archive member hashes",
+    "Bind selected owning output maps at owning commits",
+    "Preserve prior release objects",
+    "Verify note layout, package and public delivery"
+  ],
+  "scientific_replay": false
+}

@@ -5,7 +5,7 @@
 \geometry{margin=0.76in,headheight=14pt,headsep=15pt}
 \definecolor{ink}{HTML}{173A51}
 \makeatletter
-\def\ps@draft{\def\@oddhead{\small\color{ink}Spin(10) and global PQ: discussion draft\hfil 26 October 2026}
+\def\ps@draft{\def\@oddhead{\small\color{ink}Spin(10) and global PQ: discussion draft\hfil 9 November 2026}
 \def\@evenhead{\@oddhead}
 \def\@oddfoot{\small Discussion draft; bounded results and open physical questions\hfil\thepage}
 \def\@evenfoot{\@oddfoot}}
@@ -25,20 +25,21 @@ Spin(10) $\times$ global U(1)$_{\PQ}$\par
 gauge/scalar candidate\par}
 \vspace{4pt}
 {\large Construction, bounded results, and failed tests}\par
-{\small Solo research discussion note, prepared with AI assistance. Version 6.}
+{\small Solo research discussion note, prepared with AI assistance. Version 7.}
 
 \sect{Abstract}
 This note specifies a nonsupersymmetric Spin(10) gauge/scalar construction
 with global PQ selection rules. Earlier scalar failures, a separate classical
 feasibility witness with a large singlet correction, and the failed hierarchy
 of the older fixed-reference bosonic two-loop calculation remain unchanged.
-New work constructs further selected one-loop fermion/source normalizations,
-a bounded local Ward relation and a common family of proper nonminimal-source
-products. The latest connected-response analysis identifies an unresolved
-tadpole, nonlinear-mean and joint infrared sewing bridge. Shared-error controls
-also exposed and corrected a finite-test representation mistake. These are
-scoped computational and analytic results, not a full connected QAP theorem,
-massive matter threshold, controlled physical vacuum or unification result.
+The intervening work extends selected connected products from compact
+constructions to a direct Lorentzian one-loop family with independent
+sources, including the unmarked Ward relations, one auxiliary insertion,
+and a particular finite nonlinear source replacement. A separate
+fixed-state profile counterexample survives; the direct construction
+does not supply a weak fixed-state limit or an interacting vacuum phase.
+Higher-loop quantum consistency, massive matter matching, and physical
+unification remain open.
 All point, reference and domain restrictions remain; publication makes no
 new scientific acceptance decision.
 
@@ -673,7 +674,7 @@ multiple independent Slavnov operations, physical K-source completion,
 global chiral phase or full QAP/E5/A5.
 
 \newpage
-\sect{11. The connected-response bridge and shared-error limits}
+\sect{11. The earlier connected-response problem}
 Proper products differentiate the effective action at fixed mean fields.
 Connected products at fixed ordinary sources also differentiate the mean
 response. With $\varphi$ the ordinary field and $y_i,y_{ij}$ its first and
@@ -693,7 +694,7 @@ It cannot be discarded by
 setting the ordinary mean or one affine endpoint to zero. Classical
 source-pair contacts and nonlinear mean responses can survive.
 
-The latest work derives the actual source endpoints before restriction,
+The V661 calculation derived the actual source endpoints before restriction,
 including their zero complements. Nonlinear bosonic and genuine odd-source
 finite examples check the five-term identity by direct integration,
 implicit stationarity/determinant methods and Schur/Berezin routes.
@@ -701,12 +702,12 @@ They are statistics-sensitive algebra tests, not new Spin(10) loop values.
 A necessary affine soft bound is established; it is not the complete
 joint sewn-graph domain.
 
-\sect{What is still missing}
-The actual renormalized auxiliary tadpole has not been shown to obey the
-required adjoint membership condition. The full nonlinear mean response
-must be derived using the same fixed-heat stationary map and proper
-subtractions. The general-Schwartz joint loop/external-momentum sewing
-domain, including zero-transfer tadpole contractions, is not established.
+\sect{What V661 did not yet establish}
+At that checkpoint the actual renormalized auxiliary tadpole had not been
+shown to obey the required adjoint membership condition. Deriving the full
+nonlinear mean response required the same fixed-heat stationary map and
+proper subtractions. The general-Schwartz joint loop/external-momentum
+sewing domain, including zero-transfer tadpole contractions, was open.
 A massless inverse need not preserve Schwartz profiles.
 
 Exact controls give different simultaneous smoothing/IR limits
@@ -729,26 +730,80 @@ changed. Rejected outputs and failed reviews remain preserved.
 One intermediate nullspace was also labelled too strongly as background
 invariant. It was a restricted BRST coefficient annihilator. A separate
 actual adjoint calculation establishes a two-dimensional invariant space,
-but the necessary tadpole membership is still unproved. Correcting that
+but it did not prove the needed tadpole membership. Correcting that
 interpretation does not retroactively validate the original label.
 
-These results make the remaining bridge explicit. They do not establish
+These historical results made the bridge explicit. They did not establish
 the full connected-product prescription, QAP/measure/global phase,
 Lorentzian or physical-vacuum limit, finite massive matter C1, quantum
 control or physical unification. Shared action, analytic premises,
 data/software and AI authorship continue to limit independence.
 
 \newpage
-\sect{12. Evidence and reproduction map}
+\sect{12. Connected one-loop progress through V1166}
+The later results use a specific normalized formal family, retaining
+independent ordinary, evaluation-source and background test labels.
+They apply at each fixed finite coefficient through one loop. In the direct
+Lorentzian construction the exterior tests have compact Fourier support,
+and propagators share the same-sign Feynman boundary. This is a different
+claim from taking a weak adiabatic limit in a fixed state.
+
+\sect{From compact products to a direct functional}
+V1155 constructs the absolute compact Wick logarithm and graded graphwise
+Legendre transform, with the rooted source response and the background
+reference term retained. V1162 supplies the direct unmarked nonvacuum
+forest. Forced-zero one-port branches use actual tadpole identities before
+the inverse is applied; critical two-port groups are combined near the
+null cone, with a joint loop/threshold bound away from it. These steps
+address specific sewing requirements beyond the earlier V661 tests.
+
+V1163 assembles the direct label-dependent functional (W1 in the project's
+contract) and checks a nonzero retained-source Ward pair under one finite
+normalization. Only the source-independent free vacuum unit is anchored.
+V1164 continues the unmarked connected W3/W4/modified-W5 relations and
+their graphwise proper counterparts with the original phases and source
+chart. The finite cutoff-shape change is compensated by the first
+dimension derivative. V1165 then treats the actual single broken-sector
+auxiliary insertion, keeping the translation, shear, width and explicit
+retained-source responses in the same functional.
+
+\sect{A finite source change with a nonzero repeated response}
+V1166 implements the specified nonlinear ghost/source change of V891 in
+that direct family, with ordinary and evaluation sources transported.
+For the deformation $S_\theta=S+\theta L$, the derivative of $W_\theta$
+includes the proper loop, rooted forest and common normalization response.
+An actual auxiliary ghost bubble gives a nonzero $\theta^2$ coefficient
+for generic symbolic normalization units, including both ordered mixed
+roots. The finite endpoint is defined coefficientwise; this qualifies
+the specified W6 replacement through one loop. It does not establish
+equality at fixed untransformed sources or general nonlinear quantum
+canonical equivalence.
+
+\sect{A separate counterexample and remaining limits}
+In V915 the selected two-color coefficient differs for two compact causal
+switch profiles with the same nonzero source integrals. The residual
+$300\log(M_\Sigma/M_\Phi)$ survives a common finite constant at distinct
+positive reference masses in that prescription, after the stated
+sequential boundaries and sum. The direct construction does not remove
+that counterexample or imply failure of every other prescription.
+The weak fixed-state limit, arbitrary marked coincidences, higher-loop
+identities, interacting vacuum phase and full E5/A5 remain open.
+
+The V1165 evidence preserves the earlier overextended source-row count
+and the displaced Wick-phase binding. The corrected packet includes
+the missing width-driver rows and authenticates the actual input.
+These checks and derivations share model inputs, normalization premises,
+software and AI authorship; they are not external verification.
+
+\newpage
+\sect{13. Evidence and reproduction map}
 The frozen source checkpoint is
-\begin{center}\texttt{e08257cd2133031e11b255a1ec17173ddb85628a}.\end{center}
+\begin{center}\texttt{9a0cd951c49f0ca497a0c864b71af99631e5599b}.\end{center}
 Source \pathref{project_state.json} remains version 113, unchanged by
-publication. Earlier public notes through Version 5 and all prior source
-archives/manifests are preserved; the v5 source update extends the chain
-through handoff V661.
-The reproduction guide specifies exact assembly and separate historical-policy
-and external-control namespaces. Original Git history is absent; custody
-exit 2/seven unresolved references is not PASS.
+publication. The v6 source layer adds the tracked Git delta through V1166.
+Prior notes, archives and manifests remain preserved. External control
+records carry forward through V661 only. Original Git history is absent;
+custody exit 2 with seven unresolved references remains unresolved.
 
 The following folders are under \pathref{calculations/}, except the last row.
 Read the frozen contract, actual completed receipt, inputs, derivation and
@@ -789,18 +844,17 @@ Portable complete pilot & \pathref{tools/portable_dh_v1/README.md}\\
 \bottomrule
 \end{tabular}}
 
-The guide's dated update links the completed bosonic assembly, hierarchy
-and common-scale diagnostics, source-region theorem, symbolic Yukawa/source
-normalizations, selected finite fermion functional, local Ward relation and proper/connected
-source-product records. Their actual
-versioned receipts retain the narrower domains described above.
+The guide links the direct forest, Ward and source replacement packets
+and the distinct V915 counterexample. Their owning receipt maps bind the
+tracked evidence at the corresponding commits. This checks bytes, not
+the derivations or a complete replay of historical preparations.
 
 \sect{What readers can rerun}
 The portable pilot needs Python 3.11+ and the standard library. Its slot and
 left-derivative methods compute every coefficient of a 99,256-position
 classical Hessian identity before opening the reference table. It inherits
 the interpretation of its frozen action projections; it does not reproduce
-the full quantum model or upstream physical proofs. Both methods were run for the preceding release in an isolated copy;
+the full quantum model or upstream physical proofs. Both methods were run in an isolated copy when the pilot was packaged;
 their unchanged code/input bytes and completed captures are reused here.
 
 The package verifier authenticates every released file and archive member;
@@ -811,7 +865,7 @@ paths and read guards; explicit relocation is needed, without editing
 frozen evidence or bypassing integrity checks.
 
 \newpage
-\sect{13. Remaining obligations and AI assistance}
+\sect{14. Remaining obligations and AI assistance}
 No physically viable GUT or experimental agreement is established. The new
 point has a full classical quartic bound, but the preferred vacuum, tunneling,
 loop control, hierarchy/naturalness and complete gauged scattering remain

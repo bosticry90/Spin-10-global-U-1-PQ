@@ -1,0 +1,1 @@
+{"checks": {"absolute_envelope_controls": true, "literal_source_ports": [45, 334], "pure_mean_zero_ghost_blocks": [48, 132, 288], "reference_form_factor_slope": "-1/(30*M)", "zero_mean_source_cycle_exclusion": true}, "execution_state": "COMPLETED"}

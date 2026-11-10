@@ -1,0 +1,1 @@
+{"checks": {"cut_triangle_signed_assignments": [27, 63, 0], "literal_cubic_pivot": "sqrt(10)/4", "radial_and_forced_point_controls": true, "tied_tree_margin_before_and_after": [0, 2], "weighted_gap_identity": true}, "execution_state": "COMPLETED"}

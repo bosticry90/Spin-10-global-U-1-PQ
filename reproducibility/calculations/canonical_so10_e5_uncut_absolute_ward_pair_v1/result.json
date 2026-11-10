@@ -1,0 +1,1 @@
+{"checks": {"literal_nonzero_witness": ["-8*g10*xi", "-8*I*g10*xi", "4*I*g10*xi"], "signed_proper_and_connected_pair": true, "unmatched_finite_polynomial_is_visible": true, "zero_shifted_massless_power_after_dimension_jet": true}, "execution_state": "COMPLETED"}

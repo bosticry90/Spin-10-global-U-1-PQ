@@ -2,7 +2,7 @@
 
 This repository shares an AI-assisted investigation of a candidate grand unified model. The plain-language explanation below describes the idea, the progress and the limitations. The technical note and reproducibility materials provide the equations, code and evidence.
 
-**[Read the technical note, Version 6](paper/spin10_pq_technical_note.pdf)** · [Editable LaTeX source](paper/spin10_pq_technical_note.tex) · [Reproduction guide](reproducibility/README.md)
+**[Read the technical note, Version 7](paper/spin10_pq_technical_note.pdf)** · [Editable LaTeX source](paper/spin10_pq_technical_note.tex) · [Reproduction guide](reproducibility/README.md)
 
 ## A plain-language explanation
 
@@ -26,7 +26,7 @@ At the newer classical point, a one-loop correction to the singlet’s squared m
 
 Gauge unification remains unresolved. The earlier approximate calculation does not make the three force couplings meet. The two-loop calculation involving force and scalar fields is now assembled at the older parameter choice. At three tested settings, its corrections are larger than the starting terms, so these expressions do not support a controlled prediction. The complete matter contribution and physical matching remain unfinished. This does not exclude every parameter choice of the construction.
 
-Recent work extends selected one-loop symmetry and normalization calculations, including a bounded local symmetry relation and products of auxiliary source insertions. The newest analysis makes a remaining gap explicit: checking those pieces does not yet establish the full connected response when the fields themselves adjust. Tadpole, mean-response and joint infrared requirements remain unresolved. These results do not establish the complete quantum theory or erase the earlier failed tests.
+Recent work found a way to calculate more of the model’s linked quantum responses, including how they change when the mathematical probes used to measure them are changed. This works to the first quantum correction in a specified setup. A separate test still gives different answers depending on how the interactions are gradually switched on and off. The new calculation leaves that problem open, along with higher-order corrections and the question of whether the model describes nature.
 
 ### What role does AI play?
 
@@ -45,7 +45,7 @@ For details, start with the technical note and reproduction guide linked above. 
 The scalar content is a real 54, a complex self-dual 126, a complex 10, and a complex singlet, with global Peccei–Quinn selection rules and no supersymmetry.
 
 
-Updated 26 October 2026, from source checkpoint `e08257cd2133031e11b255a1ec17173ddb85628a`. The earlier positive-quartic point subsequently failed a perturbativity screen. A different exploratory point has stronger classical certificates but a large one-loop singlet correction. Neither is an established physical benchmark.
+Updated 9 November 2026, from source checkpoint `9a0cd951c49f0ca497a0c864b71af99631e5599b`. The earlier positive-quartic point subsequently failed a perturbativity screen. A different exploratory point has stronger classical certificates but a large one-loop singlet correction. Neither is an established physical benchmark.
 
 The construction follows established GUT and PQ literature, especially [Babu and Khan (2015)](https://arxiv.org/abs/1507.06712). Its scalar potential is a separately specified source-derived variant. Published benchmarks, fermion fits, and unification conclusions are not adopted as results for this variant. No new unification principle or exhaustive novelty claim is asserted.
 
@@ -69,7 +69,8 @@ The construction follows established GUT and PQ literature, especially [Babu and
 | Frozen common-scale test | Minimum common-log maximum two-loop/tree magnitude is about 3.20, 4.83 and 6.93 at those couplings | Changing only the explicit logarithm cannot repair the frozen hierarchy; this is not full RG evolution |
 | Symbolic fermion progress | Selected finite open-spinor/vertex comparisons and an exact-once marginal normalization family extend the earlier UV/closed-loop results | Declared one-loop Euclidean domains; no numerical flavor fit, full chiral prescription or massive matter threshold |
 | Local Ward and proper source products | A bounded first-u local relative T/F relation and a common proper nonminimal-source product extension are constructed under their analytic premises | Not a full connected Ward/QAP theorem; source-quadratic finite freedom and broader domains remain open |
-| Connected-response boundary | Actual classical endpoints, nonlinear finite integration tests and a conditional adjoint reduction are checked | Full nonlinear mean/tadpole transport and general-Schwartz joint sewing are not established |
+| Connected one-loop functional | A direct Lorentzian construction now covers the stated unmarked graphs, Ward relations, a single auxiliary insertion and a specified nonlinear ghost/source change | Fixed finite coefficients with compact Fourier tests and transported sources; broader products, higher loops and full E5/A5 remain open |
+| Fixed-state profile dependence | Two specified causal switch profiles give a nonzero difference proportional to 300 log(MΣ/MΦ) at distinct positive reference masses | The direct construction leaves this separate counterexample intact; no general fixed-state limit or all-prescription exclusion |
 
 The initial Stage 2 failure does not refute every point of the construction. Gauge matching uses the earlier +0.10486 point, whose subsequent perturbativity failure is retained. Its spectrum, thresholds and loop results are not transferred to the newer exploratory point. Missing finite thresholds are not assumed to rescue the mismatch. Diagnostic fitted scales are not physical predictions.
 
@@ -77,13 +78,13 @@ Global quartic positivity is now certified at one exploratory point. The preferr
 
 ## What the materials contain
 
-- The updated Version 6 note and editable source, with public Versions 2, 3, 4, 4.1 and 5 preserved in [paper/archive](paper/archive/).
+- The updated Version 7 note and editable source, with public Versions 2, 3, 4, 4.1, 5 and 6 preserved in [paper/archive](paper/archive/).
 - Browsable scalar/gauge calculation programs, frozen scalar points, and recorded results.
-- The unchanged original source archives plus a versioned update covering the frozen tracked source tree and referenced external research-control materials, including failed attempts.
+- The unchanged source archives plus the complete tracked Git delta through V1166, including preserved failed attempts. External control records are carried forward from the V661 release.
 - A [closed portable Hessian pilot](reproducibility/portable_dh_v1/README.md), requiring Python 3.11+ and only the standard library.
 - SHA-256 manifests and a verifier that authenticate packaged bytes without executing or scientifically accepting the calculations.
 
-This publication is a fixed snapshot of committed evidence through the stated checkpoint. The [V661 handoff](reproducibility/RESEARCH_EXECUTION_HANDOFF_V661.md) supplies the frozen continuation context; work after that checkpoint is excluded. Classical certificates and conditional quantum results retain their precise assumptions; earlier failed and blocked evidence remains classified as such. Formal scientific authority remains version 113, at 34 of 39 ledger items. Historical custody is not a global pass.
+This publication is a fixed snapshot of committed evidence through the stated checkpoint. The [V1166 handoff](reproducibility/RESEARCH_EXECUTION_HANDOFF_V1166.md) supplies the frozen continuation context; work after that checkpoint is excluded. Classical certificates and conditional quantum results retain their precise assumptions; earlier failed and blocked evidence remains classified as such. Formal scientific authority remains version 113, at 34 of 39 ledger items. Historical custody is not a global pass.
 
 The [reproduction guide](reproducibility/README.md) distinguishes byte checks, quick computational checks, expensive replays, and historical Git-custody limits. It records exactly which checks were performed for packaging.
 

@@ -1,0 +1,1 @@
+{"checks": {"direct_shear_and_retained_log_controls": true, "literal_broken_retained_rows": [33, 334, 3344], "nonzero_width_tree_carrier": "sqrt(10)*g10*xi/10", "three_ordered_mixed_terms": true}, "execution_state": "COMPLETED"}
