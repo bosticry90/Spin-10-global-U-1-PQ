@@ -2,7 +2,9 @@
 
 This repository shares an AI-assisted investigation of a candidate grand unified model. The plain-language explanation below describes the idea, the progress and the limitations. The technical note and reproducibility materials provide the equations, code and evidence.
 
-**[Read the technical note, Version 7](paper/spin10_pq_technical_note.pdf)** · [Editable LaTeX source](paper/spin10_pq_technical_note.tex) · [Reproduction guide](reproducibility/README.md)
+**[Read the technical note, Version 7.1](paper/spin10_pq_technical_note.pdf)** · [Editable LaTeX source](paper/spin10_pq_technical_note.tex) · [Reproduction guide](reproducibility/README.md)
+
+Version 7.1 makes the existing complex conjugation in the scalar potential explicit, clarifies the coupling comparison and gives a more precise statement of the formal one-loop result. See the [focused scalar check](reproducibility/README.md#version-71-notation-and-scope-review).
 
 ## A plain-language explanation
 
@@ -64,7 +66,7 @@ The construction follows established GUT and PQ literature, especially [Babu and
 | Gauge matching at earlier positive-quartic point | Maximum inverse-coupling residual ≈ 1.060 at one loop; ≈ 0.745 with two-loop SM running and one-loop thresholds | A mismatch for those inputs; finite two-loop heavy constants remain incomplete. These residuals do not apply to the new point |
 | Gauge/PQ structure | Local perturbative Spin(10) gauge-anomaly traces vanish; PQ coefficients N = 12, E = 32, E/N = 8/3; conditional wall count 3 | Representation and ordinary-orbit results; global completion and physical axion cosmology remain open |
 | Formal one-loop consistency | Complete local logarithmic UV Slavnov identity, actual parity-even bosonic counterterm closure, and constructed compact causal/QAP/normalization results in their declared domains | Material progress beyond the previous locality prerequisite; full source/global/physical E5/A5 requirements remain unqualified |
-| Bosonic loop hierarchy | At gauge coupling squared 1/2, 3/4 and 1, the two-loop kinetic term exceeds tree and one loop in all three factors | These tested bosonic truncations fail the necessary hierarchy screen; no general model exclusion |
+| Bosonic loop hierarchy | At gauge coupling squared 1/2, 3/4 and 1, the two-loop kinetic term exceeds tree and one loop in all three factors. These test values are separate from the diagnostic fitted coupling, g₁₀ ≈ 0.5231 (g₁₀² ≈ 0.274) | These tested bosonic truncations fail the necessary hierarchy screen; no general model exclusion |
 | Bosonic two-loop assembly | All nine retained primitive families, prescribed finite subtraction and the heavy-tadpole bridge are assembled at the older point | A fixed-reference bosonic coefficient, not complete massive matter C1 or physical unification |
 | Frozen common-scale test | Minimum common-log maximum two-loop/tree magnitude is about 3.20, 4.83 and 6.93 at those couplings | Changing only the explicit logarithm cannot repair the frozen hierarchy; this is not full RG evolution |
 | Symbolic fermion progress | Selected finite open-spinor/vertex comparisons and an exact-once marginal normalization family extend the earlier UV/closed-loop results | Declared one-loop Euclidean domains; no numerical flavor fit, full chiral prescription or massive matter threshold |
@@ -78,13 +80,13 @@ Global quartic positivity is now certified at one exploratory point. The preferr
 
 ## What the materials contain
 
-- The updated Version 7 note and editable source, with public Versions 2, 3, 4, 4.1, 5 and 6 preserved in [paper/archive](paper/archive/).
+- The updated Version 7.1 note and editable source, with public Versions 2, 3, 4, 4.1, 5, 6 and 7 preserved in [paper/archive](paper/archive/).
 - Browsable scalar/gauge calculation programs, frozen scalar points, and recorded results.
 - The unchanged source archives plus the complete tracked Git delta through V1166, including preserved failed attempts. External control records are carried forward from the V661 release.
 - A [closed portable Hessian pilot](reproducibility/portable_dh_v1/README.md), requiring Python 3.11+ and only the standard library.
 - SHA-256 manifests and a verifier that authenticate packaged bytes without executing or scientifically accepting the calculations.
 
-This publication is a fixed snapshot of committed evidence through the stated checkpoint. The [V1166 handoff](reproducibility/RESEARCH_EXECUTION_HANDOFF_V1166.md) supplies the frozen continuation context; work after that checkpoint is excluded. Classical certificates and conditional quantum results retain their precise assumptions; earlier failed and blocked evidence remains classified as such. Formal scientific authority remains version 113, at 34 of 39 ledger items. Historical custody is not a global pass.
+This publication is a fixed snapshot of committed evidence through the stated checkpoint. The [V1166 handoff](reproducibility/RESEARCH_EXECUTION_HANDOFF_V1166.md) supplies the frozen continuation context; work after that checkpoint is excluded. Classical certificates and conditional quantum results retain their precise assumptions; earlier failed and blocked evidence remains classified as such. Formal scientific authority remains version 113, at 34 of 39 ledger items. This is a count of internal items, not a scientific confidence score. Historical custody is not a global pass.
 
 The [reproduction guide](reproducibility/README.md) distinguishes byte checks, quick computational checks, expensive replays, and historical Git-custody limits. It records exactly which checks were performed for packaging.
 

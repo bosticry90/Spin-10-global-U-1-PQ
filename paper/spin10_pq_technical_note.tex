@@ -25,7 +25,7 @@ Spin(10) $\times$ global U(1)$_{\PQ}$\par
 gauge/scalar candidate\par}
 \vspace{4pt}
 {\large Construction, bounded results, and failed tests}\par
-{\small Solo research discussion note, prepared with AI assistance. Version 7.}
+{\small Solo research discussion note, prepared with AI assistance. Version 7.1.}
 
 \sect{Abstract}
 This note specifies a nonsupersymmetric Spin(10) gauge/scalar construction
@@ -106,18 +106,24 @@ let $P_k[I,J]=\sum_{K\in\binom{\{0,\ldots,9\}}k}\Sigma_{KI}\Sigma_{KJ}$
 and $Q_k=\sum_{I,J}|P_k[I,J]|^2$, for $k=0,1,2$.
 Antisymmetric components with repeated indices vanish. If $A,B$ are disjoint,
 $\varepsilon(A,B)$ is the parity of their concatenation relative to increasing
-order; otherwise it is zero. The fourth real five-form quartic is
+order; otherwise it is zero. For each term of the crossed contraction,
+write $C=\operatorname{sort}(A\cup B)$ and
+$D=\operatorname{sort}((I\setminus A)\cup(J\setminus B))$.
+The star on $P_1[C,D]^*$ denotes complex conjugation of the entire factor:
 \[
 \begin{split}
 X_{131}={}&\sum_{I,J\in\binom{\{0,\ldots,9\}}4}
 \ \sum_{\substack{A\subset I,\ |A|=3\\B\subset J,\ |B|=1}}
-\varepsilon(A,I\setminus A)\varepsilon(B,J\setminus B)
-\varepsilon(A,B)\varepsilon(I\setminus A,J\setminus B)\\[-2pt]
-&\hspace{25pt}\times P_1[I,J]\,
-\overline{P_1[\operatorname{sort}(A\cup B),
-\operatorname{sort}((I\setminus A)\cup(J\setminus B))]} .
+\varepsilon(A,I\setminus A)\varepsilon(B,J\setminus B)\\
+&\quad\times\varepsilon(A,B)\varepsilon(I\setminus A,J\setminus B)
+\,P_1[I,J]\,P_1[C,D]^* .
 \end{split}
 \]
+Terms with repeated indices in $C$ or $D$ are zero. The two factors carry
+PQ charges $+4$ and $-4$, so $X_{131}$ is neutral. Complex conjugation
+exchanges the two identical tensor pairs in this crossed contraction,
+leaving it real. Version 7 used an overbar for this same conjugation.
+
 The potential in these normalizations is
 \begin{align*}
 V_2={}&m_\Phi^2p_2+m_\Sigma^2N+m_\phi^2u+m_S^2|S|^2,\\
@@ -146,8 +152,13 @@ There are 29 Hermitian coefficient groups: four quadratic, three cubic, and
 22 quartic. Their 24 real and five complex coefficients give 34 real directions
 before rephasings. Independent $D_5$ character multiplicities give 34 complex
 singlet slots before Hermitian pairing; explicit contractions attain that upper
-bound. The generic scalar phase quotient leaves three relative coupling phases.
-This basis result fixes the action, not a viable vacuum.
+bound. In the $\Sigma^2(\Sigma^*)^2$ sector the character count is four;
+the four explicit contractions have a nonzero exact $4\times4$ evaluation
+minor. The accompanying notation audit checks the neutral field inventory,
+that rank witness, and the $X_{131}$ contraction by regrouping the same
+fixture tensors. The generic scalar phase quotient leaves three relative
+coupling phases. These checks specify the scalar action; they do not
+establish a viable vacuum.
 
 \newpage
 \sect{3. Scalar results: a failed tuning and a later positive point}
@@ -429,10 +440,11 @@ qualified scopes; these certificates do not transfer to other inputs.
 \sect{A complete selected one-loop pole coefficient is large}
 At the same fixture, $Q^2=\omega^2=60$ and the declared
 $\overline{\rm MS}$ stationary-branch expansion, the isolated singlet has
-tree squared mass $6/5$. Scalar seagulls and momentum-dependent bubbles,
-including the physical PQ/Higgs zero modes, give a one-particle-irreducible
-contribution $-1.36799138-0.23557167i$. The required vacuum-source insertion
-adds $+3.03144395$, so [8]
+tree squared mass $6/5$. In the same squared-mass units, scalar seagulls
+give $-0.11212056$, and momentum-dependent bubbles (including physical
+PQ/Higgs zero modes) give $-1.25587082-0.23557167i$. Their sum is
+$-1.36799138-0.23557167i$. The required vacuum-source insertion adds
+$+3.03144395$, the largest real term. The pole convention of [8] gives
 \[
 \delta m^2_{S,\rm pole}=1.66345257-0.23557167i,\qquad
 \frac{|\delta m^2_{S,\rm pole}|}{m^2_{S,\rm tree}}\simeq1.40004.
@@ -508,7 +520,9 @@ K_i=1+k_{1,i}+k_{2,i},\qquad
 k_{1,i}=-\frac{x\lambda_{1,i}}{48\pi^2},\qquad
 k_{2,i}=-\frac{x\lambda_{2,i}}{768\pi^4}.
 \]
-The three independently evaluated diagnostic couplings give, at $L=0$:
+The three diagnostic values $x=1/2,3/4,1$ are separate from the fit in
+Section 4, where $g_{10}\simeq0.5231$ gives $x\simeq0.274$. This table does
+not test that fitted coupling. At $L=0$ the results are:
 \begin{center}
 \begin{tabular}{ccrr}
 \toprule $x$ & Factor & $k_1$ & $k_2$\\
@@ -624,8 +638,9 @@ selected marginal normalization family, including shared bosonic-source
 coefficients once. Further vacuum-tangent, probe and intrinsic-source
 comparisons lead to a complete declared local relative symbol and a
 bounded first-probe Ward relation. They use the records' unshifted
-SMA/CSW/EDS action and source convention, rather than replacing the older
-BFT spectrum or the separate formal E5 construction.
+split gauge-fixed action and independent retained-source convention of
+the cited calculations. This leaves the older threshold spectrum and the
+separate quantum construction requirements in their own domains.
 
 \sect{The domain is part of the result}
 Here $u$ is a constant bookkeeping probe, $J_a,J_\Lambda$ are nonminimal
@@ -740,44 +755,46 @@ control or physical unification. Shared action, analytic premises,
 data/software and AI authorship continue to limit independence.
 
 \newpage
-\sect{12. Connected one-loop progress through V1166}
-The later results use a specific normalized formal family, retaining
-independent ordinary, evaluation-source and background test labels.
-They apply at each fixed finite coefficient through one loop. In the direct
-Lorentzian construction the exterior tests have compact Fourier support,
-and propagators share the same-sign Feynman boundary. This is a different
-claim from taking a weak adiabatic limit in a fixed state.
+\sect{12. What the direct one-loop construction establishes}
+\textbf{Functional and domain.} Use the gauge-fixed 643-field action of the
+linked calculation, with independent smooth compact Fourier tests: ordinary
+sources $j$ for fluctuating fields, sources $J$ for retained insertions, and
+background labels $A$. The connected functional $W[j,J;A]$ is the normalized
+Wick logarithm; its graded Legendre transform in $j$ gives the proper
+functional. The direct construction uses a common-sign Feynman boundary,
+coefficient by coefficient through one loop. Only the source-independent
+free vacuum unit is anchored. The common finite conversion retains its
+original constant $\kappa$ throughout.
 
-\sect{From compact products to a direct functional}
-V1155 constructs the absolute compact Wick logarithm and graded graphwise
-Legendre transform, with the rooted source response and the background
-reference term retained. V1162 supplies the direct unmarked nonvacuum
-forest. Forced-zero one-port branches use actual tadpole identities before
-the inverse is applied; critical two-port groups are combined near the
-null cone, with a joint loop/threshold bound away from it. These steps
-address specific sewing requirements beyond the earlier V661 tests.
+\textbf{Construction.} The compact functional and the direct unmarked
+nonvacuum graph bounds are established separately (V1155, V1162).
+Actual tadpole identities remove forced-zero branches before inversion;
+critical two-port groups use joint estimates. The absolute direct functional
+retains the background reference and a nonzero retained-source Ward pair
+under one common normalization (V1163). The unmarked Slavnov, background,
+and geometric identities continue with their original source phases and
+local terms; a change of cutoff shape is compensated by the first dimension
+derivative (V1164). The single auxiliary insertion retains the translation,
+shear, width and explicit retained-source responses (V1165).
 
-V1163 assembles the direct label-dependent functional (W1 in the project's
-contract) and checks a nonzero retained-source Ward pair under one finite
-normalization. Only the source-independent free vacuum unit is anchored.
-V1164 continues the unmarked connected W3/W4/modified-W5 relations and
-their graphwise proper counterparts with the original phases and source
-chart. The finite cutoff-shape change is compensated by the first
-dimension derivative. V1165 then treats the actual single broken-sector
-auxiliary insertion, keeping the translation, shear, width and explicit
-retained-source responses in the same functional.
-
-\sect{A finite source change with a nonzero repeated response}
-V1166 implements the specified nonlinear ghost/source change of V891 in
-that direct family, with ordinary and evaluation sources transported.
-For the deformation $S_\theta=S+\theta L$, the derivative of $W_\theta$
-includes the proper loop, rooted forest and common normalization response.
-An actual auxiliary ghost bubble gives a nonzero $\theta^2$ coefficient
-for generic symbolic normalization units, including both ordered mixed
-roots. The finite endpoint is defined coefficientwise; this qualifies
-the specified W6 replacement through one loop. It does not establish
-equality at fixed untransformed sources or general nonlinear quantum
-canonical equivalence.
+\textbf{A precise finite replacement identity.} After the specified constant
+change of field coordinates and its dual source transport, the remaining
+nonlinear translation is $\Delta J$, fixed by the V891 ghost functional
+and its symbolic normalization units $z_H,z_M$.
+The action $S$ is affine in $J$, so with left source derivatives,
+\[
+L=\sum_i\Delta J_i\,\frac{\delta^L S}{\delta J_i},\qquad
+S_\theta=S+\theta L,\qquad
+\partial_\theta W_\theta=I^W_L[S_\theta].
+\]
+Here $I^W_L$ is the normalized connected insertion: it includes the
+proper loop, its attachments to ordinary sources, and the derivative
+of the common local normalization. In the stated domain the finite
+endpoint $\theta=1$ is defined coefficientwise. A specific auxiliary
+ghost bubble gives a nonzero $\theta^2$ response for generic normalization
+units, including both ordered mixed roots (V1166). This is the specified
+finite renormalized replacement, with transported sources. It is not an
+equality of correlators at fixed untransformed sources.
 
 \sect{A separate counterexample and remaining limits}
 In V915 the selected two-color coefficient differs for two compact causal
@@ -787,7 +804,9 @@ positive reference masses in that prescription, after the stated
 sequential boundaries and sum. The direct construction does not remove
 that counterexample or imply failure of every other prescription.
 The weak fixed-state limit, arbitrary marked coincidences, higher-loop
-identities, interacting vacuum phase and full E5/A5 remain open.
+identities, interacting vacuum phase and general nonlinear quantum
+equivalence remain open. The full quantum construction and equivalence
+gates are called E5/A5 in the archived research records.
 
 The V1165 evidence preserves the earlier overextended source-row count
 and the displaced Wick-phase binding. The corrected packet includes

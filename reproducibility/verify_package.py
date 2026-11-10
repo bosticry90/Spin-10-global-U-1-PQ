@@ -43,7 +43,7 @@ def source_layers():
 
 
 def main():
-    release = read_json(ROOT / "provenance/publication_manifest_v7.json")
+    release = read_json(ROOT / "provenance/publication_manifest_v7_1.json")
     layers = source_layers()
     mismatches = []
     for entry in release["release_files"]:

@@ -1,6 +1,6 @@
 # Reproduce the bounded calculations
 
-The [Version 7 technical note](../paper/spin10_pq_technical_note.pdf) reports evidence through source checkpoint `9a0cd951c49f0ca497a0c864b71af99631e5599b`. The earlier public notes are preserved in [paper/archive](../paper/archive/). The new source update retains the unchanged original archives and overlays new or changed evidence. Publication changes no scientific authority or acceptance.
+The [Version 7.1 technical note](../paper/spin10_pq_technical_note.pdf) reports evidence through source checkpoint `9a0cd951c49f0ca497a0c864b71af99631e5599b`. The earlier public notes are preserved in [paper/archive](../paper/archive/). The new source update retains the unchanged original archives and overlays new or changed evidence. Publication changes no scientific authority or acceptance.
 
 ## Check the package first
 
@@ -195,3 +195,19 @@ The new layer includes all tracked source changes at the stated checkpoint, incl
 - [spin10_pq_source_update_v6_part7.zip](spin10_pq_source_update_v6_part7.zip).
 - [spin10_pq_source_update_v6_part8.zip](spin10_pq_source_update_v6_part8.zip).
 - [spin10_pq_source_update_v6_part9.zip](spin10_pq_source_update_v6_part9.zip).
+
+## Version 7.1 notation and scope review
+
+The source checkpoint and six archive layers are unchanged. The rendered Version 7 equation already used an overbar on the entire second P₁ factor of X₁₃₁, matching the [frozen parent action](calculations/canonical_so10_scalar_reconstruction/PARENT_ACTION_V1.md) and the conjugation in the [exact contraction code](calculations/canonical_so10_scalar_reconstruction/certify_sigma_quartics.py). Version 7.1 uses an explicit star with a charge explanation. P₁ has charge +4, and its conjugate has charge −4. Adding the Hermitian conjugate to an unconjugated product would not make it PQ neutral.
+
+The complex-coefficient monomials are neutral separately: tS* and ΦφφS* have charges −4 + 4, ΦTS has +4 − 4, E has +2 + 2 − 2 − 2, and Tφφ has +4 − 4. The conjugate terms are neutral as well. The remaining contractions use the neutral real field, neutral traces, or equal numbers of charged fields and their conjugates.
+
+For the focused [notation audit](audit_scalar_pq.py), install SymPy and run from the repository root:
+
+```sh
+python -B reproducibility/audit_scalar_pq.py
+```
+
+The [execution receipt](../provenance/scalar_pq_notation_audit_v7_1.json) records the 34 neutral inventory slots, the dimension-four character count in the crossed-quartic sector, and the exact nonzero rank witness. A separately grouped contraction agrees on four frozen self-dual fixtures and under an exact rational phase. The shared fixtures, field conventions and character code limit independence. This is an action-level spot check, not a replay of the spectrum, quartic bound, loop corrections or custody.
+
+The singlet split in the note uses the existing pole result: the vacuum-source insertion is the largest real term in that expansion. The bosonic hierarchy table tests three couplings separate from the earlier fitted coupling. Section 12 gives the direct one-loop replacement identity, its test domain, and the distinct fixed-state limit that remains open. No physical input or scientific status was changed.

@@ -1,0 +1,58 @@
+{
+  "execution_state": "COMPLETED",
+  "scope": "Published scalar charge inventory and Sigma quartic notation",
+  "source_commit": "9a0cd951c49f0ca497a0c864b71af99631e5599b",
+  "neutral_inventory_slots": 34,
+  "hermitian_coefficient_groups": 29,
+  "sigma_quartic_character_multiplicity": 4,
+  "sigma_quartic_rank_witness_determinant": -1680479354880,
+  "sigma_quartic_fixture_rows": [
+    [
+      1024,
+      0,
+      0,
+      0
+    ],
+    [
+      36,
+      90,
+      132,
+      216
+    ],
+    [
+      1444,
+      1050,
+      1092,
+      216
+    ],
+    [
+      17424,
+      42968,
+      51832,
+      86288
+    ]
+  ],
+  "rational_phase_controls": 4,
+  "unconstrained_missing_conjugation_control": [
+    -10540,
+    -6720
+  ],
+  "shared_inputs": "Frozen fixture forms, field conventions and SymPy; regrouped contraction",
+  "frozen_inputs_sha256": {
+    "PARENT_ACTION_V1.md": "01323e0f6a025edd6f6669b43e7c730f5350e28d8561e72df89636862ca358ed",
+    "certify_sigma_quartics.py": "3541644670b6943c95bf77085d5928b6eaf68d3f4a19beb06010cbcb2f7035f9",
+    "count_d5_singlets.py": "3ad727036b86dcd7a7eff078d7bfb71d1fda5ef9ace2754895e122a02398a1f1",
+    "test_eta1_invariant.py": "7404a252c78b53eea66a07499ea987365041822f6fe444da314d89a806e097a5",
+    "verify_eta1_doublet_mixing.py": "1040031d76aafc13aa612b9b77e01e87fea82b951bc456bdfeaf30e9e8313bbd",
+    "verify_action_inventory.py": "94afa19013d3ed499e69077bb4af49308059d97854722a381b8740c7736fba1d"
+  },
+  "scientific_acceptance": "NOT_PERFORMED",
+  "published_note_version": "7.1",
+  "recorded_at_utc": "2026-11-10T04:34:48.000408+00:00",
+  "publication_baseline": "55e80b7687a52d120e05e991323693a0015a57f6",
+  "pdf_sha256": "78aee4ac2207b4755ae36c0dfccfd8d4e6968b25f49b95f4f121c77ba3496769",
+  "replay_script_sha256": "b88dfb540f98a0e6ca65a07b51ef64c3e7f06e9e1ce85420d9adf1c8c0deea7e",
+  "rendered_pdf_review": "14 pages, zero layout warnings. Changed pages 1, 2, 6, 8, 10 and 12 visually inspected; unchanged pages compared to Version 7.",
+  "archive_verification": "Prior 59,491-member check reused for the identical source and archive bytes; no archive, frozen receipt, physical input or scientific status changed.",
+  "limits": "No new full action reconstruction, spectrum, global bound, pole, threshold, vacuum, or custody replay."
+}
